@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>Groups allow you to group staff together. In the calendar you will see each group represented as a tab, with the staff from that group displayed together.</description>
+    <enableHistory>true</enableHistory>
+    <enableReports>true</enableReports>
+    <fields>
+        <fullName>Description__c</fullName>
+        <label>Description</label>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Parent_Group__c</fullName>
+        <label>Parent Group</label>
+        <referenceTo>Staff_Group__c</referenceTo>
+        <relationshipLabel>Staff Groups</relationshipLabel>
+        <relationshipName>Staff_Groups</relationshipName>
+        <type>Lookup</type>
+    </fields>
+    <label>Staff Group</label>
+    <listViews>
+        <fullName>All</fullName>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <nameField>
+        <label>Staff Group Name</label>
+        <type>Text</type>
+    </nameField>
+    <pluralLabel>Staff Groups</pluralLabel>
+    <searchLayouts>
+        <customTabListAdditionalFields>Parent_Group__c</customTabListAdditionalFields>
+        <lookupDialogsAdditionalFields>Parent_Group__c</lookupDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>Parent_Group__c</lookupPhoneDialogsAdditionalFields>
+        <searchResultsAdditionalFields>Parent_Group__c</searchResultsAdditionalFields>
+    </searchLayouts>
+    <sharingModel>ReadWrite</sharingModel>
+</CustomObject>

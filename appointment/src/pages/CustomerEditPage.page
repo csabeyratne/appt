@@ -1,0 +1,98 @@
+<apex:page standardController="Customer__c">
+	<apex:sectionHeader title="{!$ObjectType.Customer__c.label} Edit" subtitle="{!Customer__c.name}"/>
+	<apex:form >
+	<apex:pageBlock title="{!$ObjectType.Customer__c.label} Edit" mode="edit">
+		<apex:pageBlockButtons >
+			<apex:commandButton action="{!save}" value="Save"/>
+			<apex:commandButton action="{!cancel}" value="Cancel"/>
+		</apex:pageBlockButtons>
+		<apex:pageBlockSection showHeader="true" title="Information" columns="2">
+			<apex:pageBlockSectionItem >
+				<apex:outputLabel value="Customer Owner"/>
+				<apex:outputText value="{!Customer__c.Owner.Name}"/>
+			</apex:pageBlockSectionItem>
+			<apex:inputField value="{!Customer__c.Title__c}"/>
+			<apex:inputField value="{!Customer__c.Service__c}"/>
+			<apex:inputField required="true" value="{!Customer__c.First_Name__c}"/>
+			<apex:inputField value="{!Customer__c.Staff__c}"/>
+			<apex:inputField required="true" value="{!Customer__c.Last_Name__c}"/>
+			<apex:inputField value="{!Customer__c.Status__c}"/>
+			<apex:inputField value="{!Customer__c.Email__c}"/>
+			<apex:inputField value="{!Customer__c.Text_Notification__c}"/>
+			<apex:inputField value="{!Customer__c.Home_Phone__c}"/>
+			<apex:inputField value="{!Customer__c.Email_Notification__c}"/>
+			<apex:inputField value="{!Customer__c.Mobile_Phone__c}"/>
+			<apex:inputField value="{!Customer__c.Last_Appointment_Date__c}"/>
+			<apex:inputField value="{!Customer__c.Office_Phone__c}"/>
+			<apex:pageBlockSectionItem />
+			<apex:inputField value="{!Customer__c.Hair_Condition__c}"/>
+			<apex:pageBlockSectionItem />
+			<apex:inputField value="{!Customer__c.Scalp_Condition__c}"/>
+			<apex:pageBlockSectionItem />
+			<apex:inputField value="{!Customer__c.Texture__c}"/>
+			<apex:pageBlockSectionItem />
+			<apex:inputField value="{!Customer__c.Porosity__c}"/>
+			<apex:pageBlockSectionItem />
+			<apex:inputField value="{!Customer__c.Natural_Base_Level__c}"/>
+			<apex:pageBlockSectionItem />
+			<apex:inputField value="{!Customer__c.Tonal_Value__c}"/>
+			<apex:pageBlockSectionItem />
+			<apex:inputField value="{!Customer__c.Birth_Month__c}"/>
+			<apex:pageBlockSectionItem />
+			<apex:inputField value="{!Customer__c.Birth_Day__c}"/>
+			<apex:pageBlockSectionItem />
+			<apex:pageBlockSectionItem />
+		</apex:pageBlockSection>
+		<apex:pageBlockSection showHeader="true" title="Personal Hair Treatment &amp; Product" columns="2">
+			<apex:inputField value="{!Customer__c.Shampoo__c}"/>
+			<apex:inputField value="{!Customer__c.Personal_Hair_Treatment__c}"/>
+			<apex:inputField value="{!Customer__c.Conditioner__c}"/>
+			<apex:pageBlockSectionItem />
+			<apex:inputField value="{!Customer__c.Hair_Spray__c}"/>
+			<apex:pageBlockSectionItem />
+			<apex:inputField value="{!Customer__c.Gels__c}"/>
+			<apex:pageBlockSectionItem />
+			<apex:inputField value="{!Customer__c.Personal_Hair_Other__c}"/>
+			<apex:pageBlockSectionItem />
+		</apex:pageBlockSection>
+		<apex:pageBlockSection showHeader="true" title="Hair Color Treatments" columns="2">
+			<apex:inputField value="{!Customer__c.Hair_Color_Treatments__c}"/>
+			<apex:pageBlockSectionItem />
+		</apex:pageBlockSection>
+		<apex:pageBlockSection showHeader="true" title="Perms" columns="2">
+			<apex:inputField value="{!Customer__c.Perms__c}"/>
+			<apex:inputField value="{!Customer__c.Last_Perm__c}"/>
+			<apex:pageBlockSectionItem />
+			<apex:inputField value="{!Customer__c.Brand__c}"/>
+			<apex:pageBlockSectionItem />
+			<apex:inputField value="{!Customer__c.Relaxer_Date__c}"/>
+			<apex:pageBlockSectionItem />
+			<apex:inputField value="{!Customer__c.Relaxer__c}"/>
+		</apex:pageBlockSection>
+		<apex:pageBlockSection showHeader="true" title="Address Information" columns="1">
+			<apex:inputField value="{!Customer__c.Street_Address__c}"/>
+			<apex:inputField value="{!Customer__c.City__c}"/>
+			<apex:inputField value="{!Customer__c.State__c}"/>
+			<apex:inputField value="{!Customer__c.Zip_Code__c}"/>
+		</apex:pageBlockSection>
+		<apex:pageBlockSection showHeader="true" title="Address Location" columns="1">
+		</apex:pageBlockSection>
+		<apex:pageBlockSection showHeader="true" title="Allergies" columns="2">
+			<apex:inputField value="{!Customer__c.Allergies_To_Medication__c}"/>
+			<apex:inputField value="{!Customer__c.Allergy_Reactions__c}"/>
+			<apex:inputField value="{!Customer__c.Allergies__c}"/>
+			<apex:pageBlockSectionItem />
+		</apex:pageBlockSection>
+		<apex:pageBlockSection showHeader="true" title="Comments" columns="1">
+			<apex:inputField value="{!Customer__c.Comments__c}"/>
+		</apex:pageBlockSection>
+		<apex:pageBlockSection showHeader="true" title="Recurring Customer" columns="1">
+			<apex:inputField value="{!Customer__c.Recurring__c}"/>
+			<apex:inputField value="{!Customer__c.Recurring_Start_DateTime__c}"/>
+			<apex:inputField value="{!Customer__c.Frequency__c}"/>
+		</apex:pageBlockSection>
+		<apex:pageBlockSection showHeader="true" title="System Information" columns="2">
+		</apex:pageBlockSection>
+	</apex:pageBlock>
+	</apex:form>
+</apex:page>

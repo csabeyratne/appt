@@ -1,0 +1,454 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <value>Settings</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Settings</value>
+    </caseValues>
+    <fields>
+        <label><!-- Appointment Intervals --></label>
+        <name>Appointment_Intervals__c</name>
+        <picklistValues>
+            <masterLabel>15 Minutes</masterLabel>
+            <translation><!-- 15 Minutes --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>30 Minutes</masterLabel>
+            <translation><!-- 30 Minutes --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>45 Minutes</masterLabel>
+            <translation><!-- 45 Minutes --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>60 Minutes</masterLabel>
+            <translation><!-- 60 Minutes --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Email --></label>
+        <name>Business_Email__c</name>
+    </fields>
+    <fields>
+        <label><!-- Phone --></label>
+        <name>Business_Phone__c</name>
+    </fields>
+    <fields>
+        <label><!-- State --></label>
+        <name>Business_State__c</name>
+    </fields>
+    <fields>
+        <label><!-- City --></label>
+        <name>City__c</name>
+    </fields>
+    <fields>
+        <label><!-- Display Address --></label>
+        <name>Display_Address__c</name>
+    </fields>
+    <fields>
+        <label><!-- First Name --></label>
+        <name>First_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Full Name --></label>
+        <name>Full_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Last Name --></label>
+        <name>Last_Name__c</name>
+    </fields>
+    <fields>
+        <help><!-- Select maximum time an appointment may be made. --></help>
+        <label><!-- Maximum Lead Time --></label>
+        <name>Maximum_Lead_Time__c</name>
+        <picklistValues>
+            <masterLabel>1 Day</masterLabel>
+            <translation><!-- 1 Day --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>120 Days</masterLabel>
+            <translation><!-- 120 Days --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>14 Days</masterLabel>
+            <translation><!-- 14 Days --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>160 Days</masterLabel>
+            <translation><!-- 160 Days --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2 Days</masterLabel>
+            <translation><!-- 2 Days --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>3 Days</masterLabel>
+            <translation><!-- 3 Days --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>30 Days</masterLabel>
+            <translation><!-- 30 Days --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>365 Days</masterLabel>
+            <translation><!-- 365 Days --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>4 Days</masterLabel>
+            <translation><!-- 4 Days --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>5 Days</masterLabel>
+            <translation><!-- 5 Days --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>6 Days</masterLabel>
+            <translation><!-- 6 Days --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>60 Days</masterLabel>
+            <translation><!-- 60 Days --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>7 Days</masterLabel>
+            <translation><!-- 7 Days --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>90 Days</masterLabel>
+            <translation><!-- 90 Days --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Enter minimum lead time for an appointment. --></help>
+        <label><!-- Minimum Lead Time --></label>
+        <name>Minimum_Lead_Time__c</name>
+        <picklistValues>
+            <masterLabel>1 Hr</masterLabel>
+            <translation><!-- 1 Hr --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>10 Hrs</masterLabel>
+            <translation><!-- 10 Hrs --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>12 Hrs</masterLabel>
+            <translation><!-- 12 Hrs --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>16 Hrs</masterLabel>
+            <translation><!-- 16 Hrs --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>18 Hrs</masterLabel>
+            <translation><!-- 18 Hrs --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2 Hrs</masterLabel>
+            <translation><!-- 2 Hrs --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>24 Hrs</masterLabel>
+            <translation><!-- 24 Hrs --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>3 Hrs</masterLabel>
+            <translation><!-- 3 Hrs --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>36 Hrs</masterLabel>
+            <translation><!-- 36 Hrs --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>4 Hrs</masterLabel>
+            <translation><!-- 4 Hrs --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>48 Hrs</masterLabel>
+            <translation><!-- 48 Hrs --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>5 Hrs</masterLabel>
+            <translation><!-- 5 Hrs --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>6 Hrs</masterLabel>
+            <translation><!-- 6 Hrs --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>7 Hrs</masterLabel>
+            <translation><!-- 7 Hrs --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>8 Hrs</masterLabel>
+            <translation><!-- 8 Hrs --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>9 Hrs</masterLabel>
+            <translation><!-- 9 Hrs --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- State --></label>
+        <name>State__c</name>
+        <picklistValues>
+            <masterLabel>Alabama</masterLabel>
+            <translation><!-- Alabama --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Alaska</masterLabel>
+            <translation><!-- Alaska --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Arizona</masterLabel>
+            <translation><!-- Arizona --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Arkansas</masterLabel>
+            <translation><!-- Arkansas --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>California</masterLabel>
+            <translation><!-- California --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Colorado</masterLabel>
+            <translation><!-- Colorado --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Connecticut</masterLabel>
+            <translation><!-- Connecticut --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Delaware</masterLabel>
+            <translation><!-- Delaware --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>District of Columbia</masterLabel>
+            <translation><!-- District of Columbia --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Florida</masterLabel>
+            <translation><!-- Florida --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Georgia</masterLabel>
+            <translation><!-- Georgia --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Hawaii</masterLabel>
+            <translation><!-- Hawaii --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Idaho</masterLabel>
+            <translation><!-- Idaho --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Illinois</masterLabel>
+            <translation><!-- Illinois --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Indiana</masterLabel>
+            <translation><!-- Indiana --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Iowa</masterLabel>
+            <translation><!-- Iowa --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Kansas</masterLabel>
+            <translation><!-- Kansas --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Kentucky</masterLabel>
+            <translation><!-- Kentucky --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Louisiana</masterLabel>
+            <translation><!-- Louisiana --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Maine</masterLabel>
+            <translation><!-- Maine --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Maryland</masterLabel>
+            <translation><!-- Maryland --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Massachusetts</masterLabel>
+            <translation><!-- Massachusetts --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Michigan</masterLabel>
+            <translation><!-- Michigan --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Minnesota</masterLabel>
+            <translation><!-- Minnesota --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Mississippi</masterLabel>
+            <translation><!-- Mississippi --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Missouri</masterLabel>
+            <translation><!-- Missouri --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Montana</masterLabel>
+            <translation><!-- Montana --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Nebraska</masterLabel>
+            <translation><!-- Nebraska --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Nevada</masterLabel>
+            <translation><!-- Nevada --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>New Hampshire</masterLabel>
+            <translation><!-- New Hampshire --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>New Jersey</masterLabel>
+            <translation><!-- New Jersey --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>New Mexico</masterLabel>
+            <translation><!-- New Mexico --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>New York</masterLabel>
+            <translation><!-- New York --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>North Carolina</masterLabel>
+            <translation><!-- North Carolina --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>North Dakota</masterLabel>
+            <translation><!-- North Dakota --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Ohio</masterLabel>
+            <translation><!-- Ohio --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Oklahoma</masterLabel>
+            <translation><!-- Oklahoma --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Oregon</masterLabel>
+            <translation><!-- Oregon --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Pennsylvania</masterLabel>
+            <translation><!-- Pennsylvania --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Rhode Island</masterLabel>
+            <translation><!-- Rhode Island --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>South Carolina</masterLabel>
+            <translation><!-- South Carolina --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>South Dakota</masterLabel>
+            <translation><!-- South Dakota --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Tennessee</masterLabel>
+            <translation><!-- Tennessee --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Texas</masterLabel>
+            <translation><!-- Texas --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Utah</masterLabel>
+            <translation><!-- Utah --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Vermont</masterLabel>
+            <translation><!-- Vermont --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Virginia</masterLabel>
+            <translation><!-- Virginia --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Washington</masterLabel>
+            <translation><!-- Washington --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>West Virginia</masterLabel>
+            <translation><!-- West Virginia --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Wisconsin</masterLabel>
+            <translation><!-- Wisconsin --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Wyoming</masterLabel>
+            <translation><!-- Wyoming --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Street --></label>
+        <name>Street_Address__c</name>
+    </fields>
+    <fields>
+        <label><!-- Time Format --></label>
+        <name>Time_Format__c</name>
+        <picklistValues>
+            <masterLabel>12 Hour AM/PM</masterLabel>
+            <translation><!-- 12 Hour AM/PM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>24 Hour</masterLabel>
+            <translation><!-- 24 Hour --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Enter the URL address of business website. --></help>
+        <label><!-- Website --></label>
+        <name>Website__c</name>
+    </fields>
+    <fields>
+        <help><!-- Select the first day to display on the calendar. --></help>
+        <label><!-- Week Start Day --></label>
+        <name>Week_Start_Day__c</name>
+        <picklistValues>
+            <masterLabel>Monday</masterLabel>
+            <translation><!-- Monday --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sunday</masterLabel>
+            <translation><!-- Sunday --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Zip Code --></label>
+        <name>Zip_Code__c</name>
+    </fields>
+    <layouts>
+        <layout>Settings Layout</layout>
+        <sections>
+            <label><!-- Additional Settings --></label>
+            <section>Additional Settings</section>
+        </sections>
+        <sections>
+            <label><!-- Address Location --></label>
+            <section>Address Location</section>
+        </sections>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>
