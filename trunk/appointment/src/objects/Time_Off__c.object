@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <enableHistory>true</enableHistory>
+    <enableReports>true</enableReports>
+    <fields>
+        <fullName>All_Day__c</fullName>
+        <defaultValue>true</defaultValue>
+        <description>Check box indicates time off is for the entire day.</description>
+        <inlineHelpText>Check if the time off for the date is for the entire day.</inlineHelpText>
+        <label>All Day</label>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Start_DateTime__c</fullName>
+        <label>Start Time</label>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Start_Time_List__c</fullName>
+        <label>Start Time List</label>
+        <length>10</length>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>Stop_DateTime__c</fullName>
+        <label>Stop Time</label>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Stop_Time_List__c</fullName>
+        <label>Stop Time List</label>
+        <length>10</length>
+        <type>Text</type>
+    </fields>
+    <label>Time Off</label>
+    <listViews>
+        <fullName>All</fullName>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <nameField>
+        <label>Time Off Name</label>
+        <type>Text</type>
+    </nameField>
+    <pluralLabel>Time Off</pluralLabel>
+    <searchLayouts>
+        <customTabListAdditionalFields>Start_Time_List__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Stop_Time_List__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>All_Day__c</customTabListAdditionalFields>
+        <lookupDialogsAdditionalFields>Start_Time_List__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Stop_Time_List__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>All_Day__c</lookupDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>Start_Time_List__c</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>Stop_Time_List__c</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>All_Day__c</lookupPhoneDialogsAdditionalFields>
+        <searchResultsAdditionalFields>Start_Time_List__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Stop_Time_List__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>All_Day__c</searchResultsAdditionalFields>
+    </searchLayouts>
+    <sharingModel>ReadWrite</sharingModel>
+</CustomObject>

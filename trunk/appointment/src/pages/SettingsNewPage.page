@@ -1,0 +1,46 @@
+<apex:page standardController="Setting__c">
+	<apex:sectionHeader title="{!$ObjectType.Setting__c.label} Edit" subtitle="New {!$ObjectType.Setting__c.name}"/>
+	<apex:form >
+	<apex:pageBlock title="{!$ObjectType.Setting__c.label} Edit" mode="edit">
+		<apex:pageBlockButtons >
+			<apex:commandButton action="{!save}" value="Save"/>
+			<apex:commandButton action="{!cancel}" value="Cancel"/>
+		</apex:pageBlockButtons>
+		<apex:pageBlockSection showHeader="true" title="Information" columns="1">
+			<apex:inputField required="true" value="{!Setting__c.Name}"/>
+			<apex:inputField value="{!Setting__c.First_Name__c}"/>
+			<apex:inputField value="{!Setting__c.Last_Name__c}"/>
+			<apex:inputField value="{!Setting__c.Street_Address__c}"/>
+			<apex:inputField value="{!Setting__c.City__c}"/>
+			<apex:inputField value="{!Setting__c.State__c}"/>
+			<apex:inputField value="{!Setting__c.Zip_Code__c}"/>
+			<apex:inputField value="{!Setting__c.Business_Email__c}"/>
+			<apex:inputField value="{!Setting__c.Business_Phone__c}"/>
+			<apex:inputField value="{!Setting__c.Website__c}"/>
+		</apex:pageBlockSection>
+		<apex:pageBlockSection showHeader="true" title="Address Location" columns="1">
+		</apex:pageBlockSection>
+		<apex:pageBlockSection showHeader="true" title="Additional Settings" columns="2">
+			<apex:inputField value="{!Setting__c.Minimum_Lead_Time__c}"/>
+			<apex:pageBlockSectionItem />
+			<apex:inputField value="{!Setting__c.Maximum_Lead_Time__c}"/>
+			<apex:pageBlockSectionItem />
+			<apex:inputField value="{!Setting__c.Appointment_Intervals__c}"/>
+			<apex:pageBlockSectionItem />
+			<apex:inputField value="{!Setting__c.Time_Format__c}"/>
+			<apex:pageBlockSectionItem />
+			<apex:inputField value="{!Setting__c.Week_Start_Day__c}"/>
+			<apex:pageBlockSectionItem />
+			<apex:inputField value="{!Setting__c.Display_Address__c}"/>
+			<apex:pageBlockSectionItem />
+		</apex:pageBlockSection>
+		<apex:pageBlockSection showHeader="true" title="System Information" columns="2">
+			<apex:pageBlockSectionItem >
+				<apex:outputLabel value="Settings Owner"/>
+				<apex:outputText value="{!Setting__c.Owner.Name}"/>
+			</apex:pageBlockSectionItem>
+			<apex:pageBlockSectionItem />
+		</apex:pageBlockSection>
+	</apex:pageBlock>
+	</apex:form>
+</apex:page>
