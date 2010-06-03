@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <value>Employee Hours</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Employee Hours</value>
+    </caseValues>
+    <fields>
+        <label><!-- Active --></label>
+        <name>Active__c</name>
+    </fields>
+    <fields>
+        <label><!-- DateTime In Adjusted --></label>
+        <name>DateTime_In_Adjusted__c</name>
+    </fields>
+    <fields>
+        <label><!-- DateTime In --></label>
+        <name>DateTime_In__c</name>
+    </fields>
+    <fields>
+        <label><!-- DateTime Out Adjusted --></label>
+        <name>DateTime_Out_Adjusted__c</name>
+    </fields>
+    <fields>
+        <label><!-- DateTime Out --></label>
+        <name>DateTime_Out__c</name>
+    </fields>
+    <fields>
+        <label><!-- Hours 1 --></label>
+        <name>Day1_Hours__c</name>
+    </fields>
+    <fields>
+        <label><!-- Hours 2 --></label>
+        <name>Day2_Hours__c</name>
+    </fields>
+    <fields>
+        <label><!-- Hours 3 --></label>
+        <name>Day3_Hours__c</name>
+    </fields>
+    <fields>
+        <label><!-- Hours 4 --></label>
+        <name>Day4_Hours__c</name>
+    </fields>
+    <fields>
+        <label><!-- Hours 5 --></label>
+        <name>Day5_Hours__c</name>
+    </fields>
+    <fields>
+        <label><!-- Hours 6 --></label>
+        <name>Day6_Hours__c</name>
+    </fields>
+    <fields>
+        <label><!-- Hours 7 --></label>
+        <name>Day7_Hours__c</name>
+    </fields>
+    <fields>
+        <label><!-- Doubletime Hours Shift A --></label>
+        <name>Doubletime_Hours_Shift_A__c</name>
+    </fields>
+    <fields>
+        <label><!-- Doubletime Hours Shift B --></label>
+        <name>Doubletime_Hours_Shift_B__c</name>
+    </fields>
+    <fields>
+        <label><!-- Doubletime Hours --></label>
+        <name>Doubletime_Hours__c</name>
+    </fields>
+    <fields>
+        <label><!-- Earnings Dollars --></label>
+        <name>Earnings_Dollars__c</name>
+    </fields>
+    <fields>
+        <label><!-- Employee --></label>
+        <name>Employee__c</name>
+        <relationshipLabel><!-- Employee Hours --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Incident --></label>
+        <name>Incident__c</name>
+    </fields>
+    <fields>
+        <label><!-- Lunch Deduction Hours --></label>
+        <name>Lunch_Deduction_Hours__c</name>
+    </fields>
+    <fields>
+        <label><!-- Lunch Start DateTime --></label>
+        <name>Lunch_Start_Time__c</name>
+    </fields>
+    <fields>
+        <label><!-- Overtime Hours Shift A --></label>
+        <name>Overtime_Hours_Shift_A__c</name>
+    </fields>
+    <fields>
+        <label><!-- Overtime Hours Shift B --></label>
+        <name>Overtime_Hours_Shift_B__c</name>
+    </fields>
+    <fields>
+        <label><!-- Overtime Hours --></label>
+        <name>Overtime_Hours__c</name>
+    </fields>
+    <fields>
+        <label><!-- Pay Rate Shift A --></label>
+        <name>Pay_Rate_Shift_A__c</name>
+    </fields>
+    <fields>
+        <label><!-- Pay Rate Shift B --></label>
+        <name>Pay_Rate_Shift_B__c</name>
+    </fields>
+    <fields>
+        <label><!-- Pay Rate --></label>
+        <name>Pay_Rate_Worked__c</name>
+    </fields>
+    <fields>
+        <label><!-- Points --></label>
+        <name>Points__c</name>
+    </fields>
+    <fields>
+        <label><!-- Regular Hours Shift A --></label>
+        <name>Regular_Hours_Shift_A__c</name>
+    </fields>
+    <fields>
+        <label><!-- Regular Hours Shift B --></label>
+        <name>Regular_Hours_Shift_B__c</name>
+    </fields>
+    <fields>
+        <label><!-- Regular Hours --></label>
+        <name>Regular_Hours__c</name>
+    </fields>
+    <fields>
+        <label><!-- Stage --></label>
+        <name>Stage__c</name>
+        <picklistValues>
+            <masterLabel>Approved</masterLabel>
+            <translation><!-- Approved --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Closed Archived</masterLabel>
+            <translation><!-- Closed Archived --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Closed Summarized</masterLabel>
+            <translation><!-- Closed Summarized --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Closed Transfered</masterLabel>
+            <translation><!-- Closed Transfered --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Open</masterLabel>
+            <translation><!-- Open --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Pending Approval</masterLabel>
+            <translation><!-- Pending Approval --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Rejected</masterLabel>
+            <translation><!-- Rejected --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Total Hours --></label>
+        <name>Total_Hours__c</name>
+    </fields>
+    <fields>
+        <label><!-- Week Ending Date --></label>
+        <name>Week_Ending_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Weekend Hours --></label>
+        <name>Weekend_Hours__c</name>
+    </fields>
+    <fields>
+        <label><!-- Work Date --></label>
+        <name>Work_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Worked Hours --></label>
+        <name>Worked_Hours__c</name>
+    </fields>
+    <layouts>
+        <layout>Employee Hours Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

@@ -1,0 +1,26 @@
+<apex:page standardController="Employee__c" extensions="zLookupToPicklistExtension" >
+  <apex:sectionHeader title="Employee Edit" subtitle="New Employee" />
+  <apex:form id="employeeForm">
+    <apex:pageBlock title="Employee Edit" mode="edit">
+      <apex:pageBlockButtons >
+        <apex:commandButton action="{!save}" value=" Save "></apex:commandButton>
+        <apex:commandButton action="{!cancel}" value="Cancel"></apex:commandButton>
+      </apex:pageBlockButtons>
+      <apex:pageBlockSection title="Employee Information" columns="1">
+        <apex:inputField value="{!Employee__c.Last_Name__c}" required="true"/>
+        <apex:inputField value="{!Employee__c.First_Name__c}" required="true"/>
+        <apex:pageBlockSectionItem >
+          <apex:outputLabel value="{!$ObjectType.Employee__c.fields.Location__c.label}" for="pLabel"/>
+          <apex:outputPanel styleClass="requiredInput" layout="block">
+          <apex:outputPanel styleClass="requiredBlock" layout="block"/>
+            <apex:actionRegion >
+              <apex:selectList id="locationLookupPicklist" value="{!Employee__c.Location__c}" size="1" rendered="true">
+                <apex:selectOptions value="{!locationOptions}"/>
+              </apex:selectList>
+            </apex:actionRegion>
+          </apex:outputPanel>
+        </apex:pageBlockSectionItem>
+      </apex:pageBlockSection>
+    </apex:pageBlock>
+  </apex:form>
+</apex:page>

@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <value>Attendance Policy</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Attendance Policies</value>
+    </caseValues>
+    <fields>
+        <label><!-- Active --></label>
+        <name>Active__c</name>
+    </fields>
+    <fields>
+        <label><!-- Fifth Warning Date --></label>
+        <name>Fifth_Warning_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Fifth Warning --></label>
+        <name>Fifth_Warning__c</name>
+    </fields>
+    <fields>
+        <label><!-- First Warning Date --></label>
+        <name>First_Warning_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- First Warning --></label>
+        <name>First_Warning__c</name>
+    </fields>
+    <fields>
+        <label><!-- Fourth Warning Date --></label>
+        <name>Fourth_Warning_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Fourth Warning --></label>
+        <name>Fourth_Warning__c</name>
+    </fields>
+    <fields>
+        <label><!-- Second Warning Date --></label>
+        <name>Second_Warning_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Second Warning --></label>
+        <name>Second_Warning__c</name>
+    </fields>
+    <fields>
+        <label><!-- Seventh Warning Date --></label>
+        <name>Seventh_Warning_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Seventh Warning --></label>
+        <name>Seventh_Warning__c</name>
+    </fields>
+    <fields>
+        <label><!-- Sixth Warning Date --></label>
+        <name>Sixth_Warning_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Sixth Warning --></label>
+        <name>Sixth_Warning__c</name>
+    </fields>
+    <fields>
+        <label><!-- Third Warning Date --></label>
+        <name>Third_Warning_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Third Warning --></label>
+        <name>Third_Warning__c</name>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <value>Reason</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Reasons</value>
+    </caseValues>
+    <fields>
+        <label><!-- Active --></label>
+        <name>Active__c</name>
+    </fields>
+    <fields>
+        <label><!-- Description --></label>
+        <name>Reason_Description__c</name>
+    </fields>
+    <fields>
+        <label><!-- Reason Entity --></label>
+        <name>Reason_Entity__c</name>
+    </fields>
+    <fields>
+        <label><!-- Reason Type --></label>
+        <name>Reason_Type__c</name>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

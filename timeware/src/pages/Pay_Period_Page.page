@@ -1,0 +1,3 @@
+<apex:page standardController="Pay_Period_Policy__c" showHeader="true" >
+<apex:detail />
+</apex:page>

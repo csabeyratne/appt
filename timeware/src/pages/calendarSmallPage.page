@@ -1,0 +1,53 @@
+<apex:page controller="repeatCon" id="thePage"  >
+	<apex:stylesheet value="/sCSS/Theme2/default/homeCalendar.css" />
+	
+	<apex:form id="theForm">
+         <apex:outputPanel id="theCalendar" >
+         
+            <div class="mCalendar" style="width:182px;" ><div class="topLeft" ><div class="topRight"/></div>
+			<div class="body">
+			<table cellspacing="0" cellpadding="2" border="0">
+				<tbody>
+					<tr class="header">
+						<td><apex:commandLink action="{!prev}" rerender="theCalendar">
+							<img title="Previous Month" class="prevCalArrow" alt="Previous Month" src="/s.gif" />
+						</apex:commandLink></td>
+						<td colspan="5" >
+						{!month.monthname} {!month.yearname}
+						</td>
+						<td><apex:commandLink action="{!next}" rerender="theCalendar">
+							<img title="Next Month" class="nextCalArrow" alt="Next Month"
+								src="/s.gif" />
+						</apex:commandLink></td>
+					</tr>
+					
+					<tr>
+						<th scope="col" class="calDays">Sun</th>
+						<th scope="col" class="calDays">Mon</th>
+						<th scope="col" class="calDays">Tue</th>
+						<th scope="col" class="calDays">Wed</th>
+						<th scope="col" class="calDays">Thu</th>
+						<th scope="col" class="calDays">Fri</th>
+						<th scope="col" class="calDays">Sat</th>
+					</tr>
+					
+					<apex:repeat value="{!weeks}" var="wk" id="foreachWeek">
+						<tr class="days">
+							<!-- or highlight -->
+							<apex:repeat value="{!wk.days}" var="day" id="foreachday">
+								<td valign="top"><a class="calActive"
+									href="/00U/c?md0=2008&md3={!day.dayOfYear}" target="_blank"
+									title="Day View - {!day.date}">{!day.dayofmonth2}</a></td>
+							</apex:repeat>
+						</tr>
+					</apex:repeat>
+					
+				</tbody>
+			</table>
+			</div>
+			<div class="bottomLeft"><div class="bottomRight"/></div>
+            </div>
+            
+            </apex:outputPanel>
+        </apex:form>
+</apex:page>

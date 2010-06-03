@@ -1,0 +1,4 @@
+<apex:page >
+    <apex:pageBlock title="RecordType List Component" id="tblId">
+    </apex:pageBlock>
+</apex:page>

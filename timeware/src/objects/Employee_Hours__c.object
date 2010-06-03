@@ -1,0 +1,331 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>Master-Detail relationship with Employee (Master) object.</description>
+    <enableActivities>true</enableActivities>
+    <enableEnhancedLookup>true</enableEnhancedLookup>
+    <enableHistory>true</enableHistory>
+    <enableReports>true</enableReports>
+    <fields>
+        <fullName>Active__c</fullName>
+        <defaultValue>true</defaultValue>
+        <label>Active</label>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>DateTime_In_Adjusted__c</fullName>
+        <label>DateTime In Adjusted</label>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>DateTime_In__c</fullName>
+        <label>DateTime In</label>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>DateTime_Out_Adjusted__c</fullName>
+        <label>DateTime Out Adjusted</label>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>DateTime_Out__c</fullName>
+        <label>DateTime Out</label>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Day1_Hours__c</fullName>
+        <label>Hours 1</label>
+        <precision>5</precision>
+        <scale>2</scale>
+        <type>Number</type>
+    </fields>
+    <fields>
+        <fullName>Day2_Hours__c</fullName>
+        <label>Hours 2</label>
+        <precision>5</precision>
+        <scale>2</scale>
+        <type>Number</type>
+    </fields>
+    <fields>
+        <fullName>Day3_Hours__c</fullName>
+        <label>Hours 3</label>
+        <precision>5</precision>
+        <scale>2</scale>
+        <type>Number</type>
+    </fields>
+    <fields>
+        <fullName>Day4_Hours__c</fullName>
+        <label>Hours 4</label>
+        <precision>5</precision>
+        <scale>2</scale>
+        <type>Number</type>
+    </fields>
+    <fields>
+        <fullName>Day5_Hours__c</fullName>
+        <label>Hours 5</label>
+        <precision>5</precision>
+        <scale>2</scale>
+        <type>Number</type>
+    </fields>
+    <fields>
+        <fullName>Day6_Hours__c</fullName>
+        <label>Hours 6</label>
+        <precision>5</precision>
+        <scale>2</scale>
+        <type>Number</type>
+    </fields>
+    <fields>
+        <fullName>Day7_Hours__c</fullName>
+        <label>Hours 7</label>
+        <precision>5</precision>
+        <scale>2</scale>
+        <type>Number</type>
+    </fields>
+    <fields>
+        <fullName>Doubletime_Hours_Shift_A__c</fullName>
+        <label>Doubletime Hours Shift A</label>
+        <precision>5</precision>
+        <scale>2</scale>
+        <type>Number</type>
+    </fields>
+    <fields>
+        <fullName>Doubletime_Hours_Shift_B__c</fullName>
+        <label>Doubletime Hours Shift B</label>
+        <precision>5</precision>
+        <scale>2</scale>
+        <type>Number</type>
+    </fields>
+    <fields>
+        <fullName>Doubletime_Hours__c</fullName>
+        <description>Doubletime hours</description>
+        <label>Doubletime Hours</label>
+        <precision>5</precision>
+        <scale>2</scale>
+        <type>Number</type>
+    </fields>
+    <fields>
+        <fullName>Earnings_Dollars__c</fullName>
+        <label>Earnings Dollars</label>
+        <precision>9</precision>
+        <scale>2</scale>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Employee__c</fullName>
+        <label>Employee</label>
+        <referenceTo>Employee__c</referenceTo>
+        <relationshipName>R00N70000002IOVdEAO</relationshipName>
+        <relationshipOrder>0</relationshipOrder>
+        <type>MasterDetail</type>
+    </fields>
+    <fields>
+        <fullName>Incident__c</fullName>
+        <defaultValue>false</defaultValue>
+        <label>Incident</label>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Lunch_Deduction_Hours__c</fullName>
+        <label>Lunch Deduction Hours</label>
+        <precision>5</precision>
+        <scale>2</scale>
+        <type>Number</type>
+    </fields>
+    <fields>
+        <fullName>Lunch_Start_Time__c</fullName>
+        <label>Lunch Start DateTime</label>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Overtime_Hours_Shift_A__c</fullName>
+        <label>Overtime Hours Shift A</label>
+        <precision>5</precision>
+        <scale>2</scale>
+        <type>Number</type>
+    </fields>
+    <fields>
+        <fullName>Overtime_Hours_Shift_B__c</fullName>
+        <label>Overtime Hours Shift B</label>
+        <precision>5</precision>
+        <scale>2</scale>
+        <type>Number</type>
+    </fields>
+    <fields>
+        <fullName>Overtime_Hours__c</fullName>
+        <description>Overtime hours</description>
+        <label>Overtime Hours</label>
+        <precision>5</precision>
+        <scale>2</scale>
+        <type>Number</type>
+    </fields>
+    <fields>
+        <fullName>Pay_Rate_Shift_A__c</fullName>
+        <label>Pay Rate Shift A</label>
+        <precision>11</precision>
+        <scale>4</scale>
+        <type>Number</type>
+    </fields>
+    <fields>
+        <fullName>Pay_Rate_Shift_B__c</fullName>
+        <label>Pay Rate Shift B</label>
+        <precision>11</precision>
+        <scale>4</scale>
+        <type>Number</type>
+    </fields>
+    <fields>
+        <fullName>Pay_Rate_Worked__c</fullName>
+        <description>Populated if pay rate is not default rate</description>
+        <label>Pay Rate</label>
+        <precision>11</precision>
+        <scale>4</scale>
+        <type>Number</type>
+    </fields>
+    <fields>
+        <fullName>Points__c</fullName>
+        <label>Points</label>
+        <precision>10</precision>
+        <scale>3</scale>
+        <type>Number</type>
+    </fields>
+    <fields>
+        <fullName>Regular_Hours_Shift_A__c</fullName>
+        <label>Regular Hours Shift A</label>
+        <precision>5</precision>
+        <scale>2</scale>
+        <type>Number</type>
+    </fields>
+    <fields>
+        <fullName>Regular_Hours_Shift_B__c</fullName>
+        <label>Regular Hours Shift B</label>
+        <precision>5</precision>
+        <scale>2</scale>
+        <type>Number</type>
+    </fields>
+    <fields>
+        <fullName>Regular_Hours__c</fullName>
+        <description>Regular hours</description>
+        <label>Regular Hours</label>
+        <precision>5</precision>
+        <scale>2</scale>
+        <type>Number</type>
+    </fields>
+    <fields>
+        <fullName>Stage__c</fullName>
+        <label>Stage</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Open</fullName>
+                <default>true</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Pending Approval</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Approved</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Closed Summarized</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Closed Transfered</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Closed Archived</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Rejected</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Total_Hours__c</fullName>
+        <description>Calculated hours minus lunch deduction. Total hours can be adjusted.</description>
+        <label>Total Hours</label>
+        <precision>5</precision>
+        <scale>2</scale>
+        <type>Number</type>
+    </fields>
+    <fields>
+        <fullName>Week_Ending_Date__c</fullName>
+        <label>Week Ending Date</label>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Weekend_Hours__c</fullName>
+        <description>Calculated hours that qualify for weekend differential</description>
+        <label>Weekend Hours</label>
+        <precision>5</precision>
+        <scale>2</scale>
+        <type>Number</type>
+    </fields>
+    <fields>
+        <fullName>Work_Date__c</fullName>
+        <defaultValue>Today()</defaultValue>
+        <label>Work Date</label>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Worked_Hours__c</fullName>
+        <description>Calculated hours with no deductions</description>
+        <label>Worked Hours</label>
+        <precision>5</precision>
+        <scale>2</scale>
+        <type>Number</type>
+    </fields>
+    <label>Employee Hours</label>
+    <listViews>
+        <fullName>All</fullName>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <nameField>
+        <displayFormat>EH-{00000000}</displayFormat>
+        <label>Employee Hours ID</label>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Employee Hours</pluralLabel>
+    <searchLayouts>
+        <customTabListAdditionalFields>Employee__c</customTabListAdditionalFields>
+    </searchLayouts>
+    <sharingModel>ControlledByParent</sharingModel>
+</CustomObject>

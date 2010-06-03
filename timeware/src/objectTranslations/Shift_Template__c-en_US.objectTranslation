@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <value>Shift Template</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Shift Templates</value>
+    </caseValues>
+    <fields>
+        <label><!-- Active --></label>
+        <name>Active__c</name>
+    </fields>
+    <fields>
+        <label><!-- First Early Start Time --></label>
+        <name>First_Early_Start_Time__c</name>
+    </fields>
+    <fields>
+        <label><!-- First Late Stop Time --></label>
+        <name>First_Late_Stop_Time__c</name>
+    </fields>
+    <fields>
+        <label><!-- First Shift Number --></label>
+        <name>First_Shift_Number__c</name>
+    </fields>
+    <fields>
+        <label><!-- First Start Time --></label>
+        <name>First_Start_Time__c</name>
+    </fields>
+    <fields>
+        <label><!-- First Stop Time --></label>
+        <name>First_Stop_Time__c</name>
+    </fields>
+    <fields>
+        <label><!-- Second Early Start Time --></label>
+        <name>Second_Early_Start_Time__c</name>
+    </fields>
+    <fields>
+        <label><!-- Second Late Stop Time --></label>
+        <name>Second_Late_Stop_Time__c</name>
+    </fields>
+    <fields>
+        <label><!-- Second Shift Number --></label>
+        <name>Second_Shift_Number__c</name>
+    </fields>
+    <fields>
+        <label><!-- Second Start Time --></label>
+        <name>Second_Start_Time__c</name>
+    </fields>
+    <fields>
+        <label><!-- Second Stop Time --></label>
+        <name>Second_Stop_Time__c</name>
+    </fields>
+    <fields>
+        <label><!-- Shift Count --></label>
+        <name>Shift_Count__c</name>
+    </fields>
+    <fields>
+        <label><!-- Shift Template ID --></label>
+        <name>Shift_Template_ID__c</name>
+    </fields>
+    <fields>
+        <label><!-- Third Early Start Time --></label>
+        <name>Third_Early_Start_Time__c</name>
+    </fields>
+    <fields>
+        <label><!-- Third Late Stop Time --></label>
+        <name>Third_Late_Stop_Time__c</name>
+    </fields>
+    <fields>
+        <label><!-- Third Shift Number --></label>
+        <name>Third_Shift_Number__c</name>
+    </fields>
+    <fields>
+        <label><!-- Third Start Time --></label>
+        <name>Third_Start_Time__c</name>
+    </fields>
+    <fields>
+        <label><!-- Third Stop Time --></label>
+        <name>Third_Stop_Time__c</name>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

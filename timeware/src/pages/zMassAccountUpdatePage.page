@@ -1,0 +1,45 @@
+<apex:page tabStyle="Account" controller="zMassAccountUpdateController">
+<apex:sectionHeader title="Accounts Mass Update"></apex:sectionHeader>
+<apex:form >
+<apex:pageBlock title="" id="pageBlock">
+  <!-- This block will show the search textbox and the Search button -->
+  <apex:pageBlockButtons location="top">
+    <apex:inputText value="{!keywords}" style="height:15px;"></apex:inputText>
+    <apex:commandButton value="Search" action="{!ViewData}" id="theButton" rerender="pageBlock" status="status"></apex:commandButton>
+  </apex:pageBlockButtons>
+  <!-- To show page level messages -->
+  <apex:pageMessages ></apex:pageMessages>
+
+  <!-- The below tag will provide a javascript method which when is called in turn will call a controller's method -->
+  <apex:actionFunction action="{!UpdateRecords}" name="updateRecords" rerender="pageBlock" status="status"></apex:actionFunction>
+
+  <!-- This table contains columns which have inputfield components -->
+  <apex:pageBlockTable value="{!accounts}" var="a" rendered="{!NOT(ISNULL(accounts))}">
+     <apex:column >
+       <apex:facet name="header">Name</apex:facet>
+       <apex:inputField value="{!a.Name}" onchange="updateRecords();"></apex:inputField>
+     </apex:column>
+     <apex:column >
+       <apex:facet name="header">Phone</apex:facet>
+       <apex:inputField value="{!a.Phone}" onchange="updateRecords();"></apex:inputField>
+     </apex:column>
+     <apex:column >
+       <apex:facet name="header">Billing City</apex:facet>
+       <apex:inputField value="{!a.BillingCity}" onchange="updateRecords();"></apex:inputField>
+     </apex:column>
+     <apex:column >
+       <apex:facet name="header">Billing Country</apex:facet>
+       <apex:inputField value="{!a.BillingCountry}" onchange="updateRecords();"></apex:inputField>
+     </apex:column>
+     <apex:column >
+       <apex:facet name="header">Industry</apex:facet>
+       <apex:inputField value="{!a.Industry}" onchange="updateRecords();"></apex:inputField>
+     </apex:column>
+  </apex:pageBlockTable>
+
+</apex:pageBlock>
+
+<!-- The action status to show when the AJAX postback is wroking. -->
+<apex:actionStatus id="status" startText="Requesting..."/>
+</apex:form>
+</apex:page>

@@ -1,0 +1,49 @@
+<apex:page controller="zMultiButton">
+    <apex:form >
+        Normal html links:<br/>
+        <c:multiSelectButton uniqueId="show1" buttonText="Links">
+            <apex:outputLink value="http://www.digg.com">digg.com</apex:outputLink>
+            <apex:outputLink value="http://www.engadget.com">engadget.com</apex:outputLink>
+            <apex:outputLink value="http://www.gizmodo.com">gizmodo.com</apex:outputLink>
+        </c:multiSelectButton><br/><br/>
+ 
+        Links that pass params:<br/>
+        <apex:inputText value="{!searchValue}"/>
+        <c:multiSelectButton uniqueId="show3" buttonText="Search">
+            <apex:commandLink value="Google" action="{!doSearch}">
+                <apex:param assignTo="{!searchEngine}" value="www.google.com/search?q="/>
+            </apex:commandLink>
+            <apex:commandLink value="Yahoo" action="{!doSearch}">
+                <apex:param assignTo="{!searchEngine}" value="search.yahoo.com/search?p="/>
+            </apex:commandLink>
+            <apex:commandLink value="Bing" action="{!doSearch}">
+                <apex:param assignTo="{!searchEngine}" value="www.bing.com/search?q="/> 
+            </apex:commandLink>
+        </c:multiSelectButton><br/><br/>
+ 
+ 
+        These options are bound to action methods in the controller:<br />
+        <apex:pageBlock id="tables">
+ 
+            <apex:pageBlockButtons location="top">
+                <c:multiSelectButton uniqueId="show2" buttonText="View:">
+                    <apex:commandLink value="Accounts" action="{!showAccts}" rerender="tables" />
+                    <apex:commandLink value="Opportunities" action="{!showOpps}" rerender="tables" />
+                </c:multiSelectButton>
+            </apex:pageBlockButtons>
+ 
+            <apex:pageBlockTable value="{!opps}" var="o" rendered="{!viewList = 'opps'}">
+                <apex:column value="{!o.Name}" />
+                <apex:column value="{!o.StageName}" />
+                <apex:column value="{!o.Amount}" />
+            </apex:pageBlockTable>
+ 
+            <apex:pageBlockTable value="{!accts}" var="a" rendered="{!viewList = 'accts'}">
+                <apex:column value="{!a.Name}" />
+                <apex:column value="{!a.BillingCity}" />
+                <apex:column value="{!a.BillingCountry}" />
+            </apex:pageBlockTable>
+ 
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

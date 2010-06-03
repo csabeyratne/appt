@@ -1,0 +1,41 @@
+<apex:component controller="RssFeed" >
+
+    <apex:attribute name="title" description="Title to display at the top of the feed." type="String" required="false" />
+    <apex:attribute name="debug" description="debug DIV is turned on" type="Boolean" />
+    <apex:attribute name="feedURL" description="Where to fetch the RSS feed." type="String" required="true" assignTo="{!compFeedURL}" />
+    <apex:attribute name="entriesCount" description="Number of feed entries to present."  type="Integer"    required="false" assignTo="{!entriesToShow}"  />
+    <apex:attribute name="headline" description="headline only display mode" type="Boolean" /> 
+   
+    <apex:outputPanel layout="block" rendered="{!debug}" > 
+        <br />rssFeed component debug output, 
+        feedURL: {!feedURL}<br />
+        entriesCount: {!entriesCount} entries<br />
+     <apex:repeat value="{!feedContent}" var="entry">
+            <apex:outputText value="{!entry.title}" />
+            <br />  
+        </apex:repeat>          
+    </apex:outputPanel>
+
+    <apex:outputPanel layout="block" rendered="{!NOT(headline)}">
+        <h3>{!title}</h3>
+        <apex:repeat value="{!feedContent}" var="entry">
+            <p>
+            <div id="adnblogtitle"><a href="{!entry.href}">{!entry.title}</a></div>
+            <div class="author">{!entry.author}</div>
+            <br />
+            <p>{!entry.summary}</p>
+            <i>{!entry.date}</i>
+            <br />
+            </p>
+            <hr />
+        </apex:repeat>
+    </apex:outputPanel>
+
+
+    <apex:outputPanel layout="block" rendered="{!headline}"><h3>{!title}</h3>
+        <apex:repeat value="{!feedContent}" var="entry">
+        <a href="{!entry.href}"><img src="http://www.salesforce.com/site/us/assets/developer/date{!entry.index}.gif" class="date"/><p class="adnindent">{!entry.title}</p></a>
+        </apex:repeat>
+    </apex:outputPanel>
+
+</apex:component>

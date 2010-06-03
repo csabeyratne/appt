@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>Master-Detail relationship with Employee (Master) object. Items detail earned benefit totals and hours taken.</description>
+    <enableEnhancedLookup>true</enableEnhancedLookup>
+    <enableHistory>true</enableHistory>
+    <enableReports>true</enableReports>
+    <fields>
+        <fullName>As_Of_Date__c</fullName>
+        <label>As Of Date</label>
+        <trackHistory>true</trackHistory>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Available_Hours__c</fullName>
+        <formula>IF(  Hours_Accrued__c  &gt;=  Hours_Taken__c ,  Hours_Accrued__c  -  Hours_Taken__c , 0)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Hours Available</label>
+        <precision>18</precision>
+        <scale>2</scale>
+        <type>Number</type>
+    </fields>
+    <fields>
+        <fullName>Employee__c</fullName>
+        <label>Employee</label>
+        <referenceTo>Employee__c</referenceTo>
+        <relationshipLabel>Accruals</relationshipLabel>
+        <relationshipName>R00N70000002IOXZEA4</relationshipName>
+        <relationshipOrder>0</relationshipOrder>
+        <type>MasterDetail</type>
+    </fields>
+    <fields>
+        <fullName>Hours_Accrued__c</fullName>
+        <label>Hours Accrued</label>
+        <precision>9</precision>
+        <scale>2</scale>
+        <trackHistory>true</trackHistory>
+        <type>Number</type>
+    </fields>
+    <fields>
+        <fullName>Hours_Taken__c</fullName>
+        <label>Hours Taken</label>
+        <precision>9</precision>
+        <scale>2</scale>
+        <trackHistory>true</trackHistory>
+        <type>Number</type>
+    </fields>
+    <fields>
+        <fullName>New_As_Of_Date__c</fullName>
+        <label>New As Of Date</label>
+        <trackHistory>true</trackHistory>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>New_Hours_Accrued__c</fullName>
+        <label>New Hours Accrued</label>
+        <precision>9</precision>
+        <scale>2</scale>
+        <trackHistory>true</trackHistory>
+        <type>Number</type>
+    </fields>
+    <fields>
+        <fullName>New_Hours_Available__c</fullName>
+        <formula>IF( New_Hours_Accrued__c  &gt;=  New_Hours_Taken__c ,  New_Hours_Accrued__c  -  New_Hours_Taken__c , 0)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>New Hours Available</label>
+        <precision>18</precision>
+        <scale>2</scale>
+        <type>Number</type>
+    </fields>
+    <fields>
+        <fullName>New_Hours_Taken__c</fullName>
+        <label>New Hours Taken</label>
+        <precision>9</precision>
+        <scale>2</scale>
+        <trackHistory>true</trackHistory>
+        <type>Number</type>
+    </fields>
+    <fields>
+        <fullName>Pay_Code__c</fullName>
+        <label>Pay Code</label>
+        <referenceTo>Pay_Code__c</referenceTo>
+        <relationshipLabel>Accruals</relationshipLabel>
+        <relationshipName>Accruals</relationshipName>
+        <trackHistory>true</trackHistory>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Week_Ending__c</fullName>
+        <description>Payroll week ending date.</description>
+        <label>Week Ending</label>
+        <trackHistory>true</trackHistory>
+        <type>Date</type>
+    </fields>
+    <label>Accrual</label>
+    <nameField>
+        <displayFormat>AD-{000000}</displayFormat>
+        <label>Accrual ID</label>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Accruals</pluralLabel>
+    <searchLayouts>
+        <customTabListAdditionalFields>Pay_Code__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Employee__c</customTabListAdditionalFields>
+    </searchLayouts>
+    <sharingModel>ControlledByParent</sharingModel>
+</CustomObject>

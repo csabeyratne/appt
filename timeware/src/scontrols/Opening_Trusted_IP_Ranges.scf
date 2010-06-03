@@ -1,0 +1,68 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<title>Opening Trusted IP Ranges</title>
+<!--
+	Created by: Greg Hacic
+	Last Update: August 27, 2008
+	Questions?: http://www.interactiveties.com/contact.php
+	Copyright (c) 2008 Interactive Ties LLC - All Rights Reserved
+-->
+<link href="/sCSS/14.0/Theme2/common.css" type="text/css" media="handheld,print,projection,screen,tty,tv" rel="stylesheet">
+<link href="/sCSS/14.0/Theme2/allCustom.css" type="text/css" media="handheld,print,projection,screen,tty,tv" rel="stylesheet">
+<link href="/sCSS/14.0/Theme2/dStandard.css" type="text/css" media="handheld,print,projection,screen,tty,tv" rel="stylesheet">
+<script src="/js/functions.js" type="text/javascript"></script>
+<script language="JavaScript" type="text/javascript">
+<!--
+function initiatePage() {
+	var a = 0;
+	var docHTML = "<table class=\"list\" border=\"0\" cellspacing=\"0\" cellpadding=\"0\">";
+	docHTML += "<tr class=\"headerRow\">";
+	docHTML += "<th scope=\"col\" class=\"\">IP Start</th>";
+	docHTML += "<th scope=\"col\" class=\"\">IP End</th>";
+	docHTML += "<th scope=\"col\" class=\"\">Status</th>";
+	docHTML += "<th scope=\"col\" class=\"\">&nbsp;</th>";
+	docHTML += "</tr>";
+	while (a<=254) {
+		docHTML += "<tr class=\"dataRow ";
+		if (a%2 == 0) {
+			docHTML += "even";
+		} else {
+			docHTML += "odd";
+		}
+		if (a == 254) {
+			docHTML += " last\"";
+		} else if (a == 0) {
+			docHTML += " first\"";
+		} else {
+			docHTML += "\"";
+		}
+		docHTML += " onmouseout=\"if (typeof(hiOff) != 'undefined'){hiOff(this);}\" onfocus=\"if (typeof(hiOn) != 'undefined'){hiOn(this);}\" onblur=\"if (typeof(hiOff) != 'undefined'){hiOff(this);}\" onmouseover=\"if (typeof(hiOn) != 'undefined'){hiOn(this);}\">";
+		docHTML += "<td class=\"dataCell\">"+a+".0.0.0</td>";
+		docHTML += "<td class=\"dataCell\">"+(a+1)+".255.255.255</td>";
+		docHTML += "<td class=\"dataCell\" id=\""+a+"_Updated\">Updating...</td>";
+		docHTML += "<td class=\"dataCell\"><iframe id=\""+a+"\" name=\""+a+"\" onload=\"alertFrameLoaded(this.id);\" src=\"/05G/e?retURL=%2F05G&IpStartAddress="+a+".0.0.0&IpEndAddress="+(a+1)+".255.255.255&save=1\" width=\"0\" height=\"0\" scrolling=\"No\" frameborder=\"0\"></iframe></td>";
+		docHTML += "</tr>";
+		a = a+2;
+	}
+	docHTML += "</table>";
+	docHTML += "<div class=\"pShowMore\">Click here validate the Org network access: <a href=\"/05G\">View Network Access</a></div>";
+	document.getElementById("output").innerHTML = docHTML;
+}
+
+function alertFrameLoaded(id) {
+	document.getElementById(id+"_Updated").innerHTML = "Success!";
+}
+//-->
+</script>
+</head>
+<body class="homeTab homepage" onload="initiatePage();">
+<div class="bPageTitle"><div class="ptBody secondaryPalette"><div class="content"><img src="/s.gif" alt="Home" class="pageTitleIcon"><h1 class="pageType">IP Ranges<span class="titleSeparatingColon">:</span></h1><h2 class="pageDescription"> Open Up Security</h2><div class="blank">&nbsp;</div></div></div></div>
+<div class="filterOverview">This page uses a series of IFRAME tags to update the IP Range settings for the org. It may take a few minutes for all of the IP ranges to update correctly and you will know that the loading is complete when each row in the table below has a status set to "Success". At the bottom of the screen there is a link to the network settings page.  Click this link to validate that the updates from this sControl actually finished successfully.</div>
+<div class="bRelatedList">
+	<div class="bPageBlock secondaryPalette"><div class="pbHeader"><table cellpadding="0" cellspacing="0" border="0"><tr><td class="pbTitle"><img src="/s.gif" alt="" title="" width="1" height="1" class="minWidth"><img src="/s.gif" alt="" class="relatedListIcon"><h3 class="bodyBold">Results Area</h3></td><td class="pbButton">&nbsp;</td></tr></table></div>
+		<div class="pbBody" id="output"></div>
+	<div class="listElementBottomNav"></div>
+</div>
+</body>
+</html>

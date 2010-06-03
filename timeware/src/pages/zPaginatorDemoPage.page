@@ -1,0 +1,101 @@
+<apex:page showHeader="false" sidebar="false" standardStylesheets="true" controller="zPaginatorDemoController">
+    <apex:form >
+        <p>
+            <apex:actionStatus startStyle="color: #F00; font-weight: bold;" startText="Updating...." stopText="" id="updateStatus"/>
+        </p>
+        <table width="100%" border="0" cellpadding="3" cellspacing="0">
+            <tr>
+                <td valign="top" width="50%">
+                    <apex:pageBlock title="Accounts {!acctPaginator.pageStartPositionDisplayFriendly} - {!acctPaginator.pageEndPositionDisplayFriendly} of {!acctPaginator.recordCount}" id="accounts">
+                        <apex:pageBlockTable value="{!accounts}" var="account">
+                            <apex:column >
+                                <apex:facet name="header">#</apex:facet>
+                                <apex:outputText value="{!account.serialNumber+1}"/>
+                            </apex:column>
+                            <apex:column >
+                                <apex:facet name="header">Name</apex:facet>
+                                <apex:outputPanel rendered="{!account.selected}"><b>{!account.obj.name}</b></apex:outputPanel>
+                                <apex:commandLink rendered="{!NOT(account.selected)}" action="{!handleAccountSelected}" value="{!account.obj.name}"
+                                     reRender="accounts,contacts,accountDetail,contactDetail" status="updateStatus">
+                                    <apex:param name="accountId" value="{!account.obj.id}"/>
+                                </apex:commandLink>
+                            </apex:column>
+                            <apex:facet name="footer">
+                                <apex:outputPanel >
+                                    <apex:commandLink action="{!acctPaginator.first}" value="<< First" 
+                                        reRender="accounts,contacts,accountDetail,contactDetail" status="updateStatus"/>
+                            
+                                    <apex:outputPanel >&nbsp;|&nbsp;</apex:outputPanel>
+                                    <apex:commandLink action="{!acctPaginator.previous}" rendered="{!acctPaginator.hasPrevious}" 
+                                        value="< Previous" reRender="accounts,contacts,accountDetail,contactDetail" status="updateStatus"/>
+                                    <apex:outputText rendered="{!NOT(acctPaginator.hasPrevious)}" 
+                                        value="< Previous"/>
+                            
+                                    <apex:outputPanel >&nbsp;|&nbsp;</apex:outputPanel>
+                            
+                                    <apex:commandLink action="{!acctPaginator.next}" rendered="{!acctPaginator.hasNext}" 
+                                        value="Next >" reRender="accounts,contacts,accountDetail,contactDetail" status="updateStatus"/>
+                                    <apex:outputText rendered="{!NOT(acctPaginator.hasNext)}" 
+                                        value="Next >" />
+                            
+                                    <apex:outputPanel >&nbsp;|&nbsp;</apex:outputPanel>
+                            
+                                    <apex:commandLink action="{!acctPaginator.last}" value="Last >>" reRender="accounts,contacts,accountDetail,contactDetail" 
+                                        status="updateStatus"/>
+                                </apex:outputPanel>
+                            </apex:facet>
+                        </apex:pageBlockTable> 
+                    </apex:pageBlock> 
+                    <apex:outputPanel id="accountDetail">
+                        <apex:detail subject="{!selectedAccount.id}" relatedList="false" title="false"/> 
+                    </apex:outputPanel>
+                </td>
+                <td valign="top" width="50%">
+                    <apex:pageBlock title="Contacts {!contPaginator.pageStartPositionDisplayFriendly} - {!contPaginator.pageEndPositionDisplayFriendly} of {!contPaginator.recordCount}" id="contacts">
+                        <apex:pageBlockTable value="{!contacts}" var="contact">
+                            <apex:column >
+                                <apex:facet name="header">#</apex:facet>
+                                <apex:outputText value="{!contact.serialNumber+1}"/>
+                            </apex:column>
+                            <apex:column >
+                                <apex:facet name="header">Name</apex:facet>
+                                <apex:outputPanel rendered="{!contact.selected}"><b>{!contact.obj.name}</b></apex:outputPanel>
+                                <apex:commandLink rendered="{!NOT(contact.selected)}" action="{!handleContactSelected}" value="{!contact.obj.name}"
+                                     reRender="contacts,contactDetail" status="updateStatus">
+                                    <apex:param name="contactId" value="{!contact.obj.id}"/>
+                                </apex:commandLink>
+                            </apex:column>
+                            <apex:facet name="footer">
+                                <apex:outputPanel id="contactsLinks">
+                                    <apex:commandLink action="{!contPaginator.first}" value="<< First" 
+                                        reRender="contacts,contactDetail" status="updateStatus"/>
+                            
+                                    <apex:outputPanel >&nbsp;|&nbsp;</apex:outputPanel>
+                                    <apex:commandLink action="{!contPaginator.previous}" rendered="{!contPaginator.hasPrevious}" 
+                                        value="< Previous" reRender="contacts,contactDetail" status="updateStatus"/>
+                                    <apex:outputText rendered="{!NOT(contPaginator.hasPrevious)}" 
+                                        value="< Previous"/>
+                            
+                                    <apex:outputPanel >&nbsp;|&nbsp;</apex:outputPanel>
+                            
+                                    <apex:commandLink action="{!contPaginator.next}" rendered="{!contPaginator.hasNext}" 
+                                        value="Next >" reRender="contacts,contactDetail" status="updateStatus"/>
+                                    <apex:outputText rendered="{!NOT(contPaginator.hasNext)}" 
+                                        value="Next >" />
+                            
+                                    <apex:outputPanel >&nbsp;|&nbsp;</apex:outputPanel>
+                            
+                                    <apex:commandLink action="{!contPaginator.last}" value="Last >>" reRender="contacts,contactDetail" 
+                                        status="updateStatus"/>
+                                </apex:outputPanel>         
+                            </apex:facet>
+                        </apex:pageBlockTable> 
+                    </apex:pageBlock> 
+                    <apex:outputPanel id="contactDetail">
+                        <apex:detail subject="{!selectedContact.id}" relatedList="false" title="false"/> 
+                    </apex:outputPanel>
+                </td>
+            </tr>
+        </table>                
+    </apex:form>
+</apex:page>

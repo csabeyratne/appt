@@ -1,0 +1,279 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>Accrual Policy requires benefit code, class of employee and accrual issue type.</description>
+    <enableEnhancedLookup>true</enableEnhancedLookup>
+    <enableHistory>true</enableHistory>
+    <enableReports>true</enableReports>
+    <fields>
+        <fullName>Accrual_Issue__c</fullName>
+        <description>Select the accrual issue type. Default is &quot;Annual&quot;.</description>
+        <label>Accrual Issue</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Annual</fullName>
+                <default>true</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Anniversary</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Birthday</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Monthly</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Pay Period</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>true</trackHistory>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Accural_Class__c</fullName>
+        <label>Accrual Class</label>
+        <length>20</length>
+        <trackHistory>true</trackHistory>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>Active__c</fullName>
+        <defaultValue>true</defaultValue>
+        <label>Active</label>
+        <trackHistory>true</trackHistory>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Allow_Rollover__c</fullName>
+        <defaultValue>false</defaultValue>
+        <label>Allow Rollover</label>
+        <trackHistory>true</trackHistory>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Annual_Start_Month_Number__c</fullName>
+        <description>Calculate start month number based on &quot;Annual Start Month&quot; picklist selection.</description>
+        <formula>CASE(Annual_Start_Month__c, &apos;January&apos;, 1, &apos;February&apos;, 2, &apos;March&apos;, 3, &apos;April&apos;, 4, &apos;May&apos;, 5, &apos;June&apos;, 6, &apos;July&apos;, 7, &apos;August&apos;, 8, &apos;September&apos;, 9, &apos;October&apos;, 10, &apos;November&apos;, 11, &apos;December&apos;, 12, NULL)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Annual Start Month Number</label>
+        <precision>18</precision>
+        <scale>0</scale>
+        <type>Number</type>
+    </fields>
+    <fields>
+        <fullName>Annual_Start_Month__c</fullName>
+        <description>If &quot;Accrual Issue&quot; type is &quot;Annual&quot;, select the start month. Default is &quot;January&quot;.</description>
+        <label>Annual Start Month</label>
+        <picklist>
+            <controllingField>Accrual_Issue__c</controllingField>
+            <picklistValues>
+                <fullName>January</fullName>
+                <controllingFieldValues>Annual</controllingFieldValues>
+                <default>true</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>February</fullName>
+                <controllingFieldValues>Annual</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>March</fullName>
+                <controllingFieldValues>Annual</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>April</fullName>
+                <controllingFieldValues>Annual</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>May</fullName>
+                <controllingFieldValues>Annual</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>June</fullName>
+                <controllingFieldValues>Annual</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>July</fullName>
+                <controllingFieldValues>Annual</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>August</fullName>
+                <controllingFieldValues>Annual</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>September</fullName>
+                <controllingFieldValues>Annual</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>October</fullName>
+                <controllingFieldValues>Annual</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>November</fullName>
+                <controllingFieldValues>Annual</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>December</fullName>
+                <controllingFieldValues>Annual</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>true</trackHistory>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Cutoff_Days__c</fullName>
+        <label>Cutoff Days</label>
+        <precision>2</precision>
+        <scale>0</scale>
+        <trackHistory>true</trackHistory>
+        <type>Number</type>
+    </fields>
+    <fields>
+        <fullName>Description__c</fullName>
+        <label>Description</label>
+        <length>50</length>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>Employee_Class__c</fullName>
+        <label>Employee Class</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Hourly Full Time</fullName>
+                <default>true</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Hourly Part Time</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Hourly Temporary</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Hourly Contract</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Hourly Student</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Salary Non-Exempt</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Salary Exempt</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>true</trackHistory>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Maximum_Hours_Accrued__c</fullName>
+        <label>Maximum Hours Accrued</label>
+        <precision>9</precision>
+        <scale>2</scale>
+        <trackHistory>true</trackHistory>
+        <type>Number</type>
+    </fields>
+    <fields>
+        <fullName>Pay_Code__c</fullName>
+        <label>Pay Code</label>
+        <referenceTo>Pay_Code__c</referenceTo>
+        <relationshipLabel>Accrual Policies</relationshipLabel>
+        <relationshipName>R00N700000021P7NEAU</relationshipName>
+        <trackHistory>true</trackHistory>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Rollover_Hours__c</fullName>
+        <label>Rollover Hours</label>
+        <precision>9</precision>
+        <scale>2</scale>
+        <trackHistory>true</trackHistory>
+        <type>Number</type>
+    </fields>
+    <label>Accrual Policy</label>
+    <listViews>
+        <fullName>All</fullName>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <nameField>
+        <displayFormat>AP-{0000}</displayFormat>
+        <label>Accrual Policy ID</label>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Accrual Policies</pluralLabel>
+    <searchLayouts>
+        <customTabListAdditionalFields>Pay_Code__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Accrual_Issue__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Employee_Class__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Accural_Class__c</customTabListAdditionalFields>
+        <lookupDialogsAdditionalFields>Pay_Code__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Accrual_Issue__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Employee_Class__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Accural_Class__c</lookupDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>Pay_Code__c</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>Accrual_Issue__c</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>Employee_Class__c</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>Accural_Class__c</lookupPhoneDialogsAdditionalFields>
+        <searchResultsAdditionalFields>Pay_Code__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Accrual_Issue__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Employee_Class__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Accural_Class__c</searchResultsAdditionalFields>
+    </searchLayouts>
+    <sharingModel>ReadWrite</sharingModel>
+</CustomObject>

@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <enableActivities>true</enableActivities>
+    <enableEnhancedLookup>true</enableEnhancedLookup>
+    <enableHistory>true</enableHistory>
+    <enableReports>true</enableReports>
+    <fields>
+        <fullName>Active__c</fullName>
+        <defaultValue>true</defaultValue>
+        <label>Active</label>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>First_Early_Start_Time__c</fullName>
+        <label>First Early Start Time</label>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>First_Late_Stop_Time__c</fullName>
+        <label>First Late Stop Time</label>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>First_Shift_Number__c</fullName>
+        <defaultValue>1</defaultValue>
+        <label>First Shift Number</label>
+        <precision>4</precision>
+        <scale>0</scale>
+        <type>Number</type>
+    </fields>
+    <fields>
+        <fullName>First_Start_Time__c</fullName>
+        <label>First Start Time</label>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>First_Stop_Time__c</fullName>
+        <label>First Stop Time</label>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Second_Early_Start_Time__c</fullName>
+        <label>Second Early Start Time</label>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Second_Late_Stop_Time__c</fullName>
+        <label>Second Late Stop Time</label>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Second_Shift_Number__c</fullName>
+        <defaultValue>2</defaultValue>
+        <label>Second Shift Number</label>
+        <precision>4</precision>
+        <scale>0</scale>
+        <type>Number</type>
+    </fields>
+    <fields>
+        <fullName>Second_Start_Time__c</fullName>
+        <label>Second Start Time</label>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Second_Stop_Time__c</fullName>
+        <label>Second Stop Time</label>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Shift_Count__c</fullName>
+        <defaultValue>3</defaultValue>
+        <label>Shift Count</label>
+        <precision>1</precision>
+        <scale>0</scale>
+        <type>Number</type>
+    </fields>
+    <fields>
+        <fullName>Shift_Template_ID__c</fullName>
+        <displayFormat>ST-{0000}</displayFormat>
+        <label>Shift Template ID</label>
+        <type>AutoNumber</type>
+    </fields>
+    <fields>
+        <fullName>Third_Early_Start_Time__c</fullName>
+        <label>Third Early Start Time</label>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Third_Late_Stop_Time__c</fullName>
+        <label>Third Late Stop Time</label>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Third_Shift_Number__c</fullName>
+        <defaultValue>3</defaultValue>
+        <label>Third Shift Number</label>
+        <precision>4</precision>
+        <scale>0</scale>
+        <type>Number</type>
+    </fields>
+    <fields>
+        <fullName>Third_Start_Time__c</fullName>
+        <label>Third Start Time</label>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Third_Stop_Time__c</fullName>
+        <label>Third Stop Time</label>
+        <type>DateTime</type>
+    </fields>
+    <label>Shift Template</label>
+    <listViews>
+        <fullName>All</fullName>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <nameField>
+        <label>Shift Template Name</label>
+        <type>Text</type>
+    </nameField>
+    <pluralLabel>Shift Templates</pluralLabel>
+    <searchLayouts/>
+    <sharingModel>ReadWrite</sharingModel>
+</CustomObject>

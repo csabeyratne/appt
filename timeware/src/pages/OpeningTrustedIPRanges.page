@@ -1,0 +1,4 @@
+<apex:page >
+<apex:scontrol controlName="Opening_Trusted_IP_Ranges" width="-100" height="3300" rendered="true" scrollbars="true"></apex:scontrol>
+<!-- <apex:outputLink value="{!$SControl.Opening_Trusted_IP_Ranges}">Open the Opening_Trusted_IP_Ranges s-control</apex:outputLink> -->
+</apex:page>

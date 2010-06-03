@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <enableEnhancedLookup>true</enableEnhancedLookup>
+    <enableHistory>true</enableHistory>
+    <enableReports>true</enableReports>
+    <fields>
+        <fullName>Active__c</fullName>
+        <defaultValue>true</defaultValue>
+        <label>Active</label>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Fifth_Warning_Date__c</fullName>
+        <label>Fifth Warning Date</label>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Fifth_Warning__c</fullName>
+        <label>Fifth Warning</label>
+        <length>50</length>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>First_Warning_Date__c</fullName>
+        <label>First Warning Date</label>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>First_Warning__c</fullName>
+        <label>First Warning</label>
+        <length>50</length>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>Fourth_Warning_Date__c</fullName>
+        <label>Fourth Warning Date</label>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Fourth_Warning__c</fullName>
+        <label>Fourth Warning</label>
+        <length>50</length>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>Second_Warning_Date__c</fullName>
+        <label>Second Warning Date</label>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Second_Warning__c</fullName>
+        <label>Second Warning</label>
+        <length>50</length>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>Seventh_Warning_Date__c</fullName>
+        <label>Seventh Warning Date</label>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Seventh_Warning__c</fullName>
+        <label>Seventh Warning</label>
+        <length>50</length>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>Sixth_Warning_Date__c</fullName>
+        <label>Sixth Warning Date</label>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Sixth_Warning__c</fullName>
+        <label>Sixth Warning</label>
+        <length>50</length>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>Third_Warning_Date__c</fullName>
+        <label>Third Warning Date</label>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Third_Warning__c</fullName>
+        <label>Third Warning</label>
+        <length>50</length>
+        <type>Text</type>
+    </fields>
+    <label>Attendance Policy</label>
+    <listViews>
+        <fullName>All</fullName>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <nameField>
+        <displayFormat>AT-{0000}</displayFormat>
+        <label>Attendance Policy ID</label>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Attendance Policies</pluralLabel>
+    <searchLayouts/>
+    <sharingModel>ReadWrite</sharingModel>
+</CustomObject>

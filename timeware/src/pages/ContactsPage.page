@@ -1,0 +1,10 @@
+<apex:page standardController="Contact">
+<apex:sectionHeader title="Contact" />
+<apex:form >
+<apex:pageBlock title="Contact">
+<apex:pageBlockSection title="Information">
+<apex:detail ></apex:detail>
+</apex:pageBlockSection>
+</apex:pageBlock>
+</apex:form>
+</apex:page>

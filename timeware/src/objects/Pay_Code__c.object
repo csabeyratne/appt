@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>Pay Code contains an entry for each absence category.</description>
+    <enableEnhancedLookup>true</enableEnhancedLookup>
+    <enableHistory>true</enableHistory>
+    <enableReports>true</enableReports>
+    <fields>
+        <fullName>Active__c</fullName>
+        <defaultValue>true</defaultValue>
+        <label>Active</label>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Alternate_Benefit_Code__c</fullName>
+        <label>Alternate Benefit Code</label>
+        <length>10</length>
+        <trackHistory>true</trackHistory>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>Apply_Accrual_Restriction__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Only display if &quot;Enable Accrual Tracking&apos; is true.</description>
+        <label>Apply Accrual Restriction</label>
+        <trackHistory>true</trackHistory>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Counts_As_Worked_Hours__c</fullName>
+        <defaultValue>false</defaultValue>
+        <label>Counts As Worked Hours</label>
+        <trackHistory>true</trackHistory>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Counts_Toward_Overtime__c</fullName>
+        <defaultValue>true</defaultValue>
+        <label>Counts Toward Overtime</label>
+        <trackHistory>true</trackHistory>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Description__c</fullName>
+        <label>Description</label>
+        <length>50</length>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>Earnings_Only__c</fullName>
+        <defaultValue>false</defaultValue>
+        <label>Earnings Only</label>
+        <trackHistory>true</trackHistory>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Enable_Accrual_Tracking__c</fullName>
+        <defaultValue>false</defaultValue>
+        <label>Enable Accrual Tracking</label>
+        <trackHistory>true</trackHistory>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Enable_Incidents_Points_Tracking__c</fullName>
+        <defaultValue>false</defaultValue>
+        <label>Enable Incidents/Points Tracking</label>
+        <trackHistory>true</trackHistory>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Initial_Accrued_Hours__c</fullName>
+        <description>Only display if &quot;Enable Accrual Tracking&apos; is true.</description>
+        <label>Initial Accrued Hours</label>
+        <precision>8</precision>
+        <scale>2</scale>
+        <trackHistory>true</trackHistory>
+        <type>Number</type>
+    </fields>
+    <fields>
+        <fullName>Paid__c</fullName>
+        <defaultValue>true</defaultValue>
+        <label>Paid</label>
+        <trackHistory>true</trackHistory>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Payroll_Earning_Code__c</fullName>
+        <label>Payroll Earning Code</label>
+        <length>10</length>
+        <trackHistory>true</trackHistory>
+        <type>Text</type>
+    </fields>
+    <label>Pay Code</label>
+    <listViews>
+        <fullName>All</fullName>
+        <columns>Description__c</columns>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <nameField>
+        <label>Pay Code</label>
+        <type>Text</type>
+    </nameField>
+    <pluralLabel>Pay Codes</pluralLabel>
+    <searchLayouts>
+        <customTabListAdditionalFields>Description__c</customTabListAdditionalFields>
+        <lookupDialogsAdditionalFields>Description__c</lookupDialogsAdditionalFields>
+    </searchLayouts>
+    <sharingModel>ReadWrite</sharingModel>
+</CustomObject>
