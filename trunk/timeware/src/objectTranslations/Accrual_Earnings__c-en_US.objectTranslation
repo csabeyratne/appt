@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <value>Accrual Earnings</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Accrual Earnings</value>
+    </caseValues>
+    <fields>
+        <label><!-- Accrual Policy --></label>
+        <name>Accrual_Policy__c</name>
+        <relationshipLabel><!-- Accrual Earnings --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- End Months Service --></label>
+        <name>End_Months_Service__c</name>
+    </fields>
+    <fields>
+        <label><!-- Hours Earned --></label>
+        <name>Hours_Earned__c</name>
+    </fields>
+    <fields>
+        <label><!-- Active --></label>
+        <name>IsActive__c</name>
+    </fields>
+    <fields>
+        <label><!-- Start Months Service --></label>
+        <name>Start_Months_Service__c</name>
+    </fields>
+    <layouts>
+        <layout>Accrual Earnings Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

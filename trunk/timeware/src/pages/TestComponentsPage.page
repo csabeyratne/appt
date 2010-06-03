@@ -1,0 +1,51 @@
+<apex:page standardController="Account">
+    <!-- <apex:sectionHeader title="New Account Edit Page" /> -->
+    <apex:pageBlock title="Hello {!$User.FirstName} {!$User.LastName}!">
+        You are viewing the {!account.name} account.
+    </apex:pageBlock>
+          <!-- <apex:form >
+                <apex:pageBlock title="My Content" mode="edit">
+                        <apex:pageBlockButtons >
+                                <apex:commandButton action="{!save}" value="Save"/>
+                        </apex:pageBlockButtons>
+                        <apex:pageBlockSection title="My Content Section" columns="2">
+                                <apex:inputField value="{!account.name}"/>
+                                <apex:inputField value="{!account.site}"/>
+                                <apex:inputField value="{!account.type}"/>
+                                <apex:inputField value="{!account.accountNumber}"/>
+                        </apex:pageBlockSection>
+                </apex:pageBlock>
+        </apex:form> -->
+        <apex:detail subject="{!account.ownerId}" relatedList="false" title="false"></apex:detail>
+    <apex:pageBlock >
+        You are displaying values from the {!account.name} account and a separate contact
+        that is specified by a query string parameter.
+    </apex:pageBlock>
+    <!-- <apex:pageBlock title="Contacts">
+        <apex:pageBlockTable value="{!account.Contacts}" var="contact">
+              <apex:column value="{!contact.Name}"/>
+              <apex:column value="{!contact.MailingCity}"/>
+              <apex:column value="{!contact.Phone}"/>
+       </apex:pageBlockTable>
+    </apex:pageBlock> -->
+    <!-- <apex:detail subject="{!$CurrentPage.parameters.cid}" relatedList="false" title="false"/> -->
+    <apex:outputLink value="http://google.com/search">
+        Search Google
+        <apex:param name="q" value="{!account.name}"/>
+    </apex:outputLink>
+    <apex:pageBlock title="Contacts">
+        <apex:form >
+            <apex:dataTable value="{!account.Contacts}" var="contact" cellPadding="4" border="1">
+                  <apex:column >
+                      <apex:commandLink rerender="detail"> 
+                          {!contact.Name}
+                          <apex:param name="cid" value="{!contact.id}"/>
+                      </apex:commandLink>
+                  </apex:column>
+            </apex:dataTable>
+        </apex:form>
+    </apex:pageBlock>
+    <apex:outputPanel id="detail"> 
+        <apex:detail subject="{!$CurrentPage.parameters.cid}" relatedList="false" title="false"/>
+    </apex:outputPanel> 
+</apex:page>

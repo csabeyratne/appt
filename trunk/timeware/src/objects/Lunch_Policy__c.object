@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <enableEnhancedLookup>true</enableEnhancedLookup>
+    <enableHistory>true</enableHistory>
+    <enableReports>true</enableReports>
+    <fields>
+        <fullName>Active__c</fullName>
+        <defaultValue>true</defaultValue>
+        <label>Active</label>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Deduction_Plus_Punched__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Is the automatic lunch deduction taken in addition to the time the employee
+punches out for lunch?</description>
+        <inlineHelpText>Is the automatic lunch deduction taken in addition to the time the employee
+punches out for lunch?</inlineHelpText>
+        <label>Deduction Plus Punched</label>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Deduction_Punched_Difference__c</fullName>
+        <defaultValue>true</defaultValue>
+        <description>Is the difference between the lunch deduction amount and the actual punched time for lunch taken?</description>
+        <inlineHelpText>Is the difference between the lunch deduction amount and the actual punched time for lunch taken?</inlineHelpText>
+        <label>Deduction Punched Difference</label>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Early_Lunch_In_Grace__c</fullName>
+        <description>Enter the number of minutes for early lunch in  grace period</description>
+        <inlineHelpText>Enter the number of minutes for early lunch in  grace period</inlineHelpText>
+        <label>Early Lunch In Grace</label>
+        <precision>4</precision>
+        <scale>0</scale>
+        <type>Number</type>
+    </fields>
+    <fields>
+        <fullName>Early_Lunch_Out_Grace__c</fullName>
+        <description>Enter the number of minutes for early lunch out grace period</description>
+        <inlineHelpText>Enter the number of minutes for early lunch out grace period</inlineHelpText>
+        <label>Early Lunch Out Grace</label>
+        <precision>4</precision>
+        <scale>0</scale>
+        <type>Number</type>
+    </fields>
+    <fields>
+        <fullName>Late_Lunch_In_Grace__c</fullName>
+        <description>Enter the number of minutes for late lunch in  grace period</description>
+        <inlineHelpText>Enter the number of minutes for late lunch in  grace period</inlineHelpText>
+        <label>Late Lunch In Grace</label>
+        <precision>4</precision>
+        <scale>0</scale>
+        <type>Number</type>
+    </fields>
+    <fields>
+        <fullName>Late_Lunch_Out_Grace__c</fullName>
+        <description>Enter the number of minutes for late lunch out grace period</description>
+        <inlineHelpText>Enter the number of minutes for late lunch out grace period</inlineHelpText>
+        <label>Late Lunch Out Grace</label>
+        <precision>4</precision>
+        <scale>0</scale>
+        <type>Number</type>
+    </fields>
+    <fields>
+        <fullName>Lunch_Deduction__c</fullName>
+        <defaultValue>30</defaultValue>
+        <description>Enter the number of minutes to be deducted for  lunch</description>
+        <inlineHelpText>Enter the number of minutes to be deducted for  lunch</inlineHelpText>
+        <label>Lunch Deduction</label>
+        <precision>4</precision>
+        <scale>0</scale>
+        <type>Number</type>
+    </fields>
+    <fields>
+        <fullName>Lunch_Grace_Period__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Are grace periods applied to lunch punches?</description>
+        <inlineHelpText>Are grace periods applied to lunch punches?</inlineHelpText>
+        <label>Lunch Grace Period</label>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Lunch_Policy_ID__c</fullName>
+        <displayFormat>LP-{000000}</displayFormat>
+        <label>Lunch Policy ID</label>
+        <type>AutoNumber</type>
+    </fields>
+    <fields>
+        <fullName>Lunch_Time__c</fullName>
+        <description>Lunch time is a calculated field</description>
+        <label>Lunch Time</label>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Minimum_Hours_Worked__c</fullName>
+        <defaultValue>240</defaultValue>
+        <description>Enter the number of minutes to be worked before  lunch is automatically deducted</description>
+        <inlineHelpText>Enter the number of minutes to be worked before  lunch is automatically deducted</inlineHelpText>
+        <label>Minimum Hours Worked</label>
+        <precision>4</precision>
+        <scale>0</scale>
+        <type>Number</type>
+    </fields>
+    <fields>
+        <fullName>One_Lunch_Per_Work_Day__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Is only one lunch deduction taken for entire work day? 
+MOVE INTO SHIFT POLICY TABLE?</description>
+        <inlineHelpText>Is only one lunch deduction taken for entire work day?</inlineHelpText>
+        <label>One Lunch Per Work Day</label>
+        <type>Checkbox</type>
+    </fields>
+    <label>Lunch Policy</label>
+    <listViews>
+        <fullName>All</fullName>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <nameField>
+        <displayFormat>LP-{0000}</displayFormat>
+        <label>Lunch Policy ID</label>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Lunch Policies</pluralLabel>
+    <searchLayouts/>
+    <sharingModel>ReadWrite</sharingModel>
+</CustomObject>

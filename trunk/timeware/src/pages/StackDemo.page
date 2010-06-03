@@ -1,0 +1,26 @@
+<apex:page controller="StackDemoController">
+    <apex:form id="theForm">
+    	<apex:pageBlock title="Stack Demo" >     
+    		<apex:pageMessages id="messages"/>      
+            <apex:pageBlockSection title="Pop / Push Values" columns="2">
+             	<apex:pageBlockSectionItem >
+		            <apex:inputText value="{!pushValue}" id="pushField"/>
+		            <apex:commandButton action="{!push}" value="Push" reRender="theTable,pushField,popField,messages"/>
+	            </apex:pageBlockSectionItem>
+	            <apex:pageBlockSectionItem >	
+	            	<apex:commandButton action="{!pop}" value="Pop" reRender="theTable,popField,messages"/>
+		            <apex:inputText value="{!popValue}" id="popField"/>
+            	</apex:pageBlockSectionItem>
+            </apex:pageBlockSection>
+            
+            <apex:pageBlockSection title="Stack" columns="1">
+            	<apex:dataTable value="{!Stack}" var="str" id="theTable" rowClasses="odd,even" styleClass="tableClass" border="1" cellpadding="2" width="200px">
+					<apex:column >
+						<apex:outputText value="{!str}"/>
+					</apex:column>
+				</apex:dataTable>
+            </apex:pageBlockSection>
+            
+		</apex:pageBlock>
+   </apex:form>
+</apex:page>

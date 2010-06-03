@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <value>Call Back Policy</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Call Back Policies</value>
+    </caseValues>
+    <fields>
+        <label><!-- Active --></label>
+        <name>Active__c</name>
+    </fields>
+    <fields>
+        <label><!-- Apply Call Back Premium --></label>
+        <name>Apply_Call_Back_Premium__c</name>
+    </fields>
+    <fields>
+        <label><!-- Call Back Minimum Hours --></label>
+        <name>Call_Back_Minimum_Hours__c</name>
+    </fields>
+    <fields>
+        <label><!-- Description --></label>
+        <name>Call_Back_Policy_Description__c</name>
+    </fields>
+    <fields>
+        <label><!-- Call Back Premium Type --></label>
+        <name>Call_Back_Premium_Type__c</name>
+        <picklistValues>
+            <masterLabel>Doubletime</masterLabel>
+            <translation><!-- Doubletime --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Overtime</masterLabel>
+            <translation><!-- Overtime --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Regular</masterLabel>
+            <translation><!-- Regular --></translation>
+        </picklistValues>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

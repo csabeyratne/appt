@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <value>Sample</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Samples</value>
+    </caseValues>
+    <fields>
+        <label><!-- Author --></label>
+        <name>Author__c</name>
+    </fields>
+    <fields>
+        <label><!-- Description --></label>
+        <name>Description__c</name>
+    </fields>
+    <fields>
+        <label><!-- Page Link --></label>
+        <name>Page_Link__c</name>
+    </fields>
+    <fields>
+        <label><!-- Page Name --></label>
+        <name>Page_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Query String --></label>
+        <name>Query_String__c</name>
+    </fields>
+    <fields>
+        <label><!-- Type --></label>
+        <name>Type__c</name>
+        <picklistValues>
+            <masterLabel>Component</masterLabel>
+            <translation><!-- Component --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Custom Controller</masterLabel>
+            <translation><!-- Custom Controller --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Pages Application</masterLabel>
+            <translation><!-- Pages Application --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>S-Control</masterLabel>
+            <translation><!-- S-Control --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Simple</masterLabel>
+            <translation><!-- Simple --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Simple with Controller</masterLabel>
+            <translation><!-- Simple with Controller --></translation>
+        </picklistValues>
+    </fields>
+    <layouts>
+        <layout>Sample Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

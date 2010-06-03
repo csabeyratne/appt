@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>Visualforce &amp; Apex Code Samples</description>
+    <enableEnhancedLookup>true</enableEnhancedLookup>
+    <fields>
+        <fullName>Author__c</fullName>
+        <description>Author of the code or sample</description>
+        <label>Author</label>
+        <length>128</length>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>Description__c</fullName>
+        <label>Description</label>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Page_Link__c</fullName>
+        <description>Hyperlink to test various samples.</description>
+        <formula>HYPERLINK( Page_Name__c &amp;  IF(TRIM(Query_String__c)  = &quot;&quot;, &quot;&quot;, &quot;?&quot;)  &amp; Query_String__c, &quot;Run Sample&quot;)</formula>
+        <label>Page Link</label>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>Page_Name__c</fullName>
+        <defaultValue>&quot;/apex/&quot;</defaultValue>
+        <label>Page Name</label>
+        <length>128</length>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>Query_String__c</fullName>
+        <label>Query String</label>
+        <length>128</length>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>Type__c</fullName>
+        <label>Type</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Simple</fullName>
+                <default>true</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Simple with Controller</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Custom Controller</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Component</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Pages Application</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>S-Control</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <type>Picklist</type>
+    </fields>
+    <label>Sample</label>
+    <listViews>
+        <fullName>All</fullName>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <nameField>
+        <label>Sample Name</label>
+        <type>Text</type>
+    </nameField>
+    <pluralLabel>Samples</pluralLabel>
+    <searchLayouts>
+        <customTabListAdditionalFields>Page_Link__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Description__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Page_Name__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Query_String__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Type__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Author__c</customTabListAdditionalFields>
+    </searchLayouts>
+    <sharingModel>ReadWrite</sharingModel>
+</CustomObject>

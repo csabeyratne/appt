@@ -1,0 +1,61 @@
+<apex:page sidebar="false" controller="zProjectsController"> 
+    
+    <apex:sectionHeader title="Edit Projects" subtitle="{!$User.FirstName} {!$User.LastName}"/>
+    <p/>
+    
+    <apex:pageMessages />
+    <apex:form >    
+    
+    <apex:actionFunction name="saveEdit" action="{!saveEdit}"/>
+    
+    <apex:pageBlock title="Add New Project">
+        Status:   <apex:inputField value="{!newProject.Status__c}"/>  
+        Weighting:   <apex:inputField value="{!newProject.Weighting__c}"/>
+        Name:   <apex:inputText value="{!newProject.Name}" size="40"/>  
+        <apex:commandButton value="Add" action="{!add}"/>
+    </apex:pageBlock>
+    
+    <apex:pageBlock title="Existing Projects">
+    <apex:outputPanel id="projectList">
+    <table>
+        <tr>
+            <th style="width:40px"> </th>
+            <th style="width:40px"> </th>
+            <th style="width:90px">Status</th>
+            <th style="width:90px">Weighting</th>
+            <th>Name</th>
+        </tr>
+        <apex:repeat value="{!projects}" var="p">
+        <tr style="height:20px">
+            <apex:outputPanel id="editRow" layout="none" rendered="{!p.Id == editProject.Id}">
+                <td><apex:commandLink action="{!cancelEdit}" rerender="projectList">Cancel</apex:commandLink></td>
+                <td><apex:commandLink action="{!saveEdit}" rerender="projectList">Save</apex:commandLink></td>
+                <td><apex:inputField rendered="{!p.Id == editProject.Id}" value="{!editProject.Status__c}"/></td>
+                <td><apex:inputField rendered="{!p.Id == editProject.Id}" value="{!editProject.Weighting__c}"/></td>
+                <td><apex:inputText size="40" rendered="{!p.Id == editProject.Id}" onkeypress="if (event.keyCode == 13) saveEdit()" 
+                        value="{!editProject.Name}"/></td>
+            </apex:outputPanel>
+            <apex:outputPanel id="viewRow" layout="none" rendered="{!p.Id != editProject.Id}">
+                <td>
+                    <apex:commandLink action="{!del}" onclick="return confirm('Are you sure you want to delete this project?')">Del
+                        <apex:param name="delid" value="{!p.Id}"/>
+                    </apex:commandLink>
+                </td>
+                <td>
+                    <apex:commandLink action="{!edit}" rerender="projectList">Edit
+                        <apex:param name="editid" value="{!p.Id}"/>
+                    </apex:commandLink>
+                </td>
+                <td>{!p.Status__c}</td>
+                <td>{!p.Weighting__c}</td>
+                <td>{!p.Name}</td>
+            </apex:outputPanel>
+        </tr>
+        </apex:repeat>
+    </table>
+    </apex:outputPanel>
+    </apex:pageBlock>
+
+    </apex:form>
+    
+</apex:page>

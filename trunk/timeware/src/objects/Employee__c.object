@@ -1,0 +1,363 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <enableActivities>true</enableActivities>
+    <enableEnhancedLookup>true</enableEnhancedLookup>
+    <enableHistory>true</enableHistory>
+    <enableReports>true</enableReports>
+    <fields>
+        <fullName>Accrual_Policy__c</fullName>
+        <label>Accrual Policy</label>
+        <referenceTo>Accrual_Policy__c</referenceTo>
+        <relationshipLabel>Accrual Policies</relationshipLabel>
+        <relationshipName>Employees</relationshipName>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Age_Of_Employee__c</fullName>
+        <description>Based on Employee&apos;s Birth Date</description>
+        <formula>IF(ISBLANK(Birth_Date__c),0,FLOOR((TODAY()-Birth_Date__c)/365.2425))</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Age Of Employee</label>
+        <precision>18</precision>
+        <scale>0</scale>
+        <type>Number</type>
+    </fields>
+    <fields>
+        <fullName>Attendance_Policy__c</fullName>
+        <label>Attendance Policy</label>
+        <referenceTo>Attendance_Policy__c</referenceTo>
+        <relationshipLabel>Attendance Policies</relationshipLabel>
+        <relationshipName>Employees</relationshipName>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Badge_Number__c</fullName>
+        <label>Badge Number</label>
+        <precision>9</precision>
+        <scale>0</scale>
+        <type>Number</type>
+        <unique>true</unique>
+    </fields>
+    <fields>
+        <fullName>Birth_Date__c</fullName>
+        <label>Birth Date</label>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Cummulative_Occurrences__c</fullName>
+        <label>Cummulative Occurrences</label>
+        <precision>6</precision>
+        <scale>0</scale>
+        <type>Number</type>
+    </fields>
+    <fields>
+        <fullName>Cummulative_Points__c</fullName>
+        <label>Cummulative Points</label>
+        <precision>9</precision>
+        <scale>3</scale>
+        <type>Number</type>
+    </fields>
+    <fields>
+        <fullName>Department__c</fullName>
+        <label>Department</label>
+        <referenceTo>Department__c</referenceTo>
+        <relationshipLabel>Departments</relationshipLabel>
+        <relationshipName>Employees</relationshipName>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Effective_Date_Department__c</fullName>
+        <label>Effective Date Department</label>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Effective_Date_Group__c</fullName>
+        <label>Effective Date Group</label>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Effective_Date_Job__c</fullName>
+        <label>Effective Date Job</label>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Effective_Date_Labor__c</fullName>
+        <label>Effective Date Labor</label>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Employee_Class__c</fullName>
+        <label>Employee Class</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Hourly Full Time</fullName>
+                <default>true</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Hourly Part Time</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Hourly Temporary</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Hourly Contract</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Hourly Student</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Salary Non-Exempt</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Salary Exempt</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>First_Name__c</fullName>
+        <label>First Name</label>
+        <length>40</length>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>Full_Name__c</fullName>
+        <formula>IF(AND(ISNULL(Last_Name__c ), ISNULL(First_Name__c )), 
+null, 
+IF(ISNULL(Last_Name__c ), TRIM(First_Name__c), TRIM(Last_Name__c) &amp; &quot;, &quot; &amp; TRIM(First_Name__c)) 
+)</formula>
+        <label>Full Name</label>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>Hire_Date__c</fullName>
+        <label>Hire Date</label>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Last_Name__c</fullName>
+        <label>Last Name</label>
+        <length>40</length>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>Location__c</fullName>
+        <label>Location</label>
+        <referenceTo>Location__c</referenceTo>
+        <relationshipLabel>Locations</relationshipLabel>
+        <relationshipName>Employees</relationshipName>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Months_Of_Service__c</fullName>
+        <formula>IF( ISBLANK(Hire_Date__c), 0, (TODAY()  - Hire_Date__c) / 30.5 )</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Months Of Service</label>
+        <precision>18</precision>
+        <scale>0</scale>
+        <type>Number</type>
+    </fields>
+    <fields>
+        <fullName>Pay_Group_Code__c</fullName>
+        <label>Pay Group Code</label>
+        <length>10</length>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>Pay_Period_Policy__c</fullName>
+        <label>Pay Period Policy</label>
+        <referenceTo>Pay_Period_Policy__c</referenceTo>
+        <relationshipLabel>Pay Period Policies</relationshipLabel>
+        <relationshipName>Employees</relationshipName>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Pay_Period_Select__c</fullName>
+        <label>Pay Period Select</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Previous Pay Period</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Current Pay Period</fullName>
+                <default>true</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Next Pay Period</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Pay_Policy__c</fullName>
+        <label>Pay Policy</label>
+        <referenceTo>Pay_Policy__c</referenceTo>
+        <relationshipLabel>Pay Policies</relationshipLabel>
+        <relationshipName>Employees</relationshipName>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Pay_Rate__c</fullName>
+        <label>Pay Rate</label>
+        <precision>11</precision>
+        <scale>4</scale>
+        <type>Number</type>
+    </fields>
+    <fields>
+        <fullName>Salesforce_User__c</fullName>
+        <label>User</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>Employees</relationshipName>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Shift_Number__c</fullName>
+        <defaultValue>1</defaultValue>
+        <label>Shift Number</label>
+        <precision>4</precision>
+        <scale>0</scale>
+        <type>Number</type>
+    </fields>
+    <fields>
+        <fullName>Shift_Template__c</fullName>
+        <label>Shift Template</label>
+        <referenceTo>Shift_Template__c</referenceTo>
+        <relationshipLabel>Shift Templates</relationshipLabel>
+        <relationshipName>Employees</relationshipName>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Social_Security_Number__c</fullName>
+        <label>Social Security Number</label>
+        <length>9</length>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>Status__c</fullName>
+        <label>Status</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Active</fullName>
+                <default>true</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Terminated</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Leave</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Substitute_User_Effective_Date__c</fullName>
+        <label>Substitute User Effective Date</label>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Substitute_User_Expiration_Date__c</fullName>
+        <label>Substitute User Expiration Date</label>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Substitute_User__c</fullName>
+        <label>Substitute User</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>Employees1</relationshipName>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Supervisor_Name__c</fullName>
+        <label>Supervisor Name</label>
+        <length>121</length>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>Supervisor_Number__c</fullName>
+        <label>Supervisor Number</label>
+        <precision>9</precision>
+        <scale>0</scale>
+        <type>Number</type>
+    </fields>
+    <fields>
+        <fullName>Temporary_Badge__c</fullName>
+        <label>Temporary Badge</label>
+        <referenceTo>Employee__c</referenceTo>
+        <relationshipLabel>Employees (Temporary Badge)</relationshipLabel>
+        <relationshipName>Employees2</relationshipName>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Termination_Date__c</fullName>
+        <label>Termination Date</label>
+        <type>Date</type>
+    </fields>
+    <label>Employee</label>
+    <listViews>
+        <fullName>All</fullName>
+        <columns>First_Name__c</columns>
+        <columns>Last_Name__c</columns>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <nameField>
+        <label>Employee Number</label>
+        <type>Text</type>
+    </nameField>
+    <pluralLabel>Employees</pluralLabel>
+    <searchLayouts>
+        <customTabListAdditionalFields>Full_Name__c</customTabListAdditionalFields>
+        <lookupDialogsAdditionalFields>Full_Name__c</lookupDialogsAdditionalFields>
+        <lookupFilterFields>NAME</lookupFilterFields>
+        <lookupFilterFields>Full_Name__c</lookupFilterFields>
+        <lookupPhoneDialogsAdditionalFields>Full_Name__c</lookupPhoneDialogsAdditionalFields>
+        <searchResultsAdditionalFields>Full_Name__c</searchResultsAdditionalFields>
+    </searchLayouts>
+    <sharingModel>ReadWrite</sharingModel>
+</CustomObject>

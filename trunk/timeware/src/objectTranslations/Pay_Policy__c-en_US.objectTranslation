@@ -1,0 +1,242 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <value>Pay Policy</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Pay Policies</value>
+    </caseValues>
+    <fields>
+        <label><!-- Active --></label>
+        <name>Active__c</name>
+    </fields>
+    <fields>
+        <help><!-- Are non-worked hours applied before worked hours when calculating premium pay? --></help>
+        <label><!-- Apply NonWorked Hours First --></label>
+        <name>Apply_NonWorked_Hours_First__c</name>
+    </fields>
+    <fields>
+        <help><!-- Daily hours worked that, when exceeded, count towards doubletime --></help>
+        <label><!-- Daily Doubletime After --></label>
+        <name>Daily_Doubletime_After__c</name>
+    </fields>
+    <fields>
+        <help><!-- Daily hours worked that, when exceeded, count towards overtime --></help>
+        <label><!-- Daily Overtime After --></label>
+        <name>Daily_Overtime_After__c</name>
+    </fields>
+    <fields>
+        <help><!-- Is pre-shift premium enabled? --></help>
+        <label><!-- Enable Pre-Shift Premium --></label>
+        <name>Enable_PreShift_Premium__c</name>
+    </fields>
+    <fields>
+        <help><!-- Is doubletime premium paid on the fifth consecutive day worked? --></help>
+        <label><!-- Fifth Consecutive Day Doubletime --></label>
+        <name>Fifth_Consecutive_Day_Doubletime__c</name>
+    </fields>
+    <fields>
+        <help><!-- Is overtime premium paid on the fifth consecutive day worked? --></help>
+        <label><!-- Fifth Consecutive Day Overtime --></label>
+        <name>Fifth_Consecutive_Day_Overtime__c</name>
+    </fields>
+    <fields>
+        <help><!-- Hours worked to earn Fifth Consecutive Day doubletime --></help>
+        <label><!-- Fifth Over Hours --></label>
+        <name>Fifth_Over_Hours__c</name>
+    </fields>
+    <fields>
+        <help><!-- Do holiday hours worked count towards daily premium hours? --></help>
+        <label><!-- Daily Premium for Holiday --></label>
+        <name>Holiday_Daily_Premium__c</name>
+    </fields>
+    <fields>
+        <label><!-- Default Holiday Hours --></label>
+        <name>Holiday_Default_Hours__c</name>
+    </fields>
+    <fields>
+        <help><!-- Enter the number of probation days to qualify for Holiday pay. --></help>
+        <label><!-- Holiday Probation Days --></label>
+        <name>Holiday_Probation_Days__c</name>
+    </fields>
+    <fields>
+        <help><!-- Is there a probation period for holiday pay? --></help>
+        <label><!-- Holiday Probation Period --></label>
+        <name>Holiday_Probation_Period__c</name>
+    </fields>
+    <fields>
+        <help><!-- Does employee have to be scheduled for holiday pay to count towards premium? --></help>
+        <label><!-- Scheduled for Holiday Premium --></label>
+        <name>Holiday_Scheduled_Premium__c</name>
+    </fields>
+    <fields>
+        <help><!-- Do I use work schedule hours when creating holiday records? --></help>
+        <label><!-- Use Scheduled Hours for Holiday --></label>
+        <name>Holiday_Use_Scheduled_Hours__c</name>
+    </fields>
+    <fields>
+        <help><!-- Do holiday hours equal hours worked if over 8? --></help>
+        <label><!-- Use Worked Hours for Holiday --></label>
+        <name>Holiday_Use_Worked_Hours__c</name>
+    </fields>
+    <fields>
+        <help><!-- Is doubletime premium paid for work on a holiday? --></help>
+        <label><!-- Doubletime Premium for Worked Holiday --></label>
+        <name>Holiday_Worked_Doubletime_Premium__c</name>
+    </fields>
+    <fields>
+        <help><!-- Is overtime premium paid for work on a holiday? --></help>
+        <label><!-- Overtime Premium for Worked Holiday --></label>
+        <name>Holiday_Worked_Overtime_Premium__c</name>
+    </fields>
+    <fields>
+        <label><!-- Description --></label>
+        <name>Pay_Policy_Description__c</name>
+    </fields>
+    <fields>
+        <label><!-- Premium Method --></label>
+        <name>Premium_Method__c</name>
+        <picklistValues>
+            <masterLabel>Full</masterLabel>
+            <translation><!-- Full --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Half</masterLabel>
+            <translation><!-- Half --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Is doubletime premium paid for work on Saturday? --></help>
+        <label><!-- Doubletime Premium for Saturday --></label>
+        <name>Saturday_Doubletime_Premium__c</name>
+    </fields>
+    <fields>
+        <help><!-- Is overtime premium paid for work on Saturday? --></help>
+        <label><!-- Overtime Premium for Saturday --></label>
+        <name>Saturday_Overtime_Premium__c</name>
+    </fields>
+    <fields>
+        <help><!-- Minimum hours worked to earn Saturday premium --></help>
+        <label><!-- Weekly Hours Worked for Saturday Premium --></label>
+        <name>Saturday_Weekly_Over_Hours__c</name>
+    </fields>
+    <fields>
+        <help><!-- Do weekly hours have to be exceeded to earn premium on Saturday? --></help>
+        <label><!-- Saturday Weekly Over --></label>
+        <name>Saturday_Weekly_Over__c</name>
+    </fields>
+    <fields>
+        <help><!-- Do work schedule parameters override pay policy? --></help>
+        <label><!-- Schedule Override Pay Policy --></label>
+        <name>Schedule_Override_Pay_Policy__c</name>
+    </fields>
+    <fields>
+        <help><!-- Is overtime premium paid on the seventh consecutive day worked? --></help>
+        <label><!-- Seventh Consecutive Day Doubletime --></label>
+        <name>Seventh_Consecutive_Day_Doubletime__c</name>
+    </fields>
+    <fields>
+        <help><!-- Is overtime premium paid on the seventh consecutive day worked? --></help>
+        <label><!-- Seventh Consecutive Day Overtime --></label>
+        <name>Seventh_Consecutive_Day_Overtime__c</name>
+    </fields>
+    <fields>
+        <help><!-- Hours worked to earn Seventh Consecutive Day doubletime --></help>
+        <label><!-- Seventh Over Hours --></label>
+        <name>Seventh_Over_Hours__c</name>
+    </fields>
+    <fields>
+        <help><!-- Is a premium paid if an employee swaps shift? --></help>
+        <label><!-- Shift Swap Premium --></label>
+        <name>Shift_Swap_Premium__c</name>
+    </fields>
+    <fields>
+        <help><!-- Is overtime premium paid on the sixth consecutive day worked? --></help>
+        <label><!-- Sixth Consecutive Day Doubletime --></label>
+        <name>Sixth_Consecutive_Day_Doubletime__c</name>
+    </fields>
+    <fields>
+        <help><!-- Is overtime premium paid on the sixth consecutive day worked? --></help>
+        <label><!-- Sixth Consecutive Day Overtime --></label>
+        <name>Sixth_Consecutive_Day_Overtime__c</name>
+    </fields>
+    <fields>
+        <help><!-- Hours worked to earn Sixth Consecutive Day doubletime --></help>
+        <label><!-- Sixth Over Hours --></label>
+        <name>Sixth_Over_Hours__c</name>
+    </fields>
+    <fields>
+        <help><!-- Is doubletime premium paid on Sunday? --></help>
+        <label><!-- Doubletime Premium for Sunday --></label>
+        <name>Sunday_Doubletime_Premium__c</name>
+    </fields>
+    <fields>
+        <help><!-- Is overtime premium paid on Sunday? --></help>
+        <label><!-- Overtime Premium for Sunday --></label>
+        <name>Sunday_Overtime_Premium__c</name>
+    </fields>
+    <fields>
+        <help><!-- Minimum hours worked to earn Sunday premium --></help>
+        <label><!-- Weekly Hours Worked for Sunday Premium --></label>
+        <name>Sunday_Weekly_Over_Hours__c</name>
+    </fields>
+    <fields>
+        <help><!-- Do weekly hours have to be exceeded to earn premium on Sunday? --></help>
+        <label><!-- Sunday Weekly Over --></label>
+        <name>Sunday_Weekly_Over__c</name>
+    </fields>
+    <fields>
+        <help><!-- Reason code used to identify a shift swap --></help>
+        <label><!-- Swap Reason Code --></label>
+        <name>Swap_Reason_Code__c</name>
+    </fields>
+    <fields>
+        <help><!-- Tardy docking amount - Full Quarter or Full Tenth --></help>
+        <label><!-- Tardy Dock Amount --></label>
+        <name>Tardy_Dock_Amount__c</name>
+        <picklistValues>
+            <masterLabel>Full Quarter</masterLabel>
+            <translation><!-- Full Quarter --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Full Tenth</masterLabel>
+            <translation><!-- Full Tenth --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Do I dock for tardy? --></help>
+        <label><!-- Tardy Dock --></label>
+        <name>Tardy_Dock__c</name>
+    </fields>
+    <fields>
+        <help><!-- Minimum time allowed for cumulative tardy for the week --></help>
+        <label><!-- Tardy Week Minimum --></label>
+        <name>Tardy_Week_Minimum__c</name>
+    </fields>
+    <fields>
+        <help><!-- Weekly hours worked that, when exceeded, count towards overtime --></help>
+        <label><!-- Weekly Overtime After --></label>
+        <name>Weekly_Overtime_After__c</name>
+    </fields>
+    <layouts>
+        <layout>Pay Rule Layout</layout>
+        <sections>
+            <label><!-- Additional Information --></label>
+            <section>Additional Information</section>
+        </sections>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Description --></label>
+            <section>Description</section>
+        </sections>
+        <sections>
+            <label><!-- Holiday Policy --></label>
+            <section>Holiday Policy</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

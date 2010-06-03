@@ -1,0 +1,35 @@
+<apex:page standardController="User" extensions="zUserExtension" standardStylesheets="true">
+<!--
+  Created by: Greg Hacic
+  Last Update: 7 April 2009 by Greg_H
+  Questions?: http://www.interactiveties.com/contact.php
+  Copyright (c) 2009 Interactive Ties LLC
+-->
+  <apex:sectionHeader title="User Edit" subtitle="{!User.Name}" help="/help/doc/user_ed.jsp?loc=help"></apex:sectionHeader>
+  <apex:form >
+    <apex:pageBlock title="User Edit" mode="edit">
+      <apex:pageBlockButtons >
+        <apex:commandButton action="{!save}" value=" Save "></apex:commandButton>
+        <apex:commandButton action="{!cancel}" value="Cancel"></apex:commandButton>
+      </apex:pageBlockButtons>
+      <apex:pageBlockSection title="General Information" columns="2">
+        <apex:inputField value="{!User.FirstName}"></apex:inputField>
+        <apex:inputField value="{!User.UserRoleId}"></apex:inputField>
+        <apex:inputField value="{!User.LastName}"></apex:inputField>
+        <apex:inputField value="{!User.UserType}"></apex:inputField>
+        <apex:inputField value="{!User.Alias}"></apex:inputField>
+        <apex:inputField value="{!User.ProfileId}"></apex:inputField>
+        <apex:inputField value="{!User.Username}"></apex:inputField>
+        <apex:inputField value="{!User.IsActive}"></apex:inputField>
+      </apex:pageBlockSection>
+      <apex:pageBlockSection columns="1" showHeader="false">
+        <apex:pageBlockSectionItem >
+          <apex:outputLabel value="Manager" for="mgr"></apex:outputLabel>
+          <apex:selectList id="mgr" value="{!User.ManagerId}" size="1" title="Manager">
+            <apex:selectOptions value="{!Mgrs}"></apex:selectOptions>
+          </apex:selectList>
+        </apex:pageBlockSectionItem>
+      </apex:pageBlockSection>
+    </apex:pageBlock>
+  </apex:form>
+</apex:page>

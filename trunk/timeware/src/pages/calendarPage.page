@@ -1,0 +1,58 @@
+<apex:page controller="repeatCon" id="thePage"
+	showHeader="false">
+	<apex:form id="theForm">
+		<apex:outputPanel id="theCalendar">
+			<div class="bCalendar">
+			<table class="calendarMonthView" width="100%">
+				<caption>
+				<div class="calHeader"><apex:commandLink action="{!prev}"
+					rerender="theCalendar">
+					<img title="Previous Month" class="prevCalArrow"
+						alt="Previous Month" src="/s.gif" />
+				</apex:commandLink>
+				&nbsp;&nbsp;{!month.monthname}&nbsp;&nbsp;{!month.yearname}&nbsp;&nbsp;
+				<apex:commandLink action="{!next}" rerender="theCalendar">
+					<img title="Next Month" class="nextCalArrow" alt="Next Month"
+						src="/s.gif" />
+				</apex:commandLink></div>
+				</caption>
+				<tbody>
+					<tr class="headerRow">
+						<th scope="col" class="calDays">Sunday</th>
+						<th scope="col" class="calDays">Monday</th>
+						<th scope="col" class="calDays">Tuesday</th>
+						<th scope="col" class="calDays">Wednesday</th>
+						<th scope="col" class="calDays">Thursday</th>
+						<th scope="col" class="calDays">Friday</th>
+						<th scope="col" class="calDays">Saturday</th>
+					</tr>
+
+					<apex:repeat value="{!weeks}" var="wk" id="foreachWeek">
+						<tr>
+							<apex:repeat value="{!wk.days}" var="day" id="foreachday">
+								<td class="{!day.cssname}" height="90" valign="top">
+								<div class="date"><a href="#"
+									title="Add Event - {!day.date}"><img src="/s.gif"
+									alt="Add Event - {!day.date}" class="addNewEventIcon"
+									title="Add Event - {!day.date}" /></a> <a href="#"
+									title="Day View - {!day.date}">{!day.dayofmonth}</a></div>
+
+								<div><apex:repeat value="{!day.eventstoday}" var="v"
+									id="foreachevent">
+									<span class="event">{!v.formateddate}</span>
+									<a href="#">{!v.ev.subject}</a>
+									<br />
+								</apex:repeat></div>
+								</td>
+							</apex:repeat>
+						</tr>
+
+					</apex:repeat>
+
+				</tbody>
+			</table>
+			</div>
+		</apex:outputPanel>
+
+	</apex:form>
+</apex:page>

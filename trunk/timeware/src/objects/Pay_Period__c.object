@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>Master-Detail relationship with Pay Period Policy (Master) object. Formula calculates Start dates for each &apos;Pay Frequency&apos; type:  Weekly(52), Bi-Weekly(26), Semi-Monthly(24), Monthly(12).</description>
+    <enableActivities>true</enableActivities>
+    <enableReports>true</enableReports>
+    <fields>
+        <fullName>Closeout_Stamp__c</fullName>
+        <label>Close-Out Run On</label>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Current_Pay_Period__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Flag indicates the current pay period.</description>
+        <label>Current Pay Period</label>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Pay_Period_End__c</fullName>
+        <label>Pay Period End</label>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Pay_Period_Number__c</fullName>
+        <description>&quot;Pay Period Number&quot; indicates what pay period it is for the year.</description>
+        <label>Pay Period Number</label>
+        <precision>2</precision>
+        <scale>0</scale>
+        <type>Number</type>
+    </fields>
+    <fields>
+        <fullName>Pay_Period_Policy__c</fullName>
+        <label>Pay Period Policy</label>
+        <referenceTo>Pay_Period_Policy__c</referenceTo>
+        <relationshipLabel>Pay Periods</relationshipLabel>
+        <relationshipName>Pay_Periods</relationshipName>
+        <relationshipOrder>0</relationshipOrder>
+        <type>MasterDetail</type>
+    </fields>
+    <fields>
+        <fullName>Pay_Period_Start__c</fullName>
+        <description>Change hard coding the &apos;Semi-Monthly&apos; and &apos;Monthly&apos; dates to settings in Pay Period Policy master.</description>
+        <formula>IF( TEXT(Pay_Period_Policy__r.Pay_Frequency__c)  = &apos;Weekly&apos;, (Pay_Period_End__c - 6), 
+IF( TEXT(Pay_Period_Policy__r.Pay_Frequency__c)  = &apos;Bi-Weekly&apos;, (Pay_Period_End__c - 13),
+IF( OR( TEXT(Pay_Period_Policy__r.Pay_Frequency__c)  = &apos;Monthly&apos;, AND( TEXT(Pay_Period_Policy__r.Pay_Frequency__c)  = &apos;Semi-Monthly&apos;, DAY( Pay_Period_End__c) = 15 ) ),
+DATE( YEAR(Pay_Period_End__c) , MONTH(Pay_Period_End__c) ,  1),
+IF( AND( TEXT(Pay_Period_Policy__r.Pay_Frequency__c)  = &apos;Semi-Monthly&apos;, DAY(Pay_Period_End__c)  &lt;&gt;  15 ),
+DATE( YEAR(Pay_Period_End__c) , MONTH(Pay_Period_End__c) ,  16),
+(Pay_Period_End__c - 6)
+) ) ) )</formula>
+        <label>Pay Period Start</label>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Status__c</fullName>
+        <label>Status</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Open</fullName>
+                <default>true</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Closed</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Summary_Stamp__c</fullName>
+        <label>Summary Created On</label>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Transfer_Stamp__c</fullName>
+        <description>DateTime Stamp of when the transfer file was created.</description>
+        <label>Transfer Created On</label>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Work_Week_End__c</fullName>
+        <label>Work Week End</label>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Work_Week_Number_YTD__c</fullName>
+        <description>&apos;Work Week Number YTD&apos; indicates what pay week it is for the year.</description>
+        <label>Work Week Number YTD</label>
+        <precision>2</precision>
+        <scale>0</scale>
+        <type>Number</type>
+    </fields>
+    <fields>
+        <fullName>Work_Week_Number__c</fullName>
+        <description>If &apos;Pay Frequency&apos; is not &apos;Weekly&apos;, &apos;Work Week Number&apos; will be 2, 3, 4. Default is 1.</description>
+        <formula>IF( Pay_Period_Start__c  =  Work_Week_Start__c , 1, 
+IF( AND( TEXT(Pay_Period_Policy__r.Pay_Frequency__c) = &apos;Bi-Weekly&apos;, Pay_Period_End__c  =  Work_Week_End__c ), 2,
+1) )
+/*
+IF( TEXT(Pay_Period__r.Pay_Frequency__c) = &apos;Weekly&apos;, (Pay_Period_End__c - 6),
+IF( TEXT(Pay_Period__r.Pay_Frequency__c) = &apos;Bi-Weekly&apos;, (Pay_Period_End__c - 13),
+IF( OR( TEXT(Pay_Period__r.Pay_Frequency__c) = &apos;Monthly&apos;, AND( TEXT(Pay_Period__r.Pay_Frequency__c) = &apos;Semi-Monthly&apos;, DAY( Pay_Period_End__c) = 15 ) ),
+DATE( YEAR(Pay_Period_End__c) , MONTH(Pay_Period_End__c) , 1),
+IF( AND( TEXT(Pay_Period__r.Pay_Frequency__c) = &apos;Semi-Monthly&apos;, DAY(Pay_Period_End__c) &lt;&gt; 15 ),
+DATE( YEAR(Pay_Period_End__c) , MONTH(Pay_Period_End__c) , 16),
+(Pay_Period_End__c - 6)
+) ) ) )
+*/</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Work Week Number</label>
+        <precision>18</precision>
+        <scale>0</scale>
+        <type>Number</type>
+    </fields>
+    <fields>
+        <fullName>Work_Week_Start__c</fullName>
+        <formula>Work_Week_End__c - 6</formula>
+        <label>Work Week Start</label>
+        <type>Date</type>
+    </fields>
+    <label>Pay Period</label>
+    <nameField>
+        <displayFormat>PP-{00000000}</displayFormat>
+        <label>Pay Period ID</label>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Pay Periods</pluralLabel>
+    <searchLayouts>
+        <lookupDialogsAdditionalFields>Pay_Period_Start__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Pay_Period_End__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Status__c</lookupDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>Pay_Period_Start__c</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>Pay_Period_End__c</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>Status__c</lookupPhoneDialogsAdditionalFields>
+        <searchFilterFields>Pay_Period_Start__c</searchFilterFields>
+        <searchFilterFields>Pay_Period_End__c</searchFilterFields>
+    </searchLayouts>
+    <sharingModel>ControlledByParent</sharingModel>
+</CustomObject>

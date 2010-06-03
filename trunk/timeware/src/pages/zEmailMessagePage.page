@@ -1,0 +1,130 @@
+<apex:page controller="zEmailMessageController" action="{!ViewData}">
+    <apex:sectionHeader title="Email Messages" subtitle=""></apex:sectionHeader>
+    <apex:pageblock id="emailblock">
+        <apex:facet name="header">
+            <apex:form >
+                <apex:panelGrid styleClass="list"
+                    columnClasses="pbTitle,pbButton,pbHelp" columns="3" border="0"
+                    cellpadding="0" cellspacing="0">
+                    <apex:outputLabel ><h3>Messages</h3></apex:outputLabel>
+                    <apex:commandButton value=" Refresh " styleClass="btn"
+                        action="{!ViewData}" rerender="emailblock"></apex:commandButton>
+                    <apex:SelectList value="{!wheretext}" size="1"  id="controllerselectlist">
+                        <apex:actionSupport event="onchange" action="{!ViewData}"
+                            reRender="emailblock"></apex:actionSupport>
+                        <apex:selectOptions value="{!views}" />
+                    </apex:SelectList>
+                </apex:panelGrid>
+            </apex:form>
+        </apex:facet>
+        <apex:form >
+            <apex:pageblocktable value="{!Messages}" var="e" id="emailtable"
+                bgcolor="#F3F3EC" styleClass="list" rowClasses="dataRow"
+                onRowMouseOver="hiOn(this);" onRowMouseOut="hiOff(this);">
+                <apex:column >
+                    <apex:facet name="header">
+                        <apex:commandLink action="{!ViewData}"
+                            value="{!$ObjectType.EmailMessage.fields.Subject.label}{!IF(sortExpression=='Subject', 
+                            IF(sortDirection='ASC','▼','▲'),'')}">
+                            <apex:param value="Subject" name="column"
+                                assignTo="{!sortExpression}"></apex:param>
+                        </apex:commandLink>
+                    </apex:facet>
+                    <apex:outputLink value="/{!e.Id}" target="_blank">{!e.Subject}</apex:outputLink>
+                </apex:column>
+                <apex:column >
+                    <apex:facet name="header">
+                    {!$ObjectType.Contact.fields.Name.label}
+                    </apex:facet>
+                    <apex:outputLink value="/{!e.Parent.ContactId}" target="_blank"
+                        rendered="{!IF(e.Parent.ContactId != '',true,false)}">{!e.FromName}</apex:outputLink>
+                    <apex:outputtext value="{!e.FromName}"
+                        rendered="{!IF(e.Parent.ContactId != '',false,true)}" />
+                </apex:column>
+                <apex:column >
+                    <apex:facet name="header">
+                    {!$ObjectType.Account.fields.Name.label}
+                    </apex:facet>
+                    <apex:outputLink value="/{!e.Parent.AccountId}" target="_blank">{!e.Parent.Account.Name}</apex:outputLink>
+                </apex:column>
+                <apex:column value="{!e.FromAddress}">
+                    <apex:facet name="header">
+                        <apex:commandLink action="{!ViewData}"
+                            value="{!$ObjectType.EmailMessage.fields.FromAddress.label}{!IF(sortExpression=='FromAddress', 
+                            IF(sortDirection='ASC','▼','▲'),'')}">
+                            <apex:param value="FromAddress" name="column"
+                                assignTo="{!sortExpression}"></apex:param>
+                        </apex:commandLink>
+                    </apex:facet>
+                </apex:column>
+                <apex:column value="{!e.Status}">
+                    <apex:facet name="header">
+                        <apex:commandLink action="{!ViewData}"
+                            value="{!$ObjectType.EmailMessage.fields.Status.label}{!IF(sortExpression=='Status', 
+                            IF(sortDirection='ASC','▼','▲'),'')}">
+                            <apex:param value="Status" name="column"
+                                assignTo="{!sortExpression}"></apex:param>
+                        </apex:commandLink>
+                    </apex:facet>
+                </apex:column>
+                <apex:column value="{!e.MessageDate}">
+                    <apex:facet name="header">
+                        <apex:commandLink action="{!ViewData}"
+                            value="{!$ObjectType.EmailMessage.fields.MessageDate.label}{!IF(sortExpression=='MessageDate', 
+                            IF(sortDirection='ASC','▼','▲'),'')}">
+                            <apex:param value="MessageDate" name="column"
+                                assignTo="{!sortExpression}"></apex:param>
+                        </apex:commandLink>
+                    </apex:facet>
+                </apex:column>
+                <apex:column >
+                    <apex:facet name="header">
+                        <apex:commandLink action="{!ViewData}"
+                            value="Inbound/Outbound{!IF(sortExpression=='Incoming', 
+                            IF(sortDirection='ASC','▼','▲'),'')}">
+                            <apex:param value="Incoming" name="column"
+                                assignTo="{!sortExpression}"></apex:param>
+                        </apex:commandLink>
+                    </apex:facet>
+                    <apex:image url="/img/emailInbound.gif" rendered="{!e.Incoming}" />
+                    <apex:image url="/img/emailOutbound.gif" rendered="{!NOT(e.Incoming)}" />
+                    <!--<apex:outputfield value="{!e.Incoming}" rendered="{!NOT(e.Incoming)}" />-->
+                </apex:column>
+                <apex:column >
+                    <apex:facet name="header">
+                        <apex:commandLink action="{!ViewData}"
+                            value="Attachment{!IF(sortExpression=='HasAttachment', 
+                            IF(sortDirection='ASC','▼','▲'),'')}">
+                            <apex:param value="HasAttachment" name="column"
+                                assignTo="{!sortExpression}"></apex:param>
+                        </apex:commandLink>
+                    </apex:facet>
+                    <apex:image url="/img/emailHasAttach.gif" rendered="{!e.HasAttachment}"/>
+                    <apex:outputfield value="{!e.HasAttachment}" rendered="{!NOT(e.HasAttachment)}" />
+                </apex:column>
+                <apex:column >
+                    <apex:facet name="header">
+                        <apex:commandLink action="{!ViewData}"
+                            value="{!$ObjectType.Case.fields.CaseNumber.label}{!IF(sortExpression=='ParentId', 
+                            IF(sortDirection='ASC','▼','▲'),'')}">
+                            <apex:param value="ParentId" name="column"
+                                assignTo="{!sortExpression}"></apex:param>
+                        </apex:commandLink>
+                    </apex:facet>
+                    <apex:outputLink value="/{!e.ParentId}">{!e.Parent.CaseNumber}</apex:outputLink>
+
+                </apex:column>
+                <apex:column value="{!e.ToAddress}">
+                    <apex:facet name="header">
+                        <apex:commandLink action="{!ViewData}"
+                            value="{!$ObjectType.EmailMessage.fields.ToAddress.label}{!IF(sortExpression=='ToAddress', 
+                            IF(sortDirection='ASC','▼','▲'),'')}">
+                            <apex:param value="ToAddress" name="column"
+                                assignTo="{!sortExpression}"></apex:param>
+                        </apex:commandLink>
+                    </apex:facet>
+                </apex:column>
+            </apex:pageblocktable>
+        </apex:form>
+    </apex:pageblock>
+</apex:page>

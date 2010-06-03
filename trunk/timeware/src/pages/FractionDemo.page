@@ -1,0 +1,10 @@
+<apex:page controller="FractionDemoController">
+    <apex:messages id="messages" style="color:red"/>
+    <apex:form id="theForm">
+    	<apex:pageBlock title="Fraction Demo" >           
+		             1&nbsp;/&nbsp;<apex:inputText value="{!denominator}" id="denominator" size="6"/>&nbsp; 
+		            <apex:commandButton action="{!divide}" value="="/>&nbsp;
+		            <apex:inputText value="{!result}" id="result" size="6"/>
+		</apex:pageBlock>
+   </apex:form>
+</apex:page>

@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>Master-Detail relationship with Accrual Policy (Master) object. Items detail threshold rules.</description>
+    <enableEnhancedLookup>true</enableEnhancedLookup>
+    <enableHistory>true</enableHistory>
+    <enableReports>true</enableReports>
+    <fields>
+        <fullName>Accrual_Policy__c</fullName>
+        <label>Accrual Policy</label>
+        <referenceTo>Accrual_Policy__c</referenceTo>
+        <relationshipLabel>Accrual Earnings</relationshipLabel>
+        <relationshipName>R00N70000002IOUGEA4</relationshipName>
+        <relationshipOrder>0</relationshipOrder>
+        <trackHistory>true</trackHistory>
+        <type>MasterDetail</type>
+    </fields>
+    <fields>
+        <fullName>End_Months_Service__c</fullName>
+        <label>End Months Service</label>
+        <precision>3</precision>
+        <scale>0</scale>
+        <trackHistory>true</trackHistory>
+        <type>Number</type>
+    </fields>
+    <fields>
+        <fullName>Hours_Earned__c</fullName>
+        <label>Hours Earned</label>
+        <precision>6</precision>
+        <scale>3</scale>
+        <trackHistory>true</trackHistory>
+        <type>Number</type>
+    </fields>
+    <fields>
+        <fullName>IsActive__c</fullName>
+        <defaultValue>true</defaultValue>
+        <label>Active</label>
+        <trackHistory>true</trackHistory>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Start_Months_Service__c</fullName>
+        <label>Start Months Service</label>
+        <precision>3</precision>
+        <scale>0</scale>
+        <trackHistory>true</trackHistory>
+        <type>Number</type>
+    </fields>
+    <label>Accrual Earnings</label>
+    <nameField>
+        <displayFormat>AE-{0000}</displayFormat>
+        <label>Accrual Earnings ID</label>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Accrual Earnings</pluralLabel>
+    <searchLayouts>
+        <customTabListAdditionalFields>Start_Months_Service__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>End_Months_Service__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Hours_Earned__c</customTabListAdditionalFields>
+        <lookupDialogsAdditionalFields>Start_Months_Service__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>End_Months_Service__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Hours_Earned__c</lookupDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>Start_Months_Service__c</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>End_Months_Service__c</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>Hours_Earned__c</lookupPhoneDialogsAdditionalFields>
+        <searchResultsAdditionalFields>Start_Months_Service__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>End_Months_Service__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Hours_Earned__c</searchResultsAdditionalFields>
+    </searchLayouts>
+    <sharingModel>ControlledByParent</sharingModel>
+</CustomObject>

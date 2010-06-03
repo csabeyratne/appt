@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <value>Accrual</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Accruals</value>
+    </caseValues>
+    <fields>
+        <label><!-- As Of Date --></label>
+        <name>As_Of_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Hours Available --></label>
+        <name>Available_Hours__c</name>
+    </fields>
+    <fields>
+        <label><!-- Employee --></label>
+        <name>Employee__c</name>
+        <relationshipLabel><!-- Accruals --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Hours Accrued --></label>
+        <name>Hours_Accrued__c</name>
+    </fields>
+    <fields>
+        <label><!-- Hours Taken --></label>
+        <name>Hours_Taken__c</name>
+    </fields>
+    <fields>
+        <label><!-- New As Of Date --></label>
+        <name>New_As_Of_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- New Hours Accrued --></label>
+        <name>New_Hours_Accrued__c</name>
+    </fields>
+    <fields>
+        <label><!-- New Hours Available --></label>
+        <name>New_Hours_Available__c</name>
+    </fields>
+    <fields>
+        <label><!-- New Hours Taken --></label>
+        <name>New_Hours_Taken__c</name>
+    </fields>
+    <fields>
+        <label><!-- Pay Code --></label>
+        <name>Pay_Code__c</name>
+        <relationshipLabel><!-- Accruals --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Week Ending --></label>
+        <name>Week_Ending__c</name>
+    </fields>
+    <layouts>
+        <layout>Accrual Layout</layout>
+        <sections>
+            <label><!-- Additional Information --></label>
+            <section>Additional Information</section>
+        </sections>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

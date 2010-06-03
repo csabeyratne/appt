@@ -1,0 +1,239 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <value>Employee</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Employees</value>
+    </caseValues>
+    <fields>
+        <label><!-- Accrual Policy --></label>
+        <name>Accrual_Policy__c</name>
+        <relationshipLabel><!-- Accrual Policies --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Age Of Employee --></label>
+        <name>Age_Of_Employee__c</name>
+    </fields>
+    <fields>
+        <label><!-- Attendance Policy --></label>
+        <name>Attendance_Policy__c</name>
+        <relationshipLabel><!-- Attendance Policies --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Badge Number --></label>
+        <name>Badge_Number__c</name>
+    </fields>
+    <fields>
+        <label><!-- Birth Date --></label>
+        <name>Birth_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Cummulative Occurrences --></label>
+        <name>Cummulative_Occurrences__c</name>
+    </fields>
+    <fields>
+        <label><!-- Cummulative Points --></label>
+        <name>Cummulative_Points__c</name>
+    </fields>
+    <fields>
+        <label><!-- Department --></label>
+        <name>Department__c</name>
+        <relationshipLabel><!-- Departments --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Effective Date Department --></label>
+        <name>Effective_Date_Department__c</name>
+    </fields>
+    <fields>
+        <label><!-- Effective Date Group --></label>
+        <name>Effective_Date_Group__c</name>
+    </fields>
+    <fields>
+        <label><!-- Effective Date Job --></label>
+        <name>Effective_Date_Job__c</name>
+    </fields>
+    <fields>
+        <label><!-- Effective Date Labor --></label>
+        <name>Effective_Date_Labor__c</name>
+    </fields>
+    <fields>
+        <label><!-- Employee Class --></label>
+        <name>Employee_Class__c</name>
+        <picklistValues>
+            <masterLabel>Hourly Contract</masterLabel>
+            <translation><!-- Hourly Contract --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Hourly Full Time</masterLabel>
+            <translation><!-- Hourly Full Time --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Hourly Part Time</masterLabel>
+            <translation><!-- Hourly Part Time --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Hourly Student</masterLabel>
+            <translation><!-- Hourly Student --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Hourly Temporary</masterLabel>
+            <translation><!-- Hourly Temporary --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Salary Exempt</masterLabel>
+            <translation><!-- Salary Exempt --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Salary Non-Exempt</masterLabel>
+            <translation><!-- Salary Non-Exempt --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- First Name --></label>
+        <name>First_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Full Name --></label>
+        <name>Full_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Hire Date --></label>
+        <name>Hire_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Last Name --></label>
+        <name>Last_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Location --></label>
+        <name>Location__c</name>
+        <relationshipLabel><!-- Locations --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Months Of Service --></label>
+        <name>Months_Of_Service__c</name>
+    </fields>
+    <fields>
+        <label><!-- Pay Group Code --></label>
+        <name>Pay_Group_Code__c</name>
+    </fields>
+    <fields>
+        <label><!-- Pay Period Policy --></label>
+        <name>Pay_Period_Policy__c</name>
+        <relationshipLabel><!-- Pay Period Policies --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Pay Period Select --></label>
+        <name>Pay_Period_Select__c</name>
+        <picklistValues>
+            <masterLabel>Current Pay Period</masterLabel>
+            <translation><!-- Current Pay Period --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Next Pay Period</masterLabel>
+            <translation><!-- Next Pay Period --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Previous Pay Period</masterLabel>
+            <translation><!-- Previous Pay Period --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Pay Policy --></label>
+        <name>Pay_Policy__c</name>
+        <relationshipLabel><!-- Pay Policies --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Pay Rate --></label>
+        <name>Pay_Rate__c</name>
+    </fields>
+    <fields>
+        <label><!-- User --></label>
+        <name>Salesforce_User__c</name>
+        <relationshipLabel><!-- Employees (User) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Shift Number --></label>
+        <name>Shift_Number__c</name>
+    </fields>
+    <fields>
+        <label><!-- Shift Template --></label>
+        <name>Shift_Template__c</name>
+        <relationshipLabel><!-- Shift Templates --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Social Security Number --></label>
+        <name>Social_Security_Number__c</name>
+    </fields>
+    <fields>
+        <label><!-- Status --></label>
+        <name>Status__c</name>
+        <picklistValues>
+            <masterLabel>Active</masterLabel>
+            <translation><!-- Active --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Leave</masterLabel>
+            <translation><!-- Leave --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Terminated</masterLabel>
+            <translation><!-- Terminated --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Substitute User Effective Date --></label>
+        <name>Substitute_User_Effective_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Substitute User Expiration Date --></label>
+        <name>Substitute_User_Expiration_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Substitute User --></label>
+        <name>Substitute_User__c</name>
+        <relationshipLabel><!-- Employees (Substitute User) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Supervisor Name --></label>
+        <name>Supervisor_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Supervisor Number --></label>
+        <name>Supervisor_Number__c</name>
+    </fields>
+    <fields>
+        <label><!-- Temporary Badge --></label>
+        <name>Temporary_Badge__c</name>
+        <relationshipLabel><!-- Employees (Temporary Badge) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Termination Date --></label>
+        <name>Termination_Date__c</name>
+    </fields>
+    <layouts>
+        <layout>Employee Accrual</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Fields --></label>
+            <section>Fields</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Employee Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Personal Information --></label>
+            <section>Personal Information</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

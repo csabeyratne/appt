@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <value>Summary</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Summaries</value>
+    </caseValues>
+    <fields>
+        <label><!-- Active --></label>
+        <name>Active__c</name>
+    </fields>
+    <fields>
+        <label><!-- Doubletime Hours --></label>
+        <name>Doubletime_Hours__c</name>
+    </fields>
+    <fields>
+        <label><!-- Earnings Dollars --></label>
+        <name>Earnings_Dollars__c</name>
+    </fields>
+    <fields>
+        <label><!-- Employee --></label>
+        <name>Employee__c</name>
+        <relationshipLabel><!-- Summaries --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Overtime Hours --></label>
+        <name>Overtime_Hours__c</name>
+    </fields>
+    <fields>
+        <label><!-- Pay Period Ending Date --></label>
+        <name>Pay_Period_Ending_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Pay Rate --></label>
+        <name>Pay_Rate__c</name>
+    </fields>
+    <fields>
+        <label><!-- Regular Hours --></label>
+        <name>Regular_Hours__c</name>
+    </fields>
+    <fields>
+        <label><!-- Week Ending Date --></label>
+        <name>Week_Ending_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Week Number --></label>
+        <name>Week_Number__c</name>
+    </fields>
+    <fields>
+        <label><!-- Weekend Hours --></label>
+        <name>Weekend_Hours__c</name>
+    </fields>
+    <layouts>
+        <layout>Summary Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

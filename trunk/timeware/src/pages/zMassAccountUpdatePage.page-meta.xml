@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ApexPage xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>16.0</apiVersion>
+    <description>Allow Mass Update of your Object Records Even Without Having a Save Button! by Sam Arjmandi</description>
+    <label>zMassAccountUpdatePage</label>
+</ApexPage>
