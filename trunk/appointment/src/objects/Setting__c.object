@@ -48,14 +48,6 @@
                 <fullName>30 Minutes</fullName>
                 <default>true</default>
             </picklistValues>
-            <picklistValues>
-                <fullName>45 Minutes</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>60 Minutes</fullName>
-                <default>false</default>
-            </picklistValues>
             <sorted>false</sorted>
         </picklist>
         <type>Picklist</type>

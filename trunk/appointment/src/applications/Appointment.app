@@ -16,4 +16,5 @@
     <tab>Closed_Dates__c</tab>
     <tab>Promotion__c</tab>
     <tab>Time_Range__c</tab>
+    <tab>Staff_Schedule__c</tab>
 </CustomApplication>
