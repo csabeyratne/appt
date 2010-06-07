@@ -510,6 +510,11 @@
         <field>Case.Product__c</field>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
+        <editable>false</editable>
+        <field>Case.QuestionId</field>
+        <hidden>true</hidden>
+    </fieldLevelSecurities>
+    <fieldLevelSecurities>
         <editable>true</editable>
         <field>Case.Reason</field>
     </fieldLevelSecurities>
@@ -1340,6 +1345,10 @@
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>true</editable>
+        <field>Service__c.Begin_Time__c</field>
+    </fieldLevelSecurities>
+    <fieldLevelSecurities>
+        <editable>true</editable>
         <field>Service__c.Category__c</field>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
@@ -1352,7 +1361,27 @@
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>true</editable>
+        <field>Service__c.Double_Appointment__c</field>
+    </fieldLevelSecurities>
+    <fieldLevelSecurities>
+        <editable>true</editable>
         <field>Service__c.Duration__c</field>
+    </fieldLevelSecurities>
+    <fieldLevelSecurities>
+        <editable>true</editable>
+        <field>Service__c.End_Time__c</field>
+    </fieldLevelSecurities>
+    <fieldLevelSecurities>
+        <editable>true</editable>
+        <field>Service__c.Fee__c</field>
+    </fieldLevelSecurities>
+    <fieldLevelSecurities>
+        <editable>true</editable>
+        <field>Service__c.Gap_Time__c</field>
+    </fieldLevelSecurities>
+    <fieldLevelSecurities>
+        <editable>true</editable>
+        <field>Service__c.Price__c</field>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>false</editable>
@@ -1449,6 +1478,10 @@
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>true</editable>
+        <field>Staff__c.Active__c</field>
+    </fieldLevelSecurities>
+    <fieldLevelSecurities>
+        <editable>true</editable>
         <field>Staff__c.Birth_Date__c</field>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
@@ -1489,6 +1522,10 @@
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>true</editable>
+        <field>Staff__c.License__c</field>
+    </fieldLevelSecurities>
+    <fieldLevelSecurities>
+        <editable>true</editable>
         <field>Staff__c.Mailing_State__c</field>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
@@ -1499,6 +1536,10 @@
         <editable>false</editable>
         <field>Staff__c.Settings__c</field>
         <hidden>true</hidden>
+    </fieldLevelSecurities>
+    <fieldLevelSecurities>
+        <editable>true</editable>
+        <field>Staff__c.Staff_Type__c</field>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>true</editable>
@@ -1684,6 +1725,9 @@
     </layoutAssignments>
     <layoutAssignments>
         <layout>Staff_Group__c-Staff Group Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>Staff_Schedule__c-Staff Schedule Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
         <layout>Staff__c-Staff Layout</layout>
@@ -1910,6 +1954,15 @@
         <allowEdit>true</allowEdit>
         <allowRead>true</allowRead>
         <modifyAllRecords>true</modifyAllRecords>
+        <object>Staff_Schedule__c</object>
+        <viewAllRecords>true</viewAllRecords>
+    </objectPermissions>
+    <objectPermissions>
+        <allowCreate>true</allowCreate>
+        <allowDelete>true</allowDelete>
+        <allowEdit>true</allowEdit>
+        <allowRead>true</allowRead>
+        <modifyAllRecords>true</modifyAllRecords>
         <object>Staff__c</object>
         <viewAllRecords>true</viewAllRecords>
     </objectPermissions>
@@ -2062,6 +2115,10 @@
     <tabVisibilities>
         <tab>Staff_Group__c</tab>
         <visibility>DefaultOff</visibility>
+    </tabVisibilities>
+    <tabVisibilities>
+        <tab>Staff_Schedule__c</tab>
+        <visibility>DefaultOn</visibility>
     </tabVisibilities>
     <tabVisibilities>
         <tab>Start_Here</tab>

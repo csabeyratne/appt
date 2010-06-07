@@ -37,6 +37,13 @@
     <enableHistory>true</enableHistory>
     <enableReports>true</enableReports>
     <fields>
+        <fullName>Begin_Time__c</fullName>
+        <label>Begin Time</label>
+        <precision>8</precision>
+        <scale>0</scale>
+        <type>Number</type>
+    </fields>
+    <fields>
         <fullName>Category__c</fullName>
         <description>The category the service is assigned to.</description>
         <inlineHelpText>Select the service category.</inlineHelpText>
@@ -63,6 +70,12 @@
         <type>TextArea</type>
     </fields>
     <fields>
+        <fullName>Double_Appointment__c</fullName>
+        <defaultValue>false</defaultValue>
+        <label>Double Appointment</label>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
         <fullName>Duration__c</fullName>
         <defaultValue>30</defaultValue>
         <description>The unit of measure for &apos;Duration&apos; is minutes. The default value is 30 minutes.</description>
@@ -71,6 +84,34 @@
         <precision>4</precision>
         <scale>0</scale>
         <type>Number</type>
+    </fields>
+    <fields>
+        <fullName>End_Time__c</fullName>
+        <label>End Time</label>
+        <precision>8</precision>
+        <scale>0</scale>
+        <type>Number</type>
+    </fields>
+    <fields>
+        <fullName>Fee__c</fullName>
+        <label>Fee</label>
+        <precision>9</precision>
+        <scale>2</scale>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Gap_Time__c</fullName>
+        <label>Gap Time</label>
+        <precision>8</precision>
+        <scale>0</scale>
+        <type>Number</type>
+    </fields>
+    <fields>
+        <fullName>Price__c</fullName>
+        <label>Price</label>
+        <precision>9</precision>
+        <scale>2</scale>
+        <type>Currency</type>
     </fields>
     <fields>
         <fullName>Staff__c</fullName>

@@ -8,6 +8,10 @@
         <value>Staff</value>
     </caseValues>
     <fields>
+        <label><!-- Active --></label>
+        <name>Active__c</name>
+    </fields>
+    <fields>
         <help><!-- Please enter a birth date for resource. --></help>
         <label><!-- Birth Date --></label>
         <name>Birth_Date__c</name>
@@ -55,6 +59,10 @@
         <name>Last_Name__c</name>
     </fields>
     <fields>
+        <label><!-- License --></label>
+        <name>License__c</name>
+    </fields>
+    <fields>
         <help><!-- Please enter the mailing state for resource. --></help>
         <label><!-- Mailing State --></label>
         <name>Mailing_State__c</name>
@@ -68,6 +76,22 @@
         <label><!-- Settings --></label>
         <name>Settings__c</name>
         <relationshipLabel><!-- Staff --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Staff Type --></label>
+        <name>Staff_Type__c</name>
+        <picklistValues>
+            <masterLabel>Chair Renter</masterLabel>
+            <translation><!-- Chair Renter --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Commission</masterLabel>
+            <translation><!-- Commission --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Salary</masterLabel>
+            <translation><!-- Salary --></translation>
+        </picklistValues>
     </fields>
     <fields>
         <label><!-- State --></label>

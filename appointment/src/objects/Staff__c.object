@@ -38,6 +38,12 @@
     <enableHistory>true</enableHistory>
     <enableReports>true</enableReports>
     <fields>
+        <fullName>Active__c</fullName>
+        <defaultValue>true</defaultValue>
+        <label>Active</label>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
         <fullName>Birth_Date__c</fullName>
         <description>Enter a &apos;Birth Date&apos; for resource.</description>
         <inlineHelpText>Please enter a birth date for resource.</inlineHelpText>
@@ -114,6 +120,12 @@ IF(ISBLANK(Last_Name__c ), TRIM(First_Name__c), TRIM(Last_Name__c) &amp; &quot;,
         <type>Text</type>
     </fields>
     <fields>
+        <fullName>License__c</fullName>
+        <label>License</label>
+        <length>18</length>
+        <type>Text</type>
+    </fields>
+    <fields>
         <fullName>Mailing_State__c</fullName>
         <description>Enter the &apos;Mailing State&apos; for resource.</description>
         <inlineHelpText>Please enter the mailing state for resource.</inlineHelpText>
@@ -137,6 +149,26 @@ IF(ISBLANK(Last_Name__c ), TRIM(First_Name__c), TRIM(Last_Name__c) &amp; &quot;,
         <relationshipName>Staff</relationshipName>
         <relationshipOrder>0</relationshipOrder>
         <type>MasterDetail</type>
+    </fields>
+    <fields>
+        <fullName>Staff_Type__c</fullName>
+        <label>Staff Type</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Chair Renter</fullName>
+                <default>true</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Commission</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Salary</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <type>Picklist</type>
     </fields>
     <fields>
         <fullName>State__c</fullName>
