@@ -586,11 +586,19 @@ IF(ISBLANK(Last_Name__c ), TRIM(First_Name__c), TRIM(Last_Name__c) &amp; &quot;,
         <type>Picklist</type>
     </fields>
     <fields>
-        <fullName>Recurring_Start_DateTime__c</fullName>
-        <description>Date recurring appointments start.</description>
-        <inlineHelpText>Enter date of first recurring appointment.</inlineHelpText>
-        <label>Start Date</label>
+        <fullName>Recurring_End_Date__c</fullName>
+        <label>Recurring End Date</label>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Recurring_Start_DT__c</fullName>
+        <label>Recurring Start Time</label>
         <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Recurring_Start_Date__c</fullName>
+        <label>Recurring Start Date</label>
+        <type>Date</type>
     </fields>
     <fields>
         <fullName>Recurring__c</fullName>

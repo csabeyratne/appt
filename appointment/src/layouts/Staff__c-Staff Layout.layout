@@ -189,9 +189,11 @@
     </relatedLists>
     <relatedLists>
         <fields>NAME</fields>
-        <fields>Category__c</fields>
-        <fields>Duration__c</fields>
-        <fields>Cost__c</fields>
-        <relatedList>Service__c.Staff__c</relatedList>
+        <relatedList>Staff_Schedule__c.Staff__c</relatedList>
+    </relatedLists>
+    <relatedLists>
+        <fields>NAME</fields>
+        <fields>Parent_Category__c</fields>
+        <relatedList>Service_Category__c.Staff__c</relatedList>
     </relatedLists>
 </Layout>

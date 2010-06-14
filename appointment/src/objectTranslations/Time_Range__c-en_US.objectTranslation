@@ -12,11 +12,6 @@
         <name>DateTime_Value__c</name>
     </fields>
     <fields>
-        <label><!-- Operating Hours --></label>
-        <name>Operating_Hours__c</name>
-        <relationshipLabel><!-- Time Ranges --></relationshipLabel>
-    </fields>
-    <fields>
         <label><!-- Time String --></label>
         <name>Time_String__c</name>
     </fields>

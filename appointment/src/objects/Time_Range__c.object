@@ -33,21 +33,12 @@
         <type>Default</type>
     </actionOverrides>
     <deploymentStatus>Deployed</deploymentStatus>
-    <description>Master-Detail relationship with Operating Hours (Master) object. Dynamic Picklist for times for each day of the week.</description>
+    <description>Master-Detail relationship with Settings (Master) object. Dynamic Picklist for times for each day of the week.</description>
     <enableReports>true</enableReports>
     <fields>
         <fullName>DateTime_Value__c</fullName>
         <label>DateTime Value</label>
         <type>DateTime</type>
-    </fields>
-    <fields>
-        <fullName>Operating_Hours__c</fullName>
-        <label>Operating Hours</label>
-        <referenceTo>Operating_Hours__c</referenceTo>
-        <relationshipLabel>Time Ranges</relationshipLabel>
-        <relationshipName>Time_Ranges</relationshipName>
-        <relationshipOrder>0</relationshipOrder>
-        <type>MasterDetail</type>
     </fields>
     <fields>
         <fullName>Time_String__c</fullName>
@@ -121,5 +112,5 @@
         <searchResultsAdditionalFields>Weekday__c</searchResultsAdditionalFields>
         <searchResultsAdditionalFields>Time_String__c</searchResultsAdditionalFields>
     </searchLayouts>
-    <sharingModel>ControlledByParent</sharingModel>
+    <sharingModel>ReadWrite</sharingModel>
 </CustomObject>

@@ -270,11 +270,19 @@
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
-                <field>Recurring_Start_DateTime__c</field>
+                <field>Frequency__c</field>
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
-                <field>Frequency__c</field>
+                <field>Recurring_Start_Date__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>Recurring_Start_DT__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>Recurring_End_Date__c</field>
             </layoutItems>
         </layoutColumns>
         <style>OneColumn</style>

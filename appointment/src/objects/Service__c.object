@@ -44,16 +44,6 @@
         <type>Number</type>
     </fields>
     <fields>
-        <fullName>Category__c</fullName>
-        <description>The category the service is assigned to.</description>
-        <inlineHelpText>Select the service category.</inlineHelpText>
-        <label>Service Category</label>
-        <referenceTo>Category__c</referenceTo>
-        <relationshipLabel>Services</relationshipLabel>
-        <relationshipName>Services</relationshipName>
-        <type>Lookup</type>
-    </fields>
-    <fields>
         <fullName>Cost__c</fullName>
         <description>The dollar amount of the service.</description>
         <inlineHelpText>Enter the cost of the service.</inlineHelpText>
@@ -114,9 +104,9 @@
         <type>Currency</type>
     </fields>
     <fields>
-        <fullName>Staff__c</fullName>
-        <label>Staff</label>
-        <referenceTo>Staff__c</referenceTo>
+        <fullName>Service_Category__c</fullName>
+        <label>Category</label>
+        <referenceTo>Service_Category__c</referenceTo>
         <relationshipLabel>Services</relationshipLabel>
         <relationshipName>Services</relationshipName>
         <relationshipOrder>0</relationshipOrder>
@@ -134,16 +124,12 @@
     </nameField>
     <pluralLabel>Services</pluralLabel>
     <searchLayouts>
-        <customTabListAdditionalFields>Category__c</customTabListAdditionalFields>
         <customTabListAdditionalFields>Duration__c</customTabListAdditionalFields>
         <customTabListAdditionalFields>Cost__c</customTabListAdditionalFields>
-        <lookupDialogsAdditionalFields>Category__c</lookupDialogsAdditionalFields>
         <lookupDialogsAdditionalFields>Duration__c</lookupDialogsAdditionalFields>
         <lookupDialogsAdditionalFields>Cost__c</lookupDialogsAdditionalFields>
-        <lookupPhoneDialogsAdditionalFields>Category__c</lookupPhoneDialogsAdditionalFields>
         <lookupPhoneDialogsAdditionalFields>Duration__c</lookupPhoneDialogsAdditionalFields>
         <lookupPhoneDialogsAdditionalFields>Cost__c</lookupPhoneDialogsAdditionalFields>
-        <searchResultsAdditionalFields>Category__c</searchResultsAdditionalFields>
         <searchResultsAdditionalFields>Duration__c</searchResultsAdditionalFields>
         <searchResultsAdditionalFields>Cost__c</searchResultsAdditionalFields>
     </searchLayouts>

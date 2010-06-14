@@ -92,6 +92,10 @@
                 <behavior>Edit</behavior>
                 <field>Display_Address__c</field>
             </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>Fax__c</field>
+            </layoutItems>
         </layoutColumns>
         <layoutColumns/>
         <style>TwoColumnsTopToBottom</style>
@@ -127,10 +131,6 @@
         <layoutColumns/>
         <style>CustomLinks</style>
     </layoutSections>
-    <relatedLists>
-        <fields>NAME</fields>
-        <relatedList>Operating_Hours__c.Setting__c</relatedList>
-    </relatedLists>
     <relatedLists>
         <fields>NAME</fields>
         <fields>Holiday_Date__c</fields>

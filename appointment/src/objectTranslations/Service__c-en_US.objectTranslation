@@ -12,12 +12,6 @@
         <name>Begin_Time__c</name>
     </fields>
     <fields>
-        <help><!-- Select the service category. --></help>
-        <label><!-- Service Category --></label>
-        <name>Category__c</name>
-        <relationshipLabel><!-- Services --></relationshipLabel>
-    </fields>
-    <fields>
         <help><!-- Enter the cost of the service. --></help>
         <label><!-- Cost --></label>
         <name>Cost__c</name>
@@ -53,8 +47,8 @@
         <name>Price__c</name>
     </fields>
     <fields>
-        <label><!-- Staff --></label>
-        <name>Staff__c</name>
+        <label><!-- Category --></label>
+        <name>Service_Category__c</name>
         <relationshipLabel><!-- Services --></relationshipLabel>
     </fields>
     <layouts>

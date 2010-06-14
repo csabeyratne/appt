@@ -5,10 +5,6 @@
     <deployed>true</deployed>
     <description>Settings with Staff with Services</description>
     <join>
-        <join>
-            <outerJoin>false</outerJoin>
-            <relationship>Services__r</relationship>
-        </join>
         <outerJoin>false</outerJoin>
         <relationship>Staff__r</relationship>
     </join>
@@ -258,58 +254,5 @@
             <table>Setting__c.Staff__r</table>
         </columns>
         <masterLabel>Staff</masterLabel>
-    </sections>
-    <sections>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>Id</field>
-            <table>Setting__c.Staff__r.Services__r</table>
-        </columns>
-        <columns>
-            <checkedByDefault>true</checkedByDefault>
-            <field>Name</field>
-            <table>Setting__c.Staff__r.Services__r</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>CreatedDate</field>
-            <table>Setting__c.Staff__r.Services__r</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>CreatedBy</field>
-            <table>Setting__c.Staff__r.Services__r</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>LastModifiedDate</field>
-            <table>Setting__c.Staff__r.Services__r</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>LastModifiedBy</field>
-            <table>Setting__c.Staff__r.Services__r</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>Category__c</field>
-            <table>Setting__c.Staff__r.Services__r</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>Cost__c</field>
-            <table>Setting__c.Staff__r.Services__r</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>Description__c</field>
-            <table>Setting__c.Staff__r.Services__r</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>Duration__c</field>
-            <table>Setting__c.Staff__r.Services__r</table>
-        </columns>
-        <masterLabel>Services</masterLabel>
     </sections>
 </ReportType>

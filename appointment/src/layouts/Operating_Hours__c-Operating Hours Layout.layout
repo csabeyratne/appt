@@ -10,10 +10,6 @@
                 <field>Name</field>
             </layoutItems>
             <layoutItems>
-                <behavior>Required</behavior>
-                <field>Setting__c</field>
-            </layoutItems>
-            <layoutItems>
                 <behavior>Edit</behavior>
                 <field>Monday__c</field>
             </layoutItems>
@@ -147,11 +143,5 @@
     </layoutSections>
     <relatedLists>
         <relatedList>RelatedNoteList</relatedList>
-    </relatedLists>
-    <relatedLists>
-        <fields>NAME</fields>
-        <fields>Weekday__c</fields>
-        <fields>Time_String__c</fields>
-        <relatedList>Time_Range__c.Operating_Hours__c</relatedList>
     </relatedLists>
 </Layout>
