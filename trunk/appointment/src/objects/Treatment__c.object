@@ -64,6 +64,11 @@
         <type>Date</type>
     </fields>
     <label>Treatment</label>
+    <listViews>
+        <fullName>All</fullName>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
     <nameField>
         <displayFormat>T-{000000}</displayFormat>
         <label>Treatment ID</label>

@@ -14,10 +14,6 @@
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
-                <field>Category__c</field>
-            </layoutItems>
-            <layoutItems>
-                <behavior>Edit</behavior>
                 <field>Duration__c</field>
             </layoutItems>
             <layoutItems>
@@ -31,10 +27,6 @@
         <editHeading>true</editHeading>
         <label>System Information</label>
         <layoutColumns>
-            <layoutItems>
-                <behavior>Required</behavior>
-                <field>Staff__c</field>
-            </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
                 <field>Double_Appointment__c</field>
@@ -58,6 +50,10 @@
             <layoutItems>
                 <behavior>Edit</behavior>
                 <field>Fee__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Required</behavior>
+                <field>Service_Category__c</field>
             </layoutItems>
         </layoutColumns>
         <layoutColumns>

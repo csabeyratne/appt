@@ -4,6 +4,4 @@
     <description>Start Here</description>
     <label>Force.com</label>
     <tab>Start_Here</tab>
-    <tab>Time_Off__c</tab>
-    <tab>Closed_Dates__c</tab>
 </CustomApplication>

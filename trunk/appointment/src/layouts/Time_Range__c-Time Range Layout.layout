@@ -18,10 +18,6 @@
                 <field>DateTime_Value__c</field>
             </layoutItems>
             <layoutItems>
-                <behavior>Required</behavior>
-                <field>Operating_Hours__c</field>
-            </layoutItems>
-            <layoutItems>
                 <behavior>Edit</behavior>
                 <field>Weekday__c</field>
             </layoutItems>

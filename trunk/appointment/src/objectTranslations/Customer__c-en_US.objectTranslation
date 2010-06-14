@@ -459,9 +459,16 @@
         </picklistValues>
     </fields>
     <fields>
-        <help><!-- Enter date of first recurring appointment. --></help>
-        <label><!-- Start Date --></label>
-        <name>Recurring_Start_DateTime__c</name>
+        <label><!-- Recurring End Date --></label>
+        <name>Recurring_End_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Recurring Start Time --></label>
+        <name>Recurring_Start_DT__c</name>
+    </fields>
+    <fields>
+        <label><!-- Recurring Start Date --></label>
+        <name>Recurring_Start_Date__c</name>
     </fields>
     <fields>
         <help><!-- Check if this customer desires to have recurring appointments. --></help>

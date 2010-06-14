@@ -1297,15 +1297,6 @@
         <type>Checkbox</type>
     </fields>
     <fields>
-        <fullName>Setting__c</fullName>
-        <label>Business Name</label>
-        <referenceTo>Setting__c</referenceTo>
-        <relationshipLabel>Operating Hours</relationshipLabel>
-        <relationshipName>Operating_Hours</relationshipName>
-        <relationshipOrder>0</relationshipOrder>
-        <type>MasterDetail</type>
-    </fields>
-    <fields>
         <fullName>Sunday_From_DT__c</fullName>
         <label>Sunday From DT</label>
         <type>DateTime</type>
@@ -2981,5 +2972,5 @@
     </nameField>
     <pluralLabel>Operating Hours</pluralLabel>
     <searchLayouts/>
-    <sharingModel>ControlledByParent</sharingModel>
+    <sharingModel>ReadWrite</sharingModel>
 </CustomObject>

@@ -1229,11 +1229,6 @@
         <name>Saturday__c</name>
     </fields>
     <fields>
-        <label><!-- Business Name --></label>
-        <name>Setting__c</name>
-        <relationshipLabel><!-- Operating Hours --></relationshipLabel>
-    </fields>
-    <fields>
         <label><!-- Sunday From DT --></label>
         <name>Sunday_From_DT__c</name>
     </fields>

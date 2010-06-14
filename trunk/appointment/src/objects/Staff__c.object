@@ -53,7 +53,7 @@
     <fields>
         <fullName>Category__c</fullName>
         <label>Category</label>
-        <referenceTo>Category__c</referenceTo>
+        <referenceTo>Service_Category__c</referenceTo>
         <relationshipLabel>Staff</relationshipLabel>
         <relationshipName>Staff</relationshipName>
         <type>Lookup</type>
