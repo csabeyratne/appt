@@ -41,6 +41,15 @@
         <type>DateTime</type>
     </fields>
     <fields>
+        <fullName>Settings__c</fullName>
+        <label>Settings</label>
+        <referenceTo>Setting__c</referenceTo>
+        <relationshipLabel>Time Ranges</relationshipLabel>
+        <relationshipName>Time_Ranges</relationshipName>
+        <relationshipOrder>0</relationshipOrder>
+        <type>MasterDetail</type>
+    </fields>
+    <fields>
         <fullName>Time_String__c</fullName>
         <label>Time String</label>
         <length>10</length>
@@ -48,48 +57,18 @@
     </fields>
     <fields>
         <fullName>Weekday_Number__c</fullName>
-        <formula>CASE(TEXT( Weekday__c ), &quot;Sunday&quot;, 0, &quot;Monday&quot;, 1, &quot;Tuesday&quot;, 2, &quot;Wednesday&quot;, 3, &quot;Thursday&quot;, 4, &quot;Friday&quot;, 5, &quot;Saturday&quot;, 6, NULL)</formula>
-        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <description>Number associated with weekday: Sunday = 0 ... Saturday = 6.</description>
         <label>Weekday Number</label>
-        <precision>18</precision>
+        <precision>1</precision>
         <scale>0</scale>
         <type>Number</type>
     </fields>
     <fields>
         <fullName>Weekday__c</fullName>
+        <formula>CASE( Weekday_Number__c, 0, &quot;Sunday&quot;, 1, &quot;Monday&quot;, 2, &quot;Tuesday&quot;, 3, &quot;Wednesday&quot;, 4, &quot;Thursday&quot;, 5, &quot;Friday&quot;, 6, &quot;Saturday&quot;, NULL )</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
         <label>Weekday</label>
-        <picklist>
-            <picklistValues>
-                <fullName>Sunday</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>Monday</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>Tuesday</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>Wednesday</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>Thursday</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>Friday</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>Saturday</fullName>
-                <default>false</default>
-            </picklistValues>
-            <sorted>false</sorted>
-        </picklist>
-        <type>Picklist</type>
+        <type>Text</type>
     </fields>
     <label>Time Range</label>
     <listViews>
@@ -103,14 +82,10 @@
     </nameField>
     <pluralLabel>Time Ranges</pluralLabel>
     <searchLayouts>
-        <customTabListAdditionalFields>Weekday__c</customTabListAdditionalFields>
         <customTabListAdditionalFields>Time_String__c</customTabListAdditionalFields>
-        <lookupDialogsAdditionalFields>Weekday__c</lookupDialogsAdditionalFields>
         <lookupDialogsAdditionalFields>Time_String__c</lookupDialogsAdditionalFields>
-        <lookupPhoneDialogsAdditionalFields>Weekday__c</lookupPhoneDialogsAdditionalFields>
         <lookupPhoneDialogsAdditionalFields>Time_String__c</lookupPhoneDialogsAdditionalFields>
-        <searchResultsAdditionalFields>Weekday__c</searchResultsAdditionalFields>
         <searchResultsAdditionalFields>Time_String__c</searchResultsAdditionalFields>
     </searchLayouts>
-    <sharingModel>ReadWrite</sharingModel>
+    <sharingModel>ControlledByParent</sharingModel>
 </CustomObject>

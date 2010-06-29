@@ -57,7 +57,7 @@
     </fields>
     <fields>
         <help><!-- Enter the duration in minutes. --></help>
-        <label><!-- Duration --></label>
+        <label><!-- Friday Duration --></label>
         <name>Friday_Duration__c</name>
     </fields>
     <fields>
@@ -604,7 +604,7 @@
     </fields>
     <fields>
         <help><!-- Enter the duration in minutes. --></help>
-        <label><!-- Duration --></label>
+        <label><!-- Monday Duration --></label>
         <name>Monday_Duration__c</name>
     </fields>
     <fields>
@@ -1014,7 +1014,7 @@
     </fields>
     <fields>
         <help><!-- Enter the duration in minutes. --></help>
-        <label><!-- Duration --></label>
+        <label><!-- Saturday Duration --></label>
         <name>Saturday_Duration__c</name>
     </fields>
     <fields>
@@ -1635,7 +1635,7 @@
     </fields>
     <fields>
         <help><!-- Enter the duration in minutes. --></help>
-        <label><!-- Duration --></label>
+        <label><!-- Sunday Duration --></label>
         <name>Sunday_Duration__c</name>
     </fields>
     <fields>
@@ -2044,7 +2044,7 @@
     </fields>
     <fields>
         <help><!-- Enter the duration in minutes. --></help>
-        <label><!-- Duration --></label>
+        <label><!-- Thursday Duration --></label>
         <name>Thursday_Duration__c</name>
     </fields>
     <fields>
@@ -2465,7 +2465,7 @@
     </fields>
     <fields>
         <help><!-- Enter the duration in minutes. --></help>
-        <label><!-- Duration --></label>
+        <label><!-- Tuesday Duration --></label>
         <name>Tuesday_Duration__c</name>
     </fields>
     <fields>
@@ -2879,7 +2879,7 @@
     </fields>
     <fields>
         <help><!-- Enter the duration in minutes. --></help>
-        <label><!-- Duration --></label>
+        <label><!-- Wednesday Duration --></label>
         <name>Wednesday_Duration__c</name>
     </fields>
     <fields>
@@ -3304,6 +3304,13 @@
         <name>Zip_Code__c</name>
     </fields>
     <layouts>
+        <layout>Operating Hours</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <layouts>
         <layout>Settings Layout</layout>
         <sections>
             <label><!-- Additional Settings --></label>
@@ -3317,6 +3324,38 @@
             <label><!-- Custom Links --></label>
             <section>Custom Links</section>
         </sections>
+        <sections>
+            <label><!-- Operating Hours --></label>
+            <section>Operating Hours</section>
+        </sections>
     </layouts>
     <startsWith>Consonant</startsWith>
+    <validationRules>
+        <errorMessage><!-- Please select &quot;From&quot; and &quot;To&quot; times for Friday. --></errorMessage>
+        <name>RequiredFridayTimes</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Please select &quot;From&quot; and &quot;To&quot; times for Monday. --></errorMessage>
+        <name>RequiredMondayTimes</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Please select &quot;From&quot; and &quot;To&quot; times for Saturday. --></errorMessage>
+        <name>RequiredSaturdayTimes</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Please select &quot;From&quot; and &quot;To&quot; times for Sunday. --></errorMessage>
+        <name>RequiredSundayTimes</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Please select &quot;From&quot; and &quot;To&quot; times for Thursday. --></errorMessage>
+        <name>RequiredThursdayTimes</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Please select &quot;From&quot; and &quot;To&quot; times for Tuesday. --></errorMessage>
+        <name>RequiredTuesdayTimes</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Please select &quot;From&quot; and &quot;To&quot; times for Wednesday. --></errorMessage>
+        <name>RequiredWednesdayTimes</name>
+    </validationRules>
 </CustomObjectTranslation>
