@@ -50,7 +50,7 @@
         <fullName>Friday_Duration__c</fullName>
         <description>The unit of measure for &apos;Duration&apos; is minutes.</description>
         <inlineHelpText>Enter the duration in minutes.</inlineHelpText>
-        <label>Duration</label>
+        <label>Friday Duration</label>
         <precision>18</precision>
         <scale>0</scale>
         <type>Number</type>
@@ -475,7 +475,7 @@
         <fullName>Monday_Duration__c</fullName>
         <description>The unit of measure for &apos;Duration&apos; is minutes.</description>
         <inlineHelpText>Enter the duration in minutes.</inlineHelpText>
-        <label>Duration</label>
+        <label>Monday Duration</label>
         <precision>18</precision>
         <scale>0</scale>
         <type>Number</type>
@@ -901,7 +901,7 @@
         <fullName>Saturday_Duration__c</fullName>
         <description>The unit of measure for &apos;Duration&apos; is minutes.</description>
         <inlineHelpText>Enter the duration in minutes.</inlineHelpText>
-        <label>Duration</label>
+        <label>Saturday Duration</label>
         <precision>18</precision>
         <scale>0</scale>
         <type>Number</type>
@@ -1334,7 +1334,7 @@
         <fullName>Sunday_Duration__c</fullName>
         <description>The unit of measure for &apos;Duration&apos; is minutes.</description>
         <inlineHelpText>Enter the duration in minutes.</inlineHelpText>
-        <label>Duration</label>
+        <label>Sunday Duration</label>
         <precision>18</precision>
         <scale>0</scale>
         <type>Number</type>
@@ -1759,7 +1759,7 @@
         <fullName>Thursday_Duration__c</fullName>
         <description>The unit of measure for &apos;Duration&apos; is minutes.</description>
         <inlineHelpText>Enter the duration in minutes.</inlineHelpText>
-        <label>Duration</label>
+        <label>Thursday Duration</label>
         <precision>18</precision>
         <scale>0</scale>
         <type>Number</type>
@@ -2184,7 +2184,7 @@
         <fullName>Tuesday_Duration__c</fullName>
         <description>The unit of measure for &apos;Duration&apos; is minutes.</description>
         <inlineHelpText>Enter the duration in minutes.</inlineHelpText>
-        <label>Duration</label>
+        <label>Tuesday Duration</label>
         <precision>18</precision>
         <scale>0</scale>
         <type>Number</type>
@@ -2609,7 +2609,7 @@
         <fullName>Wednesday_Duration__c</fullName>
         <description>The unit of measure for &apos;Duration&apos; is minutes.</description>
         <inlineHelpText>Enter the duration in minutes.</inlineHelpText>
-        <label>Duration</label>
+        <label>Wednesday Duration</label>
         <precision>18</precision>
         <scale>0</scale>
         <type>Number</type>

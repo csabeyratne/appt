@@ -18,12 +18,16 @@
                 <field>DateTime_Value__c</field>
             </layoutItems>
             <layoutItems>
+                <behavior>Required</behavior>
+                <field>Settings__c</field>
+            </layoutItems>
+            <layoutItems>
                 <behavior>Edit</behavior>
-                <field>Weekday__c</field>
+                <field>Weekday_Number__c</field>
             </layoutItems>
             <layoutItems>
                 <behavior>Readonly</behavior>
-                <field>Weekday_Number__c</field>
+                <field>Weekday__c</field>
             </layoutItems>
         </layoutColumns>
         <layoutColumns/>

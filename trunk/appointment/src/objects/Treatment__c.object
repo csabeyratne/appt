@@ -33,6 +33,7 @@
         <type>Default</type>
     </actionOverrides>
     <deploymentStatus>Deployed</deploymentStatus>
+    <description>Service history for customer.</description>
     <enableHistory>true</enableHistory>
     <enableReports>true</enableReports>
     <fields>

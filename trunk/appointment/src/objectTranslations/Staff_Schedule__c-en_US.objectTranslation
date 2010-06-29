@@ -17,7 +17,7 @@
     </fields>
     <fields>
         <help><!-- Enter the duration in minutes. --></help>
-        <label><!-- Duration --></label>
+        <label><!-- Friday Duration --></label>
         <name>Friday_Duration__c</name>
     </fields>
     <fields>
@@ -426,7 +426,7 @@
     </fields>
     <fields>
         <help><!-- Enter the duration in minutes. --></help>
-        <label><!-- Duration --></label>
+        <label><!-- Monday Duration --></label>
         <name>Monday_Duration__c</name>
     </fields>
     <fields>
@@ -836,7 +836,7 @@
     </fields>
     <fields>
         <help><!-- Enter the duration in minutes. --></help>
-        <label><!-- Duration --></label>
+        <label><!-- Saturday Duration --></label>
         <name>Saturday_Duration__c</name>
     </fields>
     <fields>
@@ -1250,7 +1250,7 @@
     </fields>
     <fields>
         <help><!-- Enter the duration in minutes. --></help>
-        <label><!-- Duration --></label>
+        <label><!-- Sunday Duration --></label>
         <name>Sunday_Duration__c</name>
     </fields>
     <fields>
@@ -1659,7 +1659,7 @@
     </fields>
     <fields>
         <help><!-- Enter the duration in minutes. --></help>
-        <label><!-- Duration --></label>
+        <label><!-- Thursday Duration --></label>
         <name>Thursday_Duration__c</name>
     </fields>
     <fields>
@@ -2068,7 +2068,7 @@
     </fields>
     <fields>
         <help><!-- Enter the duration in minutes. --></help>
-        <label><!-- Duration --></label>
+        <label><!-- Tuesday Duration --></label>
         <name>Tuesday_Duration__c</name>
     </fields>
     <fields>
@@ -2477,7 +2477,7 @@
     </fields>
     <fields>
         <help><!-- Enter the duration in minutes. --></help>
-        <label><!-- Duration --></label>
+        <label><!-- Wednesday Duration --></label>
         <name>Wednesday_Duration__c</name>
     </fields>
     <fields>

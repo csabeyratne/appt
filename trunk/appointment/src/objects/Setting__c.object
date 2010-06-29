@@ -96,7 +96,7 @@
         <fullName>Friday_Duration__c</fullName>
         <description>The unit of measure for &apos;Duration&apos; is minutes.</description>
         <inlineHelpText>Enter the duration in minutes.</inlineHelpText>
-        <label>Duration</label>
+        <label>Friday Duration</label>
         <precision>18</precision>
         <scale>0</scale>
         <type>Number</type>
@@ -676,7 +676,7 @@ IF(ISBLANK(Last_Name__c ), TRIM(First_Name__c), TRIM(Last_Name__c) &amp; &quot;,
         <fullName>Monday_Duration__c</fullName>
         <description>The unit of measure for &apos;Duration&apos; is minutes.</description>
         <inlineHelpText>Enter the duration in minutes.</inlineHelpText>
-        <label>Duration</label>
+        <label>Monday Duration</label>
         <precision>18</precision>
         <scale>0</scale>
         <type>Number</type>
@@ -1102,7 +1102,7 @@ IF(ISBLANK(Last_Name__c ), TRIM(First_Name__c), TRIM(Last_Name__c) &amp; &quot;,
         <fullName>Saturday_Duration__c</fullName>
         <description>The unit of measure for &apos;Duration&apos; is minutes.</description>
         <inlineHelpText>Enter the duration in minutes.</inlineHelpText>
-        <label>Duration</label>
+        <label>Saturday Duration</label>
         <precision>18</precision>
         <scale>0</scale>
         <type>Number</type>
@@ -1744,7 +1744,7 @@ IF(ISBLANK(Last_Name__c ), TRIM(First_Name__c), TRIM(Last_Name__c) &amp; &quot;,
         <fullName>Sunday_Duration__c</fullName>
         <description>The unit of measure for &apos;Duration&apos; is minutes.</description>
         <inlineHelpText>Enter the duration in minutes.</inlineHelpText>
-        <label>Duration</label>
+        <label>Sunday Duration</label>
         <precision>18</precision>
         <scale>0</scale>
         <type>Number</type>
@@ -2169,7 +2169,7 @@ IF(ISBLANK(Last_Name__c ), TRIM(First_Name__c), TRIM(Last_Name__c) &amp; &quot;,
         <fullName>Thursday_Duration__c</fullName>
         <description>The unit of measure for &apos;Duration&apos; is minutes.</description>
         <inlineHelpText>Enter the duration in minutes.</inlineHelpText>
-        <label>Duration</label>
+        <label>Thursday Duration</label>
         <precision>18</precision>
         <scale>0</scale>
         <type>Number</type>
@@ -2610,7 +2610,7 @@ IF(ISBLANK(Last_Name__c ), TRIM(First_Name__c), TRIM(Last_Name__c) &amp; &quot;,
         <fullName>Tuesday_Duration__c</fullName>
         <description>The unit of measure for &apos;Duration&apos; is minutes.</description>
         <inlineHelpText>Enter the duration in minutes.</inlineHelpText>
-        <label>Duration</label>
+        <label>Tuesday Duration</label>
         <precision>18</precision>
         <scale>0</scale>
         <type>Number</type>
@@ -3042,7 +3042,7 @@ IF(ISBLANK(Last_Name__c ), TRIM(First_Name__c), TRIM(Last_Name__c) &amp; &quot;,
         <fullName>Wednesday_Duration__c</fullName>
         <description>The unit of measure for &apos;Duration&apos; is minutes.</description>
         <inlineHelpText>Enter the duration in minutes.</inlineHelpText>
-        <label>Duration</label>
+        <label>Wednesday Duration</label>
         <precision>18</precision>
         <scale>0</scale>
         <type>Number</type>
@@ -3500,4 +3500,60 @@ IF(ISBLANK(Last_Name__c ), TRIM(First_Name__c), TRIM(Last_Name__c) &amp; &quot;,
     <pluralLabel>Settings</pluralLabel>
     <searchLayouts/>
     <sharingModel>ReadWrite</sharingModel>
+    <validationRules>
+        <fullName>RequiredFridayTimes</fullName>
+        <active>true</active>
+        <description>If open on Friday, must select From and To times.</description>
+        <errorConditionFormula>AND( Friday__c , OR( ISPICKVAL( Friday_From__c , &quot;--None--&quot; ) , ISPICKVAL( Friday_To__c , &quot;--None--&quot; ),  ISPICKVAL( Friday_From__c , &quot;&quot; ) , ISPICKVAL( Friday_To__c , &quot;&quot; ) ) )</errorConditionFormula>
+        <errorDisplayField>Friday__c</errorDisplayField>
+        <errorMessage>Please select &quot;From&quot; and &quot;To&quot; times for Friday.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>RequiredMondayTimes</fullName>
+        <active>true</active>
+        <description>If open on Monday, must select From and To times.</description>
+        <errorConditionFormula>AND( Monday__c , OR( ISPICKVAL( Monday_From__c , &quot;--None--&quot; ) , ISPICKVAL( Monday_To__c , &quot;--None--&quot; ),  ISPICKVAL( Monday_From__c , &quot;&quot; ) , ISPICKVAL( Monday_To__c , &quot;&quot; ) ) )</errorConditionFormula>
+        <errorDisplayField>Monday__c</errorDisplayField>
+        <errorMessage>Please select &quot;From&quot; and &quot;To&quot; times for Monday.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>RequiredSaturdayTimes</fullName>
+        <active>true</active>
+        <description>If open on Saturday, must select From and To times.</description>
+        <errorConditionFormula>AND( Saturday__c , OR( ISPICKVAL( Saturday_From__c , &quot;--None--&quot; ) , ISPICKVAL( Saturday_To__c , &quot;--None--&quot; ),  ISPICKVAL( Saturday_From__c , &quot;&quot; ) , ISPICKVAL( Saturday_To__c , &quot;&quot; ) ) )</errorConditionFormula>
+        <errorDisplayField>Saturday__c</errorDisplayField>
+        <errorMessage>Please select &quot;From&quot; and &quot;To&quot; times for Saturday.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>RequiredSundayTimes</fullName>
+        <active>true</active>
+        <description>If open on Sunday, must select From and To times.</description>
+        <errorConditionFormula>AND( Sunday__c , OR( ISPICKVAL( Sunday_From__c , &quot;--None--&quot; ) , ISPICKVAL( Sunday_To__c , &quot;--None--&quot; ),  ISPICKVAL( Sunday_From__c , &quot;&quot; ) , ISPICKVAL( Sunday_To__c , &quot;&quot; ) ) )</errorConditionFormula>
+        <errorDisplayField>Sunday__c</errorDisplayField>
+        <errorMessage>Please select &quot;From&quot; and &quot;To&quot; times for Sunday.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>RequiredThursdayTimes</fullName>
+        <active>true</active>
+        <description>If open on Thursday, must select From and To times.</description>
+        <errorConditionFormula>AND( Thursday__c , OR( ISPICKVAL( Thursday_From__c , &quot;--None--&quot; ) , ISPICKVAL( Thursday_To__c , &quot;--None--&quot; ),  ISPICKVAL( Thursday_From__c , &quot;&quot; ) , ISPICKVAL( Thursday_To__c , &quot;&quot; ) ) )</errorConditionFormula>
+        <errorDisplayField>Thursday__c</errorDisplayField>
+        <errorMessage>Please select &quot;From&quot; and &quot;To&quot; times for Thursday.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>RequiredTuesdayTimes</fullName>
+        <active>true</active>
+        <description>If open on Tuesday, must select From and To times.</description>
+        <errorConditionFormula>AND( Tuesday__c , OR( ISPICKVAL( Tuesday_From__c , &quot;--None--&quot; ) , ISPICKVAL( Tuesday_To__c , &quot;--None--&quot; ),  ISPICKVAL( Tuesday_From__c , &quot;&quot; ) , ISPICKVAL( Tuesday_To__c , &quot;&quot; ) ) )</errorConditionFormula>
+        <errorDisplayField>Tuesday__c</errorDisplayField>
+        <errorMessage>Please select &quot;From&quot; and &quot;To&quot; times for Tuesday.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>RequiredWednesdayTimes</fullName>
+        <active>true</active>
+        <description>If open on Wednesday, must select From and To times.</description>
+        <errorConditionFormula>AND( Wednesday__c , OR( ISPICKVAL( Wednesday_From__c , &quot;--None--&quot; ) , ISPICKVAL( Wednesday_To__c , &quot;--None--&quot; ),  ISPICKVAL( Wednesday_From__c , &quot;&quot; ) , ISPICKVAL( Wednesday_To__c , &quot;&quot; ) ) )</errorConditionFormula>
+        <errorDisplayField>Wednesday__c</errorDisplayField>
+        <errorMessage>Please select &quot;From&quot; and &quot;To&quot; times for Wednesday.</errorMessage>
+    </validationRules>
 </CustomObject>

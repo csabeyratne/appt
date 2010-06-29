@@ -12,6 +12,11 @@
         <name>DateTime_Value__c</name>
     </fields>
     <fields>
+        <label><!-- Settings --></label>
+        <name>Settings__c</name>
+        <relationshipLabel><!-- Time Ranges --></relationshipLabel>
+    </fields>
+    <fields>
         <label><!-- Time String --></label>
         <name>Time_String__c</name>
     </fields>
@@ -22,34 +27,6 @@
     <fields>
         <label><!-- Weekday --></label>
         <name>Weekday__c</name>
-        <picklistValues>
-            <masterLabel>Friday</masterLabel>
-            <translation><!-- Friday --></translation>
-        </picklistValues>
-        <picklistValues>
-            <masterLabel>Monday</masterLabel>
-            <translation><!-- Monday --></translation>
-        </picklistValues>
-        <picklistValues>
-            <masterLabel>Saturday</masterLabel>
-            <translation><!-- Saturday --></translation>
-        </picklistValues>
-        <picklistValues>
-            <masterLabel>Sunday</masterLabel>
-            <translation><!-- Sunday --></translation>
-        </picklistValues>
-        <picklistValues>
-            <masterLabel>Thursday</masterLabel>
-            <translation><!-- Thursday --></translation>
-        </picklistValues>
-        <picklistValues>
-            <masterLabel>Tuesday</masterLabel>
-            <translation><!-- Tuesday --></translation>
-        </picklistValues>
-        <picklistValues>
-            <masterLabel>Wednesday</masterLabel>
-            <translation><!-- Wednesday --></translation>
-        </picklistValues>
     </fields>
     <layouts>
         <layout>Time Range Layout</layout>

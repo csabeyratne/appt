@@ -2153,6 +2153,11 @@
         <field>Time_Range__c.DateTime_Value__c</field>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
+        <editable>false</editable>
+        <field>Time_Range__c.Settings__c</field>
+        <hidden>true</hidden>
+    </fieldLevelSecurities>
+    <fieldLevelSecurities>
         <editable>true</editable>
         <field>Time_Range__c.Time_String__c</field>
     </fieldLevelSecurities>

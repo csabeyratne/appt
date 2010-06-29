@@ -13,6 +13,11 @@
     </packageVersions>
     <packageVersions>
         <majorNumber>1</majorNumber>
+        <minorNumber>12</minorNumber>
+        <namespace>INFA</namespace>
+    </packageVersions>
+    <packageVersions>
+        <majorNumber>1</majorNumber>
         <minorNumber>0</minorNumber>
         <namespace>cloudconverter</namespace>
     </packageVersions>

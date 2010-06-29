@@ -96,11 +96,11 @@ public class Utils {
         string minute = timeStringDivided.get(1);
         string second = '00';
         
-        if (timeStringDivided.get(2) == 'PM')
-        {
+        if (timeStringDivided.get(2) == 'PM') {
             hour = String.valueOf(Integer.valueOf(hour) + 12);
         }
 
+        // create datetime 
         string stringDateTime = dateString + ' ' + hour + ':' + minute +  ':' + second;
 
         //system.debug('Date: ' + dateString);
@@ -122,7 +122,7 @@ public class Utils {
         // an Appontment record expects start time and duration in minutes
 
         integer Duration;
-        string dateString = '2010-01-03'; // 'YYYY-MM-DD' date doesn't really matter here
+        //string dateString = '2010-01-03'; // 'YYYY-MM-DD' date doesn't really matter here
         
         datetime dt1 = getConvertDateTime(timeString1);
         datetime dt2 = getConvertDateTime(timeString2);
@@ -143,6 +143,5 @@ public class Utils {
         return Duration;
 
     } 
-
     
 }
