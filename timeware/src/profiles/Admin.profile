@@ -121,14 +121,6 @@
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>EmployeeHours</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>EmployeeHoursUtils</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
         <apexClass>Field</apexClass>
         <enabled>true</enabled>
     </classAccesses>
@@ -302,14 +294,6 @@
     </classAccesses>
     <classAccesses>
         <apexClass>PageUtilsTest</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>PayPeriodPolicyTrigger</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>PayPeriodPolicyUtils</apexClass>
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
