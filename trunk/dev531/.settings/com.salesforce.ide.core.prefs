@@ -1,0 +1,13 @@
+#Fri Jun 25 11:56:54 EDT 2010
+eclipse.preferences.version=1
+endpointApiVersion=19.0
+endpointEnvironment=Sandbox
+endpointServer=test.salesforce.com
+httpsProtocol=true
+ideVersion=19.0
+keependpoint=false
+metadataFormatVersion=19.0
+namespacePrefix=
+packageName=unpackaged
+readTimeout=600
+username=admin@dev531.3776.com.devorg3776
