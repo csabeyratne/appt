@@ -96,6 +96,10 @@
         </layoutColumns>
         <layoutColumns>
             <layoutItems>
+                <behavior>Readonly</behavior>
+                <field>Sunday_Times_Count__c</field>
+            </layoutItems>
+            <layoutItems>
                 <behavior>Edit</behavior>
                 <field>Sunday_From_DT__c</field>
             </layoutItems>
@@ -215,8 +219,11 @@
     </layoutSections>
     <relatedLists>
         <fields>NAME</fields>
+        <fields>OBJECT_ID</fields>
         <fields>Time_String__c</fields>
         <fields>DateTime_Value__c</fields>
+        <fields>Weekday_Number__c</fields>
+        <fields>Weekday__c</fields>
         <relatedList>Time_Range__c.Settings__c</relatedList>
     </relatedLists>
 </Layout>

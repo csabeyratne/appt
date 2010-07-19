@@ -469,6 +469,10 @@
         <name>Full_Name__c</name>
     </fields>
     <fields>
+        <label><!-- Interval Minutes --></label>
+        <name>Interval_Minutes__c</name>
+    </fields>
+    <fields>
         <label><!-- Last Name --></label>
         <name>Last_Name__c</name>
     </fields>
@@ -1837,6 +1841,10 @@
             <masterLabel>12:30 PM</masterLabel>
             <translation><!-- 12:30 PM --></translation>
         </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Sunday Times Count --></label>
+        <name>Sunday_Times_Count__c</name>
     </fields>
     <fields>
         <label><!-- Sunday To DT --></label>

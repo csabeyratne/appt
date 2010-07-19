@@ -420,6 +420,13 @@ IF(ISBLANK(Last_Name__c ), TRIM(First_Name__c), TRIM(Last_Name__c) &amp; &quot;,
         <type>Picklist</type>
     </fields>
     <fields>
+        <fullName>User__c</fullName>
+        <label>User</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>Staff</relationshipName>
+        <type>Lookup</type>
+    </fields>
+    <fields>
         <fullName>Zip_Code__c</fullName>
         <description>Enter the zip code.</description>
         <inlineHelpText>Please enter the zip code.</inlineHelpText>

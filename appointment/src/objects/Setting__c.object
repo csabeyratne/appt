@@ -527,6 +527,16 @@ IF(ISBLANK(Last_Name__c ), TRIM(First_Name__c), TRIM(Last_Name__c) &amp; &quot;,
         <type>Text</type>
     </fields>
     <fields>
+        <fullName>Interval_Minutes__c</fullName>
+        <description>Appointment Intervals in minutes.</description>
+        <formula>CASE( TEXT( Appointment_Intervals__c ), &apos;15 Minutes&apos;, 15, &apos;30 Minutes&apos;, 30, 0)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Interval Minutes</label>
+        <precision>18</precision>
+        <scale>0</scale>
+        <type>Number</type>
+    </fields>
+    <fields>
         <fullName>Last_Name__c</fullName>
         <label>Last Name</label>
         <length>50</length>
@@ -1953,6 +1963,18 @@ IF(ISBLANK(Last_Name__c ), TRIM(First_Name__c), TRIM(Last_Name__c) &amp; &quot;,
             <sorted>false</sorted>
         </picklist>
         <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Sunday_Times_Count__c</fullName>
+        <label>Sunday Times Count</label>
+        <summaryFilterItems>
+            <field>Time_Range__c.Weekday__c</field>
+            <operation>equals</operation>
+            <value>Sunday</value>
+        </summaryFilterItems>
+        <summaryForeignKey>Time_Range__c.Settings__c</summaryForeignKey>
+        <summaryOperation>count</summaryOperation>
+        <type>Summary</type>
     </fields>
     <fields>
         <fullName>Sunday_To_DT__c</fullName>

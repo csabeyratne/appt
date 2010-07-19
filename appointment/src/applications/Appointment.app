@@ -13,7 +13,7 @@
     <tab>Time_Off__c</tab>
     <tab>Setting__c</tab>
     <tab>Holiday__c</tab>
-    <tab>Closed_Dates__c</tab>
+    <tab>Closed_Date__c</tab>
     <tab>Promotion__c</tab>
     <tab>Time_Range__c</tab>
     <tab>Manufacturer__c</tab>

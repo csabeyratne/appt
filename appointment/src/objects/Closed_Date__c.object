@@ -46,7 +46,7 @@
         <label>Business Name</label>
         <referenceTo>Setting__c</referenceTo>
         <relationshipLabel>Closed Dates</relationshipLabel>
-        <relationshipName>Closed_Dates</relationshipName>
+        <relationshipName>Closed_Date</relationshipName>
         <relationshipOrder>0</relationshipOrder>
         <type>MasterDetail</type>
     </fields>

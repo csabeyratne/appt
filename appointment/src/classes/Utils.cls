@@ -27,7 +27,7 @@ public class Utils {
     
     // <name> triggerAction </name>
     // <summary> contains possible actions for a trigger </summary>
-    public enum triggerAction {beforeInsert, beforeUpdate, beforeDelete, afterInsert, afterUpdate, afterDelete, afterUndelete}
+    // public enum triggerAction {beforeInsert, beforeUpdate, beforeDelete, afterInsert, afterUpdate, afterDelete, afterUndelete}
 
     /* ============================================================
     * This code is part of the "apex-lang" open source project avaiable at:
@@ -45,7 +45,7 @@ public class Utils {
     */
     public static final String LINE_SEPARATOR = '\n';
     public static void debugLimits(){
-        System.debug(
+        System.Debug(
               LINE_SEPARATOR + '##################################################################'
             + LINE_SEPARATOR + 'Limits:'
             + LINE_SEPARATOR + '##################################################################'
@@ -82,40 +82,52 @@ public class Utils {
     * @return datetime 
     */
     public static DateTime getConvertDateTime(string timeString) {
+    
+        // System.Debug('## >>> START Class getConvertDateTime(string timeString)'); 
 
         // used to convert a picklist time value (Format: "10:45 PM") into
         // a datetime the system can use
 
-        string dateString = '2010-01-03'; // 'YYYY-MM-DD' date doesn't really matter here
+        // string dateString = '2010-01-03'; // 'YYYY-MM-DD' date doesn't really matter here
 
         // split string on whitespace or colon
         string splitString = '[\\s:]';
         String[] timeStringDivided = timeString.split(splitString);
 
+        // System.Debug('## >>> timeStringDivided: ' + timeStringDivided);
+        // System.Debug('## >>> timeStringDivided.get(0): ' + timeStringDivided.get(0));
+        // System.Debug('## >>> timeStringDivided.get(1): ' + timeStringDivided.get(1));
+        // System.Debug('## >>> timeStringDivided.get(2): ' + timeStringDivided.get(2));
+
         string hour = timeStringDivided.get(0);
         string minute = timeStringDivided.get(1);
-        string second = '00';
+        // string second = '00';
         
-        if (timeStringDivided.get(2) == 'PM') {
+        if ( (timeStringDivided.get(2) == 'PM') && (timeStringDivided.get(0) <> '12') ) {
             hour = String.valueOf(Integer.valueOf(hour) + 12);
         }
 
         // create datetime 
-        string stringDateTime = dateString + ' ' + hour + ':' + minute +  ':' + second;
+        // string stringDateTime = dateString + ' ' + hour + ':' + minute +  ':' + second;
 
-        //system.debug('Date: ' + dateString);
-        //system.debug('timeStringDivided: ' + timeStringDivided);
-        //system.debug('Hour: ' + hour);
-        //system.debug('Minute: ' + minute);
-        //system.debug('Second: ' + second);
-        //system.debug('timeStringDivided.get(2): ' + timeStringDivided.get(2));
-        //system.debug('stringDateTime: ' + stringDateTime);
+        Datetime dtTime = Datetime.newInstance(2010, 1, 3, Integer.valueOf(hour), Integer.valueOf(minute), 0);
+
+        // System.Debug('## >>> Date: ' + dateString);
+        // System.Debug('## >>> Hour: ' + hour);
+        // System.Debug('## >>> Minute: ' + minute);
+        // System.Debug('## >>> Second: ' + second);
+        // System.Debug('stringDateTime: ' + stringDateTime);
+        // System.Debug('## >>> Datetime.newInstance(): ' + Datetime.newInstance(2010, 1, 3, Integer.valueOf(hour), Integer.valueOf(minute), 0 ));
+        // System.Debug('## >>> datetime.valueOf(stringDateTime): ' + datetime.valueOf(stringDateTime));
         
-        return datetime.valueOf(stringDateTime);
-        
+        // return datetime.valueOfGmt(stringDateTime);
+        return dtTime;
+
     }
 
     public static integer CalcTimeDuration (string timeString1, string timeString2) {
+        
+        // System.Debug('## >>> START Class CalcTimeDuration (string timeString1, string timeString2)');
         
         // calculate the duration in minutes between two picklist time values (Format: "10:45 PM")
         // first time is earlier than second time

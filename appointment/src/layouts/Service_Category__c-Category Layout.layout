@@ -5,6 +5,10 @@
         <label>Information</label>
         <layoutColumns>
             <layoutItems>
+                <behavior>Edit</behavior>
+                <field>Staff__c</field>
+            </layoutItems>
+            <layoutItems>
                 <behavior>Required</behavior>
                 <field>Name</field>
             </layoutItems>
@@ -26,10 +30,6 @@
             <layoutItems>
                 <behavior>Edit</behavior>
                 <field>OwnerId</field>
-            </layoutItems>
-            <layoutItems>
-                <behavior>Edit</behavior>
-                <field>Staff__c</field>
             </layoutItems>
         </layoutColumns>
         <layoutColumns>
@@ -58,7 +58,9 @@
     </relatedLists>
     <relatedLists>
         <fields>NAME</fields>
-        <relatedList>Service_Category__c.Parent_Category__c</relatedList>
+        <fields>Duration__c</fields>
+        <fields>Cost__c</fields>
+        <relatedList>Service__c.Service_Category__c</relatedList>
     </relatedLists>
     <relatedLists>
         <fields>First_Name__c</fields>
@@ -67,11 +69,5 @@
         <fields>Home_Phone__c</fields>
         <fields>Mobile_Phone__c</fields>
         <relatedList>Staff__c.Category__c</relatedList>
-    </relatedLists>
-    <relatedLists>
-        <fields>NAME</fields>
-        <fields>Duration__c</fields>
-        <fields>Cost__c</fields>
-        <relatedList>Service__c.Service_Category__c</relatedList>
     </relatedLists>
 </Layout>
