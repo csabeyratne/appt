@@ -38,14 +38,6 @@
     <enableHistory>true</enableHistory>
     <enableReports>true</enableReports>
     <fields>
-        <fullName>Accrual_Policy__c</fullName>
-        <label>Accrual Policy</label>
-        <referenceTo>Accrual_Policy__c</referenceTo>
-        <relationshipLabel>Accrual Policies</relationshipLabel>
-        <relationshipName>Employees</relationshipName>
-        <type>Lookup</type>
-    </fields>
-    <fields>
         <fullName>Age_Of_Employee__c</fullName>
         <description>Based on Employee&apos;s Birth Date</description>
         <formula>IF(ISBLANK(Birth_Date__c),0,FLOOR((TODAY()-Birth_Date__c)/365.2425))</formula>
@@ -54,14 +46,6 @@
         <precision>18</precision>
         <scale>0</scale>
         <type>Number</type>
-    </fields>
-    <fields>
-        <fullName>Attendance_Policy__c</fullName>
-        <label>Attendance Policy</label>
-        <referenceTo>Attendance_Policy__c</referenceTo>
-        <relationshipLabel>Attendance Policies</relationshipLabel>
-        <relationshipName>Employees</relationshipName>
-        <type>Lookup</type>
     </fields>
     <fields>
         <fullName>Badge_Number__c</fullName>
@@ -74,48 +58,6 @@
     <fields>
         <fullName>Birth_Date__c</fullName>
         <label>Birth Date</label>
-        <type>Date</type>
-    </fields>
-    <fields>
-        <fullName>Cummulative_Occurrences__c</fullName>
-        <label>Cummulative Occurrences</label>
-        <precision>6</precision>
-        <scale>0</scale>
-        <type>Number</type>
-    </fields>
-    <fields>
-        <fullName>Cummulative_Points__c</fullName>
-        <label>Cummulative Points</label>
-        <precision>9</precision>
-        <scale>3</scale>
-        <type>Number</type>
-    </fields>
-    <fields>
-        <fullName>Department__c</fullName>
-        <label>Department</label>
-        <referenceTo>Department__c</referenceTo>
-        <relationshipLabel>Departments</relationshipLabel>
-        <relationshipName>Employees</relationshipName>
-        <type>Lookup</type>
-    </fields>
-    <fields>
-        <fullName>Effective_Date_Department__c</fullName>
-        <label>Effective Date Department</label>
-        <type>Date</type>
-    </fields>
-    <fields>
-        <fullName>Effective_Date_Group__c</fullName>
-        <label>Effective Date Group</label>
-        <type>Date</type>
-    </fields>
-    <fields>
-        <fullName>Effective_Date_Job__c</fullName>
-        <label>Effective Date Job</label>
-        <type>Date</type>
-    </fields>
-    <fields>
-        <fullName>Effective_Date_Labor__c</fullName>
-        <label>Effective Date Labor</label>
         <type>Date</type>
     </fields>
     <fields>
@@ -189,21 +131,6 @@ IF(ISNULL(Last_Name__c ), TRIM(First_Name__c), TRIM(Last_Name__c) &amp; &quot;, 
         <type>Lookup</type>
     </fields>
     <fields>
-        <fullName>Months_Of_Service__c</fullName>
-        <formula>IF( ISBLANK(Hire_Date__c), 0, (TODAY()  - Hire_Date__c) / 30.5 )</formula>
-        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
-        <label>Months Of Service</label>
-        <precision>18</precision>
-        <scale>0</scale>
-        <type>Number</type>
-    </fields>
-    <fields>
-        <fullName>Pay_Group_Code__c</fullName>
-        <label>Pay Group Code</label>
-        <length>10</length>
-        <type>Text</type>
-    </fields>
-    <fields>
         <fullName>Pay_Period_Policy__c</fullName>
         <label>Pay Period Policy</label>
         <referenceTo>Pay_Period_Policy__c</referenceTo>
@@ -232,14 +159,6 @@ IF(ISNULL(Last_Name__c ), TRIM(First_Name__c), TRIM(Last_Name__c) &amp; &quot;, 
         <type>Picklist</type>
     </fields>
     <fields>
-        <fullName>Pay_Policy__c</fullName>
-        <label>Pay Policy</label>
-        <referenceTo>Pay_Policy__c</referenceTo>
-        <relationshipLabel>Pay Policies</relationshipLabel>
-        <relationshipName>Employees</relationshipName>
-        <type>Lookup</type>
-    </fields>
-    <fields>
         <fullName>Pay_Rate__c</fullName>
         <label>Pay Rate</label>
         <precision>11</precision>
@@ -250,22 +169,6 @@ IF(ISNULL(Last_Name__c ), TRIM(First_Name__c), TRIM(Last_Name__c) &amp; &quot;, 
         <fullName>Salesforce_User__c</fullName>
         <label>User</label>
         <referenceTo>User</referenceTo>
-        <relationshipName>Employees</relationshipName>
-        <type>Lookup</type>
-    </fields>
-    <fields>
-        <fullName>Shift_Number__c</fullName>
-        <defaultValue>1</defaultValue>
-        <label>Shift Number</label>
-        <precision>4</precision>
-        <scale>0</scale>
-        <type>Number</type>
-    </fields>
-    <fields>
-        <fullName>Shift_Template__c</fullName>
-        <label>Shift Template</label>
-        <referenceTo>Shift_Template__c</referenceTo>
-        <relationshipLabel>Shift Templates</relationshipLabel>
         <relationshipName>Employees</relationshipName>
         <type>Lookup</type>
     </fields>
@@ -310,27 +213,6 @@ IF(ISNULL(Last_Name__c ), TRIM(First_Name__c), TRIM(Last_Name__c) &amp; &quot;, 
         <label>Substitute User</label>
         <referenceTo>User</referenceTo>
         <relationshipName>Employees1</relationshipName>
-        <type>Lookup</type>
-    </fields>
-    <fields>
-        <fullName>Supervisor_Name__c</fullName>
-        <label>Supervisor Name</label>
-        <length>121</length>
-        <type>Text</type>
-    </fields>
-    <fields>
-        <fullName>Supervisor_Number__c</fullName>
-        <label>Supervisor Number</label>
-        <precision>9</precision>
-        <scale>0</scale>
-        <type>Number</type>
-    </fields>
-    <fields>
-        <fullName>Temporary_Badge__c</fullName>
-        <label>Temporary Badge</label>
-        <referenceTo>Employee__c</referenceTo>
-        <relationshipLabel>Employees (Temporary Badge)</relationshipLabel>
-        <relationshipName>Employees2</relationshipName>
         <type>Lookup</type>
     </fields>
     <fields>

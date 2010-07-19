@@ -31,10 +31,6 @@
                 <behavior>Required</behavior>
                 <field>Effective_Date__c</field>
             </layoutItems>
-            <layoutItems>
-                <behavior>Edit</behavior>
-                <field>Closeout_Cutoff_Days__c</field>
-            </layoutItems>
         </layoutColumns>
         <layoutColumns>
             <layoutItems>
@@ -89,9 +85,6 @@
         <fields>Pay_Period_Start__c</fields>
         <fields>Pay_Period_End__c</fields>
         <fields>Status__c</fields>
-        <fields>Summary_Stamp__c</fields>
-        <fields>Transfer_Stamp__c</fields>
-        <fields>Closeout_Stamp__c</fields>
         <relatedList>Pay_Period__c.Pay_Period_Policy__c</relatedList>
     </relatedLists>
     <relatedLists>

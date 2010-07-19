@@ -37,11 +37,6 @@
     <enableActivities>true</enableActivities>
     <enableReports>true</enableReports>
     <fields>
-        <fullName>Closeout_Stamp__c</fullName>
-        <label>Close-Out Run On</label>
-        <type>DateTime</type>
-    </fields>
-    <fields>
         <fullName>Current_Pay_Period__c</fullName>
         <defaultValue>false</defaultValue>
         <description>Flag indicates the current pay period.</description>
@@ -101,28 +96,9 @@ DATE( YEAR(Pay_Period_End__c) , MONTH(Pay_Period_End__c) ,  16),
         <type>Picklist</type>
     </fields>
     <fields>
-        <fullName>Summary_Stamp__c</fullName>
-        <label>Summary Created On</label>
-        <type>DateTime</type>
-    </fields>
-    <fields>
-        <fullName>Transfer_Stamp__c</fullName>
-        <description>DateTime Stamp of when the transfer file was created.</description>
-        <label>Transfer Created On</label>
-        <type>DateTime</type>
-    </fields>
-    <fields>
         <fullName>Work_Week_End__c</fullName>
         <label>Work Week End</label>
         <type>Date</type>
-    </fields>
-    <fields>
-        <fullName>Work_Week_Number_YTD__c</fullName>
-        <description>&apos;Work Week Number YTD&apos; indicates what pay week it is for the year.</description>
-        <label>Work Week Number YTD</label>
-        <precision>2</precision>
-        <scale>0</scale>
-        <type>Number</type>
     </fields>
     <fields>
         <fullName>Work_Week_Number__c</fullName>

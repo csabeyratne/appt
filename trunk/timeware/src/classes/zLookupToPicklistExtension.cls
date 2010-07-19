@@ -12,8 +12,8 @@ public class zLookupToPicklistExtension {
     public SelectOption[] getLocationOptions() {
         SelectOption[] locations = new SelectOption[]{};
         /*locations.add(new SelectOption('','–None–'));*/
-        for (Location__c l : [select name, description__c from location__c where active__c = true order by name]) {
-            locations.add(new SelectOption(l.name, l.name + ' ' + l.description__c));
+        for (Location__c l : [select name from location__c where active__c = true order by name]) {
+            locations.add(new SelectOption(l.name, l.name));
         }
         return locations;
     }

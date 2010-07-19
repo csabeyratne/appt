@@ -45,110 +45,12 @@
         <type>Checkbox</type>
     </fields>
     <fields>
-        <fullName>Department_Five__c</fullName>
-        <label>Department Five</label>
-        <referenceTo>Department__c</referenceTo>
-        <relationshipName>R00N70000002IZKeEAO</relationshipName>
-        <type>Lookup</type>
-    </fields>
-    <fields>
-        <fullName>Department_Four__c</fullName>
-        <label>Department Four</label>
-        <referenceTo>Department__c</referenceTo>
-        <relationshipName>R00N70000002IZKdEAO</relationshipName>
-        <type>Lookup</type>
-    </fields>
-    <fields>
-        <fullName>Department_One__c</fullName>
-        <label>Department One</label>
-        <referenceTo>Department__c</referenceTo>
-        <relationshipName>R00N70000002IZMBEA4</relationshipName>
-        <type>Lookup</type>
-    </fields>
-    <fields>
-        <fullName>Department_Seven__c</fullName>
-        <label>Department Seven</label>
-        <referenceTo>Department__c</referenceTo>
-        <relationshipName>R00N70000002IZOPEA4</relationshipName>
-        <type>Lookup</type>
-    </fields>
-    <fields>
-        <fullName>Department_Six__c</fullName>
-        <label>Department Six</label>
-        <referenceTo>Department__c</referenceTo>
-        <relationshipName>R00N70000002IZOOEA4</relationshipName>
-        <type>Lookup</type>
-    </fields>
-    <fields>
-        <fullName>Department_Three__c</fullName>
-        <label>Department Three</label>
-        <referenceTo>Department__c</referenceTo>
-        <relationshipName>R00N70000002IZOEEA4</relationshipName>
-        <type>Lookup</type>
-    </fields>
-    <fields>
-        <fullName>Department_Two__c</fullName>
-        <label>Department Two</label>
-        <referenceTo>Department__c</referenceTo>
-        <relationshipName>R00N70000002IZKcEAO</relationshipName>
-        <type>Lookup</type>
-    </fields>
-    <fields>
         <fullName>Employee__c</fullName>
         <label>Employee</label>
         <referenceTo>Employee__c</referenceTo>
         <relationshipName>R00N70000002IOY3EAO</relationshipName>
         <relationshipOrder>0</relationshipOrder>
         <type>MasterDetail</type>
-    </fields>
-    <fields>
-        <fullName>Job_Five__c</fullName>
-        <label>Job Five</label>
-        <referenceTo>Job__c</referenceTo>
-        <relationshipName>R00N70000002Ib9yEAC</relationshipName>
-        <type>Lookup</type>
-    </fields>
-    <fields>
-        <fullName>Job_Four__c</fullName>
-        <label>Job Four</label>
-        <referenceTo>Job__c</referenceTo>
-        <relationshipName>R00N70000002Ib9vEAC</relationshipName>
-        <type>Lookup</type>
-    </fields>
-    <fields>
-        <fullName>Job_One__c</fullName>
-        <label>Job One</label>
-        <referenceTo>Job__c</referenceTo>
-        <relationshipName>R00N70000002Ib9oEAC</relationshipName>
-        <type>Lookup</type>
-    </fields>
-    <fields>
-        <fullName>Job_Seven__c</fullName>
-        <label>Job Seven</label>
-        <referenceTo>Job__c</referenceTo>
-        <relationshipName>R00N70000002IbA3EAK</relationshipName>
-        <type>Lookup</type>
-    </fields>
-    <fields>
-        <fullName>Job_Six__c</fullName>
-        <label>Job Six</label>
-        <referenceTo>Job__c</referenceTo>
-        <relationshipName>R00N70000002Ib9wEAC</relationshipName>
-        <type>Lookup</type>
-    </fields>
-    <fields>
-        <fullName>Job_Three__c</fullName>
-        <label>Job Three</label>
-        <referenceTo>Job__c</referenceTo>
-        <relationshipName>R00N70000002Ib9uEAC</relationshipName>
-        <type>Lookup</type>
-    </fields>
-    <fields>
-        <fullName>Job_Two__c</fullName>
-        <label>Job Two</label>
-        <referenceTo>Job__c</referenceTo>
-        <relationshipName>R00N70000002Ib9tEAC</relationshipName>
-        <type>Lookup</type>
     </fields>
     <fields>
         <fullName>Schedule_Five__c</fullName>

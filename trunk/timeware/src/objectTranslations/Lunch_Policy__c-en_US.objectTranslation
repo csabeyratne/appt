@@ -53,10 +53,6 @@ punches out for lunch? --></help>
         <name>Lunch_Grace_Period__c</name>
     </fields>
     <fields>
-        <label><!-- Lunch Policy ID --></label>
-        <name>Lunch_Policy_ID__c</name>
-    </fields>
-    <fields>
         <label><!-- Lunch Time --></label>
         <name>Lunch_Time__c</name>
     </fields>
@@ -65,10 +61,12 @@ punches out for lunch? --></help>
         <label><!-- Minimum Hours Worked --></label>
         <name>Minimum_Hours_Worked__c</name>
     </fields>
-    <fields>
-        <help><!-- Is only one lunch deduction taken for entire work day? --></help>
-        <label><!-- One Lunch Per Work Day --></label>
-        <name>One_Lunch_Per_Work_Day__c</name>
-    </fields>
+    <layouts>
+        <layout>Lunch Policy Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
     <startsWith>Consonant</startsWith>
 </CustomObjectTranslation>

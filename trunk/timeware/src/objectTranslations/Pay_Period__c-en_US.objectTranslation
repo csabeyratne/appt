@@ -8,10 +8,6 @@
         <value>Pay Periods</value>
     </caseValues>
     <fields>
-        <label><!-- Close-Out Run On --></label>
-        <name>Closeout_Stamp__c</name>
-    </fields>
-    <fields>
         <label><!-- Current Pay Period --></label>
         <name>Current_Pay_Period__c</name>
     </fields>
@@ -45,20 +41,8 @@
         </picklistValues>
     </fields>
     <fields>
-        <label><!-- Summary Created On --></label>
-        <name>Summary_Stamp__c</name>
-    </fields>
-    <fields>
-        <label><!-- Transfer Created On --></label>
-        <name>Transfer_Stamp__c</name>
-    </fields>
-    <fields>
         <label><!-- Work Week End --></label>
         <name>Work_Week_End__c</name>
-    </fields>
-    <fields>
-        <label><!-- Work Week Number YTD --></label>
-        <name>Work_Week_Number_YTD__c</name>
     </fields>
     <fields>
         <label><!-- Work Week Number --></label>

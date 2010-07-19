@@ -8,10 +8,6 @@
         <value>Pay Period Policies</value>
     </caseValues>
     <fields>
-        <label><!-- Close-Out Cutoff Days --></label>
-        <name>Closeout_Cutoff_Days__c</name>
-    </fields>
-    <fields>
         <label><!-- Default Pay Periods --></label>
         <name>Default_Pay_Periods__c</name>
     </fields>
@@ -217,10 +213,6 @@
         </sections>
     </layouts>
     <startsWith>Consonant</startsWith>
-    <validationRules>
-        <errorMessage><!-- Close-Out Cutoff Days must be 1 to 7 days. --></errorMessage>
-        <name>CloseOutCutoffDays</name>
-    </validationRules>
     <validationRules>
         <errorMessage><!-- Effective Date must be on the day specified in &apos;Pay Week Start Day&apos;. --></errorMessage>
         <name>EffectiveDateEqualsWeekStartDay</name>

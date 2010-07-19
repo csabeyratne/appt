@@ -12,10 +12,6 @@
         <name>Active__c</name>
     </fields>
     <fields>
-        <label><!-- Description --></label>
-        <name>Description__c</name>
-    </fields>
-    <fields>
         <label><!-- Time Format --></label>
         <name>Time_Format__c</name>
         <picklistValues>

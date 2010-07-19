@@ -115,12 +115,6 @@ punches out for lunch?</inlineHelpText>
         <type>Checkbox</type>
     </fields>
     <fields>
-        <fullName>Lunch_Policy_ID__c</fullName>
-        <displayFormat>LP-{000000}</displayFormat>
-        <label>Lunch Policy ID</label>
-        <type>AutoNumber</type>
-    </fields>
-    <fields>
         <fullName>Lunch_Time__c</fullName>
         <description>Lunch time is a calculated field</description>
         <label>Lunch Time</label>
@@ -135,15 +129,6 @@ punches out for lunch?</inlineHelpText>
         <precision>4</precision>
         <scale>0</scale>
         <type>Number</type>
-    </fields>
-    <fields>
-        <fullName>One_Lunch_Per_Work_Day__c</fullName>
-        <defaultValue>false</defaultValue>
-        <description>Is only one lunch deduction taken for entire work day? 
-MOVE INTO SHIFT POLICY TABLE?</description>
-        <inlineHelpText>Is only one lunch deduction taken for entire work day?</inlineHelpText>
-        <label>One Lunch Per Work Day</label>
-        <type>Checkbox</type>
     </fields>
     <label>Lunch Policy</label>
     <listViews>

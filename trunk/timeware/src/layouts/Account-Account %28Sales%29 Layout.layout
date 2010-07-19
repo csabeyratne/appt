@@ -175,11 +175,7 @@
     <layoutSections>
         <customLabel>true</customLabel>
         <label>Custom Links</label>
-        <layoutColumns>
-            <layoutItems>
-                <customLink>Billing</customLink>
-            </layoutItems>
-        </layoutColumns>
+        <layoutColumns/>
         <layoutColumns/>
         <layoutColumns/>
         <style>CustomLinks</style>

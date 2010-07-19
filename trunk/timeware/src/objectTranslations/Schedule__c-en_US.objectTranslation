@@ -12,22 +12,6 @@
         <name>Active__c</name>
     </fields>
     <fields>
-        <label><!-- Alternate Schedule One --></label>
-        <name>Alternate_Schedule_One__c</name>
-    </fields>
-    <fields>
-        <label><!-- Alternate Schedule Two --></label>
-        <name>Alternate_Schedule_Two__c</name>
-    </fields>
-    <fields>
-        <label><!-- Daily Doubletime After --></label>
-        <name>Daily_Doubletime_After__c</name>
-    </fields>
-    <fields>
-        <label><!-- Daily Overtime After --></label>
-        <name>Daily_Overtime_After__c</name>
-    </fields>
-    <fields>
         <label><!-- Early Start Time --></label>
         <name>Early_Start_Time__c</name>
     </fields>
@@ -69,10 +53,6 @@
         <name>Scheduled_Hours__c</name>
     </fields>
     <fields>
-        <label><!-- Shift Number --></label>
-        <name>Shift_Number__c</name>
-    </fields>
-    <fields>
         <label><!-- Start Time --></label>
         <name>Start_Time__c</name>
     </fields>
@@ -80,9 +60,12 @@
         <label><!-- Stop Time --></label>
         <name>Stop_Time__c</name>
     </fields>
-    <fields>
-        <label><!-- Weekly Overtime After --></label>
-        <name>Weekly_Overtime_After__c</name>
-    </fields>
+    <layouts>
+        <layout>Schedule Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
     <startsWith>Consonant</startsWith>
 </CustomObjectTranslation>
