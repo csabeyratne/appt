@@ -44,36 +44,6 @@
         <type>Checkbox</type>
     </fields>
     <fields>
-        <fullName>Alternate_Schedule_One__c</fullName>
-        <label>Alternate Schedule One</label>
-        <precision>4</precision>
-        <scale>0</scale>
-        <type>Number</type>
-    </fields>
-    <fields>
-        <fullName>Alternate_Schedule_Two__c</fullName>
-        <label>Alternate Schedule Two</label>
-        <precision>4</precision>
-        <scale>0</scale>
-        <type>Number</type>
-    </fields>
-    <fields>
-        <fullName>Daily_Doubletime_After__c</fullName>
-        <defaultValue>12</defaultValue>
-        <label>Daily Doubletime After</label>
-        <precision>4</precision>
-        <scale>2</scale>
-        <type>Number</type>
-    </fields>
-    <fields>
-        <fullName>Daily_Overtime_After__c</fullName>
-        <defaultValue>8</defaultValue>
-        <label>Daily Overtime After</label>
-        <precision>4</precision>
-        <scale>2</scale>
-        <type>Number</type>
-    </fields>
-    <fields>
         <fullName>Early_Start_Time__c</fullName>
         <label>Early Start Time</label>
         <required>true</required>
@@ -143,15 +113,6 @@
         <type>Number</type>
     </fields>
     <fields>
-        <fullName>Shift_Number__c</fullName>
-        <defaultValue>1</defaultValue>
-        <label>Shift Number</label>
-        <precision>4</precision>
-        <required>true</required>
-        <scale>0</scale>
-        <type>Number</type>
-    </fields>
-    <fields>
         <fullName>Start_Time__c</fullName>
         <label>Start Time</label>
         <required>true</required>
@@ -162,14 +123,6 @@
         <label>Stop Time</label>
         <required>true</required>
         <type>DateTime</type>
-    </fields>
-    <fields>
-        <fullName>Weekly_Overtime_After__c</fullName>
-        <defaultValue>40</defaultValue>
-        <label>Weekly Overtime After</label>
-        <precision>4</precision>
-        <scale>2</scale>
-        <type>Number</type>
     </fields>
     <label>Schedule</label>
     <nameField>

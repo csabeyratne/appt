@@ -12,79 +12,9 @@
         <name>Active__c</name>
     </fields>
     <fields>
-        <label><!-- Department Five --></label>
-        <name>Department_Five__c</name>
-        <relationshipLabel><!-- Employee Schedules (Department Five) --></relationshipLabel>
-    </fields>
-    <fields>
-        <label><!-- Department Four --></label>
-        <name>Department_Four__c</name>
-        <relationshipLabel><!-- Employee Schedules (Department Four) --></relationshipLabel>
-    </fields>
-    <fields>
-        <label><!-- Department One --></label>
-        <name>Department_One__c</name>
-        <relationshipLabel><!-- Employee Schedules (Department One) --></relationshipLabel>
-    </fields>
-    <fields>
-        <label><!-- Department Seven --></label>
-        <name>Department_Seven__c</name>
-        <relationshipLabel><!-- Employee Schedules (Department Seven) --></relationshipLabel>
-    </fields>
-    <fields>
-        <label><!-- Department Six --></label>
-        <name>Department_Six__c</name>
-        <relationshipLabel><!-- Employee Schedules (Department Six) --></relationshipLabel>
-    </fields>
-    <fields>
-        <label><!-- Department Three --></label>
-        <name>Department_Three__c</name>
-        <relationshipLabel><!-- Employee Schedules (Department Three) --></relationshipLabel>
-    </fields>
-    <fields>
-        <label><!-- Department Two --></label>
-        <name>Department_Two__c</name>
-        <relationshipLabel><!-- Employee Schedules (Department Two) --></relationshipLabel>
-    </fields>
-    <fields>
         <label><!-- Employee --></label>
         <name>Employee__c</name>
         <relationshipLabel><!-- Employee Schedules --></relationshipLabel>
-    </fields>
-    <fields>
-        <label><!-- Job Five --></label>
-        <name>Job_Five__c</name>
-        <relationshipLabel><!-- Employee Schedules (Job Five) --></relationshipLabel>
-    </fields>
-    <fields>
-        <label><!-- Job Four --></label>
-        <name>Job_Four__c</name>
-        <relationshipLabel><!-- Employee Schedules (Job Four) --></relationshipLabel>
-    </fields>
-    <fields>
-        <label><!-- Job One --></label>
-        <name>Job_One__c</name>
-        <relationshipLabel><!-- Employee Schedules (Job One) --></relationshipLabel>
-    </fields>
-    <fields>
-        <label><!-- Job Seven --></label>
-        <name>Job_Seven__c</name>
-        <relationshipLabel><!-- Employee Schedules (Job Seven) --></relationshipLabel>
-    </fields>
-    <fields>
-        <label><!-- Job Six --></label>
-        <name>Job_Six__c</name>
-        <relationshipLabel><!-- Employee Schedules (Job Six) --></relationshipLabel>
-    </fields>
-    <fields>
-        <label><!-- Job Three --></label>
-        <name>Job_Three__c</name>
-        <relationshipLabel><!-- Employee Schedules (Job Three) --></relationshipLabel>
-    </fields>
-    <fields>
-        <label><!-- Job Two --></label>
-        <name>Job_Two__c</name>
-        <relationshipLabel><!-- Employee Schedules (Job Two) --></relationshipLabel>
     </fields>
     <fields>
         <label><!-- Schedule Five --></label>

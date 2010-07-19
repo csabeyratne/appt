@@ -6,9 +6,6 @@
     <logo>External_Documents/Developerforce_Logo.gif</logo>
     <tab>Sample__c</tab>
     <tab>Cloud_Converter</tab>
-    <tab>Informatica_Data_Loader</tab>
+    <tab>INFA__Integration</tab>
     <tab>Appirio_SOQL_Query_Tool</tab>
-    <tab>My_To_Do</tab>
-    <tab>Start_Here</tab>
-    <tab>zCat3__c</tab>
 </CustomApplication>

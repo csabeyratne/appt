@@ -250,47 +250,4 @@
         </filters>
         <label>Won</label>
     </listViews>
-    <webLinks>
-        <fullName>DeliveryStatus</fullName>
-        <availability>online</availability>
-        <displayType>link</displayType>
-        <hasMenubar>true</hasMenubar>
-        <hasScrollbars>true</hasScrollbars>
-        <hasToolbar>true</hasToolbar>
-        <height>600</height>
-        <isResizable>true</isResizable>
-        <linkType>url</linkType>
-        <masterLabel>Delivery Status</masterLabel>
-        <openType>newWindow</openType>
-        <position>none</position>
-        <protected>false</protected>
-        <showsLocation>true</showsLocation>
-        <showsStatus>true</showsStatus>
-        <url>http://www.fedex.com/cgi-bin/tracking?tracknumbers={!Opportunity_Tracking_Number}&amp;action=track&amp;language=english&amp;cntry_code=us</url>
-    </webLinks>
-    <webLinks>
-        <fullName>Mass_Edit</fullName>
-        <availability>online</availability>
-        <displayType>massActionButton</displayType>
-        <height>600</height>
-        <linkType>page</linkType>
-        <masterLabel>Mass Edit</masterLabel>
-        <openType>sidebar</openType>
-        <page>MassEditOpp</page>
-        <protected>false</protected>
-        <requireRowSelection>true</requireRowSelection>
-    </webLinks>
-    <webLinks>
-        <fullName>Mass_Update</fullName>
-        <availability>online</availability>
-        <description>Mass update</description>
-        <displayType>massActionButton</displayType>
-        <height>600</height>
-        <linkType>page</linkType>
-        <masterLabel>Mass Update</masterLabel>
-        <openType>sidebar</openType>
-        <page>MassUpdateOpportunity</page>
-        <protected>false</protected>
-        <requireRowSelection>true</requireRowSelection>
-    </webLinks>
 </CustomObject>

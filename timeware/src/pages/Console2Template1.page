@@ -1,4 +1,4 @@
-<apex:page sidebar="true" controller="ListviewController" tabStyle="My_To_Do__tab" >
+<apex:page sidebar="true" controller="ListViewController" tabStyle="My_To_Do__tab" >
 <apex:include pageName="Console2Resources"></apex:include>
 <table width="99%">
   <tr>

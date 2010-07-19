@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Layout xmlns="http://soap.sforce.com/2006/04/metadata">
+    <excludeButtons>Submit</excludeButtons>
     <headers>PersonalTagging</headers>
     <headers>PublicTagging</headers>
     <layoutSections>
@@ -130,11 +131,9 @@
         <style>OneColumn</style>
     </layoutSections>
     <layoutSections>
-        <layoutColumns>
-            <layoutItems>
-                <customLink>DeliveryStatus</customLink>
-            </layoutItems>
-        </layoutColumns>
+        <customLabel>true</customLabel>
+        <label>Custom Links</label>
+        <layoutColumns/>
         <layoutColumns/>
         <layoutColumns/>
         <style>CustomLinks</style>
@@ -185,6 +184,4 @@
         <relatedList>RelatedOpportunityHistoryList</relatedList>
     </relatedLists>
     <relatedObjects>AccountId</relatedObjects>
-    <showEmailCheckbox>true</showEmailCheckbox>
-    <showRunAssignmentRulesCheckbox>true</showRunAssignmentRulesCheckbox>
 </Layout>

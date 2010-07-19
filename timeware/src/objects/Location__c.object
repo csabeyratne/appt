@@ -46,23 +46,15 @@
         <type>Checkbox</type>
     </fields>
     <fields>
-        <fullName>Description__c</fullName>
-        <description>Enter a description for this location.</description>
-        <label>Description</label>
-        <length>50</length>
-        <trackHistory>true</trackHistory>
-        <type>Text</type>
-    </fields>
-    <fields>
         <fullName>Time_Format__c</fullName>
         <label>Time Format</label>
         <picklist>
             <picklistValues>
-                <fullName>Military Time</fullName>
+                <fullName>Standard Time</fullName>
                 <default>true</default>
             </picklistValues>
             <picklistValues>
-                <fullName>Standard Time</fullName>
+                <fullName>Military Time</fullName>
                 <default>false</default>
             </picklistValues>
             <sorted>false</sorted>
@@ -74,19 +66,16 @@
     <listViews>
         <fullName>AllLocations</fullName>
         <columns>NAME</columns>
-        <columns>Description__c</columns>
         <filterScope>Everything</filterScope>
         <label>All Locations</label>
     </listViews>
     <nameField>
-        <label>Location Code</label>
+        <label>Business Name</label>
         <type>Text</type>
     </nameField>
     <pluralLabel>Locations</pluralLabel>
     <searchLayouts>
-        <customTabListAdditionalFields>Description__c</customTabListAdditionalFields>
         <lookupFilterFields>NAME</lookupFilterFields>
-        <lookupFilterFields>Description__c</lookupFilterFields>
     </searchLayouts>
     <sharingModel>ReadWrite</sharingModel>
 </CustomObject>

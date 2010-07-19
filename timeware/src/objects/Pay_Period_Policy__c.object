@@ -38,16 +38,6 @@
     <enableHistory>true</enableHistory>
     <enableReports>true</enableReports>
     <fields>
-        <fullName>Closeout_Cutoff_Days__c</fullName>
-        <defaultValue>5</defaultValue>
-        <description>Number of days after &quot;Pay Period End&quot; to complete close-out process (summarize, transfer, close-out). Default is 5.</description>
-        <label>Close-Out Cutoff Days</label>
-        <precision>2</precision>
-        <scale>0</scale>
-        <trackHistory>true</trackHistory>
-        <type>Number</type>
-    </fields>
-    <fields>
         <fullName>Default_Pay_Periods__c</fullName>
         <formula>CASE(TEXT(Pay_Frequency__c), &quot;Weekly&quot;, 52, &quot;Bi-Weekly&quot;,26, &quot;Semi-Monthly&quot;,24, &quot;Monthly&quot;,12,0)</formula>
         <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
@@ -326,14 +316,6 @@
         <searchResultsAdditionalFields>Pay_Frequency__c</searchResultsAdditionalFields>
     </searchLayouts>
     <sharingModel>ReadWrite</sharingModel>
-    <validationRules>
-        <fullName>CloseOutCutoffDays</fullName>
-        <active>true</active>
-        <description>Close-Out must be completed 1 to 7 days after pay period end.</description>
-        <errorConditionFormula>OR( Closeout_Cutoff_Days__c  &lt; 1,Closeout_Cutoff_Days__c  &gt; 7)</errorConditionFormula>
-        <errorDisplayField>Closeout_Cutoff_Days__c</errorDisplayField>
-        <errorMessage>Close-Out Cutoff Days must be 1 to 7 days.</errorMessage>
-    </validationRules>
     <validationRules>
         <fullName>EffectiveDateEqualsWeekStartDay</fullName>
         <active>true</active>

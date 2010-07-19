@@ -1,5 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ApexComponent xmlns="http://soap.sforce.com/2006/04/metadata">
-    <apiVersion>17.0</apiVersion>
+    <apiVersion>19.0</apiVersion>
+    <description>Batch Apex Status Bar Component by TehNrd Blog (Jason Venable)</description>
     <label>batchJobs</label>
+    <packageVersions>
+        <majorNumber>1</majorNumber>
+        <minorNumber>8</minorNumber>
+        <namespace>EasyDescribe</namespace>
+    </packageVersions>
+    <packageVersions>
+        <majorNumber>1</majorNumber>
+        <minorNumber>23</minorNumber>
+        <namespace>EasyPage</namespace>
+    </packageVersions>
+    <packageVersions>
+        <majorNumber>1</majorNumber>
+        <minorNumber>11</minorNumber>
+        <namespace>sfLma</namespace>
+    </packageVersions>
 </ApexComponent>

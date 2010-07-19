@@ -23,10 +23,6 @@
                 <behavior>Edit</behavior>
                 <field>Hire_Date__c</field>
             </layoutItems>
-            <layoutItems>
-                <behavior>Readonly</behavior>
-                <field>Months_Of_Service__c</field>
-            </layoutItems>
         </layoutColumns>
         <style>TwoColumnsLeftToRight</style>
     </layoutSections>
@@ -39,11 +35,4 @@
         <layoutColumns/>
         <style>CustomLinks</style>
     </layoutSections>
-    <relatedLists>
-        <fields>Pay_Code__c</fields>
-        <fields>Hours_Accrued__c</fields>
-        <fields>Hours_Taken__c</fields>
-        <fields>Available_Hours__c</fields>
-        <relatedList>Accrual__c.Employee__c</relatedList>
-    </relatedLists>
 </Layout>
