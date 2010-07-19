@@ -83,6 +83,11 @@
     <pluralLabel>Time Ranges</pluralLabel>
     <searchLayouts>
         <customTabListAdditionalFields>Time_String__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>DateTime_Value__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Weekday_Number__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Weekday__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Settings__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>OBJECT_ID</customTabListAdditionalFields>
         <lookupDialogsAdditionalFields>Time_String__c</lookupDialogsAdditionalFields>
         <lookupPhoneDialogsAdditionalFields>Time_String__c</lookupPhoneDialogsAdditionalFields>
         <searchResultsAdditionalFields>Time_String__c</searchResultsAdditionalFields>

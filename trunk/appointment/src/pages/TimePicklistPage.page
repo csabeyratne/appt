@@ -1,6 +1,7 @@
 <apex:page controller="TimePicklistController" sidebar="false" >
 <apex:form >
 <apex:sectionHeader title="Time Picklist" subtitle="Reusable code"/>
+<!--
 <apex:pageblock >
 <apex:pageBlockSection title="Time Picklist" columns="1">
       <apex:pageblocksectionItem >
@@ -19,5 +20,6 @@
       </apex:pageblocksectionItem>                                        
   </apex:pageblocksection>
 </apex:pageblock>
+-->
 </apex:form>
 </apex:page>

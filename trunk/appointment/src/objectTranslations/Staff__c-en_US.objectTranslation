@@ -331,6 +331,11 @@
         </picklistValues>
     </fields>
     <fields>
+        <label><!-- User --></label>
+        <name>User__c</name>
+        <relationshipLabel><!-- Staff --></relationshipLabel>
+    </fields>
+    <fields>
         <help><!-- Please enter the zip code. --></help>
         <label><!-- Zip Code --></label>
         <name>Zip_Code__c</name>

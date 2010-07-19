@@ -1,8 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<ApexPage xmlns="http://soap.sforce.com/2006/04/metadata">
+<ApexTrigger xmlns="http://soap.sforce.com/2006/04/metadata">
     <apiVersion>19.0</apiVersion>
-    <description>Inline Google Maps using Visualforce</description>
-    <label>Setting Google Maps</label>
     <packageVersions>
         <majorNumber>1</majorNumber>
         <minorNumber>8</minorNumber>
@@ -18,4 +16,5 @@
         <minorNumber>0</minorNumber>
         <namespace>cloudconverter</namespace>
     </packageVersions>
-</ApexPage>
+    <status>Active</status>
+</ApexTrigger>

@@ -260,6 +260,10 @@
                 <field>Appointment_Intervals__c</field>
             </layoutItems>
             <layoutItems>
+                <behavior>Readonly</behavior>
+                <field>Interval_Minutes__c</field>
+            </layoutItems>
+            <layoutItems>
                 <behavior>Edit</behavior>
                 <field>Time_Format__c</field>
             </layoutItems>
@@ -274,6 +278,10 @@
             <layoutItems>
                 <behavior>Edit</behavior>
                 <field>Fax__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Readonly</behavior>
+                <field>Sunday_Times_Count__c</field>
             </layoutItems>
         </layoutColumns>
         <layoutColumns/>
@@ -317,7 +325,7 @@
     </relatedLists>
     <relatedLists>
         <fields>NAME</fields>
-        <relatedList>Closed_Dates__c.Setting__c</relatedList>
+        <relatedList>Closed_Date__c.Setting__c</relatedList>
     </relatedLists>
     <relatedLists>
         <fields>First_Name__c</fields>
