@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <value>Appointment</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Appointments</value>
+    </caseValues>
+    <fields>
+        <label><!-- Customer --></label>
+        <name>Customer__c</name>
+        <relationshipLabel><!-- Appointments --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Duration --></label>
+        <name>Duration_In_Minutes__c</name>
+    </fields>
+    <fields>
+        <label><!-- Service --></label>
+        <name>Service__c</name>
+        <relationshipLabel><!-- Appointments --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Staff --></label>
+        <name>Staff__c</name>
+        <relationshipLabel><!-- Appointments --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Start Time --></label>
+        <name>Start_DateTime__c</name>
+    </fields>
+    <fields>
+        <label><!-- Start Time List --></label>
+        <name>Start_Time_List__c</name>
+    </fields>
+    <fields>
+        <label><!-- Status --></label>
+        <name>Status__c</name>
+        <picklistValues>
+            <masterLabel>Accepted</masterLabel>
+            <translation><!-- Accepted --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Requested</masterLabel>
+            <translation><!-- Requested --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Scheduled</masterLabel>
+            <translation><!-- Scheduled --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Stop Time --></label>
+        <name>Stop_DateTime__c</name>
+    </fields>
+    <fields>
+        <label><!-- Stop Time List --></label>
+        <name>Stop_Time_List__c</name>
+    </fields>
+    <layouts>
+        <layout>Appointment Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

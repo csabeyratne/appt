@@ -1,0 +1,33 @@
+<apex:page standardController="Appointment__c">
+	<apex:sectionHeader title="{!$ObjectType.Appointment__c.label}" subtitle="{!Appointment__c.name}"/>
+	<apex:pageBlock title="{!$ObjectType.Appointment__c.label} Detail">
+		<apex:pageBlockButtons >
+		<apex:form >
+			<apex:commandButton action="{!edit}" value="Edit"/>
+			<apex:commandButton action="{!delete}" value="Delete"/>
+			<apex:commandButton action="{!URLFOR($Action.Appointment__c.Clone,Appointment__c.id)}" value="Clone"/>
+		</apex:form>
+		</apex:pageBlockButtons>
+		<apex:pageBlockSection showHeader="false" columns="2">
+			<apex:outputField value="{!Appointment__c.Name}"/>
+			<apex:outputField value="{!Appointment__c.Customer__c}"/>
+			<apex:outputField value="{!Appointment__c.Start_Time_List__c}"/>
+			<apex:outputField value="{!Appointment__c.Service__c}"/>
+			<apex:outputField value="{!Appointment__c.Stop_Time_List__c}"/>
+			<apex:outputField value="{!Appointment__c.Staff__c}"/>
+			<apex:outputField value="{!Appointment__c.Status__c}"/>
+			<apex:pageBlockSectionItem />
+			<apex:outputField value="{!Appointment__c.Duration_In_Minutes__c}"/>
+			<apex:pageBlockSectionItem />
+		</apex:pageBlockSection>
+		<apex:pageBlockSection showHeader="false" columns="2">
+			<apex:outputField value="{!Appointment__c.CreatedById}"/>
+			<apex:outputField value="{!Appointment__c.LastModifiedById}"/>
+		</apex:pageBlockSection>
+		<apex:pageBlockSection showHeader="true" title="Custom Links" columns="3">
+		</apex:pageBlockSection>
+	</apex:pageBlock>
+	<apex:relatedList list="OpenActivities"/>
+	<apex:relatedList list="ActivityHistories"/>
+	<apex:relatedList list="NotesAndAttachments"/>
+</apex:page>

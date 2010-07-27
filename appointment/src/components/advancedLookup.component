@@ -1,0 +1,35 @@
+<apex:component controller="advancedLookup" >
+    <apex:attribute name="object" assignTo="{!objectType}" required="true" type="string" description="The object this component will search."/>
+    <apex:attribute name="value" assignTo="{!selectValue}" required="true" type="object" description="A merge feld that references the controller class variable that is associated with this feld. This must be an Id field."/>
+    <apex:attribute name="maxHeight" assignTo="{!maxHeight}" required="true" type="Integer" description="Max height of selectList."/>
+    <apex:attribute name="width" required="true" type="string" description="Width of the component in pixels or percent."/>
+    <apex:attribute name="style" type="string" description="The style used to display the inputText component, used primarily for adding inline CSS styles."/>
+    <apex:outputPanel layout="block" style="{!style}">
+ 
+            <!-- This is our input text that we will use in a wildcard search against the names of the defined object. We refresh the results every time this field
+            is clicked or a letter is entered (keyup) -->
+            <apex:inputText value="{!searchValue}" style="width:{!width}" id="searchValue">
+                <apex:actionSupport event="onkeyup" action="{!search}" rerender="resultsPanel"/>
+                <apex:actionSupport event="onclick" action="{!search}" rerender="resultsPanel"/>
+            </apex:InputText>
+ 
+            <!-- Once we perform the query on the object we will populate this list with the returned values. When a user selects a value we will hide this list
+            and auto complete the selected value -->
+            <apex:outputPanel id="resultsPanel" layout="block" style="position: absolute;">
+                <apex:selectList value="{!value}" size="{!height}" style="width:{!width}" rendered="{!showList}" >
+                    <apex:selectOptions value="{!results}"/>
+                    <apex:actionSupport event="onchange" action="{!selectvalue}" rerender="resultsPanel,searchValue"/>
+                </apex:selectList>
+            </apex:outputPanel>
+ 
+    </apex:outputPanel>
+ 
+    <!-- This component has one little piece of javascript. If a user clicks on the screen before selecting a value we want to hide the list of options similar to
+    how a normal picklist behaves -->
+    <apex:actionFunction name="hideResults" action="{!hideResults}" reRender="resultsPanel"/>
+    <script type="text/javascript">
+        document.onclick = function(){
+            hideResults();
+        }
+    </script>
+</apex:component>

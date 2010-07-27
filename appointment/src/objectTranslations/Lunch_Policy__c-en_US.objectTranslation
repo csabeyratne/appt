@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <value>Lunch Policy</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Lunch Policies</value>
+    </caseValues>
+    <fields>
+        <label><!-- Active --></label>
+        <name>Active__c</name>
+    </fields>
+    <fields>
+        <help><!-- Is the automatic lunch deduction taken in addition to the time the employee
+punches out for lunch? --></help>
+        <label><!-- Deduction Plus Punched --></label>
+        <name>Deduction_Plus_Punched__c</name>
+    </fields>
+    <fields>
+        <help><!-- Is the difference between the lunch deduction amount and the actual punched time for lunch taken? --></help>
+        <label><!-- Deduction Punched Difference --></label>
+        <name>Deduction_Punched_Difference__c</name>
+    </fields>
+    <fields>
+        <help><!-- Enter the number of minutes for early lunch in  grace period --></help>
+        <label><!-- Early Lunch In Grace --></label>
+        <name>Early_Lunch_In_Grace__c</name>
+    </fields>
+    <fields>
+        <help><!-- Enter the number of minutes for early lunch out grace period --></help>
+        <label><!-- Early Lunch Out Grace --></label>
+        <name>Early_Lunch_Out_Grace__c</name>
+    </fields>
+    <fields>
+        <help><!-- Enter the number of minutes for late lunch in  grace period --></help>
+        <label><!-- Late Lunch In Grace --></label>
+        <name>Late_Lunch_In_Grace__c</name>
+    </fields>
+    <fields>
+        <help><!-- Enter the number of minutes for late lunch out grace period --></help>
+        <label><!-- Late Lunch Out Grace --></label>
+        <name>Late_Lunch_Out_Grace__c</name>
+    </fields>
+    <fields>
+        <help><!-- Enter the number of minutes to be deducted for  lunch --></help>
+        <label><!-- Lunch Deduction --></label>
+        <name>Lunch_Deduction__c</name>
+    </fields>
+    <fields>
+        <help><!-- Are grace periods applied to lunch punches? --></help>
+        <label><!-- Lunch Grace Period --></label>
+        <name>Lunch_Grace_Period__c</name>
+    </fields>
+    <fields>
+        <label><!-- Lunch Time --></label>
+        <name>Lunch_Time__c</name>
+    </fields>
+    <fields>
+        <help><!-- Enter the number of minutes to be worked before  lunch is automatically deducted --></help>
+        <label><!-- Minimum Hours Worked --></label>
+        <name>Minimum_Hours_Worked__c</name>
+    </fields>
+    <layouts>
+        <layout>Lunch Policy Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

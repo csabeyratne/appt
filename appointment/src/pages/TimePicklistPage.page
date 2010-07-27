@@ -1,0 +1,25 @@
+<apex:page controller="TimePicklistController" sidebar="false" >
+<apex:form >
+<apex:sectionHeader title="Time Picklist" subtitle="Reusable code"/>
+<!--
+<apex:pageblock >
+<apex:pageBlockSection title="Time Picklist" columns="1">
+      <apex:pageblocksectionItem >
+          <apex:outputlabel value="Start Time" for="startvalues" />
+          <apex:selectList value="{!starttime}" size="1" id="startvalues">
+              <apex:actionSupport event="onchange" reRender="newvalue" />
+              <apex:selectOptions value="{!starttimes}"/>
+          </apex:selectList>
+      </apex:pageblocksectionItem>                                        
+      <apex:pageblocksectionItem >
+          <apex:outputlabel value="Stop Time" for="stopvalues" />
+          <apex:selectList value="{!stoptime}" size="1" id="stopvalues">
+              <apex:actionSupport event="onchange" reRender="newvalue" />
+              <apex:selectOptions value="{!stoptimes}"/>
+          </apex:selectList>
+      </apex:pageblocksectionItem>                                        
+  </apex:pageblocksection>
+</apex:pageblock>
+-->
+</apex:form>
+</apex:page>

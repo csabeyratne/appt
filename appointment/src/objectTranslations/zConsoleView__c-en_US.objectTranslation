@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <value>zConsoleView</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>zConsoleViews</value>
+    </caseValues>
+    <fields>
+        <label><!-- List 1 Id --></label>
+        <name>List_1_Id__c</name>
+    </fields>
+    <fields>
+        <label><!-- List 2 Id --></label>
+        <name>List_2_Id__c</name>
+    </fields>
+    <fields>
+        <label><!-- List 3 Id --></label>
+        <name>List_3_Id__c</name>
+    </fields>
+    <fields>
+        <label><!-- List 4 Id --></label>
+        <name>List_4_Id__c</name>
+    </fields>
+    <fields>
+        <label><!-- List 5 Id --></label>
+        <name>List_5_Id__c</name>
+    </fields>
+    <fields>
+        <label><!-- Tab --></label>
+        <name>Tab__c</name>
+        <picklistValues>
+            <masterLabel>Pay Periods</masterLabel>
+            <translation><!-- Pay Periods --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- User Role --></label>
+        <name>User_Role__c</name>
+    </fields>
+    <fields>
+        <label><!-- User --></label>
+        <name>User__c</name>
+        <relationshipLabel><!-- zConsoleViews --></relationshipLabel>
+    </fields>
+    <layouts>
+        <layout>Console View Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

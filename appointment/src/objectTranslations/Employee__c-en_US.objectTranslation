@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <value>Employee</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Employees</value>
+    </caseValues>
+    <fields>
+        <label><!-- Age Of Employee --></label>
+        <name>Age_Of_Employee__c</name>
+    </fields>
+    <fields>
+        <label><!-- Badge Number --></label>
+        <name>Badge_Number__c</name>
+    </fields>
+    <fields>
+        <label><!-- Birth Date --></label>
+        <name>Birth_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Employee Class --></label>
+        <name>Employee_Class__c</name>
+        <picklistValues>
+            <masterLabel>Hourly Contract</masterLabel>
+            <translation><!-- Hourly Contract --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Hourly Full Time</masterLabel>
+            <translation><!-- Hourly Full Time --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Hourly Part Time</masterLabel>
+            <translation><!-- Hourly Part Time --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Hourly Student</masterLabel>
+            <translation><!-- Hourly Student --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Hourly Temporary</masterLabel>
+            <translation><!-- Hourly Temporary --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Salary Exempt</masterLabel>
+            <translation><!-- Salary Exempt --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Salary Non-Exempt</masterLabel>
+            <translation><!-- Salary Non-Exempt --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- First Name --></label>
+        <name>First_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Full Name --></label>
+        <name>Full_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Hire Date --></label>
+        <name>Hire_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Last Name --></label>
+        <name>Last_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Location --></label>
+        <name>Location__c</name>
+        <relationshipLabel><!-- Locations --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Pay Period Policy --></label>
+        <name>Pay_Period_Policy__c</name>
+        <relationshipLabel><!-- Pay Period Policies --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Pay Period Select --></label>
+        <name>Pay_Period_Select__c</name>
+        <picklistValues>
+            <masterLabel>Current Pay Period</masterLabel>
+            <translation><!-- Current Pay Period --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Next Pay Period</masterLabel>
+            <translation><!-- Next Pay Period --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Previous Pay Period</masterLabel>
+            <translation><!-- Previous Pay Period --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Pay Rate --></label>
+        <name>Pay_Rate__c</name>
+    </fields>
+    <fields>
+        <label><!-- User --></label>
+        <name>Salesforce_User__c</name>
+        <relationshipLabel><!-- Employees (User) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Social Security Number --></label>
+        <name>Social_Security_Number__c</name>
+    </fields>
+    <fields>
+        <label><!-- Status --></label>
+        <name>Status__c</name>
+        <picklistValues>
+            <masterLabel>Active</masterLabel>
+            <translation><!-- Active --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Leave</masterLabel>
+            <translation><!-- Leave --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Terminated</masterLabel>
+            <translation><!-- Terminated --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Substitute User Effective Date --></label>
+        <name>Substitute_User_Effective_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Substitute User Expiration Date --></label>
+        <name>Substitute_User_Expiration_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Substitute User --></label>
+        <name>Substitute_User__c</name>
+        <relationshipLabel><!-- Employees (Substitute User) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Termination Date --></label>
+        <name>Termination_Date__c</name>
+    </fields>
+    <layouts>
+        <layout>Employee Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Personal Information --></label>
+            <section>Personal Information</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

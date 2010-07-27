@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>Services you provide.</description>
+    <enableEnhancedLookup>true</enableEnhancedLookup>
+    <enableHistory>true</enableHistory>
+    <enableReports>true</enableReports>
+    <fields>
+        <fullName>Begin_Time__c</fullName>
+        <label>Begin Time</label>
+        <precision>8</precision>
+        <scale>0</scale>
+        <type>Number</type>
+    </fields>
+    <fields>
+        <fullName>Cost__c</fullName>
+        <description>The dollar amount of the service.</description>
+        <inlineHelpText>Enter the cost of the service.</inlineHelpText>
+        <label>Cost</label>
+        <precision>9</precision>
+        <scale>2</scale>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Description__c</fullName>
+        <description>Description of service displayed in calendar or in an email.</description>
+        <inlineHelpText>Enter description of the service.</inlineHelpText>
+        <label>Description</label>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Double_Appointment__c</fullName>
+        <defaultValue>false</defaultValue>
+        <label>Double Appointment</label>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Duration__c</fullName>
+        <defaultValue>30</defaultValue>
+        <description>The unit of measure for &apos;Duration&apos; is minutes. The default value is 30 minutes.</description>
+        <inlineHelpText>Enter the service duration in minutes.</inlineHelpText>
+        <label>Duration</label>
+        <precision>4</precision>
+        <scale>0</scale>
+        <type>Number</type>
+    </fields>
+    <fields>
+        <fullName>End_Time__c</fullName>
+        <label>End Time</label>
+        <precision>8</precision>
+        <scale>0</scale>
+        <type>Number</type>
+    </fields>
+    <fields>
+        <fullName>Fee__c</fullName>
+        <label>Fee</label>
+        <precision>9</precision>
+        <scale>2</scale>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Gap_Time__c</fullName>
+        <label>Gap Time</label>
+        <precision>8</precision>
+        <scale>0</scale>
+        <type>Number</type>
+    </fields>
+    <fields>
+        <fullName>Price__c</fullName>
+        <label>Price</label>
+        <precision>9</precision>
+        <scale>2</scale>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Service_Category__c</fullName>
+        <label>Category</label>
+        <referenceTo>Service_Category__c</referenceTo>
+        <relationshipLabel>Services</relationshipLabel>
+        <relationshipName>Services</relationshipName>
+        <relationshipOrder>0</relationshipOrder>
+        <type>MasterDetail</type>
+    </fields>
+    <label>Service</label>
+    <listViews>
+        <fullName>All</fullName>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <nameField>
+        <label>Service Name</label>
+        <type>Text</type>
+    </nameField>
+    <pluralLabel>Services</pluralLabel>
+    <searchLayouts>
+        <customTabListAdditionalFields>Duration__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Cost__c</customTabListAdditionalFields>
+        <lookupDialogsAdditionalFields>Duration__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Cost__c</lookupDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>Duration__c</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>Cost__c</lookupPhoneDialogsAdditionalFields>
+        <searchResultsAdditionalFields>Duration__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Cost__c</searchResultsAdditionalFields>
+    </searchLayouts>
+    <sharingModel>ControlledByParent</sharingModel>
+</CustomObject>

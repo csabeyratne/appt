@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <value>Promotion</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Promotions</value>
+    </caseValues>
+    <fields>
+        <label><!-- Description --></label>
+        <name>Description__c</name>
+    </fields>
+    <fields>
+        <label><!-- Discount Currency --></label>
+        <name>Discount_Currency__c</name>
+    </fields>
+    <fields>
+        <label><!-- Discount Percent --></label>
+        <name>Discount_Percent__c</name>
+    </fields>
+    <fields>
+        <label><!-- Expiration Date --></label>
+        <name>Expiration_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Promotion Code --></label>
+        <name>Promotion_Code__c</name>
+    </fields>
+    <layouts>
+        <layout>Promotion Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>
