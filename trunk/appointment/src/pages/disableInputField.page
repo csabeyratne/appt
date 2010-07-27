@@ -1,0 +1,12 @@
+<apex:page controller="disableInputField">
+    <apex:form >
+        <apex:commandButton value="Disable inputField" action="{!disableCloseDateInput}" rerender="oppName"/>
+        <apex:commandButton value="Enable inputField" action="{!enableCloseDateInput}" rerender="oppName"/><br/><br/>
+  
+        Opportunity Name:
+        <apex:outputPanel id="oppName">
+            <apex:inputField value="{!opp.CloseDate}" id="oppNameInput" required="false"/>
+            <script>document.getElementById('{!$Component.oppNameInput}').disabled = {!disableInput}; </script>
+        </apex:outputPanel>
+    </apex:form>
+</apex:page>

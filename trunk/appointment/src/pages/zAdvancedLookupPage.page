@@ -1,0 +1,14 @@
+<apex:page controller="zAdvancedLookup">
+    Try searching with 'e', 'oil', 'az', 'install', etc then click the Show button.
+ 
+    <apex:form >
+        <!-- This is only line need for the advanced lookup. The value is bound to an ID variable in this page's controller. When you click the button it 
+        refreshes the detail panel and displays the selected opp -->
+        <c:advancedLookup object="Opportunity" value="{!oppId}" maxHeight="20" width="250px" style="float: left"/> 
+        <apex:commandButton value="Show" rerender="detail" style="float: left" status="status"/>
+        <apex:actionStatus startText="Processing..." id="status"/>      
+        <apex:outputPanel id="detail">
+            <apex:detail subject="{!oppId}"/>
+        </apex:outputPanel>
+    </apex:form>
+</apex:page>

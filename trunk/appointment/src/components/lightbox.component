@@ -1,0 +1,35 @@
+<!-- Jonathan Hersh - jhersh@salesforce.com - 7/13/2009 -->
+
+<apex:component selfclosing="true">
+    <apex:attribute name="function" description="This is the name of the JS function to call." 
+        type="String" required="true"/>
+    <apex:attribute name="title" description="This is the title displayed in the lightbox." 
+        type="String" required="true"/>
+    <apex:attribute name="content" description="This is the HTML content of the lightbox." 
+        type="String" required="true"/>
+    <apex:attribute name="width" description="This is the width, in pixels, of the lightbox." 
+        type="Integer" required="true"/>
+    <apex:attribute name="duration" description="This is the duration, in ms, to show the box before it autohides (i.e. 2000ms = 2 sec), or 0 for an untimed box." 
+        type="Integer" required="true"/>
+    
+    <script type="text/javascript">     
+        function {!function}() {
+             var box = new parent.SimpleDialog("hersh"+Math.random(), true);
+             parent.box = box;
+        
+             box.setTitle("{!title}");
+        
+             box.createDialog();
+             box.setWidth({!width});
+             
+             box.setContentInnerHTML("<a href=\"#\" onclick=\"box.hide();\">Close</a><br /><br /><p>{!content}</p>");
+
+             box.setupDefaultButtons();
+             
+             box.show();
+             
+             if( {!duration} > 0 )
+                setTimeout("box.hide();",{!duration});
+        }
+    </script>
+</apex:component>

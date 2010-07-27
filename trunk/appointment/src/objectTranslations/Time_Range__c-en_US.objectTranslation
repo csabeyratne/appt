@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <value>Time Range</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Time Ranges</value>
+    </caseValues>
+    <fields>
+        <label><!-- DateTime Value --></label>
+        <name>DateTime_Value__c</name>
+    </fields>
+    <fields>
+        <label><!-- Settings --></label>
+        <name>Settings__c</name>
+        <relationshipLabel><!-- Time Ranges --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Time String --></label>
+        <name>Time_String__c</name>
+    </fields>
+    <fields>
+        <label><!-- Weekday Number --></label>
+        <name>Weekday_Number__c</name>
+    </fields>
+    <fields>
+        <label><!-- Weekday --></label>
+        <name>Weekday__c</name>
+    </fields>
+    <layouts>
+        <layout>Time Range Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

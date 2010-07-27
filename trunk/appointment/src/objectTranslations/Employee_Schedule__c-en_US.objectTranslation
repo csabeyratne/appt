@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <value>Employee Schedule</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Employee Schedules</value>
+    </caseValues>
+    <fields>
+        <label><!-- Active --></label>
+        <name>Active__c</name>
+    </fields>
+    <fields>
+        <label><!-- Employee --></label>
+        <name>Employee__c</name>
+        <relationshipLabel><!-- Employee Schedules --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Schedule Five --></label>
+        <name>Schedule_Five__c</name>
+        <relationshipLabel><!-- Employee Schedules (Schedule Five) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Schedule Four --></label>
+        <name>Schedule_Four__c</name>
+        <relationshipLabel><!-- Employee Schedules (Schedule Four) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Schedule One Label --></label>
+        <name>Schedule_One_Label__c</name>
+    </fields>
+    <fields>
+        <label><!-- Schedule One --></label>
+        <name>Schedule_One__c</name>
+        <relationshipLabel><!-- Employee Schedules (Schedule One) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Schedule Seven --></label>
+        <name>Schedule_Seven__c</name>
+        <relationshipLabel><!-- Employee Schedules (Schedule Seven) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Schedule Six --></label>
+        <name>Schedule_Six__c</name>
+        <relationshipLabel><!-- Employee Schedules (Schedule Six) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Schedule Three --></label>
+        <name>Schedule_Three__c</name>
+        <relationshipLabel><!-- Employee Schedules (Schedule Three) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Schedule Two --></label>
+        <name>Schedule_Two__c</name>
+        <relationshipLabel><!-- Employee Schedules (Schedule Two) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Week Ending Date --></label>
+        <name>Week_Ending_Date__c</name>
+    </fields>
+    <layouts>
+        <layout>Employee Schedules Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

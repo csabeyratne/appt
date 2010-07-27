@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomSite xmlns="http://soap.sforce.com/2006/04/metadata">
+    <active>true</active>
+    <allowHomePage>false</allowHomePage>
+    <allowStandardIdeasPages>false</allowStandardIdeasPages>
+    <allowStandardLookups>false</allowStandardLookups>
+    <allowStandardSearch>false</allowStandardSearch>
+    <authorizationRequiredPage>Unauthorized</authorizationRequiredPage>
+    <bandwidthExceededPage>BandwidthExceeded</bandwidthExceededPage>
+    <description>Appointment Scheduling from Tempus Systems, Inc.</description>
+    <fileNotFoundPage>FileNotFound</fileNotFoundPage>
+    <genericErrorPage>Exception</genericErrorPage>
+    <inMaintenancePage>InMaintenance</inMaintenancePage>
+    <inactiveIndexPage>InMaintenance</inactiveIndexPage>
+    <indexPage>UnderConstruction</indexPage>
+    <masterLabel>Appointment</masterLabel>
+    <requireInsecurePortalAccess>false</requireInsecurePortalAccess>
+    <siteAdmin>tempus.systems@testedition.org</siteAdmin>
+    <siteTemplate>SiteTemplate</siteTemplate>
+    <subdomain>tempus-developer-edition</subdomain>
+    <urlPathPrefix>appointment</urlPathPrefix>
+</CustomSite>

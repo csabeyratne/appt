@@ -1,0 +1,339 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>Master-Detail relationship with Pay Period (Detail) object. Trigger creates Pay Periods based on &apos;Pay Frequency&apos; type:  Weekly(52), Bi-Weekly(26), Semi-Monthly(24), Monthly(12).</description>
+    <enableEnhancedLookup>true</enableEnhancedLookup>
+    <enableHistory>true</enableHistory>
+    <enableReports>true</enableReports>
+    <fields>
+        <fullName>Default_Pay_Periods__c</fullName>
+        <formula>CASE(TEXT(Pay_Frequency__c), &quot;Weekly&quot;, 52, &quot;Bi-Weekly&quot;,26, &quot;Semi-Monthly&quot;,24, &quot;Monthly&quot;,12,0)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Default Pay Periods</label>
+        <precision>18</precision>
+        <scale>0</scale>
+        <type>Number</type>
+    </fields>
+    <fields>
+        <fullName>Description__c</fullName>
+        <label>Description</label>
+        <length>50</length>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>Effective_Date__c</fullName>
+        <label>Effective Date</label>
+        <required>true</required>
+        <trackHistory>true</trackHistory>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Monthly_Start_Day__c</fullName>
+        <description>If &apos;Pay Frequency&apos; is &apos;Semi-Monthly&apos; or &apos;Monthly&apos;, select the day of the month the pay period starts. The default is the first day of the month, &apos;01&apos;.</description>
+        <inlineHelpText>Select the day of the month the pay period starts. The default is the first day of the month, &apos;01&apos;.</inlineHelpText>
+        <label>Monthly Start Day</label>
+        <picklist>
+            <picklistValues>
+                <fullName>01</fullName>
+                <default>true</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>02</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>03</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>04</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>05</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>06</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>07</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>08</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>09</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>10</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>11</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>12</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>13</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>14</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>15</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>16</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>17</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>18</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>19</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>20</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>21</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>22</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>23</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>24</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>25</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>26</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>27</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>28</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>true</trackHistory>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Pay_Frequency_Number__c</fullName>
+        <formula>CASE(TEXT(Pay_Frequency__c), &quot;Weekly&quot;, 1, &quot;Bi-Weekly&quot;, 2, &quot;Semi-Monthly&quot;, 3, &quot;Monthly&quot;, 4, 1)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Pay Frequency Number</label>
+        <precision>18</precision>
+        <scale>0</scale>
+        <type>Number</type>
+    </fields>
+    <fields>
+        <fullName>Pay_Frequency__c</fullName>
+        <label>Pay Frequency</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Weekly</fullName>
+                <default>true</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Bi-Weekly</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Semi-Monthly</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Monthly</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>true</trackHistory>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Pay_Periods_Available__c</fullName>
+        <label>Pay Periods Available</label>
+        <precision>3</precision>
+        <scale>0</scale>
+        <trackHistory>true</trackHistory>
+        <type>Number</type>
+    </fields>
+    <fields>
+        <fullName>Shift_Start_Number__c</fullName>
+        <defaultValue>1</defaultValue>
+        <description>Shift the pay week begins.  Default is 1. Add validation? Eventually have a lookup with the Shift Templates object.</description>
+        <inlineHelpText>Shift the work week begins.</inlineHelpText>
+        <label>Shift Start Number</label>
+        <precision>3</precision>
+        <scale>0</scale>
+        <trackHistory>true</trackHistory>
+        <type>Number</type>
+    </fields>
+    <fields>
+        <fullName>Start_Day_Number__c</fullName>
+        <description>Number represents the day of the week for &apos;Start Day&apos; field.
+• 0 for Sunday
+• 6 for Saturday</description>
+        <formula>CASE(TEXT(Start_Day__c) ,  &quot;Sunday&quot;, 0, &quot;Monday&quot;, 1, &quot;Tuesday&quot;, 2, &quot;Wednesday&quot;, 3, &quot;Thursday&quot;, 4, &quot;Friday&quot;, 5, &quot;Saturday&quot;, 6, 1)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Start Day Number</label>
+        <precision>18</precision>
+        <scale>0</scale>
+        <type>Number</type>
+    </fields>
+    <fields>
+        <fullName>Start_Day__c</fullName>
+        <description>Select the Day the work week begins. Default is &apos;Monday&apos;.</description>
+        <label>Start Day</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Monday</fullName>
+                <default>true</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Tuesday</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Wednesday</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Thursday</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Friday</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Saturday</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Sunday</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>true</trackHistory>
+        <type>Picklist</type>
+    </fields>
+    <label>Pay Period Policy</label>
+    <listViews>
+        <fullName>All_Pay_Periods</fullName>
+        <columns>NAME</columns>
+        <columns>Description__c</columns>
+        <columns>Pay_Frequency__c</columns>
+        <columns>Shift_Start_Number__c</columns>
+        <columns>Start_Day__c</columns>
+        <columns>Effective_Date__c</columns>
+        <filterScope>Everything</filterScope>
+        <label>All Pay Periods</label>
+    </listViews>
+    <nameField>
+        <displayFormat>PPP-{000000}</displayFormat>
+        <label>Policy ID</label>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Pay Period Policies</pluralLabel>
+    <searchLayouts>
+        <customTabListAdditionalFields>Description__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Pay_Frequency__c</customTabListAdditionalFields>
+        <lookupDialogsAdditionalFields>Description__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Pay_Frequency__c</lookupDialogsAdditionalFields>
+        <lookupFilterFields>Description__c</lookupFilterFields>
+        <lookupFilterFields>Pay_Frequency__c</lookupFilterFields>
+        <lookupPhoneDialogsAdditionalFields>Description__c</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>Pay_Frequency__c</lookupPhoneDialogsAdditionalFields>
+        <searchResultsAdditionalFields>Description__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Pay_Frequency__c</searchResultsAdditionalFields>
+    </searchLayouts>
+    <sharingModel>ReadWrite</sharingModel>
+    <validationRules>
+        <fullName>EffectiveDateEqualsWeekStartDay</fullName>
+        <active>true</active>
+        <description>Effective Date must occur on the same weekday as &apos;Pay Week Start Day&apos;.
+MOD(&lt;DATE&gt; - DATE(1900, 1, 7), 7) returns 0-Sunday...6-Saturday.</description>
+        <errorConditionFormula>IF(ISBLANK(Effective_Date__c)  || TEXT(Pay_Frequency__c)  = &apos;Semi-Monthly&apos;  || TEXT(Pay_Frequency__c)  = &apos;Monthly&apos;, 
+false,
+IF(Start_Day_Number__c  &lt;&gt; MOD(Effective_Date__c - DATE(1900, 1, 7), 7), true, 
+false) )</errorConditionFormula>
+        <errorDisplayField>Effective_Date__c</errorDisplayField>
+        <errorMessage>Effective Date must be on the day specified in &apos;Pay Week Start Day&apos;.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>ShiftStartNumber</fullName>
+        <active>true</active>
+        <description>&apos;Shift Start Number&apos; must be 1 or 3. Eventually remove and use Shift Lookup.</description>
+        <errorConditionFormula>AND( Shift_Start_Number__c  &lt;&gt; 1,Shift_Start_Number__c  &lt;&gt; 3)</errorConditionFormula>
+        <errorDisplayField>Shift_Start_Number__c</errorDisplayField>
+        <errorMessage>Pay Period Shift Start Number must be 1 or 3.</errorMessage>
+    </validationRules>
+</CustomObject>

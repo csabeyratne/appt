@@ -1,0 +1,850 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <value>Customer</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Customers</value>
+    </caseValues>
+    <fields>
+        <label><!-- Allergies To Medication --></label>
+        <name>Allergies_To_Medication__c</name>
+    </fields>
+    <fields>
+        <label><!-- Allergies --></label>
+        <name>Allergies__c</name>
+    </fields>
+    <fields>
+        <label><!-- Allergy Reactions --></label>
+        <name>Allergy_Reactions__c</name>
+        <picklistValues>
+            <masterLabel>Chemicals</masterLabel>
+            <translation><!-- Chemicals --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Cosmetics</masterLabel>
+            <translation><!-- Cosmetics --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Hormones</masterLabel>
+            <translation><!-- Hormones --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Birth Date --></label>
+        <name>Birth_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Birth Day --></label>
+        <name>Birth_Day__c</name>
+        <picklistValues>
+            <masterLabel>1</masterLabel>
+            <translation><!-- 1 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>10</masterLabel>
+            <translation><!-- 10 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>11</masterLabel>
+            <translation><!-- 11 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>12</masterLabel>
+            <translation><!-- 12 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>13</masterLabel>
+            <translation><!-- 13 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>14</masterLabel>
+            <translation><!-- 14 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>15</masterLabel>
+            <translation><!-- 15 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>16</masterLabel>
+            <translation><!-- 16 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>17</masterLabel>
+            <translation><!-- 17 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>18</masterLabel>
+            <translation><!-- 18 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>19</masterLabel>
+            <translation><!-- 19 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2</masterLabel>
+            <translation><!-- 2 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>20</masterLabel>
+            <translation><!-- 20 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>21</masterLabel>
+            <translation><!-- 21 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>22</masterLabel>
+            <translation><!-- 22 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>23</masterLabel>
+            <translation><!-- 23 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>24</masterLabel>
+            <translation><!-- 24 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>25</masterLabel>
+            <translation><!-- 25 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>26</masterLabel>
+            <translation><!-- 26 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>27</masterLabel>
+            <translation><!-- 27 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>28</masterLabel>
+            <translation><!-- 28 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>29</masterLabel>
+            <translation><!-- 29 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>3</masterLabel>
+            <translation><!-- 3 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>30</masterLabel>
+            <translation><!-- 30 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>31</masterLabel>
+            <translation><!-- 31 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>4</masterLabel>
+            <translation><!-- 4 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>5</masterLabel>
+            <translation><!-- 5 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>6</masterLabel>
+            <translation><!-- 6 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>7</masterLabel>
+            <translation><!-- 7 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>8</masterLabel>
+            <translation><!-- 8 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>9</masterLabel>
+            <translation><!-- 9 --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Birth Month --></label>
+        <name>Birth_Month__c</name>
+        <picklistValues>
+            <masterLabel>April</masterLabel>
+            <translation><!-- April --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>August</masterLabel>
+            <translation><!-- August --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>December</masterLabel>
+            <translation><!-- December --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>February</masterLabel>
+            <translation><!-- February --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>January</masterLabel>
+            <translation><!-- January --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>July</masterLabel>
+            <translation><!-- July --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>June</masterLabel>
+            <translation><!-- June --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>March</masterLabel>
+            <translation><!-- March --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>May</masterLabel>
+            <translation><!-- May --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>November</masterLabel>
+            <translation><!-- November --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>October</masterLabel>
+            <translation><!-- October --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>September</masterLabel>
+            <translation><!-- September --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Last Perm Brand --></label>
+        <name>Brand__c</name>
+    </fields>
+    <fields>
+        <help><!-- Enter customer&apos;s city. --></help>
+        <label><!-- City --></label>
+        <name>City__c</name>
+    </fields>
+    <fields>
+        <help><!-- Enter comments about the Customer. --></help>
+        <label><!-- Comments --></label>
+        <name>Comments__c</name>
+    </fields>
+    <fields>
+        <label><!-- Conditioner --></label>
+        <name>Conditioner__c</name>
+    </fields>
+    <fields>
+        <help><!-- Check if customer receives email notifications. --></help>
+        <label><!-- Email Notification --></label>
+        <name>Email_Notification__c</name>
+    </fields>
+    <fields>
+        <help><!-- Enter Customer&apos;s Email address. --></help>
+        <label><!-- Email --></label>
+        <name>Email__c</name>
+    </fields>
+    <fields>
+        <help><!-- Enter customer&apos;s first name. --></help>
+        <label><!-- First Name --></label>
+        <name>First_Name__c</name>
+    </fields>
+    <fields>
+        <help><!-- Select frequency when Recurring is checked. --></help>
+        <label><!-- Frequency --></label>
+        <name>Frequency__c</name>
+        <picklistValues>
+            <masterLabel>Every Eight Weeks</masterLabel>
+            <translation><!-- Every Eight Weeks --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Every Five Weeks</masterLabel>
+            <translation><!-- Every Five Weeks --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Every Four Weeks</masterLabel>
+            <translation><!-- Every Four Weeks --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Every Seven Weeks</masterLabel>
+            <translation><!-- Every Seven Weeks --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Every Six Weeks</masterLabel>
+            <translation><!-- Every Six Weeks --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Every Three Weeks</masterLabel>
+            <translation><!-- Every Three Weeks --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Every Two Weeks</masterLabel>
+            <translation><!-- Every Two Weeks --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Every Week</masterLabel>
+            <translation><!-- Every Week --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Full Name --></label>
+        <name>Full_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Gels --></label>
+        <name>Gels__c</name>
+    </fields>
+    <fields>
+        <label><!-- Hair Color Treatments --></label>
+        <name>Hair_Color_Treatments__c</name>
+        <picklistValues>
+            <masterLabel>Bleached</masterLabel>
+            <translation><!-- Bleached --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Frosted</masterLabel>
+            <translation><!-- Frosted --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Henna</masterLabel>
+            <translation><!-- Henna --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Highlighted</masterLabel>
+            <translation><!-- Highlighted --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Metallic Base</masterLabel>
+            <translation><!-- Metallic Base --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Other</masterLabel>
+            <translation><!-- Other --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Permanent</masterLabel>
+            <translation><!-- Permanent --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Semi-Permanent</masterLabel>
+            <translation><!-- Semi-Permanent --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Toned</masterLabel>
+            <translation><!-- Toned --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Hair Condition --></label>
+        <name>Hair_Condition__c</name>
+        <picklistValues>
+            <masterLabel>Dry</masterLabel>
+            <translation><!-- Dry --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Normal</masterLabel>
+            <translation><!-- Normal --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Oily</masterLabel>
+            <translation><!-- Oily --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Hair Spray --></label>
+        <name>Hair_Spray__c</name>
+    </fields>
+    <fields>
+        <help><!-- Enter customer&apos;s home phone number. --></help>
+        <label><!-- Home Phone --></label>
+        <name>Home_Phone__c</name>
+    </fields>
+    <fields>
+        <help><!-- Enter date of last appointment. --></help>
+        <label><!-- Last Appointment Date --></label>
+        <name>Last_Appointment_Date__c</name>
+    </fields>
+    <fields>
+        <help><!-- Enter Customer&apos;s last name. --></help>
+        <label><!-- Last Name --></label>
+        <name>Last_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Last Perm --></label>
+        <name>Last_Perm__c</name>
+    </fields>
+    <fields>
+        <label><!-- Mailing State --></label>
+        <name>Mailing_State__c</name>
+    </fields>
+    <fields>
+        <help><!-- Enter Customer&apos;s mobile/cell phone.  Include area code. --></help>
+        <label><!-- Mobile Phone --></label>
+        <name>Mobile_Phone__c</name>
+    </fields>
+    <fields>
+        <label><!-- Natural Base Level --></label>
+        <name>Natural_Base_Level__c</name>
+    </fields>
+    <fields>
+        <help><!-- Enter Customer&apos;s office phone. --></help>
+        <label><!-- Office Phone --></label>
+        <name>Office_Phone__c</name>
+    </fields>
+    <fields>
+        <label><!-- Perms --></label>
+        <name>Perms__c</name>
+        <picklistValues>
+            <masterLabel>Acid</masterLabel>
+            <translation><!-- Acid --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Alkaline</masterLabel>
+            <translation><!-- Alkaline --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Exothermic</masterLabel>
+            <translation><!-- Exothermic --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Personal Hair Other --></label>
+        <name>Personal_Hair_Other__c</name>
+    </fields>
+    <fields>
+        <label><!-- Personal Hair Treatment --></label>
+        <name>Personal_Hair_Treatment__c</name>
+        <picklistValues>
+            <masterLabel>Bleach</masterLabel>
+            <translation><!-- Bleach --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Color</masterLabel>
+            <translation><!-- Color --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Condition</masterLabel>
+            <translation><!-- Condition --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Cut</masterLabel>
+            <translation><!-- Cut --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Other</masterLabel>
+            <translation><!-- Other --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Perm</masterLabel>
+            <translation><!-- Perm --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Rinse</masterLabel>
+            <translation><!-- Rinse --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Porosity --></label>
+        <name>Porosity__c</name>
+        <picklistValues>
+            <masterLabel>Dry</masterLabel>
+            <translation><!-- Dry --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Normal</masterLabel>
+            <translation><!-- Normal --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Oily</masterLabel>
+            <translation><!-- Oily --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Recurring End Date --></label>
+        <name>Recurring_End_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Recurring Start Time --></label>
+        <name>Recurring_Start_DT__c</name>
+    </fields>
+    <fields>
+        <label><!-- Recurring Start Date --></label>
+        <name>Recurring_Start_Date__c</name>
+    </fields>
+    <fields>
+        <help><!-- Check if this customer desires to have recurring appointments. --></help>
+        <label><!-- Recurring --></label>
+        <name>Recurring__c</name>
+    </fields>
+    <fields>
+        <label><!-- Relaxer Date --></label>
+        <name>Relaxer_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Relaxer --></label>
+        <name>Relaxer__c</name>
+        <picklistValues>
+            <masterLabel>Mild</masterLabel>
+            <translation><!-- Mild --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Regular</masterLabel>
+            <translation><!-- Regular --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Super</masterLabel>
+            <translation><!-- Super --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Scalp Condition --></label>
+        <name>Scalp_Condition__c</name>
+        <picklistValues>
+            <masterLabel>Dry</masterLabel>
+            <translation><!-- Dry --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Normal</masterLabel>
+            <translation><!-- Normal --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Oily</masterLabel>
+            <translation><!-- Oily --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Enter Service to be performed if Recurring is checked. --></help>
+        <label><!-- Service --></label>
+        <name>Service__c</name>
+        <relationshipLabel><!-- Customers --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Shampoo --></label>
+        <name>Shampoo__c</name>
+    </fields>
+    <fields>
+        <label><!-- Staff --></label>
+        <name>Staff__c</name>
+        <relationshipLabel><!-- Customers --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- State --></label>
+        <name>State__c</name>
+        <picklistValues>
+            <masterLabel>Alabama</masterLabel>
+            <translation><!-- Alabama --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Alaska</masterLabel>
+            <translation><!-- Alaska --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Arizona</masterLabel>
+            <translation><!-- Arizona --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Arkansas</masterLabel>
+            <translation><!-- Arkansas --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>California</masterLabel>
+            <translation><!-- California --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Colorado</masterLabel>
+            <translation><!-- Colorado --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Connecticut</masterLabel>
+            <translation><!-- Connecticut --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Delaware</masterLabel>
+            <translation><!-- Delaware --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>District of Columbia</masterLabel>
+            <translation><!-- District of Columbia --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Florida</masterLabel>
+            <translation><!-- Florida --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Georgia</masterLabel>
+            <translation><!-- Georgia --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Hawaii</masterLabel>
+            <translation><!-- Hawaii --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Idaho</masterLabel>
+            <translation><!-- Idaho --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Illinois</masterLabel>
+            <translation><!-- Illinois --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Indiana</masterLabel>
+            <translation><!-- Indiana --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Iowa</masterLabel>
+            <translation><!-- Iowa --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Kansas</masterLabel>
+            <translation><!-- Kansas --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Kentucky</masterLabel>
+            <translation><!-- Kentucky --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Louisiana</masterLabel>
+            <translation><!-- Louisiana --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Maine</masterLabel>
+            <translation><!-- Maine --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Maryland</masterLabel>
+            <translation><!-- Maryland --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Massachusetts</masterLabel>
+            <translation><!-- Massachusetts --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Michigan</masterLabel>
+            <translation><!-- Michigan --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Minnesota</masterLabel>
+            <translation><!-- Minnesota --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Mississippi</masterLabel>
+            <translation><!-- Mississippi --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Missouri</masterLabel>
+            <translation><!-- Missouri --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Montana</masterLabel>
+            <translation><!-- Montana --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Nebraska</masterLabel>
+            <translation><!-- Nebraska --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Nevada</masterLabel>
+            <translation><!-- Nevada --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>New Hampshire</masterLabel>
+            <translation><!-- New Hampshire --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>New Jersey</masterLabel>
+            <translation><!-- New Jersey --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>New Mexico</masterLabel>
+            <translation><!-- New Mexico --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>New York</masterLabel>
+            <translation><!-- New York --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>North Carolina</masterLabel>
+            <translation><!-- North Carolina --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>North Dakota</masterLabel>
+            <translation><!-- North Dakota --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Ohio</masterLabel>
+            <translation><!-- Ohio --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Oklahoma</masterLabel>
+            <translation><!-- Oklahoma --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Oregon</masterLabel>
+            <translation><!-- Oregon --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Pennsylvania</masterLabel>
+            <translation><!-- Pennsylvania --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Rhode Island</masterLabel>
+            <translation><!-- Rhode Island --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>South Carolina</masterLabel>
+            <translation><!-- South Carolina --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>South Dakota</masterLabel>
+            <translation><!-- South Dakota --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Tennessee</masterLabel>
+            <translation><!-- Tennessee --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Texas</masterLabel>
+            <translation><!-- Texas --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Utah</masterLabel>
+            <translation><!-- Utah --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Vermont</masterLabel>
+            <translation><!-- Vermont --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Virginia</masterLabel>
+            <translation><!-- Virginia --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Washington</masterLabel>
+            <translation><!-- Washington --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>West Virginia</masterLabel>
+            <translation><!-- West Virginia --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Wisconsin</masterLabel>
+            <translation><!-- Wisconsin --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Wyoming</masterLabel>
+            <translation><!-- Wyoming --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Enter Customer&apos;s Status.  Default is Active. --></help>
+        <label><!-- Status --></label>
+        <name>Status__c</name>
+        <picklistValues>
+            <masterLabel>Active</masterLabel>
+            <translation><!-- Active --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Deceased</masterLabel>
+            <translation><!-- Deceased --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Inactive</masterLabel>
+            <translation><!-- Inactive --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Enter customer&apos;s street address. --></help>
+        <label><!-- Street --></label>
+        <name>Street_Address__c</name>
+    </fields>
+    <fields>
+        <help><!-- Check if customer receives mobile text messages. --></help>
+        <label><!-- Text Notification --></label>
+        <name>Text_Notification__c</name>
+    </fields>
+    <fields>
+        <label><!-- Texture --></label>
+        <name>Texture__c</name>
+        <picklistValues>
+            <masterLabel>Dry</masterLabel>
+            <translation><!-- Dry --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Normal</masterLabel>
+            <translation><!-- Normal --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Oily</masterLabel>
+            <translation><!-- Oily --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Select customer&apos;s salutation. --></help>
+        <label><!-- Title --></label>
+        <name>Title__c</name>
+        <picklistValues>
+            <masterLabel>Dr.</masterLabel>
+            <translation><!-- Dr. --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Mr.</masterLabel>
+            <translation><!-- Mr. --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Mrs.</masterLabel>
+            <translation><!-- Mrs. --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Ms.</masterLabel>
+            <translation><!-- Ms. --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Tonal Value --></label>
+        <name>Tonal_Value__c</name>
+    </fields>
+    <fields>
+        <help><!-- Enter customer&apos;s zip code. --></help>
+        <label><!-- Zip Code --></label>
+        <name>Zip_Code__c</name>
+    </fields>
+    <layouts>
+        <layout>Customer Layout</layout>
+        <sections>
+            <label><!-- Address Information --></label>
+            <section>Address Information</section>
+        </sections>
+        <sections>
+            <label><!-- Address Location --></label>
+            <section>Address Location</section>
+        </sections>
+        <sections>
+            <label><!-- Allergies --></label>
+            <section>Allergies</section>
+        </sections>
+        <sections>
+            <label><!-- Comments --></label>
+            <section>Comments</section>
+        </sections>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Hair Color Treatments --></label>
+            <section>Hair Color Treatments</section>
+        </sections>
+        <sections>
+            <label><!-- Perms --></label>
+            <section>Perms</section>
+        </sections>
+        <sections>
+            <label><!-- Personal Hair Treatment &amp; Product --></label>
+            <section>Personal Hair Treatment &amp; Product</section>
+        </sections>
+        <sections>
+            <label><!-- Recurring Customer --></label>
+            <section>Recurring Customer</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

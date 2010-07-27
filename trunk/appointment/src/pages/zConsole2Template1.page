@@ -1,0 +1,49 @@
+<apex:page sidebar="true" controller="zListViewController" tabStyle="My_To_Do__tab" >
+<apex:include pageName="zConsole2Resources"></apex:include>
+<table width="99%">
+  <tr>
+    <td valign="top" width="50%">
+      <!-- left column views -->
+      <table width="100%">
+        <tr>
+          <td>
+            <apex:enhancedList listId="{!List1Id}" rowsPerPage="25" height="600" id="List1" customizable="False" rendered="{!List1Render}"></apex:enhancedList>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <apex:enhancedList listId="{!List2Id}" rowsPerPage="10" height="200" id="List2" customizable="False" rendered="{!List2Render}"></apex:enhancedList>
+          </td>
+        </tr>
+      </table>
+    </td>
+    <td valign="top" width="50%">
+      <!-- right column views -->
+      <table width="100%">
+        <tr>
+          <td>
+            <apex:enhancedList listId="{!List3Id}" rowsPerPage="10" height="250" id="List3" customizable="False" rendered="{!List3Render}"></apex:enhancedList>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <apex:enhancedList listId="{!List4Id}" rowsPerPage="10" height="350" id="List4" customizable="False" rendered="{!List4Render}"></apex:enhancedList>
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+  <tr>
+    <td valign="top" width="100%" colspan="2">
+      <!-- bottom full width views -->
+      <table width="100%">
+        <tr>
+          <td>
+            <apex:enhancedList listId="{!List5Id}" rowsPerPage="10" height="400" id="List5" customizable="False" rendered="{!List5Render}"></apex:enhancedList>
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+</apex:page>

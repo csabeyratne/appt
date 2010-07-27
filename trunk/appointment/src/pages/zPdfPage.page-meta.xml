@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ApexPage xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>16.0</apiVersion>
+    <description>How to Create Word, PDF or Excel Files with Salesforce Data by Sam Arjmandi</description>
+    <label>zPdfPage</label>
+</ApexPage>
