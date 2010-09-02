@@ -12,11 +12,6 @@
         <name>Begin_Time__c</name>
     </fields>
     <fields>
-        <help><!-- Enter the cost of the service. --></help>
-        <label><!-- Cost --></label>
-        <name>Cost__c</name>
-    </fields>
-    <fields>
         <help><!-- Enter description of the service. --></help>
         <label><!-- Description --></label>
         <name>Description__c</name>
@@ -47,7 +42,8 @@
         <name>Price__c</name>
     </fields>
     <fields>
-        <label><!-- Category --></label>
+        <help><!-- Select the appropriate Service Category for your service. --></help>
+        <label><!-- Service Category --></label>
         <name>Service_Category__c</name>
         <relationshipLabel><!-- Services --></relationshipLabel>
     </fields>

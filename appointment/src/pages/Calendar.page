@@ -1,5 +1,36 @@
 <apex:page standardStylesheets="false" expires="1" cache="false" showHeader="false" sidebar="false" standardController="Appointment__c">
 
+    <html>
+    <head>
+    <style>
+        /* Lightbox background */
+        #lightbox {
+            display:none;
+            background:#000000;
+            opacity:0.9;
+            filter:alpha(opacity=90);
+            position:absolute;
+            top:0px;
+            left:0px;
+            min-width:100%;
+            min-height:100%;
+            z-index:1000;
+        }
+        /* Lightbox panel with some content */
+        #lightbox-panel {
+            display:none;
+            position:fixed;
+            top:100px;
+            left:50%;
+            margin-left:-200px;
+            width:400px;
+            background:#FFFFFF;
+            padding:10px 15px 10px 15px;
+            border:2px solid #CCCCCC;
+            z-index:1001;
+        }
+    </style>
+
     <apex:includeScript value="{!URLFOR($Resource.CalendarResources,'jquery.min.js')}"/>
     <apex:includeScript value="{!URLFOR($Resource.CalendarResources,'fullcalendar.min.js')}" />
     <apex:includeScript value="{!URLFOR($Resource.CalendarResources,'dragresize.js')}" />
@@ -13,6 +44,185 @@
     <script type='text/javascript' src="{!URLFOR($Resource.CalendarResources,'fullcalendar.min.js')}"></script>
     <script type="text/javascript" src="{!URLFOR($Resource.CalendarResources,'dragresize.js')}"></script>
     -->
-    <div id='calendar'></div>
+
+    <script type='text/javascript'>
+        var jsonString;
+        var allAppointments;
+        var visibleClasses = '';
+        var appointments;
+        $(document).ready(function()
+        {
+        
+        var date = new Date();
+        var d = date.getDate();
+        var m = date.getMonth();
+        var y = date.getFullYear();
+
+        $('#calendar').fullCalendar({
+            theme: true,
+            header: {
+                left: 'prev,next today',
+                center: 'title',
+                right: 'month,agendaWeek,agendaDay'
+            },
+            editable: false,
+ 
+            appointments: "------------------------- PUT THE URL TO YOUR JSON RESPONDER PAGE HERE -------------------", 
+            loading: function(isLoading, view)
+            {
+                if(isLoading)
+                {
+                $("#lightbox, #lightbox-panel").fadeIn(300); 
+                }
+                if(!isLoading)
+                {
+                    appointments = $('#calendar').fullCalendar('clientappointments');
+                    filterappointments(document.getElementById('filterType').value, document.form.filterCriteria.value);
+                    $("#lightbox, #lightbox-panel").fadeOut(300);
+                }
+            },
+            
+            appointmentRender: function(appointment, element) 
+            {
+                var newdiv = document.createElement('div');
+                newdiv.setAttribute('id', 'NoticeDiv_'+appointment.id);
+                newdiv.setAttribute('class', 'drsElement');
+                document.getElementById("Body").appendChild(newdiv);
+                document.getElementById('NoticeDiv_'+appointment.id).innerHTML = '<div class="drsMoveHandle" id="TitleBar_'+appointment.id+'"></div>';
+            },  
+                      
+            appointmentClick: function(appointment, jsEvent, view ) 
+            {
+                showMessage(appointment, jsEvent, view )
+            },
+            
+            
+        });
+
+    updateVisible(document.form.classesToShow);});   
+
+    function showMessage(appointment, jsEvent, view)
+    {
+        document.getElementById("NoticeDiv_"+appointment.id).style.left = jsEvent.pageX+'px';+'px';
+        document.getElementById("NoticeDiv_"+appointment.id).style.top = jsEvent.pageY+'px';
+        document.getElementById("NoticeDiv_"+appointment.id).innerHTML = '<div id="TitleBar_'+appointment.id+'" class="drsMoveHandle">'+appointment.title+'<img src="http://images.fpitesters.com/shared/application_close_fade.png" id="closeButton_'+appointment.id+'" name="closeButton_'+appointment.id+'" onmouseover=\'javascript:roll_over("closeButton_'+appointment.id+'", "http://images.fpitesters.com/shared/application_close.png");\' onmouseout= \'javascript:roll_over("closeButton_'+appointment.id+'", "http://images.fpitesters.com/shared/application_close_fade.png");\' onClick="javascript:hideMessage(\''+appointment.id+'\');" ></div> \
+                                                          Start: ' + $.fullCalendar.formatDate(appointment.start, "h:mm tt") +'<br> \
+                                                          End: '+ $.fullCalendar.formatDate(appointment.end, "h:mm tt")+'<br> \
+                                                          Client: '+appointment.client+'<br> \
+                                                          All Day: '+appointment.allDay+'<br> \
+                                                          Status: '+appointment.status+'<br> \
+                                                          Test: '+appointment.test+'<br> \
+                                                          PM: '+appointment.PM+'<br> \
+                                                          PA: '+appointment.PA+'<br><br> \
+                                                          <center><a href="'+appointment.linkurl+'" target=\'_blank\'>'+appointment.linkurl+'</a></center>';
+        $("#NoticeDiv_"+appointment.id).slideDown('fast', function()
+        {
+        });   
+
+    }
+    
+    function hideMessage(id)
+    {
+        $("#NoticeDiv_"+id).slideUp('fast', function()
+        {
+        });
+    }
+ 
+    function roll_over(img_name, img_src)
+    {
+        document[img_name].src = img_src;
+    }
+
+    function updateVisible(classNames)
+    {
+        visibleClasses='';
+        for(var i=0; i<classNames.length; i++)
+        {
+            if(classNames[i].checked)
+            {
+                visibleClasses += classNames[i].value;
+            }    
+        }     
+    }
+
+    function filterappointments(filterField, filterValue)
+    {
+        var matchesFilter = -1;
+        var matchesClass = -1;
+        
+        for(var i=0; i<appointments.length; i++)
+        {
+            try
+            {
+                //alert('Finding '+appointments[i].status.toLowerCase()+'. In: '+visibleClasses.toLowerCase()+'. Result: '+visibleClasses.toLowerCase().indexOf(appointments[i].status.toLowerCase()));
+                matchesFilter = appointments[i][filterField].toLowerCase().indexOf(filterValue.toLowerCase());
+                matchesClass = visibleClasses.toLowerCase().indexOf(appointments[i].status.toLowerCase());
+            }         
+            catch(e)
+            {
+                //Sometimes they will try and filter on a value that an appointment object doesn't have a value for.
+                //in that case, just say that it passes the appointment filter. It can still fail the class filter though.
+                matchesFilter = 1;
+            }    
+            
+            if((matchesFilter != -1 && filterValue.length > 0 && matchesClass != -1) || (filterValue.length < 1 && matchesClass != -1))
+            {
+                $('.'+appointments[i].id).slideDown('fast', function()
+                {
+  
+                });
+            }
+            else
+            {
+                $('.'+appointments[i].id).slideUp('fast', function()
+                {
+
+                });
+            }
+
+        }
+
+    }  
+
+</script>
+</head>
+<body id="Body">
+
+<div id='calendar'></div> 
+
+<div id="lightbox-panel">  
+    <h2>Calendar Data Loading</h2>  
+    <p><img src="http://images.fpitesters.com/portal/ajax-loader2.gif"></img></p>  
+    <p align="center">    
+    </p>  
+</div><!-- /lightbox-panel -->  
+   
+<div id="lightbox"> </div>
+<!-- /lightbox --> 
+
+    <div id="NoticeDiv" class="drsElement">
+        <div id="TitleBar" class="drsMoveHandle"></div>
+    </div>
+
+    <form name="form" id="form" method="post">
+    <img src="http://images.fpitesters.com/shared/arrow_rotate_clockwise.png" onClick="javascript:$('#calendar').fullCalendar( 'rerenderappointments' );"></img>
+        Show Only Appointments where 
+        <select name="filterType" id="filterType">
+            <option value="customer">Customer</option>
+            <option value="staff">Staff</option>
+            <option value="service">Service</option>
+        </select>
+         Is 
+        <input name="filterCriteria" id="filterCriteria" onkeyup="javascript:filterappointments(filterType.value,this.value,form.classesToShow);" /> 
+        
+        and status is    
+        <LABEL FOR="confirmed">Confirmed: <input type="checkbox" name="classesToShow" value=".Confirmed" id="confirmed" checked="checked" onclick="javascript:updateVisible(form.classesToShow);filterappointments(filterType.value,filterCriteria.value);"/></LABEL> 
+        <LABEL FOR="pending">Pending: <input type="checkbox" name="classesToShow" value=".Pending" id="pending" checked="checked" onclick="javascript:updateVisible(form.classesToShow);filterappointments(filterType.value,filterCriteria.value);"/> </LABEL>
+        <LABEL FOR="canceled">Canceled: <input type="checkbox" name="classesToShow" value=".Canceled" id="canceled" checked="checked" onclick="javascript:updateVisible(form.classesToShow);filterappointments(filterType.value,filterCriteria.value);"/></LABEL><br />
+        
+    </form>
+    
+</body>
+</html>
     
 </apex:page>

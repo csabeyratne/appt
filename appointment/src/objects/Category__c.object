@@ -33,33 +33,29 @@
         <type>Default</type>
     </actionOverrides>
     <deploymentStatus>Deployed</deploymentStatus>
-    <description>Use service categories to group like services together.</description>
+    <description>A Service Category is used to group like services together.</description>
     <enableHistory>true</enableHistory>
     <enableReports>true</enableReports>
     <fields>
         <fullName>Description__c</fullName>
         <label>Description</label>
+        <trackHistory>true</trackHistory>
         <type>TextArea</type>
     </fields>
     <fields>
         <fullName>Parent_Category__c</fullName>
         <label>Parent Category</label>
         <referenceTo>Category__c</referenceTo>
-        <relationshipLabel>Categories</relationshipLabel>
         <relationshipName>Categories</relationshipName>
+        <trackHistory>true</trackHistory>
         <type>Lookup</type>
     </fields>
-    <label>Category</label>
-    <listViews>
-        <fullName>All</fullName>
-        <filterScope>Everything</filterScope>
-        <label>All</label>
-    </listViews>
+    <label>Service Category</label>
     <nameField>
         <label>Category Name</label>
         <type>Text</type>
     </nameField>
-    <pluralLabel>Categories</pluralLabel>
+    <pluralLabel>Service Categories</pluralLabel>
     <searchLayouts>
         <customTabListAdditionalFields>Parent_Category__c</customTabListAdditionalFields>
         <lookupDialogsAdditionalFields>Parent_Category__c</lookupDialogsAdditionalFields>

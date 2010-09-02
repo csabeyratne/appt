@@ -1,4 +1,6 @@
-<apex:page standardController="Employee__c" extensions="zLookupToPicklistExtension" >
+<apex:page ></apex:page>
+<!--
+<apex:page standardController="01I70000000AdiY" extensions="zLookupToPicklistExtension" >
   <apex:sectionHeader title="Employee Edit" subtitle="New Employee" />
   <apex:form id="employeeForm">
     <apex:pageBlock title="Employee Edit" mode="edit">
@@ -24,3 +26,4 @@
     </apex:pageBlock>
   </apex:form>
 </apex:page>
+-->

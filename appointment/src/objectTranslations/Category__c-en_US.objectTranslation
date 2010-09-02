@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
     <caseValues>
-        <value>Category</value>
+        <value>Service Category</value>
     </caseValues>
     <caseValues>
         <plural>true</plural>
-        <value>Categories</value>
+        <value>Service Categories</value>
     </caseValues>
     <fields>
         <label><!-- Description --></label>
@@ -14,7 +14,14 @@
     <fields>
         <label><!-- Parent Category --></label>
         <name>Parent_Category__c</name>
-        <relationshipLabel><!-- Categories --></relationshipLabel>
+        <relationshipLabel><!-- Service Categories --></relationshipLabel>
     </fields>
+    <layouts>
+        <layout>Servive Category Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
     <startsWith>Consonant</startsWith>
 </CustomObjectTranslation>

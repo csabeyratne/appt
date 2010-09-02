@@ -17,11 +17,6 @@
         <name>Birth_Date__c</name>
     </fields>
     <fields>
-        <label><!-- Category --></label>
-        <name>Category__c</name>
-        <relationshipLabel><!-- Staff --></relationshipLabel>
-    </fields>
-    <fields>
         <help><!-- Please enter the city. --></help>
         <label><!-- City --></label>
         <name>City__c</name>

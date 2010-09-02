@@ -8,6 +8,10 @@
         <value>Appointments</value>
     </caseValues>
     <fields>
+        <label><!-- All Day --></label>
+        <name>All_Day__c</name>
+    </fields>
+    <fields>
         <label><!-- Customer --></label>
         <name>Customer__c</name>
         <relationshipLabel><!-- Appointments --></relationshipLabel>
@@ -17,13 +21,8 @@
         <name>Duration_In_Minutes__c</name>
     </fields>
     <fields>
-        <label><!-- Service --></label>
-        <name>Service__c</name>
-        <relationshipLabel><!-- Appointments --></relationshipLabel>
-    </fields>
-    <fields>
-        <label><!-- Staff --></label>
-        <name>Staff__c</name>
+        <label><!-- Staff Service --></label>
+        <name>Staff_Service__c</name>
         <relationshipLabel><!-- Appointments --></relationshipLabel>
     </fields>
     <fields>

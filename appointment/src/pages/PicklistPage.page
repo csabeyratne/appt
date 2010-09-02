@@ -1,5 +1,5 @@
 <apex:page standardController="account">
-    <!--
-    <c:picklist id="industryPicklist" value="{!accountIndustry}" picklistField="Industry" systemEntity="Account" usedefaultvalue="true"/>
-    -->
+    <apex:form >
+        <c:picklistComponent id="industryPicklist" value="{!account.Industry}" picklistField="Industry" systemEntity="Account" usedefaultvalue="true"/>
+    </apex:form>
 </apex:page>

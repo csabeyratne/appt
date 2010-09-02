@@ -37,14 +37,20 @@
     <enableHistory>true</enableHistory>
     <enableReports>true</enableReports>
     <fields>
+        <fullName>All_Day__c</fullName>
+        <defaultValue>false</defaultValue>
+        <label>All Day</label>
+        <trackHistory>true</trackHistory>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
         <fullName>Customer__c</fullName>
         <label>Customer</label>
         <referenceTo>Customer__c</referenceTo>
         <relationshipLabel>Appointments</relationshipLabel>
         <relationshipName>Appointments</relationshipName>
-        <relationshipOrder>0</relationshipOrder>
         <trackHistory>true</trackHistory>
-        <type>MasterDetail</type>
+        <type>Lookup</type>
     </fields>
     <fields>
         <fullName>Duration_In_Minutes__c</fullName>
@@ -55,23 +61,13 @@
         <type>Number</type>
     </fields>
     <fields>
-        <fullName>Service__c</fullName>
-        <label>Service</label>
-        <referenceTo>Service__c</referenceTo>
+        <fullName>Staff_Service__c</fullName>
+        <label>Staff Service</label>
+        <referenceTo>Staff_Service__c</referenceTo>
         <relationshipLabel>Appointments</relationshipLabel>
         <relationshipName>Appointments</relationshipName>
         <trackHistory>true</trackHistory>
         <type>Lookup</type>
-    </fields>
-    <fields>
-        <fullName>Staff__c</fullName>
-        <label>Staff</label>
-        <referenceTo>Staff__c</referenceTo>
-        <relationshipLabel>Appointments</relationshipLabel>
-        <relationshipName>Appointments</relationshipName>
-        <relationshipOrder>1</relationshipOrder>
-        <trackHistory>true</trackHistory>
-        <type>MasterDetail</type>
     </fields>
     <fields>
         <fullName>Start_DateTime__c</fullName>
@@ -136,19 +132,13 @@
         <customTabListAdditionalFields>Start_Time_List__c</customTabListAdditionalFields>
         <customTabListAdditionalFields>Stop_Time_List__c</customTabListAdditionalFields>
         <customTabListAdditionalFields>Customer__c</customTabListAdditionalFields>
-        <customTabListAdditionalFields>Service__c</customTabListAdditionalFields>
-        <customTabListAdditionalFields>Staff__c</customTabListAdditionalFields>
         <lookupDialogsAdditionalFields>Start_Time_List__c</lookupDialogsAdditionalFields>
         <lookupDialogsAdditionalFields>Stop_Time_List__c</lookupDialogsAdditionalFields>
         <lookupDialogsAdditionalFields>Customer__c</lookupDialogsAdditionalFields>
-        <lookupDialogsAdditionalFields>Service__c</lookupDialogsAdditionalFields>
-        <lookupDialogsAdditionalFields>Staff__c</lookupDialogsAdditionalFields>
         <searchFilterFields>OBJECT_ID</searchFilterFields>
         <searchResultsAdditionalFields>Start_Time_List__c</searchResultsAdditionalFields>
         <searchResultsAdditionalFields>Stop_Time_List__c</searchResultsAdditionalFields>
         <searchResultsAdditionalFields>Customer__c</searchResultsAdditionalFields>
-        <searchResultsAdditionalFields>Service__c</searchResultsAdditionalFields>
-        <searchResultsAdditionalFields>Staff__c</searchResultsAdditionalFields>
     </searchLayouts>
-    <sharingModel>ControlledByParent</sharingModel>
+    <sharingModel>ReadWrite</sharingModel>
 </CustomObject>

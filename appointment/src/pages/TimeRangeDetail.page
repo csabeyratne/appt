@@ -1,0 +1,32 @@
+<apex:page standardController="Time_Range__c">
+	<apex:sectionHeader title="{!$ObjectType.Time_Range__c.label}" subtitle="{!Time_Range__c.name}"/>
+	<apex:pageBlock title="{!$ObjectType.Time_Range__c.label} Detail">
+		<apex:pageBlockButtons >
+		<apex:form >
+			<apex:commandButton action="{!edit}" value="Edit"/>
+			<apex:commandButton action="{!delete}" value="Delete"/>
+			<apex:commandButton action="{!URLFOR($Action.Time_Range__c.Clone,Time_Range__c.id)}" value="Clone"/>
+		</apex:form>
+		</apex:pageBlockButtons>
+		<apex:pageBlockSection showHeader="false" columns="2">
+			<apex:outputField value="{!Time_Range__c.Settings__c}"/>
+			<apex:pageBlockSectionItem />
+			<apex:outputField value="{!Time_Range__c.Name}"/>
+			<apex:pageBlockSectionItem />
+			<apex:outputField value="{!Time_Range__c.Time_String__c}"/>
+			<apex:pageBlockSectionItem />
+			<apex:outputField value="{!Time_Range__c.DateTime_Value__c}"/>
+			<apex:pageBlockSectionItem />
+			<apex:outputField value="{!Time_Range__c.Weekday_Number__c}"/>
+			<apex:pageBlockSectionItem />
+			<apex:outputField value="{!Time_Range__c.Weekday__c}"/>
+			<apex:pageBlockSectionItem />
+		</apex:pageBlockSection>
+		<apex:pageBlockSection showHeader="false" columns="2">
+			<apex:outputField value="{!Time_Range__c.CreatedById}"/>
+			<apex:outputField value="{!Time_Range__c.LastModifiedById}"/>
+		</apex:pageBlockSection>
+		<apex:pageBlockSection showHeader="true" title="Custom Links" columns="3">
+		</apex:pageBlockSection>
+	</apex:pageBlock>
+</apex:page>

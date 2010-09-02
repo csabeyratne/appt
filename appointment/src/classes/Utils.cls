@@ -1,5 +1,6 @@
 public class Utils {
 
+    public static Boolean inFutureContext = false; // Prevent recursive future method calls
     public static Boolean isTest = false;
 
     /*
@@ -44,6 +45,7 @@ public class Utils {
     * SystemUtils
     */
     public static final String LINE_SEPARATOR = '\n';
+    
     public static void debugLimits(){
         System.Debug(
               LINE_SEPARATOR + '##################################################################'
@@ -78,19 +80,16 @@ public class Utils {
     }
     
     /*
-    * @param string value
+    * @param string value (Format '10:45 PM')
     * @return datetime 
     */
     public static DateTime getConvertDateTime(string timeString) {
     
         // System.Debug('## >>> START Class getConvertDateTime(string timeString)'); 
 
-        // used to convert a picklist time value (Format: "10:45 PM") into
-        // a datetime the system can use
+        // Used to convert a picklist time value (Format: '10:45 PM') into a datetime the system can use
 
-        // string dateString = '2010-01-03'; // 'YYYY-MM-DD' date doesn't really matter here
-
-        // split string on whitespace or colon
+        // Split string on whitespace or colon
         string splitString = '[\\s:]';
         String[] timeStringDivided = timeString.split(splitString);
 
@@ -101,59 +100,208 @@ public class Utils {
 
         string hour = timeStringDivided.get(0);
         string minute = timeStringDivided.get(1);
-        // string second = '00';
         
         if ( (timeStringDivided.get(2) == 'PM') && (timeStringDivided.get(0) <> '12') ) {
             hour = String.valueOf(Integer.valueOf(hour) + 12);
         }
 
-        // create datetime 
-        // string stringDateTime = dateString + ' ' + hour + ':' + minute +  ':' + second;
+        Datetime dtTime = Datetime.newInstance(2010, 1, 3, Integer.valueOf(hour), Integer.valueOf(minute), 0); // Date value doesn't matter
 
-        Datetime dtTime = Datetime.newInstance(2010, 1, 3, Integer.valueOf(hour), Integer.valueOf(minute), 0);
-
-        // System.Debug('## >>> Date: ' + dateString);
         // System.Debug('## >>> Hour: ' + hour);
         // System.Debug('## >>> Minute: ' + minute);
-        // System.Debug('## >>> Second: ' + second);
-        // System.Debug('stringDateTime: ' + stringDateTime);
-        // System.Debug('## >>> Datetime.newInstance(): ' + Datetime.newInstance(2010, 1, 3, Integer.valueOf(hour), Integer.valueOf(minute), 0 ));
-        // System.Debug('## >>> datetime.valueOf(stringDateTime): ' + datetime.valueOf(stringDateTime));
+        // System.Debug('## >>> dtTime: ' + dtTime);
         
-        // return datetime.valueOfGmt(stringDateTime);
         return dtTime;
 
     }
 
+    /*
+    * @param string value (Format '10:45 PM')
+    * @param string value (Format '10:45 PM')
+    * @return datetime 
+    */
     public static integer CalcTimeDuration (string timeString1, string timeString2) {
         
         // System.Debug('## >>> START Class CalcTimeDuration (string timeString1, string timeString2)');
         
-        // calculate the duration in minutes between two picklist time values (Format: "10:45 PM")
-        // first time is earlier than second time
-        // an Appontment record expects start time and duration in minutes
+        // Calculate the duration in minutes between two picklist time values (Format: '10:45 PM')
+        // First time is earlier than second time
+        // Appointment record expects start time and duration in minutes
 
         integer Duration;
-        //string dateString = '2010-01-03'; // 'YYYY-MM-DD' date doesn't really matter here
         
         datetime dt1 = getConvertDateTime(timeString1);
         datetime dt2 = getConvertDateTime(timeString2);
         
-        // this function must return a Long
+        // Function must return a Long
         Long dt1ms = dt1.getTime();
         Long dt2ms = dt2.getTime();
         
         Long Diffms = dt2ms - dt1ms;
         
-        // need to cast the long to int (long way around)
+        // Need to cast the long to int (long way around)
         // (see: http://community.salesforce.com/sforce/board/message?board.id=apex&message.id=1881)
         Integer DiffmsInt = Integer.valueOf(String.valueOf(Diffms));
         
-        // convert from ms to minutes
+        // Convert from ms to minutes
         Duration = DiffmsInt / 1000 / 60;
         
         return Duration;
 
     } 
     
+    /*
+    * Get all the IDs out of an array into a set.
+    * Really useful for bulkifying triggers
+    * @author cpeterson
+    */
+    public static Set<id> getIds(sObject[] objList){
+        Set<id> retval = new Set<id>();
+        for(sobject thisObj: objList){
+            retval.add(thisObj.id);
+        }
+        return retval;
+    }
+
+    /*
+    * TimeConversions Class
+    * Created by: Michael Smith/Force2b, 04/06/2010
+    */
+    public class TimeConversions {
+
+        /* -------------------------------------------------------------------------------------
+        * Returns an Integer  of the Timezone Offset from Eastern Time for the
+        * currently logged in user
+        *
+        * This is used to convert the String DateTime (that is in Eastern Time) into a
+        * DateTime value in SalesForce. The default behavior of SFC converts the string into
+        * a local datetime value, but we need to get into Eastern Time.
+        * ------------------------------------------------------------------------------------- */
+        public Integer getCurrentUserTZOffsetFromEastern() {
+
+            Map<String, Integer[]> tzSIDKeys = getTZSidKeys();
+
+            User user = [SELECT ID, TimeZoneSidKey FROM User WHERE ID = :UserInfo.getUserId() LIMIT 1];
+
+            Date[] dstDatesNow = getDSTDates(System.Today().year());
+            Integer UsersTZOffset = 0;
+
+            if (tzSIDKeys.get(user.TimeZoneSidKey) != null) {
+
+                // Get the base timezone offset from GMT for the user
+                if (System.Today() >= dstDatesNow[0] && System.Today() <= dstDatesNow[1]) UsersTZOffset = tzSIDKeys.get(user.TimeZoneSidKey)[1];
+                else UsersTZOffset = tzSIDKeys.get(user.TimeZoneSidKey)[0];
+                
+                system.debug(LoggingLevel.Error, 'Base TimeZone for Current User=' + user.TimeZoneSidKey + '/' + UsersTZOffset );
+         
+                // Now make it a timezone offset from EASTERN time
+                Integer EasternTZOffset = 0;
+                if (System.Today() >= dstDatesNow[0] && System.Today() <= dstDatesNow[1]) EasternTZOffset = tzSIDKeys.get('America/New_York')[1];
+                else EasternTZOffset = tzSIDKeys.get('America/New_York')[0];
+                UsersTZOffset = Math.abs(EasternTZOffset) - Math.abs(UsersTZOffset);
+
+                system.debug(LoggingLevel.Error, 'TimeZone Offset to Eastern Time=' + UsersTZOffset );
+
+            }
+
+            return UsersTZOffset ;
+
+        }
+
+        /* -------------------------------------------------------------------------------------
+        * Returns a String Collection of the Timezone Codes based on the Timezone Offset Passed
+        * for the date passed.
+        *
+        * Based on a table from: http://en.wikipedia.org/wiki/Zone.tab
+        *
+        * getTimeZoneCode[0] = Display Text (ex: EDT)
+        * getTimeZoneCode[1] = DateTime.Format() parameter (ex: America/New_York)
+        * ------------------------------------------------------------------------------------- */
+        public string[] getTimeZoneCode(Integer tzOffset, Date theDate, Boolean isDSTObserved) {
+
+            Date[] dstDates = getDSTDates(theDate.year()); // [0]=startDate, [1]=endDate
+            boolean isDSTOn = (theDate >= dstDates[0] && theDate <= dstDates[1]);
+      
+            if (tzOffset == 0) return new String[]{' GMT', 'Europe/London' };
+            else if (tzOffset == 4) return new String[]{' AST (UTC-04)', 'America/Puerto_Rico' };
+            else if (tzOffset == 5 && isDSTOn && isDSTObserved) return new String[]{' EDT (UTC-04)', 'America/New_York' };
+            else if (tzOffset == 5) return new String[]{' EST (UTC-05)', 'America/New_York' };
+            else if (tzOffset == 6 && isDSTOn && isDSTObserved) return new String[]{' CDT (UTC-05)', 'America/Chicago' };
+            else if (tzOffset == 6) return new String[]{' CST (UTC-06)', 'America/Chicago' };
+            else if (tzOffset == 7 && !isDSTObserved) return new String[]{' MST (UTC-07)', 'America/Phoenix' };
+            else if (tzOffset == 7 && isDSTOn && isDSTObserved) return new String[]{' MDT (UTC-06)', 'America/Denver' };
+            else if (tzOffset == 7) return new String[]{' MST (UTC-07)', 'America/Denver' };
+            else if (tzOffset == 8 && isDSTOn && isDSTObserved) return new String[]{' PDT (UTC-07)', 'America/Los_Angeles' };
+            else if (tzOffset == 8) return new String[]{' PST (UTC-08)', 'America/Los_Angeles' };
+            else if (tzOffset == 9 && isDSTOn && isDSTObserved) return new String[]{' AKDT (UTC-08)', 'America/Anchorage' };
+            else if (tzOffset == 9) return new String[]{' AKST (UTC-09)', 'America/Anchorage' };
+            else if (tzOffset == 10 && !isDSTObserved) return new String[]{' HST (UTC-10)', 'Pacific/Honolulu' };
+            else if (tzOffset == 10 && isDSTOn && isDSTObserved) return new String[]{' HDT (UTC-09)', 'America/Adak' };
+            else if (tzOffset == 10) return new String[]{' HST (UTC-10)', 'America/Adak' };
+            else if (tzOffset == 11) return new String[]{' HST (UTC-10)', 'Pacific/Pago_Pago' };
+            else return new String[]{' UTC-' + tzOffset, 'GMT' };
+      
+         }
+   
+         /* -------------------------------------------------------------------------------------
+         * Returns a date Collection of Start/End dates for US Daylight Saving Time
+         * for the specified year.
+         *
+         * Based on code from: http://www.webexhibits.org/daylightsaving/b2.html
+         * ------------------------------------------------------------------------------------- */
+         public Date[] getDSTDates(Integer theYear) {
+   
+            Long thisYear;
+            Long AprilDate;
+            Long OctoberDate;
+            Long MarchDate;
+            Long NovemberDate;
+            Long longSeven = 7;
+            thisYear = Math.round(theYear);
+      
+            AprilDate = Math.mod(2+6 * thisYear - Math.floor(thisYear / 4).longValue(), longSeven) + 1;
+            OctoberDate=  Math.mod(31-( Math.floor(thisYear * 5 / 4).longValue() + 1), longSeven);
+      
+            MarchDate = 14 - Math.mod(Math.floor(1 + thisYear * 5 / 4).LongValue(), longSeven);
+            NovemberDate = 7 - Math.mod(Math.floor (1 + thisYear * 5 / 4).LongValue(), longSeven);
+      
+            string startDate = (thisYear > 2006 ? ('03/'+MarchDate) : ('04/'+AprilDate)) + '/' + thisYear;
+            string endDate = (thisYear > 2006 ? ('11/'+NovemberDate):('10/'+OctoberDate))+ '/' + thisYear;
+      
+            Date[] rtnDates = new List<Date>();
+            rtnDates.add(Date.parse(startDate));
+            rtnDates.add(Date.parse(endDate));
+            return rtnDates;
+      
+         }
+   
+         public Map<String, Integer[]> getTZSidKeys() {
+   
+            Map<String, Integer[]> tzSIDKeys = new Map<String, Integer[]>();
+      
+            tzSIDKeys.put('America/Adak', new Integer[]{-10, -9});
+            tzSIDKeys.put('America/Anchorage', new Integer[]{-9, -8});
+            tzSIDKeys.put('America/Chicago', new Integer[]{-6, -5});
+            tzSIDKeys.put('America/Denver', new Integer[]{-7, -6});
+            tzSIDKeys.put('America/Detroit', new Integer[]{-5, -4});
+            tzSIDKeys.put('America/Halifax', new Integer[]{-4, -3});
+            tzSIDKeys.put('America/Indianapolis', new Integer[]{-5, -4});
+            tzSIDKeys.put('America/Los_Angeles', new Integer[]{-8, -7});
+            tzSIDKeys.put('America/Montreal', new Integer[]{-5, -4});
+            tzSIDKeys.put('America/New_York', new Integer[]{-5, -4});
+            tzSIDKeys.put('America/Panama', new Integer[]{-5, -5});
+            tzSIDKeys.put('America/Phoenix', new Integer[]{-7, -7});
+            tzSIDKeys.put('America/Puerto_Rico', new Integer[]{-4, -4});
+            tzSIDKeys.put('America/Toronto', new Integer[]{-5, -4});
+            tzSIDKeys.put('America/Vancouver', new Integer[]{-8, -7});
+            tzSIDKeys.put('Europe/London', new Integer[]{0, 1});
+            tzSIDKeys.put('Pacific/Honolulu', new Integer[]{-10, -10});
+            tzSIDKeys.put('Pacific/Pago_Pago', new Integer[]{-11, -11});
+      
+            return tzSIDKeys;
+      
+        }
+   
+    }
+
 }

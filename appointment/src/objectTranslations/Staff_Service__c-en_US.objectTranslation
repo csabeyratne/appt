@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <value>Staff Service</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Staff Services</value>
+    </caseValues>
+    <fields>
+        <label><!-- Begin Time --></label>
+        <name>Begin_Time__c</name>
+    </fields>
+    <fields>
+        <label><!-- Double Appointment --></label>
+        <name>Double_Appointment__c</name>
+    </fields>
+    <fields>
+        <help><!-- Enter the service duration in minutes. --></help>
+        <label><!-- Duration --></label>
+        <name>Duration__c</name>
+    </fields>
+    <fields>
+        <label><!-- End Time --></label>
+        <name>End_Time__c</name>
+    </fields>
+    <fields>
+        <help><!-- Enter fee. --></help>
+        <label><!-- Fee --></label>
+        <name>Fee__c</name>
+    </fields>
+    <fields>
+        <label><!-- Gap Time --></label>
+        <name>Gap_Time__c</name>
+    </fields>
+    <fields>
+        <help><!-- Enter price of this service. --></help>
+        <label><!-- Price --></label>
+        <name>Price__c</name>
+    </fields>
+    <fields>
+        <help><!-- Enter service. --></help>
+        <label><!-- Service --></label>
+        <name>Service__c</name>
+        <relationshipLabel><!-- Staff Services --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Enter Staff --></help>
+        <label><!-- Staff --></label>
+        <name>Staff__c</name>
+        <relationshipLabel><!-- Staff Services --></relationshipLabel>
+    </fields>
+    <layouts>
+        <layout>Staff Service Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

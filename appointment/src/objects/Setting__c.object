@@ -33,7 +33,7 @@
         <type>Default</type>
     </actionOverrides>
     <deploymentStatus>Deployed</deploymentStatus>
-    <description>Business rules and parameters.</description>
+    <description>Manage business rules and parameters including operating hours, holidays, days closed.</description>
     <enableEnhancedLookup>true</enableEnhancedLookup>
     <enableHistory>true</enableHistory>
     <enableReports>true</enableReports>
@@ -51,11 +51,13 @@
             </picklistValues>
             <sorted>false</sorted>
         </picklist>
+        <trackHistory>true</trackHistory>
         <type>Picklist</type>
     </fields>
     <fields>
         <fullName>Business_Email__c</fullName>
         <label>Email</label>
+        <trackHistory>true</trackHistory>
         <type>Email</type>
     </fields>
     <fields>
@@ -112,22 +114,6 @@
         <label>Friday From</label>
         <picklist>
             <picklistValues>
-                <fullName>04:00 AM</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>04:30 AM</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>05:00 AM</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>05:30 AM</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
                 <fullName>06:00 AM</fullName>
                 <default>false</default>
             </picklistValues>
@@ -267,40 +253,9 @@
                 <fullName>11:00 PM</fullName>
                 <default>false</default>
             </picklistValues>
-            <picklistValues>
-                <fullName>12:00 AM</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>12:30 AM</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>01:00 AM</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>01:30 AM</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>02:00 AM</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>02:30 AM</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>03:00 AM</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>03:30 AM</fullName>
-                <default>false</default>
-            </picklistValues>
             <sorted>false</sorted>
         </picklist>
+        <trackHistory>true</trackHistory>
         <type>Picklist</type>
     </fields>
     <fields>
@@ -325,54 +280,6 @@
         <label>Friday To</label>
         <picklist>
             <picklistValues>
-                <fullName>12:00 AM</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>12:30 AM</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>01:00 AM</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>01:30 AM</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>02:00 AM</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>02:30 AM</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>03:00 AM</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>03:30 AM</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>04:00 AM</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>04:30 AM</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>05:00 AM</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>05:30 AM</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
                 <fullName>06:00 AM</fullName>
                 <default>false</default>
             </picklistValues>
@@ -512,12 +419,9 @@
                 <fullName>11:00 PM</fullName>
                 <default>false</default>
             </picklistValues>
-            <picklistValues>
-                <fullName>11:30 PM</fullName>
-                <default>false</default>
-            </picklistValues>
             <sorted>false</sorted>
         </picklist>
+        <trackHistory>true</trackHistory>
         <type>Picklist</type>
     </fields>
     <fields>
@@ -616,6 +520,7 @@ IF(ISBLANK(Last_Name__c ), TRIM(First_Name__c), TRIM(Last_Name__c) &amp; &quot;,
             </picklistValues>
             <sorted>false</sorted>
         </picklist>
+        <trackHistory>true</trackHistory>
         <type>Picklist</type>
     </fields>
     <fields>
@@ -690,6 +595,7 @@ IF(ISBLANK(Last_Name__c ), TRIM(First_Name__c), TRIM(Last_Name__c) &amp; &quot;,
             </picklistValues>
             <sorted>false</sorted>
         </picklist>
+        <trackHistory>true</trackHistory>
         <type>Picklist</type>
     </fields>
     <fields>
@@ -710,54 +616,6 @@ IF(ISBLANK(Last_Name__c ), TRIM(First_Name__c), TRIM(Last_Name__c) &amp; &quot;,
         <fullName>Monday_From__c</fullName>
         <label>Monday From</label>
         <picklist>
-            <picklistValues>
-                <fullName>12:00 AM</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>12:30 AM</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>01:00 AM</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>01:30 AM</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>02:00 AM</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>02:30 AM</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>03:00 AM</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>03:30 AM</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>04:00 AM</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>04:30 AM</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>05:00 AM</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>05:30 AM</fullName>
-                <default>false</default>
-            </picklistValues>
             <picklistValues>
                 <fullName>06:00 AM</fullName>
                 <default>false</default>
@@ -898,12 +756,9 @@ IF(ISBLANK(Last_Name__c ), TRIM(First_Name__c), TRIM(Last_Name__c) &amp; &quot;,
                 <fullName>11:00 PM</fullName>
                 <default>false</default>
             </picklistValues>
-            <picklistValues>
-                <fullName>11:30 PM</fullName>
-                <default>false</default>
-            </picklistValues>
             <sorted>false</sorted>
         </picklist>
+        <trackHistory>true</trackHistory>
         <type>Picklist</type>
     </fields>
     <fields>
@@ -928,54 +783,6 @@ IF(ISBLANK(Last_Name__c ), TRIM(First_Name__c), TRIM(Last_Name__c) &amp; &quot;,
         <label>Monday To</label>
         <picklist>
             <picklistValues>
-                <fullName>12:00 AM</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>12:30 AM</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>01:00 AM</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>01:30 AM</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>02:00 AM</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>02:30 AM</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>03:00 AM</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>03:30 AM</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>04:00 AM</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>04:30 AM</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>05:00 AM</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>05:30 AM</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
                 <fullName>06:00 AM</fullName>
                 <default>false</default>
             </picklistValues>
@@ -1115,12 +922,9 @@ IF(ISBLANK(Last_Name__c ), TRIM(First_Name__c), TRIM(Last_Name__c) &amp; &quot;,
                 <fullName>11:00 PM</fullName>
                 <default>false</default>
             </picklistValues>
-            <picklistValues>
-                <fullName>11:30 PM</fullName>
-                <default>false</default>
-            </picklistValues>
             <sorted>false</sorted>
         </picklist>
+        <trackHistory>true</trackHistory>
         <type>Picklist</type>
     </fields>
     <fields>
@@ -1149,54 +953,6 @@ IF(ISBLANK(Last_Name__c ), TRIM(First_Name__c), TRIM(Last_Name__c) &amp; &quot;,
         <label>Saturday From</label>
         <picklist>
             <picklistValues>
-                <fullName>12:00 AM</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>12:30 AM</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>01:00 AM</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>01:30 AM</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>02:00 AM</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>02:30 AM</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>03:00 AM</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>03:30 AM</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>04:00 AM</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>04:30 AM</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>05:00 AM</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>05:30 AM</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
                 <fullName>06:00 AM</fullName>
                 <default>false</default>
             </picklistValues>
@@ -1336,12 +1092,9 @@ IF(ISBLANK(Last_Name__c ), TRIM(First_Name__c), TRIM(Last_Name__c) &amp; &quot;,
                 <fullName>11:00 PM</fullName>
                 <default>false</default>
             </picklistValues>
-            <picklistValues>
-                <fullName>11:30 PM</fullName>
-                <default>false</default>
-            </picklistValues>
             <sorted>false</sorted>
         </picklist>
+        <trackHistory>true</trackHistory>
         <type>Picklist</type>
     </fields>
     <fields>
@@ -1366,54 +1119,6 @@ IF(ISBLANK(Last_Name__c ), TRIM(First_Name__c), TRIM(Last_Name__c) &amp; &quot;,
         <label>Saturday To</label>
         <picklist>
             <picklistValues>
-                <fullName>12:00 AM</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>12:30 AM</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>01:00 AM</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>01:30 AM</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>02:00 AM</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>02:30 AM</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>03:00 AM</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>03:30 AM</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>04:00 AM</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>04:30 AM</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>05:00 AM</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>05:30 AM</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
                 <fullName>06:00 AM</fullName>
                 <default>false</default>
             </picklistValues>
@@ -1553,12 +1258,9 @@ IF(ISBLANK(Last_Name__c ), TRIM(First_Name__c), TRIM(Last_Name__c) &amp; &quot;,
                 <fullName>11:00 PM</fullName>
                 <default>false</default>
             </picklistValues>
-            <picklistValues>
-                <fullName>11:30 PM</fullName>
-                <default>false</default>
-            </picklistValues>
             <sorted>false</sorted>
         </picklist>
+        <trackHistory>true</trackHistory>
         <type>Picklist</type>
     </fields>
     <fields>
@@ -1804,54 +1506,6 @@ IF(ISBLANK(Last_Name__c ), TRIM(First_Name__c), TRIM(Last_Name__c) &amp; &quot;,
         <label>Sunday From</label>
         <picklist>
             <picklistValues>
-                <fullName>12:00 AM</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>12:30 AM</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>01:00 AM</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>01:30 AM</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>02:00 AM</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>02:30 AM</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>03:00 AM</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>03:30 AM</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>04:00 AM</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>04:30 AM</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>05:00 AM</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>05:30 AM</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
                 <fullName>06:00 AM</fullName>
                 <default>false</default>
             </picklistValues>
@@ -1991,12 +1645,9 @@ IF(ISBLANK(Last_Name__c ), TRIM(First_Name__c), TRIM(Last_Name__c) &amp; &quot;,
                 <fullName>11:00 PM</fullName>
                 <default>false</default>
             </picklistValues>
-            <picklistValues>
-                <fullName>11:30 PM</fullName>
-                <default>false</default>
-            </picklistValues>
             <sorted>false</sorted>
         </picklist>
+        <trackHistory>true</trackHistory>
         <type>Picklist</type>
     </fields>
     <fields>
@@ -2021,54 +1672,6 @@ IF(ISBLANK(Last_Name__c ), TRIM(First_Name__c), TRIM(Last_Name__c) &amp; &quot;,
         <label>Sunday To</label>
         <picklist>
             <picklistValues>
-                <fullName>12:00 AM</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>12:30 AM</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>01:00 AM</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>01:30 AM</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>02:00 AM</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>02:30 AM</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>03:00 AM</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>03:30 AM</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>04:00 AM</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>04:30 AM</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>05:00 AM</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>05:30 AM</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
                 <fullName>06:00 AM</fullName>
                 <default>false</default>
             </picklistValues>
@@ -2208,12 +1811,9 @@ IF(ISBLANK(Last_Name__c ), TRIM(First_Name__c), TRIM(Last_Name__c) &amp; &quot;,
                 <fullName>11:00 PM</fullName>
                 <default>false</default>
             </picklistValues>
-            <picklistValues>
-                <fullName>11:30 PM</fullName>
-                <default>false</default>
-            </picklistValues>
             <sorted>false</sorted>
         </picklist>
+        <trackHistory>true</trackHistory>
         <type>Picklist</type>
     </fields>
     <fields>
@@ -2242,54 +1842,6 @@ IF(ISBLANK(Last_Name__c ), TRIM(First_Name__c), TRIM(Last_Name__c) &amp; &quot;,
         <label>Thursday From</label>
         <picklist>
             <picklistValues>
-                <fullName>12:00 AM</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>12:30 AM</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>01:00 AM</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>01:30 AM</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>02:00 AM</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>02:30 AM</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>03:00 AM</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>03:30 AM</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>04:00 AM</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>04:30 AM</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>05:00 AM</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>05:30 AM</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
                 <fullName>06:00 AM</fullName>
                 <default>false</default>
             </picklistValues>
@@ -2429,12 +1981,9 @@ IF(ISBLANK(Last_Name__c ), TRIM(First_Name__c), TRIM(Last_Name__c) &amp; &quot;,
                 <fullName>11:00 PM</fullName>
                 <default>false</default>
             </picklistValues>
-            <picklistValues>
-                <fullName>11:30 PM</fullName>
-                <default>false</default>
-            </picklistValues>
             <sorted>false</sorted>
         </picklist>
+        <trackHistory>true</trackHistory>
         <type>Picklist</type>
     </fields>
     <fields>
@@ -2459,54 +2008,6 @@ IF(ISBLANK(Last_Name__c ), TRIM(First_Name__c), TRIM(Last_Name__c) &amp; &quot;,
         <label>Thursday To</label>
         <picklist>
             <picklistValues>
-                <fullName>12:00 AM</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>12:30 AM</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>01:00 AM</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>01:30 AM</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>02:00 AM</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>02:30 AM</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>03:00 AM</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>03:30 AM</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>04:00 AM</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>04:30 AM</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>05:00 AM</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>05:30 AM</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
                 <fullName>06:00 AM</fullName>
                 <default>false</default>
             </picklistValues>
@@ -2646,12 +2147,9 @@ IF(ISBLANK(Last_Name__c ), TRIM(First_Name__c), TRIM(Last_Name__c) &amp; &quot;,
                 <fullName>11:00 PM</fullName>
                 <default>false</default>
             </picklistValues>
-            <picklistValues>
-                <fullName>11:30 PM</fullName>
-                <default>false</default>
-            </picklistValues>
             <sorted>false</sorted>
         </picklist>
+        <trackHistory>true</trackHistory>
         <type>Picklist</type>
     </fields>
     <fields>
@@ -2675,6 +2173,7 @@ IF(ISBLANK(Last_Name__c ), TRIM(First_Name__c), TRIM(Last_Name__c) &amp; &quot;,
             </picklistValues>
             <sorted>false</sorted>
         </picklist>
+        <trackHistory>true</trackHistory>
         <type>Picklist</type>
     </fields>
     <fields>
@@ -2695,54 +2194,6 @@ IF(ISBLANK(Last_Name__c ), TRIM(First_Name__c), TRIM(Last_Name__c) &amp; &quot;,
         <fullName>Tuesday_From__c</fullName>
         <label>Tuesday From</label>
         <picklist>
-            <picklistValues>
-                <fullName>12:00 AM</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>12:30 AM</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>01:00 AM</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>01:30 AM</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>02:00 AM</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>02:30 AM</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>03:00 AM</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>03:30 AM</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>04:00 AM</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>04:30 AM</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>05:00 AM</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>05:30 AM</fullName>
-                <default>false</default>
-            </picklistValues>
             <picklistValues>
                 <fullName>06:00 AM</fullName>
                 <default>false</default>
@@ -2883,12 +2334,9 @@ IF(ISBLANK(Last_Name__c ), TRIM(First_Name__c), TRIM(Last_Name__c) &amp; &quot;,
                 <fullName>11:00 PM</fullName>
                 <default>false</default>
             </picklistValues>
-            <picklistValues>
-                <fullName>11:30 PM</fullName>
-                <default>false</default>
-            </picklistValues>
             <sorted>false</sorted>
         </picklist>
+        <trackHistory>true</trackHistory>
         <type>Picklist</type>
     </fields>
     <fields>
@@ -2913,54 +2361,6 @@ IF(ISBLANK(Last_Name__c ), TRIM(First_Name__c), TRIM(Last_Name__c) &amp; &quot;,
         <label>Tuesday To</label>
         <picklist>
             <picklistValues>
-                <fullName>12:00 AM</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>12:30 AM</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>01:00 AM</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>01:30 AM</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>02:00 AM</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>02:30 AM</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>03:00 AM</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>03:30 AM</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>04:00 AM</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>04:30 AM</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>05:00 AM</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>05:30 AM</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
                 <fullName>06:00 AM</fullName>
                 <default>false</default>
             </picklistValues>
@@ -3100,12 +2500,9 @@ IF(ISBLANK(Last_Name__c ), TRIM(First_Name__c), TRIM(Last_Name__c) &amp; &quot;,
                 <fullName>11:00 PM</fullName>
                 <default>false</default>
             </picklistValues>
-            <picklistValues>
-                <fullName>11:30 PM</fullName>
-                <default>false</default>
-            </picklistValues>
             <sorted>false</sorted>
         </picklist>
+        <trackHistory>true</trackHistory>
         <type>Picklist</type>
     </fields>
     <fields>
@@ -3141,54 +2538,6 @@ IF(ISBLANK(Last_Name__c ), TRIM(First_Name__c), TRIM(Last_Name__c) &amp; &quot;,
         <label>Wednesday From</label>
         <picklist>
             <picklistValues>
-                <fullName>12:00 AM</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>12:30 AM</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>01:00 AM</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>01:30 AM</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>02:00 AM</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>02:30 AM</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>03:00 AM</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>03:30 AM</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>04:00 AM</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>04:30 AM</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>05:00 AM</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>05:30 AM</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
                 <fullName>06:00 AM</fullName>
                 <default>false</default>
             </picklistValues>
@@ -3328,12 +2677,9 @@ IF(ISBLANK(Last_Name__c ), TRIM(First_Name__c), TRIM(Last_Name__c) &amp; &quot;,
                 <fullName>11:00 PM</fullName>
                 <default>false</default>
             </picklistValues>
-            <picklistValues>
-                <fullName>11:30 PM</fullName>
-                <default>false</default>
-            </picklistValues>
             <sorted>false</sorted>
         </picklist>
+        <trackHistory>true</trackHistory>
         <type>Picklist</type>
     </fields>
     <fields>
@@ -3358,54 +2704,6 @@ IF(ISBLANK(Last_Name__c ), TRIM(First_Name__c), TRIM(Last_Name__c) &amp; &quot;,
         <label>Wednesday To</label>
         <picklist>
             <picklistValues>
-                <fullName>12:00 AM</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>12:30 AM</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>01:00 AM</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>01:30 AM</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>02:00 AM</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>02:30 AM</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>03:00 AM</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>03:30 AM</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>04:00 AM</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>04:30 AM</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>05:00 AM</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>05:30 AM</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
                 <fullName>06:00 AM</fullName>
                 <default>false</default>
             </picklistValues>
@@ -3545,12 +2843,9 @@ IF(ISBLANK(Last_Name__c ), TRIM(First_Name__c), TRIM(Last_Name__c) &amp; &quot;,
                 <fullName>11:00 PM</fullName>
                 <default>false</default>
             </picklistValues>
-            <picklistValues>
-                <fullName>11:30 PM</fullName>
-                <default>false</default>
-            </picklistValues>
             <sorted>false</sorted>
         </picklist>
+        <trackHistory>true</trackHistory>
         <type>Picklist</type>
     </fields>
     <fields>
