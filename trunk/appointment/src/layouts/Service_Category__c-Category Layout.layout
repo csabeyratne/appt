@@ -64,7 +64,6 @@
     <relatedLists>
         <fields>NAME</fields>
         <fields>Duration__c</fields>
-        <fields>Cost__c</fields>
         <relatedList>Service__c.Service_Category__c</relatedList>
     </relatedLists>
 </Layout>

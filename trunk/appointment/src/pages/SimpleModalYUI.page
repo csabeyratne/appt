@@ -1,0 +1,113 @@
+<apex:page standardController="Account" >
+ 
+<apex:stylesheet value="http://yui.yahooapis.com/2.6.0/build/assets/skins/sam/skin.css" />
+ 
+<apex:includescript value="http://yui.yahooapis.com/2.6.0/build/yahoo-dom-event/yahoo-dom-event.js" />
+<apex:includescript value="http://yui.yahooapis.com/2.6.0/build/dragdrop/dragdrop-min.js" />
+<apex:includescript value="http://yui.yahooapis.com/2.6.0/build/container/container-min.js"/>
+<apex:includescript value="http://yui.yahooapis.com/2.6.0/build/animation/animation-min.js"/>
+ 
+<script>
+    
+    // Create a namespace for our custom functions
+    YAHOO.namespace("force.com");
+
+    // Function called when we want to show the dialog
+    YAHOO.force.com.showMe = function() {
+        document.getElementById("myPanel").style.display = "block";
+        YAHOO.force.com.myDialog.show();
+    }
+   
+   // Function called when we want to hide the dialog
+    YAHOO.force.com.hideMe = function() {
+        YAHOO.force.com.myDialog.hide();
+    }
+
+    // Function called when the DOM is ready to create the dialog,
+    // render the dialog into the document body, add our dialog skin
+    // css to the body tag, and wire up the buttons on our dialog    
+    YAHOO.force.com.init = function() {
+        document.body.className = document.body.className + " yui-skin-sam";
+        YAHOO.force.com.myDialog = new YAHOO.widget.Panel(
+            "myPanel",  // The id of our dialog container
+            { 
+                    width           :   "300px",    // You can play with this until it's right
+                    visible         :   false,  // Should be invisible when rendered
+                    draggable       :   true,   // Make the dialog draggable
+                    close           :   false,  // Don't include a close title button
+                    modal           :   true,   // Make it modal
+                    fixedCenter     :   true,   // Keep centered if window is scrolled
+                    zindex          :   40,     // Make sure it's on top of everything
+                    
+                    // This line adds the appear/disapper fade effect
+                    effect          :   {effect:YAHOO.widget.ContainerEffect.FADE,duration:0.35} 
+            }
+         );
+        
+        // Render the dialog to the document.body level of the DOM
+        YAHOO.force.com.myDialog.render(document.body);
+    }
+    
+    // Add the init method to the window.load event
+    YAHOO.util.Event.addListener(window, "load", YAHOO.force.com.init);
+</script>
+
+<!-- This is the page that we want to display to the user -->
+<apex:outputPanel >
+    <apex:pageBlock title="Basic Modal Dialog" id="none">
+        <apex:pageBlockButtons >
+            <apex:form >
+                <apex:commandButton id="showBtn" 
+                    value="Popup Demo" 
+                    oncomplete="YAHOO.force.com.showMe();" />
+            </apex:form>
+        </apex:pageBlockButtons>
+        <apex:outputPanel layout="block">
+            <apex:outputPanel layout="block" style="margin-bottom: 10px;">
+                <apex:outputLink value="http://developer.yahoo.com/yui/container/" target="_blank">
+                    Yahoo Developer Network - Container
+                </apex:outputLink>
+            </apex:outputPanel>
+            <apex:outputPanel layout="block" style="margin-bottom: 10px;">
+             A basic modal dialog with minimal styling and without any additional
+        settings. The basic overall style is set by the CSS defined in the skins.css
+        file included at the top of the page source. The example Visualforce 
+        page will collect information and place it back on this page.
+            </apex:outputPanel>
+            <apex:outputPanel id="output" layout="block">   
+            Account Name :<strong><apex:outputText value="{!account.name}" /></strong>
+            </apex:outputPanel>
+        </apex:outputPanel>
+    </apex:pageBlock>
+</apex:outputPanel>
+
+<!-- This is the content of the modal dialog -->
+<div id="myPanel" style="display: none" >
+    <div class="hd">
+        <apex:outputText value="Quickly Create Contact" />
+    </div> 
+    <div class="bd">
+        <apex:form >
+            <apex:actionRegion >
+                <apex:pageBlock >
+                    <apex:pageBlockSection columns="1">
+                        <apex:inputField id="fName" value="{!account.name}" />
+                    </apex:pageBlockSection>
+                </apex:pageBlock>
+                <div style="text-align: right;" >
+                    <apex:commandButton value="Select" oncomplete="YAHOO.force.com.hideMe();" rerender="output" />
+                    <apex:commandButton value="Cancel" immediate="true" oncomplete="YAHOO.force.com.hideMe();" rerender="output"/>
+                </div>
+            </apex:actionRegion>
+        </apex:form>
+    </div>
+    <div class="ft" style="font-size: 10px;">
+        <apex:outputPanel layout="block">
+            The dialog in this demo is using a "hidden" DIV containing and contains it's own
+            a Visualforce Form. The information entered into the inputText component 
+            is bound to data in the Apex Controller.
+        </apex:outputPanel>
+    </div>
+</div>
+
+</apex:page>

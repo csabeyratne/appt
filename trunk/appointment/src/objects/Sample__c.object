@@ -76,7 +76,11 @@
                 <default>true</default>
             </picklistValues>
             <picklistValues>
-                <fullName>Simple with Controller</fullName>
+                <fullName>Standard Controller</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Controller with Extension</fullName>
                 <default>false</default>
             </picklistValues>
             <picklistValues>
@@ -89,10 +93,6 @@
             </picklistValues>
             <picklistValues>
                 <fullName>Pages Application</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>S-Control</fullName>
                 <default>false</default>
             </picklistValues>
             <sorted>false</sorted>

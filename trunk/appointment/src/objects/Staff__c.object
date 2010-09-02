@@ -52,14 +52,6 @@
         <type>Date</type>
     </fields>
     <fields>
-        <fullName>Category__c</fullName>
-        <label>Category</label>
-        <referenceTo>Service_Category__c</referenceTo>
-        <relationshipLabel>Staff</relationshipLabel>
-        <relationshipName>Staff</relationshipName>
-        <type>Lookup</type>
-    </fields>
-    <fields>
         <fullName>City__c</fullName>
         <description>Enter the city.</description>
         <inlineHelpText>Please enter the city.</inlineHelpText>

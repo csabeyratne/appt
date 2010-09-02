@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ReportType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <baseObject></baseObject>
+    <category>other</category>
+    <deployed>true</deployed>
+    <description>Categories with Services with Staff Services</description>
+    <label>Categories with Services with Staff Services</label>
+    <sections>
+        <masterLabel>Categories</masterLabel>
+    </sections>
+</ReportType>

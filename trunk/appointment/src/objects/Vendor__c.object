@@ -51,6 +51,7 @@
         <label>Contact Name</label>
         <length>50</length>
         <required>true</required>
+        <trackHistory>true</trackHistory>
         <type>Text</type>
     </fields>
     <fields>
@@ -58,6 +59,7 @@
         <description>Customer&apos;s Email address.</description>
         <inlineHelpText>Enter Customer&apos;s Email address.</inlineHelpText>
         <label>Email</label>
+        <trackHistory>true</trackHistory>
         <type>Email</type>
     </fields>
     <fields>
@@ -65,6 +67,7 @@
         <description>Customer&apos;s home phone</description>
         <inlineHelpText>Enter customer&apos;s home phone number.</inlineHelpText>
         <label>Home Phone</label>
+        <trackHistory>true</trackHistory>
         <type>Phone</type>
     </fields>
     <fields>
@@ -78,6 +81,7 @@
         <description>Customer&apos;s mobile/cell phone.</description>
         <inlineHelpText>Enter Customer&apos;s mobile/cell phone.  Include area code.</inlineHelpText>
         <label>Mobile Phone</label>
+        <trackHistory>true</trackHistory>
         <type>Phone</type>
     </fields>
     <fields>
@@ -85,6 +89,7 @@
         <description>Customer&apos;s office phone.</description>
         <inlineHelpText>Enter Customer&apos;s office phone.</inlineHelpText>
         <label>Office Phone</label>
+        <trackHistory>true</trackHistory>
         <type>Phone</type>
     </fields>
     <fields>

@@ -40,6 +40,7 @@
     <fields>
         <fullName>Closed_Date__c</fullName>
         <label>Closed Date</label>
+        <trackHistory>true</trackHistory>
         <type>Date</type>
     </fields>
     <fields>

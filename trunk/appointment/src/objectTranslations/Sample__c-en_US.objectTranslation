@@ -35,6 +35,10 @@
             <translation><!-- Component --></translation>
         </picklistValues>
         <picklistValues>
+            <masterLabel>Controller with Extension</masterLabel>
+            <translation><!-- Controller with Extension --></translation>
+        </picklistValues>
+        <picklistValues>
             <masterLabel>Custom Controller</masterLabel>
             <translation><!-- Custom Controller --></translation>
         </picklistValues>
@@ -43,16 +47,12 @@
             <translation><!-- Pages Application --></translation>
         </picklistValues>
         <picklistValues>
-            <masterLabel>S-Control</masterLabel>
-            <translation><!-- S-Control --></translation>
-        </picklistValues>
-        <picklistValues>
             <masterLabel>Simple</masterLabel>
             <translation><!-- Simple --></translation>
         </picklistValues>
         <picklistValues>
-            <masterLabel>Simple with Controller</masterLabel>
-            <translation><!-- Simple with Controller --></translation>
+            <masterLabel>Standard Controller</masterLabel>
+            <translation><!-- Standard Controller --></translation>
         </picklistValues>
     </fields>
     <layouts>

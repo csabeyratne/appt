@@ -45,15 +45,6 @@
         <type>Number</type>
     </fields>
     <fields>
-        <fullName>Cost__c</fullName>
-        <description>The dollar amount of the service.</description>
-        <inlineHelpText>Enter the cost of the service.</inlineHelpText>
-        <label>Cost</label>
-        <precision>9</precision>
-        <scale>2</scale>
-        <type>Currency</type>
-    </fields>
-    <fields>
         <fullName>Description__c</fullName>
         <description>Description of service displayed in calendar or in an email.</description>
         <inlineHelpText>Enter description of the service.</inlineHelpText>
@@ -106,8 +97,9 @@
     </fields>
     <fields>
         <fullName>Service_Category__c</fullName>
-        <label>Category</label>
-        <referenceTo>Service_Category__c</referenceTo>
+        <inlineHelpText>Select the appropriate Service Category for your service.</inlineHelpText>
+        <label>Service Category</label>
+        <referenceTo>Category__c</referenceTo>
         <relationshipLabel>Services</relationshipLabel>
         <relationshipName>Services</relationshipName>
         <relationshipOrder>0</relationshipOrder>
@@ -126,13 +118,9 @@
     <pluralLabel>Services</pluralLabel>
     <searchLayouts>
         <customTabListAdditionalFields>Duration__c</customTabListAdditionalFields>
-        <customTabListAdditionalFields>Cost__c</customTabListAdditionalFields>
         <lookupDialogsAdditionalFields>Duration__c</lookupDialogsAdditionalFields>
-        <lookupDialogsAdditionalFields>Cost__c</lookupDialogsAdditionalFields>
         <lookupPhoneDialogsAdditionalFields>Duration__c</lookupPhoneDialogsAdditionalFields>
-        <lookupPhoneDialogsAdditionalFields>Cost__c</lookupPhoneDialogsAdditionalFields>
         <searchResultsAdditionalFields>Duration__c</searchResultsAdditionalFields>
-        <searchResultsAdditionalFields>Cost__c</searchResultsAdditionalFields>
     </searchLayouts>
     <sharingModel>ControlledByParent</sharingModel>
 </CustomObject>

@@ -8,10 +8,6 @@
         <value>Schedules</value>
     </caseValues>
     <fields>
-        <label><!-- Active --></label>
-        <name>Active__c</name>
-    </fields>
-    <fields>
         <label><!-- Description --></label>
         <name>Description__c</name>
     </fields>

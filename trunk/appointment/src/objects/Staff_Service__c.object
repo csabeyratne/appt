@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>Junction for staff and service.</description>
+    <enableHistory>true</enableHistory>
+    <enableReports>true</enableReports>
+    <fields>
+        <fullName>Begin_Time__c</fullName>
+        <label>Begin Time</label>
+        <precision>8</precision>
+        <scale>0</scale>
+        <trackHistory>true</trackHistory>
+        <type>Number</type>
+    </fields>
+    <fields>
+        <fullName>Double_Appointment__c</fullName>
+        <defaultValue>false</defaultValue>
+        <label>Double Appointment</label>
+        <trackHistory>true</trackHistory>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Duration__c</fullName>
+        <description>The unit of measure for &apos;Duration&apos; is minutes. The default value is 30 minutes.</description>
+        <inlineHelpText>Enter the service duration in minutes.</inlineHelpText>
+        <label>Duration</label>
+        <precision>4</precision>
+        <scale>0</scale>
+        <trackHistory>true</trackHistory>
+        <type>Number</type>
+    </fields>
+    <fields>
+        <fullName>End_Time__c</fullName>
+        <label>End Time</label>
+        <precision>8</precision>
+        <scale>0</scale>
+        <trackHistory>true</trackHistory>
+        <type>Number</type>
+    </fields>
+    <fields>
+        <fullName>Fee__c</fullName>
+        <description>Fee amount if applicable for this service</description>
+        <inlineHelpText>Enter fee.</inlineHelpText>
+        <label>Fee</label>
+        <precision>9</precision>
+        <scale>2</scale>
+        <trackHistory>true</trackHistory>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Gap_Time__c</fullName>
+        <label>Gap Time</label>
+        <precision>8</precision>
+        <scale>0</scale>
+        <trackHistory>true</trackHistory>
+        <type>Number</type>
+    </fields>
+    <fields>
+        <fullName>Price__c</fullName>
+        <description>Sales price of the service for this staff member</description>
+        <inlineHelpText>Enter price of this service.</inlineHelpText>
+        <label>Price</label>
+        <precision>9</precision>
+        <scale>2</scale>
+        <trackHistory>true</trackHistory>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Service__c</fullName>
+        <description>Service Assigned</description>
+        <inlineHelpText>Enter service.</inlineHelpText>
+        <label>Service</label>
+        <referenceTo>Service__c</referenceTo>
+        <relationshipLabel>Staff Services</relationshipLabel>
+        <relationshipName>Staff_Services</relationshipName>
+        <relationshipOrder>1</relationshipOrder>
+        <trackHistory>true</trackHistory>
+        <type>MasterDetail</type>
+    </fields>
+    <fields>
+        <fullName>Staff__c</fullName>
+        <description>Staff assigned</description>
+        <inlineHelpText>Enter Staff</inlineHelpText>
+        <label>Staff</label>
+        <referenceTo>Staff__c</referenceTo>
+        <relationshipLabel>Staff Services</relationshipLabel>
+        <relationshipName>Staff_Services</relationshipName>
+        <relationshipOrder>0</relationshipOrder>
+        <trackHistory>true</trackHistory>
+        <type>MasterDetail</type>
+    </fields>
+    <label>Staff Service</label>
+    <listViews>
+        <fullName>All</fullName>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <nameField>
+        <displayFormat>SS-{00000000}</displayFormat>
+        <label>Staff Service ID</label>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Staff Services</pluralLabel>
+    <searchLayouts/>
+    <sharingModel>ControlledByParent</sharingModel>
+</CustomObject>

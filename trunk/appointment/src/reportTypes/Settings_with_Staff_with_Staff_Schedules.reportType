@@ -249,11 +249,6 @@
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
-            <field>Category__c</field>
-            <table>Setting__c.Staff__r</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
             <field>Text_Notification__c</field>
             <table>Setting__c.Staff__r</table>
         </columns>
@@ -303,11 +298,6 @@
         <columns>
             <checkedByDefault>false</checkedByDefault>
             <field>LastModifiedBy</field>
-            <table>Setting__c.Staff__r.Staff_Schedules__r</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>Active__c</field>
             <table>Setting__c.Staff__r.Staff_Schedules__r</table>
         </columns>
         <columns>

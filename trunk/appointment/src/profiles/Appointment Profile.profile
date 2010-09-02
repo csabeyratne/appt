@@ -21,19 +21,7 @@
         <visible>false</visible>
     </applicationVisibilities>
     <classAccesses>
-        <apexClass>AppointmentUtils</apexClass>
-        <enabled>false</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>CategoryUtils</apexClass>
-        <enabled>false</enabled>
-    </classAccesses>
-    <classAccesses>
         <apexClass>ChangePasswordController</apexClass>
-        <enabled>false</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>ClosedDatesUtils</apexClass>
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
@@ -41,7 +29,7 @@
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>CustomerUtils</apexClass>
+        <apexClass>CustomerTriggerHandler</apexClass>
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
@@ -49,27 +37,11 @@
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>HolidayUtils</apexClass>
-        <enabled>false</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>OperatingHoursTrigger</apexClass>
-        <enabled>false</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>OperatingHoursUtils</apexClass>
-        <enabled>false</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>PromotionUtils</apexClass>
+        <apexClass>JSONObject</apexClass>
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
         <apexClass>RecordTypeListController</apexClass>
-        <enabled>false</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>ServiceUtils</apexClass>
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
@@ -81,10 +53,6 @@
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>SettingUtils</apexClass>
-        <enabled>false</enabled>
-    </classAccesses>
-    <classAccesses>
         <apexClass>SiteLoginController</apexClass>
         <enabled>false</enabled>
     </classAccesses>
@@ -93,27 +61,11 @@
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>StaffGroupUtils</apexClass>
-        <enabled>false</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>StaffUtils</apexClass>
-        <enabled>false</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>TimeOffUtils</apexClass>
-        <enabled>false</enabled>
-    </classAccesses>
-    <classAccesses>
         <apexClass>TimePicklistController</apexClass>
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
         <apexClass>TimeRangesInsertBatch</apexClass>
-        <enabled>false</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>TreatmentUtils</apexClass>
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
@@ -134,6 +86,10 @@
     </classAccesses>
     <classAccesses>
         <apexClass>disableInputField</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>getJSONAppointments</apexClass>
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
@@ -305,20 +261,23 @@
         <field>Account.Website</field>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
-        <editable>true</editable>
+        <editable>false</editable>
+        <field>Appointment__c.All_Day__c</field>
+        <hidden>true</hidden>
+    </fieldLevelSecurities>
+    <fieldLevelSecurities>
+        <editable>false</editable>
         <field>Appointment__c.Customer__c</field>
+        <hidden>true</hidden>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>true</editable>
         <field>Appointment__c.Duration_In_Minutes__c</field>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
-        <editable>true</editable>
-        <field>Appointment__c.Service__c</field>
-    </fieldLevelSecurities>
-    <fieldLevelSecurities>
-        <editable>true</editable>
-        <field>Appointment__c.Staff__c</field>
+        <editable>false</editable>
+        <field>Appointment__c.Staff_Service__c</field>
+        <hidden>true</hidden>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>true</editable>
@@ -853,6 +812,21 @@
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>false</editable>
+        <field>Customer__c.Anniversary_Date__c</field>
+        <hidden>true</hidden>
+    </fieldLevelSecurities>
+    <fieldLevelSecurities>
+        <editable>false</editable>
+        <field>Customer__c.Anniversary_Day__c</field>
+        <hidden>true</hidden>
+    </fieldLevelSecurities>
+    <fieldLevelSecurities>
+        <editable>false</editable>
+        <field>Customer__c.Anniversary_Month__c</field>
+        <hidden>true</hidden>
+    </fieldLevelSecurities>
+    <fieldLevelSecurities>
+        <editable>false</editable>
         <field>Customer__c.Birth_Date__c</field>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
@@ -1037,127 +1011,6 @@
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>true</editable>
-        <field>Employee_Schedule__c.Active__c</field>
-    </fieldLevelSecurities>
-    <fieldLevelSecurities>
-        <editable>false</editable>
-        <field>Employee_Schedule__c.Employee__c</field>
-        <hidden>true</hidden>
-    </fieldLevelSecurities>
-    <fieldLevelSecurities>
-        <editable>true</editable>
-        <field>Employee_Schedule__c.Schedule_Five__c</field>
-    </fieldLevelSecurities>
-    <fieldLevelSecurities>
-        <editable>true</editable>
-        <field>Employee_Schedule__c.Schedule_Four__c</field>
-    </fieldLevelSecurities>
-    <fieldLevelSecurities>
-        <editable>false</editable>
-        <field>Employee_Schedule__c.Schedule_One_Label__c</field>
-    </fieldLevelSecurities>
-    <fieldLevelSecurities>
-        <editable>true</editable>
-        <field>Employee_Schedule__c.Schedule_One__c</field>
-    </fieldLevelSecurities>
-    <fieldLevelSecurities>
-        <editable>true</editable>
-        <field>Employee_Schedule__c.Schedule_Seven__c</field>
-    </fieldLevelSecurities>
-    <fieldLevelSecurities>
-        <editable>true</editable>
-        <field>Employee_Schedule__c.Schedule_Six__c</field>
-    </fieldLevelSecurities>
-    <fieldLevelSecurities>
-        <editable>true</editable>
-        <field>Employee_Schedule__c.Schedule_Three__c</field>
-    </fieldLevelSecurities>
-    <fieldLevelSecurities>
-        <editable>true</editable>
-        <field>Employee_Schedule__c.Schedule_Two__c</field>
-    </fieldLevelSecurities>
-    <fieldLevelSecurities>
-        <editable>true</editable>
-        <field>Employee_Schedule__c.Week_Ending_Date__c</field>
-    </fieldLevelSecurities>
-    <fieldLevelSecurities>
-        <editable>false</editable>
-        <field>Employee__c.Age_Of_Employee__c</field>
-    </fieldLevelSecurities>
-    <fieldLevelSecurities>
-        <editable>true</editable>
-        <field>Employee__c.Badge_Number__c</field>
-    </fieldLevelSecurities>
-    <fieldLevelSecurities>
-        <editable>true</editable>
-        <field>Employee__c.Birth_Date__c</field>
-    </fieldLevelSecurities>
-    <fieldLevelSecurities>
-        <editable>true</editable>
-        <field>Employee__c.Employee_Class__c</field>
-    </fieldLevelSecurities>
-    <fieldLevelSecurities>
-        <editable>true</editable>
-        <field>Employee__c.First_Name__c</field>
-    </fieldLevelSecurities>
-    <fieldLevelSecurities>
-        <editable>false</editable>
-        <field>Employee__c.Full_Name__c</field>
-    </fieldLevelSecurities>
-    <fieldLevelSecurities>
-        <editable>true</editable>
-        <field>Employee__c.Hire_Date__c</field>
-    </fieldLevelSecurities>
-    <fieldLevelSecurities>
-        <editable>true</editable>
-        <field>Employee__c.Last_Name__c</field>
-    </fieldLevelSecurities>
-    <fieldLevelSecurities>
-        <editable>true</editable>
-        <field>Employee__c.Location__c</field>
-    </fieldLevelSecurities>
-    <fieldLevelSecurities>
-        <editable>true</editable>
-        <field>Employee__c.Pay_Period_Policy__c</field>
-    </fieldLevelSecurities>
-    <fieldLevelSecurities>
-        <editable>true</editable>
-        <field>Employee__c.Pay_Period_Select__c</field>
-    </fieldLevelSecurities>
-    <fieldLevelSecurities>
-        <editable>true</editable>
-        <field>Employee__c.Pay_Rate__c</field>
-    </fieldLevelSecurities>
-    <fieldLevelSecurities>
-        <editable>true</editable>
-        <field>Employee__c.Salesforce_User__c</field>
-    </fieldLevelSecurities>
-    <fieldLevelSecurities>
-        <editable>true</editable>
-        <field>Employee__c.Social_Security_Number__c</field>
-    </fieldLevelSecurities>
-    <fieldLevelSecurities>
-        <editable>true</editable>
-        <field>Employee__c.Status__c</field>
-    </fieldLevelSecurities>
-    <fieldLevelSecurities>
-        <editable>true</editable>
-        <field>Employee__c.Substitute_User_Effective_Date__c</field>
-    </fieldLevelSecurities>
-    <fieldLevelSecurities>
-        <editable>true</editable>
-        <field>Employee__c.Substitute_User_Expiration_Date__c</field>
-    </fieldLevelSecurities>
-    <fieldLevelSecurities>
-        <editable>true</editable>
-        <field>Employee__c.Substitute_User__c</field>
-    </fieldLevelSecurities>
-    <fieldLevelSecurities>
-        <editable>true</editable>
-        <field>Employee__c.Termination_Date__c</field>
-    </fieldLevelSecurities>
-    <fieldLevelSecurities>
-        <editable>true</editable>
         <field>Event.Description</field>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
@@ -1300,244 +1153,7 @@
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>true</editable>
-        <field>Location__c.Active__c</field>
-    </fieldLevelSecurities>
-    <fieldLevelSecurities>
-        <editable>true</editable>
-        <field>Location__c.Time_Format__c</field>
-    </fieldLevelSecurities>
-    <fieldLevelSecurities>
-        <editable>true</editable>
-        <field>Lunch_Policy__c.Active__c</field>
-    </fieldLevelSecurities>
-    <fieldLevelSecurities>
-        <editable>true</editable>
-        <field>Lunch_Policy__c.Deduction_Plus_Punched__c</field>
-    </fieldLevelSecurities>
-    <fieldLevelSecurities>
-        <editable>true</editable>
-        <field>Lunch_Policy__c.Deduction_Punched_Difference__c</field>
-    </fieldLevelSecurities>
-    <fieldLevelSecurities>
-        <editable>true</editable>
-        <field>Lunch_Policy__c.Early_Lunch_In_Grace__c</field>
-    </fieldLevelSecurities>
-    <fieldLevelSecurities>
-        <editable>true</editable>
-        <field>Lunch_Policy__c.Early_Lunch_Out_Grace__c</field>
-    </fieldLevelSecurities>
-    <fieldLevelSecurities>
-        <editable>true</editable>
-        <field>Lunch_Policy__c.Late_Lunch_In_Grace__c</field>
-    </fieldLevelSecurities>
-    <fieldLevelSecurities>
-        <editable>true</editable>
-        <field>Lunch_Policy__c.Late_Lunch_Out_Grace__c</field>
-    </fieldLevelSecurities>
-    <fieldLevelSecurities>
-        <editable>true</editable>
-        <field>Lunch_Policy__c.Lunch_Deduction__c</field>
-    </fieldLevelSecurities>
-    <fieldLevelSecurities>
-        <editable>true</editable>
-        <field>Lunch_Policy__c.Lunch_Grace_Period__c</field>
-    </fieldLevelSecurities>
-    <fieldLevelSecurities>
-        <editable>true</editable>
-        <field>Lunch_Policy__c.Lunch_Time__c</field>
-    </fieldLevelSecurities>
-    <fieldLevelSecurities>
-        <editable>true</editable>
-        <field>Lunch_Policy__c.Minimum_Hours_Worked__c</field>
-    </fieldLevelSecurities>
-    <fieldLevelSecurities>
-        <editable>true</editable>
         <field>Manufacturer__c.Active__c</field>
-    </fieldLevelSecurities>
-    <fieldLevelSecurities>
-        <editable>false</editable>
-        <field>Operating_Hours__c.Active__c</field>
-        <hidden>true</hidden>
-    </fieldLevelSecurities>
-    <fieldLevelSecurities>
-        <editable>false</editable>
-        <field>Operating_Hours__c.Description__c</field>
-        <hidden>true</hidden>
-    </fieldLevelSecurities>
-    <fieldLevelSecurities>
-        <editable>false</editable>
-        <field>Operating_Hours__c.Friday_From_DT__c</field>
-        <hidden>true</hidden>
-    </fieldLevelSecurities>
-    <fieldLevelSecurities>
-        <editable>false</editable>
-        <field>Operating_Hours__c.Friday_From__c</field>
-        <hidden>true</hidden>
-    </fieldLevelSecurities>
-    <fieldLevelSecurities>
-        <editable>false</editable>
-        <field>Operating_Hours__c.Friday_To_DT__c</field>
-        <hidden>true</hidden>
-    </fieldLevelSecurities>
-    <fieldLevelSecurities>
-        <editable>false</editable>
-        <field>Operating_Hours__c.Friday_To__c</field>
-        <hidden>true</hidden>
-    </fieldLevelSecurities>
-    <fieldLevelSecurities>
-        <editable>false</editable>
-        <field>Operating_Hours__c.Friday__c</field>
-        <hidden>true</hidden>
-    </fieldLevelSecurities>
-    <fieldLevelSecurities>
-        <editable>false</editable>
-        <field>Operating_Hours__c.Monday_From_DT__c</field>
-        <hidden>true</hidden>
-    </fieldLevelSecurities>
-    <fieldLevelSecurities>
-        <editable>false</editable>
-        <field>Operating_Hours__c.Monday_From__c</field>
-        <hidden>true</hidden>
-    </fieldLevelSecurities>
-    <fieldLevelSecurities>
-        <editable>false</editable>
-        <field>Operating_Hours__c.Monday_To_DT__c</field>
-        <hidden>true</hidden>
-    </fieldLevelSecurities>
-    <fieldLevelSecurities>
-        <editable>false</editable>
-        <field>Operating_Hours__c.Monday_To__c</field>
-        <hidden>true</hidden>
-    </fieldLevelSecurities>
-    <fieldLevelSecurities>
-        <editable>false</editable>
-        <field>Operating_Hours__c.Monday__c</field>
-        <hidden>true</hidden>
-    </fieldLevelSecurities>
-    <fieldLevelSecurities>
-        <editable>false</editable>
-        <field>Operating_Hours__c.Saturday_From_DT__c</field>
-        <hidden>true</hidden>
-    </fieldLevelSecurities>
-    <fieldLevelSecurities>
-        <editable>false</editable>
-        <field>Operating_Hours__c.Saturday_From__c</field>
-        <hidden>true</hidden>
-    </fieldLevelSecurities>
-    <fieldLevelSecurities>
-        <editable>false</editable>
-        <field>Operating_Hours__c.Saturday_To_DT__c</field>
-        <hidden>true</hidden>
-    </fieldLevelSecurities>
-    <fieldLevelSecurities>
-        <editable>false</editable>
-        <field>Operating_Hours__c.Saturday_To__c</field>
-        <hidden>true</hidden>
-    </fieldLevelSecurities>
-    <fieldLevelSecurities>
-        <editable>false</editable>
-        <field>Operating_Hours__c.Saturday__c</field>
-        <hidden>true</hidden>
-    </fieldLevelSecurities>
-    <fieldLevelSecurities>
-        <editable>false</editable>
-        <field>Operating_Hours__c.Sunday_From_DT__c</field>
-        <hidden>true</hidden>
-    </fieldLevelSecurities>
-    <fieldLevelSecurities>
-        <editable>false</editable>
-        <field>Operating_Hours__c.Sunday_From__c</field>
-        <hidden>true</hidden>
-    </fieldLevelSecurities>
-    <fieldLevelSecurities>
-        <editable>false</editable>
-        <field>Operating_Hours__c.Sunday_To_DT__c</field>
-        <hidden>true</hidden>
-    </fieldLevelSecurities>
-    <fieldLevelSecurities>
-        <editable>false</editable>
-        <field>Operating_Hours__c.Sunday_To__c</field>
-        <hidden>true</hidden>
-    </fieldLevelSecurities>
-    <fieldLevelSecurities>
-        <editable>false</editable>
-        <field>Operating_Hours__c.Sunday__c</field>
-        <hidden>true</hidden>
-    </fieldLevelSecurities>
-    <fieldLevelSecurities>
-        <editable>false</editable>
-        <field>Operating_Hours__c.Thursday_From_DT__c</field>
-        <hidden>true</hidden>
-    </fieldLevelSecurities>
-    <fieldLevelSecurities>
-        <editable>false</editable>
-        <field>Operating_Hours__c.Thursday_From__c</field>
-        <hidden>true</hidden>
-    </fieldLevelSecurities>
-    <fieldLevelSecurities>
-        <editable>false</editable>
-        <field>Operating_Hours__c.Thursday_To_DT__c</field>
-        <hidden>true</hidden>
-    </fieldLevelSecurities>
-    <fieldLevelSecurities>
-        <editable>false</editable>
-        <field>Operating_Hours__c.Thursday_To__c</field>
-        <hidden>true</hidden>
-    </fieldLevelSecurities>
-    <fieldLevelSecurities>
-        <editable>false</editable>
-        <field>Operating_Hours__c.Thursday__c</field>
-        <hidden>true</hidden>
-    </fieldLevelSecurities>
-    <fieldLevelSecurities>
-        <editable>false</editable>
-        <field>Operating_Hours__c.Tuesday_From_DT__c</field>
-        <hidden>true</hidden>
-    </fieldLevelSecurities>
-    <fieldLevelSecurities>
-        <editable>false</editable>
-        <field>Operating_Hours__c.Tuesday_From__c</field>
-        <hidden>true</hidden>
-    </fieldLevelSecurities>
-    <fieldLevelSecurities>
-        <editable>false</editable>
-        <field>Operating_Hours__c.Tuesday_To_DT__c</field>
-        <hidden>true</hidden>
-    </fieldLevelSecurities>
-    <fieldLevelSecurities>
-        <editable>false</editable>
-        <field>Operating_Hours__c.Tuesday_To__c</field>
-        <hidden>true</hidden>
-    </fieldLevelSecurities>
-    <fieldLevelSecurities>
-        <editable>false</editable>
-        <field>Operating_Hours__c.Tuesday__c</field>
-        <hidden>true</hidden>
-    </fieldLevelSecurities>
-    <fieldLevelSecurities>
-        <editable>false</editable>
-        <field>Operating_Hours__c.Wednesday_From_DT__c</field>
-        <hidden>true</hidden>
-    </fieldLevelSecurities>
-    <fieldLevelSecurities>
-        <editable>false</editable>
-        <field>Operating_Hours__c.Wednesday_From__c</field>
-        <hidden>true</hidden>
-    </fieldLevelSecurities>
-    <fieldLevelSecurities>
-        <editable>false</editable>
-        <field>Operating_Hours__c.Wednesday_To_DT__c</field>
-        <hidden>true</hidden>
-    </fieldLevelSecurities>
-    <fieldLevelSecurities>
-        <editable>false</editable>
-        <field>Operating_Hours__c.Wednesday_To__c</field>
-        <hidden>true</hidden>
-    </fieldLevelSecurities>
-    <fieldLevelSecurities>
-        <editable>false</editable>
-        <field>Operating_Hours__c.Wednesday__c</field>
-        <hidden>true</hidden>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>true</editable>
@@ -1634,83 +1250,6 @@
         <field>OpportunityLineItem.TotalPrice</field>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
-        <editable>false</editable>
-        <field>Pay_Period_Policy__c.Default_Pay_Periods__c</field>
-    </fieldLevelSecurities>
-    <fieldLevelSecurities>
-        <editable>true</editable>
-        <field>Pay_Period_Policy__c.Description__c</field>
-    </fieldLevelSecurities>
-    <fieldLevelSecurities>
-        <editable>true</editable>
-        <field>Pay_Period_Policy__c.Effective_Date__c</field>
-    </fieldLevelSecurities>
-    <fieldLevelSecurities>
-        <editable>true</editable>
-        <field>Pay_Period_Policy__c.Monthly_Start_Day__c</field>
-    </fieldLevelSecurities>
-    <fieldLevelSecurities>
-        <editable>false</editable>
-        <field>Pay_Period_Policy__c.Pay_Frequency_Number__c</field>
-    </fieldLevelSecurities>
-    <fieldLevelSecurities>
-        <editable>true</editable>
-        <field>Pay_Period_Policy__c.Pay_Frequency__c</field>
-    </fieldLevelSecurities>
-    <fieldLevelSecurities>
-        <editable>true</editable>
-        <field>Pay_Period_Policy__c.Pay_Periods_Available__c</field>
-    </fieldLevelSecurities>
-    <fieldLevelSecurities>
-        <editable>true</editable>
-        <field>Pay_Period_Policy__c.Shift_Start_Number__c</field>
-    </fieldLevelSecurities>
-    <fieldLevelSecurities>
-        <editable>false</editable>
-        <field>Pay_Period_Policy__c.Start_Day_Number__c</field>
-    </fieldLevelSecurities>
-    <fieldLevelSecurities>
-        <editable>true</editable>
-        <field>Pay_Period_Policy__c.Start_Day__c</field>
-    </fieldLevelSecurities>
-    <fieldLevelSecurities>
-        <editable>true</editable>
-        <field>Pay_Period__c.Current_Pay_Period__c</field>
-    </fieldLevelSecurities>
-    <fieldLevelSecurities>
-        <editable>true</editable>
-        <field>Pay_Period__c.Pay_Period_End__c</field>
-    </fieldLevelSecurities>
-    <fieldLevelSecurities>
-        <editable>true</editable>
-        <field>Pay_Period__c.Pay_Period_Number__c</field>
-    </fieldLevelSecurities>
-    <fieldLevelSecurities>
-        <editable>false</editable>
-        <field>Pay_Period__c.Pay_Period_Policy__c</field>
-        <hidden>true</hidden>
-    </fieldLevelSecurities>
-    <fieldLevelSecurities>
-        <editable>false</editable>
-        <field>Pay_Period__c.Pay_Period_Start__c</field>
-    </fieldLevelSecurities>
-    <fieldLevelSecurities>
-        <editable>true</editable>
-        <field>Pay_Period__c.Status__c</field>
-    </fieldLevelSecurities>
-    <fieldLevelSecurities>
-        <editable>true</editable>
-        <field>Pay_Period__c.Work_Week_End__c</field>
-    </fieldLevelSecurities>
-    <fieldLevelSecurities>
-        <editable>false</editable>
-        <field>Pay_Period__c.Work_Week_Number__c</field>
-    </fieldLevelSecurities>
-    <fieldLevelSecurities>
-        <editable>false</editable>
-        <field>Pay_Period__c.Work_Week_Start__c</field>
-    </fieldLevelSecurities>
-    <fieldLevelSecurities>
         <editable>true</editable>
         <field>Product2.Description</field>
     </fieldLevelSecurities>
@@ -1792,83 +1331,7 @@
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>true</editable>
-        <field>Schedule_RM__c.Active__c</field>
-    </fieldLevelSecurities>
-    <fieldLevelSecurities>
-        <editable>true</editable>
-        <field>Schedule_RM__c.Early_Start_Time__c</field>
-    </fieldLevelSecurities>
-    <fieldLevelSecurities>
-        <editable>true</editable>
-        <field>Schedule_RM__c.Early_Stop_Time__c</field>
-    </fieldLevelSecurities>
-    <fieldLevelSecurities>
-        <editable>true</editable>
-        <field>Schedule_RM__c.Late_Start_Time__c</field>
-    </fieldLevelSecurities>
-    <fieldLevelSecurities>
-        <editable>true</editable>
-        <field>Schedule_RM__c.Late_Stop_Time__c</field>
-    </fieldLevelSecurities>
-    <fieldLevelSecurities>
-        <editable>true</editable>
-        <field>Schedule_RM__c.Lunch_Deduction__c</field>
-    </fieldLevelSecurities>
-    <fieldLevelSecurities>
-        <editable>true</editable>
-        <field>Schedule_RM__c.Lunch_Policy__c</field>
-    </fieldLevelSecurities>
-    <fieldLevelSecurities>
-        <editable>false</editable>
-        <field>Schedule_RM__c.Lunch_Start_Time__c</field>
-    </fieldLevelSecurities>
-    <fieldLevelSecurities>
-        <editable>true</editable>
-        <field>Schedule_RM__c.Minimum_Hours_Worked__c</field>
-    </fieldLevelSecurities>
-    <fieldLevelSecurities>
-        <editable>true</editable>
-        <field>Schedule_RM__c.Schedule_Number__c</field>
-    </fieldLevelSecurities>
-    <fieldLevelSecurities>
-        <editable>false</editable>
-        <field>Schedule_RM__c.Scheduled_Hours__c</field>
-    </fieldLevelSecurities>
-    <fieldLevelSecurities>
-        <editable>true</editable>
-        <field>Schedule_RM__c.Start_Time__c</field>
-    </fieldLevelSecurities>
-    <fieldLevelSecurities>
-        <editable>true</editable>
-        <field>Schedule_RM__c.Stop_Time__c</field>
-    </fieldLevelSecurities>
-    <fieldLevelSecurities>
-        <editable>true</editable>
-        <field>Schedule_Template__c.Active__c</field>
-    </fieldLevelSecurities>
-    <fieldLevelSecurities>
-        <editable>true</editable>
-        <field>Schedule_Template__c.Schedule_Number__c</field>
-    </fieldLevelSecurities>
-    <fieldLevelSecurities>
-        <editable>true</editable>
-        <field>Service_Category__c.Description__c</field>
-    </fieldLevelSecurities>
-    <fieldLevelSecurities>
-        <editable>true</editable>
-        <field>Service_Category__c.Parent_Category__c</field>
-    </fieldLevelSecurities>
-    <fieldLevelSecurities>
-        <editable>true</editable>
-        <field>Service_Category__c.Staff__c</field>
-    </fieldLevelSecurities>
-    <fieldLevelSecurities>
-        <editable>true</editable>
         <field>Service__c.Begin_Time__c</field>
-    </fieldLevelSecurities>
-    <fieldLevelSecurities>
-        <editable>true</editable>
-        <field>Service__c.Cost__c</field>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>true</editable>
@@ -1899,8 +1362,9 @@
         <field>Service__c.Price__c</field>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
-        <editable>true</editable>
+        <editable>false</editable>
         <field>Service__c.Service_Category__c</field>
+        <hidden>true</hidden>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>true</editable>
@@ -2196,10 +1660,6 @@
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>true</editable>
-        <field>Staff_Schedule__c.Active__c</field>
-    </fieldLevelSecurities>
-    <fieldLevelSecurities>
-        <editable>true</editable>
         <field>Staff_Schedule__c.Description__c</field>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
@@ -2375,16 +1835,57 @@
         <field>Staff_Schedule__c.Wednesday__c</field>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
+        <editable>false</editable>
+        <field>Staff_Service__c.Begin_Time__c</field>
+        <hidden>true</hidden>
+    </fieldLevelSecurities>
+    <fieldLevelSecurities>
+        <editable>false</editable>
+        <field>Staff_Service__c.Double_Appointment__c</field>
+        <hidden>true</hidden>
+    </fieldLevelSecurities>
+    <fieldLevelSecurities>
+        <editable>false</editable>
+        <field>Staff_Service__c.Duration__c</field>
+        <hidden>true</hidden>
+    </fieldLevelSecurities>
+    <fieldLevelSecurities>
+        <editable>false</editable>
+        <field>Staff_Service__c.End_Time__c</field>
+        <hidden>true</hidden>
+    </fieldLevelSecurities>
+    <fieldLevelSecurities>
+        <editable>false</editable>
+        <field>Staff_Service__c.Fee__c</field>
+        <hidden>true</hidden>
+    </fieldLevelSecurities>
+    <fieldLevelSecurities>
+        <editable>false</editable>
+        <field>Staff_Service__c.Gap_Time__c</field>
+        <hidden>true</hidden>
+    </fieldLevelSecurities>
+    <fieldLevelSecurities>
+        <editable>false</editable>
+        <field>Staff_Service__c.Price__c</field>
+        <hidden>true</hidden>
+    </fieldLevelSecurities>
+    <fieldLevelSecurities>
+        <editable>false</editable>
+        <field>Staff_Service__c.Service__c</field>
+        <hidden>true</hidden>
+    </fieldLevelSecurities>
+    <fieldLevelSecurities>
+        <editable>false</editable>
+        <field>Staff_Service__c.Staff__c</field>
+        <hidden>true</hidden>
+    </fieldLevelSecurities>
+    <fieldLevelSecurities>
         <editable>true</editable>
         <field>Staff__c.Active__c</field>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>true</editable>
         <field>Staff__c.Birth_Date__c</field>
-    </fieldLevelSecurities>
-    <fieldLevelSecurities>
-        <editable>true</editable>
-        <field>Staff__c.Category__c</field>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>true</editable>
@@ -2650,7 +2151,7 @@
         <layout>CaseClose-Close Case Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
-        <layout>Category__c-Category Layout</layout>
+        <layout>Category__c-Servive Category Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
         <layout>Closed_Date__c-Closed Date Layout</layout>
@@ -2665,12 +2166,6 @@
         <layout>Customer__c-Customer Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
-        <layout>Employee_Schedule__c-Employee Schedules Layout</layout>
-    </layoutAssignments>
-    <layoutAssignments>
-        <layout>Employee__c-Employee Layout</layout>
-    </layoutAssignments>
-    <layoutAssignments>
         <layout>Event-Event Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
@@ -2683,28 +2178,13 @@
         <layout>Lead-Lead Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
-        <layout>Location__c-Location Layout</layout>
-    </layoutAssignments>
-    <layoutAssignments>
-        <layout>Lunch_Policy__c-Lunch Policy Layout</layout>
-    </layoutAssignments>
-    <layoutAssignments>
         <layout>Manufacturer__c-Manufacturer Layout</layout>
-    </layoutAssignments>
-    <layoutAssignments>
-        <layout>Operating_Hours__c-Operating Hours Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
         <layout>Opportunity-Opportunity Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
         <layout>OpportunityLineItem-Opportunity Product Layout</layout>
-    </layoutAssignments>
-    <layoutAssignments>
-        <layout>Pay_Period_Policy__c-Pay Period Policy Layout</layout>
-    </layoutAssignments>
-    <layoutAssignments>
-        <layout>Pay_Period__c-Pay Period Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
         <layout>Product2-Product Layout</layout>
@@ -2725,15 +2205,6 @@
         <layout>Sample__c-Sample Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
-        <layout>Schedule_RM__c-Schedule Layout</layout>
-    </layoutAssignments>
-    <layoutAssignments>
-        <layout>Schedule_Template__c-Schedule Template Layout</layout>
-    </layoutAssignments>
-    <layoutAssignments>
-        <layout>Service_Category__c-Category Layout</layout>
-    </layoutAssignments>
-    <layoutAssignments>
         <layout>Service__c-Service Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
@@ -2747,6 +2218,9 @@
     </layoutAssignments>
     <layoutAssignments>
         <layout>Staff_Schedule__c-Staff Schedule Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>Staff_Service__c-Staff Service Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
         <layout>Staff__c-Staff Layout</layout>
@@ -2809,12 +2283,6 @@
         <object>Customer__c</object>
     </objectPermissions>
     <objectPermissions>
-        <object>Employee_Schedule__c</object>
-    </objectPermissions>
-    <objectPermissions>
-        <object>Employee__c</object>
-    </objectPermissions>
-    <objectPermissions>
         <object>Holiday__c</object>
     </objectPermissions>
     <objectPermissions>
@@ -2825,25 +2293,10 @@
         <object>Lead</object>
     </objectPermissions>
     <objectPermissions>
-        <object>Location__c</object>
-    </objectPermissions>
-    <objectPermissions>
-        <object>Lunch_Policy__c</object>
-    </objectPermissions>
-    <objectPermissions>
         <object>Manufacturer__c</object>
     </objectPermissions>
     <objectPermissions>
-        <object>Operating_Hours__c</object>
-    </objectPermissions>
-    <objectPermissions>
         <object>Opportunity</object>
-    </objectPermissions>
-    <objectPermissions>
-        <object>Pay_Period_Policy__c</object>
-    </objectPermissions>
-    <objectPermissions>
-        <object>Pay_Period__c</object>
     </objectPermissions>
     <objectPermissions>
         <object>Product2</object>
@@ -2867,15 +2320,6 @@
         <object>Sample__c</object>
     </objectPermissions>
     <objectPermissions>
-        <object>Schedule_RM__c</object>
-    </objectPermissions>
-    <objectPermissions>
-        <object>Schedule_Template__c</object>
-    </objectPermissions>
-    <objectPermissions>
-        <object>Service_Category__c</object>
-    </objectPermissions>
-    <objectPermissions>
         <object>Service__c</object>
     </objectPermissions>
     <objectPermissions>
@@ -2889,6 +2333,9 @@
     </objectPermissions>
     <objectPermissions>
         <object>Staff_Schedule__c</object>
+    </objectPermissions>
+    <objectPermissions>
+        <object>Staff_Service__c</object>
     </objectPermissions>
     <objectPermissions>
         <object>Staff__c</object>
@@ -2919,15 +2366,15 @@
         <enabled>false</enabled>
     </pageAccesses>
     <pageAccesses>
-        <apexPage>AppointmentDetailPage</apexPage>
+        <apexPage>AppointmentDetail</apexPage>
         <enabled>false</enabled>
     </pageAccesses>
     <pageAccesses>
-        <apexPage>AppointmentEditPage</apexPage>
+        <apexPage>AppointmentEdit</apexPage>
         <enabled>false</enabled>
     </pageAccesses>
     <pageAccesses>
-        <apexPage>AppointmentNewPage</apexPage>
+        <apexPage>AppointmentNew</apexPage>
         <enabled>false</enabled>
     </pageAccesses>
     <pageAccesses>
@@ -2936,6 +2383,10 @@
     </pageAccesses>
     <pageAccesses>
         <apexPage>Calendar</apexPage>
+        <enabled>false</enabled>
+    </pageAccesses>
+    <pageAccesses>
+        <apexPage>CalendarJSONResponder</apexPage>
         <enabled>false</enabled>
     </pageAccesses>
     <pageAccesses>
@@ -2983,10 +2434,6 @@
         <enabled>false</enabled>
     </pageAccesses>
     <pageAccesses>
-        <apexPage>Pay_Period_Page</apexPage>
-        <enabled>false</enabled>
-    </pageAccesses>
-    <pageAccesses>
         <apexPage>PicklistPage</apexPage>
         <enabled>false</enabled>
     </pageAccesses>
@@ -3007,6 +2454,10 @@
         <enabled>false</enabled>
     </pageAccesses>
     <pageAccesses>
+        <apexPage>SimpleModalYUI</apexPage>
+        <enabled>false</enabled>
+    </pageAccesses>
+    <pageAccesses>
         <apexPage>SiteLogin</apexPage>
         <enabled>true</enabled>
     </pageAccesses>
@@ -3023,19 +2474,7 @@
         <enabled>true</enabled>
     </pageAccesses>
     <pageAccesses>
-        <apexPage>StaffDetailPage</apexPage>
-        <enabled>false</enabled>
-    </pageAccesses>
-    <pageAccesses>
-        <apexPage>StaffEditPage</apexPage>
-        <enabled>false</enabled>
-    </pageAccesses>
-    <pageAccesses>
         <apexPage>StaffGoogleMaps</apexPage>
-        <enabled>false</enabled>
-    </pageAccesses>
-    <pageAccesses>
-        <apexPage>StaffNewPage</apexPage>
         <enabled>false</enabled>
     </pageAccesses>
     <pageAccesses>
@@ -3052,6 +2491,18 @@
     </pageAccesses>
     <pageAccesses>
         <apexPage>TimePicklistPage</apexPage>
+        <enabled>false</enabled>
+    </pageAccesses>
+    <pageAccesses>
+        <apexPage>TimeRangeDetail</apexPage>
+        <enabled>false</enabled>
+    </pageAccesses>
+    <pageAccesses>
+        <apexPage>TimeRangeEdit</apexPage>
+        <enabled>false</enabled>
+    </pageAccesses>
+    <pageAccesses>
+        <apexPage>TimeRangeNew</apexPage>
         <enabled>false</enabled>
     </pageAccesses>
     <pageAccesses>

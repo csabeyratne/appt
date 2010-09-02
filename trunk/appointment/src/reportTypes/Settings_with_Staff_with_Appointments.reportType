@@ -5,10 +5,6 @@
     <deployed>true</deployed>
     <description>Settings with Staff with Appointments</description>
     <join>
-        <join>
-            <outerJoin>false</outerJoin>
-            <relationship>Appointments__r</relationship>
-        </join>
         <outerJoin>false</outerJoin>
         <relationship>Staff__r</relationship>
     </join>
@@ -249,87 +245,9 @@
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
-            <field>Category__c</field>
-            <table>Setting__c.Staff__r</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
             <field>Text_Notification__c</field>
             <table>Setting__c.Staff__r</table>
         </columns>
         <masterLabel>Staff</masterLabel>
-    </sections>
-    <sections>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>Id</field>
-            <table>Setting__c.Staff__r.Appointments__r</table>
-        </columns>
-        <columns>
-            <checkedByDefault>true</checkedByDefault>
-            <field>Name</field>
-            <table>Setting__c.Staff__r.Appointments__r</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>CreatedDate</field>
-            <table>Setting__c.Staff__r.Appointments__r</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>CreatedBy</field>
-            <table>Setting__c.Staff__r.Appointments__r</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>LastModifiedDate</field>
-            <table>Setting__c.Staff__r.Appointments__r</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>LastModifiedBy</field>
-            <table>Setting__c.Staff__r.Appointments__r</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>Duration_In_Minutes__c</field>
-            <table>Setting__c.Staff__r.Appointments__r</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>Status__c</field>
-            <table>Setting__c.Staff__r.Appointments__r</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>Start_DateTime__c</field>
-            <table>Setting__c.Staff__r.Appointments__r</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>Stop_Time_List__c</field>
-            <table>Setting__c.Staff__r.Appointments__r</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>Stop_DateTime__c</field>
-            <table>Setting__c.Staff__r.Appointments__r</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>Start_Time_List__c</field>
-            <table>Setting__c.Staff__r.Appointments__r</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>Customer__c</field>
-            <table>Setting__c.Staff__r.Appointments__r</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>Service__c</field>
-            <table>Setting__c.Staff__r.Appointments__r</table>
-        </columns>
-        <masterLabel>Appointments</masterLabel>
     </sections>
 </ReportType>

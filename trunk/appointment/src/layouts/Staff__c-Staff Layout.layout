@@ -66,12 +66,7 @@
                 <field>User__c</field>
             </layoutItems>
         </layoutColumns>
-        <layoutColumns>
-            <layoutItems>
-                <behavior>Edit</behavior>
-                <field>Category__c</field>
-            </layoutItems>
-        </layoutColumns>
+        <layoutColumns/>
         <style>TwoColumnsTopToBottom</style>
     </layoutSections>
     <layoutSections>
@@ -176,13 +171,6 @@
         <relatedList>RelatedNoteList</relatedList>
     </relatedLists>
     <relatedLists>
-        <fields>NAME</fields>
-        <fields>Start_Time_List__c</fields>
-        <fields>Stop_Time_List__c</fields>
-        <fields>Service__c</fields>
-        <relatedList>Appointment__c.Staff__c</relatedList>
-    </relatedLists>
-    <relatedLists>
         <fields>First_Name__c</fields>
         <fields>Last_Name__c</fields>
         <fields>Email__c</fields>
@@ -197,7 +185,6 @@
     </relatedLists>
     <relatedLists>
         <fields>NAME</fields>
-        <fields>Parent_Category__c</fields>
-        <relatedList>Service_Category__c.Staff__c</relatedList>
+        <relatedList>Staff_Service__c.Staff__c</relatedList>
     </relatedLists>
 </Layout>
