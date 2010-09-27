@@ -2,6 +2,7 @@
 <HomePageLayout xmlns="http://soap.sforce.com/2006/04/metadata">
     <narrowComponents>Advanced Search</narrowComponents>
     <narrowComponents>standard-CreateNew</narrowComponents>
+    <narrowComponents>Sidebar Visualforce</narrowComponents>
     <narrowComponents>standard-MessagesAndAlerts</narrowComponents>
     <narrowComponents>standard-RecentItems</narrowComponents>
     <narrowComponents>standard-UsefulLinks</narrowComponents>

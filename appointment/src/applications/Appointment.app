@@ -3,11 +3,13 @@
     <defaultLandingTab>standard-home</defaultLandingTab>
     <description>On-Demand Appointment Scheduling from Tempus Systems, Inc.</description>
     <label>Appointment</label>
+    <logo>External_Documents/Belle_Amitie_Logo.gif</logo>
     <tab>Appointment__c</tab>
     <tab>Customer__c</tab>
     <tab>Staff__c</tab>
     <tab>Staff_Service__c</tab>
     <tab>Service__c</tab>
+    <tab>Category__c</tab>
     <tab>Staff_Schedule__c</tab>
     <tab>Staff_Group__c</tab>
     <tab>Time_Off__c</tab>

@@ -67,7 +67,8 @@
             },
             editable: false,
  
-            appointments: "------------------------- PUT THE URL TO YOUR JSON RESPONDER PAGE HERE -------------------", 
+            // appointments: "------------------------- PUT THE URL TO YOUR JSON RESPONDER PAGE HERE -------------------", 
+            appointments: "http://tempus-developer-edition.na5.force.com/appointment/CalendarJSONResponder", 
             loading: function(isLoading, view)
             {
                 if(isLoading)

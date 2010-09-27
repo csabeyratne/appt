@@ -24,6 +24,7 @@
         <name>Page_Name__c</name>
     </fields>
     <fields>
+        <help><!-- Add &apos;core.apexpages.devmode.url=1&apos; to NOT run in development mode. --></help>
         <label><!-- Query String --></label>
         <name>Query_String__c</name>
     </fields>

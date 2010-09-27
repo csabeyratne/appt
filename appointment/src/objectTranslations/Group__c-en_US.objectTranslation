@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <value>Resource</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Resources</value>
+    </caseValues>
+    <fields>
+        <label><!-- Description --></label>
+        <name>Description__c</name>
+    </fields>
+    <fields>
+        <label><!-- Resource Type --></label>
+        <name>Resource_Type__c</name>
+        <picklistValues>
+            <masterLabel>Automobile</masterLabel>
+            <translation><!-- Automobile --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Conference Room</masterLabel>
+            <translation><!-- Conference Room --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Large Room</masterLabel>
+            <translation><!-- Large Room --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Small Room</masterLabel>
+            <translation><!-- Small Room --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Telephone</masterLabel>
+            <translation><!-- Telephone --></translation>
+        </picklistValues>
+    </fields>
+    <layouts>
+        <layout>Group Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

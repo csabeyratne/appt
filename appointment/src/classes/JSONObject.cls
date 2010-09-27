@@ -118,11 +118,7 @@ SOFTWARE.
                     //system.debug( v );
                     ret += v.valueToString() + ','; 
                 }
-                if ( this.values.size() > 0 )   {
-                    // remove last comma
-                    ret = ret.substring(0,ret.length()-1);
-            } 
-                return ret + ']'; 
+                return ret.substring(0,ret.length()-1) + ']'; 
             } 
             if ( this.obj != null ) {
                 return this.obj.valueToString();    
@@ -961,7 +957,10 @@ SOFTWARE.
     public String valueToString() {
         string ret = '{';
         for ( string key: this.keys() ) { 
-            ret += '"' + key + '": ' + this.getvalue(key).valueToString() + ',';
+            //MOD d3developer 081610
+            ret += '"' + key + '" : ' + this.getvalue(key).valueToString() + ',';
+        
+//          ret += key + ': ' + this.getvalue(key).valueToString() + ',';
         }
         return ret.substring(0,ret.length()-1) + '}';   
     }
@@ -1371,14 +1370,18 @@ public class JSONTokener {
                 }
             }
             try {
-                Integer si = Integer.valueof(s);
-                return  new value( si );
-            } catch (System.TypeException e) {
+                return  new value( Integer.valueof(s) );
+            } catch (Exception e) {
+               /* try {
+                    return new Long(s);
+                } catch (Exception f) {
                     try {
-                    return new value( Double.valueof(s) );
-                }  catch (System.TypeException g) {
-                    // fall thru
+                        return new Double(s);
+                    }  catch (Exception g) {
+                        return s;
+                    }
                 }
+                */
             }
         }
         return new value( s );
@@ -1635,35 +1638,5 @@ public class JSONTokener {
         } 
     }
     
-    public static  testmethod void test_valueToString() {
-        JsonObject json = new JsonObject();
-        json.putOpt('foo', new JSONObject.value('bar'));
-        /*
-        Make sure that the JSON rendered by this class passes validation by parsers
-        from http://json.org/json2.js and http://www.jsonlint.com.
-        For example:    {foo: "bar"} is invalid
-                        {"foo": "bar"} is valid
-        */
-        system.assertEquals( '{"foo": "bar"}', json.ValuetoString());
-    }
-    
-    // test that we can parse json containing a dobule 
-    public static  testmethod void test_geocode() {
-        string simple = '{ "Point": { "coordinates": [ -122.0841430, 37.4219720, 0 ] } }';
-        JSONObject jj =  new JSONObject( new  JsonTokener(simple) ) ;   
-        value p = jj.getValue('Point');
-        system.debug (p.obj.data.get('coordinates'));
-        value[] vals = p.obj.data.get('coordinates').values;
-        system.debug( vals[0].dnum);
-        system.assertEquals(3,vals.size());
-        system.assertEquals(-122.0841430,   vals[0].dnum);
-        system.assertEquals(37.4219720,     vals[1].dnum);
-        system.assertEquals('0',            vals[2].valueToString());
-    } 
-    public static  testmethod void test_g(){
-        string googlejson = '{  "name": "1600 Amphitheatre Parkway, Mountain View, CA",  "Status": {    "code": 200,    "request": "geocode"  },  "Placemark": [ {    "id": "p1",    "address": "1600 Amphitheatre Pkwy, Mountain View, CA 94043, USA",    "AddressDetails": {   "Accuracy" : 8,   "Country" : {      "AdministrativeArea" : {         "AdministrativeAreaName" : "CA",         "SubAdministrativeArea" : {            "Locality" : {               "LocalityName" : "Mountain View",               "PostalCode" : {                  "PostalCodeNumber" : "94043"               },               "Thoroughfare" : {                  "ThoroughfareName" : "1600 Amphitheatre Pkwy"               }            },         '+
-        '   "SubAdministrativeAreaName" : "Santa Clara"         }      },      "CountryName" : "USA",      "CountryNameCode" : "US"   }},    "ExtendedData": {      "LatLonBox": {        "north": 37.4251466,        "south": 37.4188514,        "east": -122.0811574,        "west": -122.0874526      }    },    "Point": {      "coordinates": [ -122.0843700, 37.4217590, 0 ]    }  } ]}   ';
-        JSONObject jj = new JSONObject( new  JsonTokener(googlejson)  );    
-        system.assertNotEquals(null,jj);
-    }
+
 }
