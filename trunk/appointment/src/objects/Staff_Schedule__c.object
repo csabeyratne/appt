@@ -483,6 +483,12 @@
         <type>DateTime</type>
     </fields>
     <fields>
+        <fullName>Monday_From_Text__c</fullName>
+        <label>Monday From Text</label>
+        <length>10</length>
+        <type>Text</type>
+    </fields>
+    <fields>
         <fullName>Monday_From__c</fullName>
         <label>Monday From</label>
         <picklist>
@@ -687,6 +693,12 @@
         <fullName>Monday_To_DT__c</fullName>
         <label>Monday To DT</label>
         <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Monday_To_Text__c</fullName>
+        <label>Monday To Text</label>
+        <length>10</length>
+        <type>Text</type>
     </fields>
     <fields>
         <fullName>Monday_To__c</fullName>

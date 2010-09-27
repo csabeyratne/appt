@@ -1,4 +1,16 @@
-public class Utils {
+public with sharing class Utils {
+
+    // IMPORTANT: Enables minimized JS and CSS files for Production Release
+    public static Boolean isProduction = false;
+
+    // Usage:
+    // Add in the Constructor for the Page Controller
+    // public Boolean isProduction {set;get;}
+    // public InstallController(){
+    //     this.isProduction = ProjectUtil.isProduction;
+    // }
+    // Add in the Page or Component
+    // <apex:outputPanel rendered="{!isProduction}">
 
     public static Boolean inFutureContext = false; // Prevent recursive future method calls
     public static Boolean isTest = false;
@@ -14,72 +26,16 @@ public class Utils {
         return Utils.isTest;
     }
 
-    public class TimewareException extends Exception {}
-    
-    //public static Payroll_System__c get_payroll_system(String payroll_system_name) {
-    //  Payroll_System__c result = payroll_system_map.get(payroll_system_name);
-    //  if (result == null) {
-    //      Payroll_System__c[] systems = [select Id, Name from Payroll_System__c where Name = :payroll_system_name];
-    //      if (systems.size() != 1) {
-    //          throw new Timeware.Timeware_Exception('This is a sample error message that can be displayed for \'' + payroll_system_name + '\'.');
-    //      }
-    //  }
-    //}
+    public class CustomException extends Exception {}
+    // Ex. throw new Utils.CustomException('This is a sample error message that can be displayed for \'' + <field-name> + '\'.');
     
     // <name> triggerAction </name>
     // <summary> contains possible actions for a trigger </summary>
     // public enum triggerAction {beforeInsert, beforeUpdate, beforeDelete, afterInsert, afterUpdate, afterDelete, afterUndelete}
 
-    /* ============================================================
-    * This code is part of the "apex-lang" open source project avaiable at:
-    * 
-    *      http://code.google.com/p/apex-lang/
-    *
-    * This code is licensed under the Apache License, Version 2.0.  You may obtain a 
-    * copy of the License at:
-    * 
-    *      http://www.apache.org/licenses/LICENSE-2.0
-    * ============================================================ */
-    
     /*
-    * SystemUtils
-    */
-    public static final String LINE_SEPARATOR = '\n';
-    
-    public static void debugLimits(){
-        System.Debug(
-              LINE_SEPARATOR + '##################################################################'
-            + LINE_SEPARATOR + 'Limits:'
-            + LINE_SEPARATOR + '##################################################################'
-            + LINE_SEPARATOR + 'AggregateQueries: ' + Limits.getAggregateQueries() + ' of ' + Limits.getLimitAggregateQueries()
-            + LINE_SEPARATOR + 'Callouts: ' + Limits.getCallouts() + ' of ' + Limits.getLimitCallouts()
-            + LINE_SEPARATOR + 'DMLRows: ' + Limits.getDMLRows() + ' of ' + Limits.getLimitDMLRows()
-            + LINE_SEPARATOR + 'DMLStatements: ' + Limits.getDMLStatements() + ' of ' + Limits.getLimitDMLStatements()
-            + LINE_SEPARATOR + 'EmailInvocations: ' + Limits.getEmailInvocations() + ' of ' + Limits.getLimitEmailInvocations()
-            + LINE_SEPARATOR + 'FieldsDescribes: ' + Limits.getFieldsDescribes() + ' of ' + Limits.getLimitFieldsDescribes()
-            + LINE_SEPARATOR + 'FindSimilarCalls: ' + Limits.getFindSimilarCalls() + ' of ' + Limits.getLimitFindSimilarCalls()
-            + LINE_SEPARATOR + 'FutureCalls: ' + Limits.getFutureCalls() + ' of ' + Limits.getLimitFutureCalls()
-            + LINE_SEPARATOR + 'HeapSize: ' + Limits.getHeapSize() + ' of ' + Limits.getLimitHeapSize()
-            + LINE_SEPARATOR + 'Queries: ' + Limits.getQueries() + ' of ' + Limits.getLimitQueries()
-            + LINE_SEPARATOR + 'PicklistDescribes: ' + Limits.getPicklistDescribes() + ' of ' + Limits.getLimitPicklistDescribes()
-            + LINE_SEPARATOR + 'QueryRows: ' + Limits.getQueryRows() + ' of ' + Limits.getLimitQueryRows()
-            + LINE_SEPARATOR + 'RunAs: ' + Limits.getRunAs() + ' of ' + Limits.getLimitRunAs()
-            + LINE_SEPARATOR + 'SavepointRollbacks: ' + Limits.getSavepointRollbacks() + ' of ' + Limits.getLimitSavepointRollbacks()
-            + LINE_SEPARATOR + 'Savepoints: ' + Limits.getSavepoints() + ' of ' + Limits.getLimitSavepoints()
-            + LINE_SEPARATOR + 'ScriptStatements: ' + Limits.getScriptStatements() + ' of ' + Limits.getLimitScriptStatements()
-            + LINE_SEPARATOR + 'SoslQueries: ' + Limits.getSoslQueries() + ' of ' + Limits.getLimitSoslQueries()
-            );
-    }
-
-    /*
-    * SystemUtils Test
-    */
-    //@IsTest
-    private static testmethod void testLimitDebug(){
-        Utils.debugLimits();
-    }
-    
-    /*
+    * getConvertDateTime Class
+    * Created by: Matthew Leahy
     * @param string value (Format '10:45 PM')
     * @return datetime 
     */
@@ -116,6 +72,8 @@ public class Utils {
     }
 
     /*
+    * CalcTimeDuration Class
+    * Created by: Matthew Leahy
     * @param string value (Format '10:45 PM')
     * @param string value (Format '10:45 PM')
     * @return datetime 
@@ -150,19 +108,6 @@ public class Utils {
 
     } 
     
-    /*
-    * Get all the IDs out of an array into a set.
-    * Really useful for bulkifying triggers
-    * @author cpeterson
-    */
-    public static Set<id> getIds(sObject[] objList){
-        Set<id> retval = new Set<id>();
-        for(sobject thisObj: objList){
-            retval.add(thisObj.id);
-        }
-        return retval;
-    }
-
     /*
     * TimeConversions Class
     * Created by: Michael Smith/Force2b, 04/06/2010
@@ -302,6 +247,124 @@ public class Utils {
       
         }
    
+    }
+
+    /*
+    * Get all the IDs out of an array into a set.
+    * Really useful for bulkifying triggers
+    * @author cpeterson
+    */
+    public static Set<id> getIds(sObject[] objList) {
+        Set<id> retval = new Set<id>();
+        for(sobject thisObj: objList){
+            retval.add(thisObj.id);
+        }
+        return retval;
+    }
+
+    /*
+    * Get a string field from an array of objects, and return those fields in an array.
+    * @author cpeterson
+    */ 
+    public static List<string> getStringFields(List<sObject> objectList, string fieldName) {
+        List<string> result = new List<string>();
+        for(sObject thisObject:objectList){
+            result.add(String.valueOf(thisObject.get(fieldName)));
+        }       
+        System.assertEquals(result.size(),objectList.size());
+        return result;
+    }
+    
+    /*
+    * Wrapper around getStringFeilds, but returns an ID rather than a string
+    * useful for use in SOQL queries.
+    * @author cpeterson
+    */
+    public static List<Id> getIDFields(List<sObject> objectList, string fieldName) {
+        List<Id> idList = Utils.getStringFields(objectList, fieldName);
+        return idList;
+    }
+    
+    /**
+     * This method accepts the ID of any object type and returns the full name, including prefix of the sObject
+     * type to which it belongs.
+     * @author cpeterson
+     **/
+    public static Schema.SObjectType getObjectType(id subject){
+        Schema.SObjectType result;
+        string target = subject;
+        Map<String, Schema.SObjectType> gd = Schema.getGlobalDescribe();
+        string keyPrefix;
+        
+        for(Schema.SObjectType describe: gd.values() ){
+            keyPrefix = describe.getDescribe().getKeyPrefix();
+            if(keyPrefix != null && target.startsWith(keyPrefix)){
+                result = describe;
+                break; // no need to keep looking
+            }
+        }
+        return result;
+    }
+    
+    public static sObject getAllFields(id subject){
+        Schema.SObjectType objectType = getObjectType(subject);
+        Map<String, Schema.SObjectField> fields = objectType.getDescribe().fields.getMap();
+        string queryString = 'SELECT ';
+        for(Schema.sObjectField field:fields.values()){
+            queryString += ' '+field.getDescribe().getName()+', ';
+        }
+        queryString = queryString.substring(0, queryString.length()-2)+' FROM '+objectType.getDescribe().getName()+' WHERE id = \''+subject+'\' LIMIT 1';
+        sObject result = Database.query(queryString);
+        return result;
+    }
+
+    /* ============================================================
+    * This code is part of the "apex-lang" open source project avaiable at:
+    * 
+    *      http://code.google.com/p/apex-lang/
+    *
+    * This code is licensed under the Apache License, Version 2.0.  You may obtain a 
+    * copy of the License at:
+    * 
+    *      http://www.apache.org/licenses/LICENSE-2.0
+    * ============================================================ */
+
+    /*
+    * SystemUtils
+    */
+    public static final String LINE_SEPARATOR = '\n';
+    
+    public static void debugLimits(){
+        System.Debug(
+              LINE_SEPARATOR + '##################################################################'
+            + LINE_SEPARATOR + 'Limits:'
+            + LINE_SEPARATOR + '##################################################################'
+            + LINE_SEPARATOR + 'AggregateQueries: ' + Limits.getAggregateQueries() + ' of ' + Limits.getLimitAggregateQueries()
+            + LINE_SEPARATOR + 'Callouts: ' + Limits.getCallouts() + ' of ' + Limits.getLimitCallouts()
+            + LINE_SEPARATOR + 'DMLRows: ' + Limits.getDMLRows() + ' of ' + Limits.getLimitDMLRows()
+            + LINE_SEPARATOR + 'DMLStatements: ' + Limits.getDMLStatements() + ' of ' + Limits.getLimitDMLStatements()
+            + LINE_SEPARATOR + 'EmailInvocations: ' + Limits.getEmailInvocations() + ' of ' + Limits.getLimitEmailInvocations()
+            + LINE_SEPARATOR + 'FieldsDescribes: ' + Limits.getFieldsDescribes() + ' of ' + Limits.getLimitFieldsDescribes()
+            + LINE_SEPARATOR + 'FindSimilarCalls: ' + Limits.getFindSimilarCalls() + ' of ' + Limits.getLimitFindSimilarCalls()
+            + LINE_SEPARATOR + 'FutureCalls: ' + Limits.getFutureCalls() + ' of ' + Limits.getLimitFutureCalls()
+            + LINE_SEPARATOR + 'HeapSize: ' + Limits.getHeapSize() + ' of ' + Limits.getLimitHeapSize()
+            + LINE_SEPARATOR + 'Queries: ' + Limits.getQueries() + ' of ' + Limits.getLimitQueries()
+            + LINE_SEPARATOR + 'PicklistDescribes: ' + Limits.getPicklistDescribes() + ' of ' + Limits.getLimitPicklistDescribes()
+            + LINE_SEPARATOR + 'QueryRows: ' + Limits.getQueryRows() + ' of ' + Limits.getLimitQueryRows()
+            + LINE_SEPARATOR + 'RunAs: ' + Limits.getRunAs() + ' of ' + Limits.getLimitRunAs()
+            + LINE_SEPARATOR + 'SavepointRollbacks: ' + Limits.getSavepointRollbacks() + ' of ' + Limits.getLimitSavepointRollbacks()
+            + LINE_SEPARATOR + 'Savepoints: ' + Limits.getSavepoints() + ' of ' + Limits.getLimitSavepoints()
+            + LINE_SEPARATOR + 'ScriptStatements: ' + Limits.getScriptStatements() + ' of ' + Limits.getLimitScriptStatements()
+            + LINE_SEPARATOR + 'SoslQueries: ' + Limits.getSoslQueries() + ' of ' + Limits.getLimitSoslQueries()
+            );
+    }
+
+    /*
+    * SystemUtils Test
+    */
+    //@IsTest
+    private static testmethod void testLimitDebug(){
+        Utils.debugLimits();
     }
 
 }

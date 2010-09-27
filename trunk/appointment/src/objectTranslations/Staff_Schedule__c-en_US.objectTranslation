@@ -430,6 +430,10 @@
         <name>Monday_From_DT__c</name>
     </fields>
     <fields>
+        <label><!-- Monday From Text --></label>
+        <name>Monday_From_Text__c</name>
+    </fields>
+    <fields>
         <label><!-- Monday From --></label>
         <name>Monday_From__c</name>
         <picklistValues>
@@ -628,6 +632,10 @@
     <fields>
         <label><!-- Monday To DT --></label>
         <name>Monday_To_DT__c</name>
+    </fields>
+    <fields>
+        <label><!-- Monday To Text --></label>
+        <name>Monday_To_Text__c</name>
     </fields>
     <fields>
         <label><!-- Monday To --></label>

@@ -1,0 +1,18 @@
+<apex:page controller="zOpportunityPagination" showheader="false">
+    <apex:form >
+        <apex:pageblock id="ThePageBlock">
+            <apex:pageblocktable value="{!opportunities}" var="o">
+                <apex:column value="{!o.name}"></apex:column>
+                <apex:column value="{!o.closedate}"></apex:column>
+                <apex:panelgrid columns="5">
+                    <apex:commandlink action="{!first}" rerender="ThePageBlock"> First</apex:commandlink>
+                    <apex:commandlink action="{!previous}" rendered="{!hasPrevious}" rerender="ThePageBlock">  Previous</apex:commandlink>  
+                    <apex:outputtext value="Page #{!pageNumber} ">                 
+                        <apex:commandlink action="{!next}" rendered="{!hasNext}" rerender="ThePageBlock">Next </apex:commandlink>
+                        <apex:commandlink action="{!last}" rerender="ThePageBlock">Last </apex:commandlink>
+                    </apex:outputtext>         
+                </apex:panelgrid>
+            </apex:pageblocktable>
+        </apex:pageblock>
+    </apex:form>
+</apex:page>

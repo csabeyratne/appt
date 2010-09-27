@@ -12,7 +12,6 @@ public class SettingExtTrigger {
     public Boolean isBefore = false;  
     public Boolean isAfter = false;  
   
-    // public SettingExtTrigger(List oldValues,List newValues, Map oldMap, Map newMap) {  
     public SettingExtTrigger(List<Setting__c> oldValues, List<Setting__c> newValues, Map<Id,Setting__c> oldMap, Map<Id,Setting__c> newMap) {  
   
         this.newValues = newValues;  

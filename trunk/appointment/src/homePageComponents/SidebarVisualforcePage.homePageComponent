@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<HomePageComponent xmlns="http://soap.sforce.com/2006/04/metadata">
+    <body>&lt;pre&gt;&amp;lt;iframe src=&quot;/apex/Masked_Input_Page?core.apexpages.devmode.url=1&quot; width=&quot;100%&quot; frameborder=&quot;0&quot; height=&quot;100&quot;&amp;gt;&amp;lt;/iframe&amp;gt;&lt;/pre&gt;</body>
+    <pageComponentType>htmlArea</pageComponentType>
+    <width>narrow</width>
+</HomePageComponent>

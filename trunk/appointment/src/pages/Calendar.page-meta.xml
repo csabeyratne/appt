@@ -20,6 +20,11 @@
     </packageVersions>
     <packageVersions>
         <majorNumber>1</majorNumber>
+        <minorNumber>0</minorNumber>
+        <namespace>cloudconverter</namespace>
+    </packageVersions>
+    <packageVersions>
+        <majorNumber>1</majorNumber>
         <minorNumber>11</minorNumber>
         <namespace>sfLma</namespace>
     </packageVersions>

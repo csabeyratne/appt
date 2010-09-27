@@ -1,0 +1,16 @@
+<apex:page controller="zRerenderTestController">
+
+    <h1>Partial Page Refresh</h1>
+ 
+    <apex:form >
+  
+        Put some text here: <apex:inputText value="{!showInRerender}" />
+        <apex:commandButton action="{!doSomething}" rerender="idToRerender" value="Rerender"/>
+        
+    </apex:form>
+
+    <apex:outputPanel id="idToRerender"> 
+        {!showInRerenderModified} 
+    </apex:outputPanel>
+
+</apex:page>

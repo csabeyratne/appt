@@ -1,0 +1,50 @@
+<apex:page controller="zInPlaceAccountsController" tabstyle="Account">
+<apex:sectionheader subtitle="{!$User.FirstName} {!$User.LastName}" title="Quick Edit Accounts">
+<!--
+    <apex:pagemessages>
+        <apex:form>        
+            <apex:actionfunction action="{!saveEditAcc}" name="saveEdit">   
+                <apex:pageblock title="Add New Account"> 
+                    <apex:pageblocksection>
+                        <b>Name:</b>
+                        <apex:inputtext value="{!newAccount.Name}"></apex:inputtext>
+                        <b>Annual Revenue:</b>
+                        <apex:inputtext value="{!newAccount.AnnualRevenue}"></apex:inputtext>
+                    </apex:pageblocksection>    
+                    <apex:commandbutton action="{!add}" value="Add"></apex:commandbutton>
+                </apex:pageblock>
+                <apex:pageblock title="Existing Accounts">
+                    <apex:outputpanel id="projectList"></apex:outputpanel>
+                </apex:pageblock>
+            </apex:actionfunction>
+        </apex:form>
+    </apex:pagemessages>
+    <apex:repeat value="{!projects}" var="p"></apex:repeat>
+    <apex:outputpanel id="editRow" layout="none" rendered="{!p.Id == editAccount.Id}"></apex:outputpanel>
+    <apex:outputpanel id="viewRow" layout="none" rendered="{!p.Id != editAccount.Id}"></apex:outputpanel>
+    <table>
+        <tbody>
+            <tr>       
+                <th style="width: 40px;"></th>
+                <th style="width: 40px;"></th>  
+                <th>Name</th>
+                <th>Annual Revenue</th>
+            </tr>
+            <tr style="height: 20px;">  
+                <apex:form>        
+                <td><apex:commandlink action="{!cancelEdit}" rerender="projectList">Cancel</apex:commandlink></td>
+                <td><apex:commandlink action="{!saveEditAcc}" rerender="projectList">Save</apex:commandlink></td> 
+                <td><apex:inputtext onkeypress="if (event.keyCode == 13) saveEdit()" rendered="{!p.Id == editAccount.Id}" size="40" value="{!editAccount.Name}"></apex:inputtext></td>
+                <td><apex:inputtext onkeypress="if (event.keyCode == 13) saveEdit()" rendered="{!p.Id == editAccount.Id}" size="40" value="{!editAccount.AnnualRevenue}"></apex:inputtext></td>  
+                <td><apex:commandlink action="{!del}" onclick="return confirm('Are you sure you want to delete this project?')">Del<apex:param name="delid" value="{!p.Id}"></apex:param></apex:commandlink></td>
+                <td><apex:commandlink action="{!editAcc}" rerender="projectList">Edit<apex:param name="editid" value="{!p.Id}"></apex:param></apex:commandlink></td>  
+                <td>{!p.Name}</td>
+                <td>{!p.AnnualRevenue}</td>
+                <td><apex:outputlink target="_blank" value="/{!p.id}">View Details</apex:outputlink></td>
+                </apex:form>
+            </tr>
+        </tbody>
+    </table>
+-->    
+</apex:sectionheader>
+</apex:page>

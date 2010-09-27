@@ -63,6 +63,9 @@
     </fields>
     <fields>
         <fullName>Query_String__c</fullName>
+        <defaultValue>&quot;core.apexpages.devmode.url=1&quot;</defaultValue>
+        <description>Add &apos;core.apexpages.devmode.url=1&apos; to NOT run in development mode.</description>
+        <inlineHelpText>Add &apos;core.apexpages.devmode.url=1&apos; to NOT run in development mode.</inlineHelpText>
         <label>Query String</label>
         <length>128</length>
         <type>Text</type>
@@ -115,8 +118,14 @@
         <customTabListAdditionalFields>Description__c</customTabListAdditionalFields>
         <customTabListAdditionalFields>Page_Name__c</customTabListAdditionalFields>
         <customTabListAdditionalFields>Query_String__c</customTabListAdditionalFields>
-        <customTabListAdditionalFields>Type__c</customTabListAdditionalFields>
         <customTabListAdditionalFields>Author__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Type__c</customTabListAdditionalFields>
+        <lookupDialogsAdditionalFields>Page_Link__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Description__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Page_Name__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Query_String__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Author__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Type__c</lookupDialogsAdditionalFields>
     </searchLayouts>
     <sharingModel>ReadWrite</sharingModel>
 </CustomObject>

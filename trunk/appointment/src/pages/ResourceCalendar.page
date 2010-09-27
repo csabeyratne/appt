@@ -1,0 +1,371 @@
+<apex:page standardStylesheets="false" standardController="Group__c" extensions="CalendarController"	showHeader="true" sidebar="false" cache="false" sidebar="true">
+
+      <!--------------------------- Required files and reference ---------------------------------->
+    <apex:stylesheet value="{!URLFOR($Resource.web2cal, 'css/web2cal.css')}"/>
+    <apex:stylesheet value="{!URLFOR($Resource.jQueryUI, 'css/ui-lightness/jquery-ui-1.8rc3.custom.css')}"/>
+    <script src="/soap/ajax/17.0/connection.js" type="text/javascript"></script>
+    <script src="/soap/ajax/17.0/apex.js" type="text/javascript"></script> 
+    <apex:includeScript value="{!URLFOR($Resource.jQueryUI, '/js/jquery-1.4.2.min.js')}" />
+    <apex:includeScript value="{!URLFOR($Resource.jQueryUI, '/js/jquery-ui-1.8rc3.custom.min.js')}" />
+    <apex:includeScript value="{!URLFOR($Resource.jQueryUI, '/development-bundle/ui/jquery.ui.datepicker.js')}" />
+    <apex:includeScript value="{!URLFOR($Resource.web2cal,'/js/Web2Cal-1.4.0-min.js')} " />
+    <apex:includeScript value="{!URLFOR($Resource.web2calsupport)}" />
+    <apex:includeScript value="{!URLFOR($Resource.web2cal, '/js/icalparser.js')}" />
+    <apex:includeScript value="{!URLFOR($Resource.web2cal, '/js/jquery.cookie.js')}" />
+    <apex:includeScript value="{!URLFOR($Resource.web2cal, '/js/dateselector.js')}" />
+    <script>WEB2CAL_LICENSE_KEY=["Mzg5Mmdtc2FkLGJtbA=="];    jQuery.noConflict();</script>
+    <apex:includeScript value="{!URLFOR($Resource.web2caldefaulttemplate)}" /> 
+    <script>sforce.connection.sessionId = '{!$Api.Session_ID}'; </script>
+    <script>jQuery.noConflict();</script>
+    
+      <!-------------------------------------------------------------------------------------------->
+
+    <title>Basic Calendar</title>
+    <style>
+            body
+            {
+                font-family: Arial, Helvetica, sans-serif;
+                font-size: 12px;
+            }
+            .pbBody
+            {
+              text-align:center;
+            }
+    </style>
+    
+   <apex:pageBlock >  
+    <h2 >{!Notification}</h2><br/>
+    <p><apex:outputLink value="/apex/resourceCalendar" id="refreshLink" rendered="{!showMessage}">Click here</apex:outputLink> <apex:outputText rendered="{!showMessage}">, to refresh page and remove any association.</apex:outputText></p>
+   </apex:pageBlock>     
+
+   <div id="calendarContainer"></div>    
+
+  <script>
+  
+  var ical;
+  var usersAndIds;
+  var GLOBALgroupsArray;
+  var GLOBALsubgroupArray; 
+  var currentUserId;
+  
+    
+    function setUsersAndIds()
+    {
+      usersAndIds = new Array();
+      currentUserId ="{!fullUserId}";
+      
+      <apex:repeat var="person" value="{!W2CPeople}" id="theUserandIdRepeat">
+        usersAndIds.push(new Array("{!person.firstName} {!person.lastName}", "{!person.userId}"));    
+      </apex:repeat>
+    }
+    
+    /*
+     Create the Calendar.
+     */
+    function drawCalendar()
+    { 
+        ical = new Web2Cal('calendarContainer', {
+            loadEvents: loadCalendarEvents,             
+            wsOnNewEvent: onNewEvent,
+            weekOnNewEvent: onNewEvent,
+            agendaOnNewEvent: onNewEvent, 
+            monthOnNewEvent: onNewEvent,
+            onUpdateEvent: updateEventApex, 
+            defaultView: 'workshift', 
+            views: 'workshift',
+            wsStartTime: 7,
+            wsInterval: 4, 
+            sampleMode:true
+        });
+        ical.build();
+    }
+    
+    /*
+     Method invoked when creating a new event, before showing the new event form.
+     @param obj - Object containing (startTime, endTime)
+     @param groups - List of Group objects ({groupId, name})
+     @param allday - boolean to indicate if the event created is allday event.
+     */
+     
+    function onNewEvent(obj, groups, allday)
+    {
+      if(obj.personName == obj.personId)
+       {
+          ical.closeAddEvent();
+          alert("Please Choose Valid Resource");
+       }
+       else
+       {
+          Web2Cal.defaultPlugins.onNewEvent(obj, groups, allday, usersAndIds, currentUserId, GLOBALsubgroupArray);      
+       }
+     }
+    
+    
+    /*
+     Utility function to create date object from date string and time string
+     @param dateString - Date String mm/dd/yyyy
+     @param timeString - Time String HH:MM AM/PM
+     */
+    function getDateFromStrings(dateString, timeString)
+    {
+        var dt = (timeString == "") ? new Date() : parseTime(timeString);
+        var tempDate = UTC.parseDateString(dateString);
+        
+        dt.setMonth(tempDate.getMonth());
+        dt.setYear(tempDate.getYear());
+        dt.setDate(tempDate.getDate());
+        
+        return dt;
+    }
+    
+
+      
+    
+     /**
+     Method to get Events and display it in the calendar.
+     If you need to make an asynchronous call, invoke ical.render in the callback method.
+     @param startTime - Calendar Display Range start
+     @para endTime - Calendar End Range end
+     */ 
+    
+    function loadCalendarEvents(startTime, endTime)
+    {  
+          ical.hidePreview(); 
+          var tester = startTime;
+          /**********************adding groups*********************************/ 
+                var events = new Array();
+                GLOBALgroupsArray = new Array()          
+        
+              <apex:repeat value="{!BigGroups}" var="namo" id="biggrpRepeat">
+               var thegroup= {
+                   name: "{!namo}",
+                   groupId: "{!namo}",
+                   events: events,
+               }
+               
+               GLOBALgroupsArray.push(thegroup);
+            </apex:repeat>  
+                   
+          ical.render(GLOBALgroupsArray);    
+           /**********************adding sub groups*****************************/ 
+          GLOBALsubgroupArray = new Array();         
+          <apex:repeat value="{!subgroups}" var="subg" id="subgrpRepeat">
+            GLOBALsubgroupArray.push(["{!subg.name}","{!subg.Id}","{!subg.description}"]);
+            /*GLOBALsubgroupArray.push(["{!subg.name}","{!subg.Id}"]);*/
+            
+            ical.addEvent({
+               startTime:  "{!subg.startDate}",
+               endTime:    "{!subg.endDate}",
+               group:      GLOBALgroupsArray[{!subg.groupNum}],
+               eventId:    "{!subg.Id}",
+               eventName:  "{!subg.Name}",
+               eventDesc:  "{!subg.Name}",
+               personId:   "{!subg.Id}",
+               personName: "{!subg.Name}"
+                           });             
+          </apex:repeat>  
+          
+                 /**********Added by Natha*************/
+        var alleventsT = sforce.apex.execute("CalendarController", "getAllEvents", 
+                        {
+                        startT: startTime,
+                        endT: endTime 
+                        });
+        /******************add events*******************/
+               var i = 0;
+               var groupId = parseInt(alleventsT[i+6]);
+               while (i< alleventsT.length) {
+                  ical.addEvent({
+                    eventName:alleventsT[i],
+                    eventDesc:alleventsT[i+1],
+                    eventId:alleventsT[i+3],
+                    startTime:alleventsT[i+4],
+                    endTime:alleventsT[i+5],
+                    group:GLOBALgroupsArray[alleventsT[i+6]],
+                    personId:alleventsT[i+7],
+                    personName:alleventsT[i+8]
+                  });   
+                  i= i+9;
+                }
+      } 
+
+    /*
+     Click on Edit Button in preview window
+     */ 
+   function rzEditEvent(eventID)
+   {
+     var eventObj=ical.getEventById(eventID);
+     var UserList= jQuery("#eventName").get(0);
+     var uaiSize = usersAndIds.length;
+     removeAllOptions(UserList);
+     addUAIlist(UserList); 
+     jQuery("#eventName").val(eventObj.eventName);     
+     jQuery("#eventDesc").val(eventObj.eventDesc);
+     jQuery("#myEditForm").show();
+     
+    }
+    
+
+    function updateEventToDB(eventId)
+    {
+         var editEventContainer = jQuery("#previewTemplate"); 
+         var desc       = jQuery('textarea[id=ed]').val();
+         if(desc == null){desc="";}   
+         var result = sforce.apex.execute("CalendarController", "editEvent", 
+                      {eventId : eventId,
+                      eventName: name,
+                      description: desc
+                          });
+  
+         var evt = ical.getEventById(eventId);
+         //evt.eventName = name;
+         evt.eventDesc = desc;
+         ical.updateEvent(evt);
+         ical.hidePreview();
+    }   
+   
+    /**
+     Clicking delete in Preview window
+     */
+    function rzDeleteEvent(eventId)
+    {
+      var verify = confirm("Are you sure you want to delete event?");
+      if(verify==true){
+        var ev = ical.getEventById(eventId);
+        var result = sforce.apex.execute(
+          "CalendarController",     //class
+          "deleteEvent",   //method
+          {eId:eventId});
+        ical.deleteEvent(ev);
+        }
+       ical.hidePreview(); 
+    }
+
+    
+    /**
+     * Click of Add in add event box.
+     */
+    function rzAddEvent(eventId)
+    {
+      var newev = Web2Cal.defaultPlugins.getNewEventObject();
+      // insert into the DB
+        
+        var curPage = window.location.href;
+        var id = sforce.apex.execute("CalendarController", "createEvent", 
+                        {
+                        name: newev.user,
+                        resourceId: newev.subId,  
+                        strtDate: newev.startDate,
+                        strtTime: newev.strtTime,
+                        endDate: newev.endDate,
+                        endTime: newev.endTime, 
+                        newEventDesc: newev.evtDesc,
+                        currentPage:curPage
+                        });
+ 
+    if(id == 1)
+    {
+      ical.closeAddEvent();
+      alert("Cannot Create Event: Time Conflict");
+    }
+    else
+    { 
+        /*     Time formatting     */
+        var startDate = getTimeDate(newev.startDate, newev.strtTime);
+        var endDate = getTimeDate(newev.endDate, newev.endTime);
+        var groupAdder = getGroupAdder(newev.group);
+        var userName = sforce.apex.execute("CalendarController", "getUserName", {userId: newev.user});
+        
+        // Fill a new object
+        var theobject={
+                startTime: startDate,   
+                endTime: endDate, 
+                group: groupAdder,        
+                eventId: id.toString(),        
+                eventName: userName,      
+                eventDesc: newev.evtDesc,       
+                personId: newev.subId,       
+                personName: newev.subPerson        
+            } 
+        // Add the event to the calendar view
+            ical.addEvent(theobject); 
+            ical.closeAddEvent();
+       }
+    }
+
+   function getGroupAdder(groupName)
+   {
+      var i;
+      for(i=0; i<GLOBALgroupsArray.length; i++)
+      {
+        if(GLOBALgroupsArray[i].name == groupName)
+        {  
+          return GLOBALgroupsArray[i];
+        }
+      }    
+   }
+  /* Outputs the time in  fromt mm/dd/yyyy hh:mm format: YYYY-MM-DD HH:mm:ss */
+    function getTimeDate(date, time) {
+         var dateArray = date.split("/");
+         date = dateArray[2]+'-'+dateArray[0]+'-'+dateArray[1]; // YYYY-MM-DD
+         var space = time.lastIndexOf(' ');
+         var theTime = time.substring(0, space);        // get rid of AM/PM
+         var timeArray = theTime.split(":");
+         if (time.charAt(space+1)=='P' && timeArray[0]<12){  // PM time?
+          timeArray[0] = parseInt(timeArray[0]) +12;      // add 12 hours
+         }
+         theTime = timeArray[0]+':'+timeArray[1]+':00';     //HH:mm:ss
+         date += " "+theTime;
+    return date;
+    }    
+    
+    /**
+     * Onclick of Close in AddEvent Box.
+     */
+    function rzCloseAddEvent()
+    {
+        ical.closeAddEvent();
+    }
+    
+    /**
+     * Once page is loaded, invoke the Load Calendar Script.
+     */
+    jQuery(document).ready(function()
+    { 
+        setUsersAndIds();
+        drawCalendar(); 
+    });
+
+    function updateEventApex(Object){ 
+       var result = sforce.apex.execute(
+        "CalendarController",     //class
+        "updateEvent",   //method
+        {eId:Object.eventId,
+        newStartDate:Object.startTime,
+        newEndDate:Object.endTime});
+        if(result=="true")
+        {
+          ical.updateEvent(Object);
+        }
+        else
+        {
+          ical.render();
+          alert("Could not update event: TIME CONFLICT");
+        }
+   }
+   
+   function addUAIlist(UserList)
+    {
+      for(var f=0;f<usersAndIds.length; f++)
+      {
+        addOption(UserList, usersAndIds[f][0], usersAndIds[f][0], false);
+      }  
+    }
+    
+    
+</script>
+
+
+
+  <!-- End Default Content REMOVE THIS -->
+</apex:page>
