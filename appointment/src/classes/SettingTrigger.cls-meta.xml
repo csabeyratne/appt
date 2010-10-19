@@ -19,6 +19,11 @@
     <packageVersions>
         <majorNumber>1</majorNumber>
         <minorNumber>0</minorNumber>
+        <namespace>SLCA</namespace>
+    </packageVersions>
+    <packageVersions>
+        <majorNumber>1</majorNumber>
+        <minorNumber>0</minorNumber>
         <namespace>cloudconverter</namespace>
     </packageVersions>
     <packageVersions>

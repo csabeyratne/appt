@@ -524,6 +524,15 @@ TODAY()</formula>
         <type>Text</type>
     </fields>
     <fields>
+        <fullName>First_Then_Last_Name__c</fullName>
+        <formula>IF(AND(ISBLANK(First_Name__c ),ISBLANK(Last_Name__c )), 
+NULL, 
+IF(ISBLANK(First_Name__c ), TRIM(Last_Name__c), TRIM(First_Name__c) &amp; &quot;, &quot; &amp; TRIM(Last_Name__c)))</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Name</label>
+        <type>Text</type>
+    </fields>
+    <fields>
         <fullName>Frequency__c</fullName>
         <description>If recurring is checked what frequency will the system us to schedule an appointment.</description>
         <inlineHelpText>Select frequency when Recurring is checked.</inlineHelpText>
@@ -564,15 +573,6 @@ TODAY()</formula>
             <sorted>false</sorted>
         </picklist>
         <type>Picklist</type>
-    </fields>
-    <fields>
-        <fullName>Full_Name__c</fullName>
-        <formula>IF(AND(ISBLANK(Last_Name__c ),ISBLANK(First_Name__c )), 
-NULL, 
-IF(ISBLANK(Last_Name__c ), TRIM(First_Name__c), TRIM(Last_Name__c) &amp; &quot;, &quot; &amp; TRIM(First_Name__c)))</formula>
-        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
-        <label>Full Name</label>
-        <type>Text</type>
     </fields>
     <fields>
         <fullName>Gels__c</fullName>
@@ -678,6 +678,15 @@ IF(ISBLANK(Last_Name__c ), TRIM(First_Name__c), TRIM(Last_Name__c) &amp; &quot;,
         <fullName>Last_Perm__c</fullName>
         <label>Last Perm</label>
         <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Last_Then_First_Name__c</fullName>
+        <formula>IF(AND(ISBLANK(Last_Name__c ),ISBLANK(First_Name__c )), 
+NULL, 
+IF(ISBLANK(Last_Name__c ), TRIM(First_Name__c), TRIM(Last_Name__c) &amp; &quot;, &quot; &amp; TRIM(First_Name__c)))</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Name</label>
+        <type>Text</type>
     </fields>
     <fields>
         <fullName>Mailing_State__c</fullName>
@@ -1214,9 +1223,13 @@ IF(ISBLANK(Last_Name__c ), TRIM(First_Name__c), TRIM(Last_Name__c) &amp; &quot;,
         <lookupDialogsAdditionalFields>Home_Phone__c</lookupDialogsAdditionalFields>
         <lookupDialogsAdditionalFields>Office_Phone__c</lookupDialogsAdditionalFields>
         <lookupDialogsAdditionalFields>Mobile_Phone__c</lookupDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>First_Name__c</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>Last_Name__c</lookupPhoneDialogsAdditionalFields>
         <lookupPhoneDialogsAdditionalFields>Home_Phone__c</lookupPhoneDialogsAdditionalFields>
         <lookupPhoneDialogsAdditionalFields>Office_Phone__c</lookupPhoneDialogsAdditionalFields>
         <lookupPhoneDialogsAdditionalFields>Mobile_Phone__c</lookupPhoneDialogsAdditionalFields>
+        <searchFilterFields>First_Name__c</searchFilterFields>
+        <searchFilterFields>Last_Name__c</searchFilterFields>
         <searchResultsAdditionalFields>First_Name__c</searchResultsAdditionalFields>
         <searchResultsAdditionalFields>Last_Name__c</searchResultsAdditionalFields>
         <searchResultsAdditionalFields>Email__c</searchResultsAdditionalFields>

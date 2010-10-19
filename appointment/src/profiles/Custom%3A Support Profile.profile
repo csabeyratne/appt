@@ -21,6 +21,14 @@
         <visible>false</visible>
     </applicationVisibilities>
     <classAccesses>
+        <apexClass>BirthdayCronJob</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>BirthdayCronJobTest</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>ChangePasswordController</apexClass>
         <enabled>false</enabled>
     </classAccesses>
@@ -979,12 +987,12 @@
         <field>Customer__c.First_Name__c</field>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
-        <editable>true</editable>
-        <field>Customer__c.Frequency__c</field>
+        <editable>false</editable>
+        <field>Customer__c.First_Then_Last_Name__c</field>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
-        <editable>false</editable>
-        <field>Customer__c.Full_Name__c</field>
+        <editable>true</editable>
+        <field>Customer__c.Frequency__c</field>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>true</editable>
@@ -1017,6 +1025,10 @@
     <fieldLevelSecurities>
         <editable>true</editable>
         <field>Customer__c.Last_Perm__c</field>
+    </fieldLevelSecurities>
+    <fieldLevelSecurities>
+        <editable>false</editable>
+        <field>Customer__c.Last_Then_First_Name__c</field>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>true</editable>
@@ -2028,7 +2040,7 @@
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>false</editable>
-        <field>Staff__c.Full_Name__c</field>
+        <field>Staff__c.First_Then_Last_Name__c</field>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>true</editable>
@@ -2037,6 +2049,10 @@
     <fieldLevelSecurities>
         <editable>true</editable>
         <field>Staff__c.Last_Name__c</field>
+    </fieldLevelSecurities>
+    <fieldLevelSecurities>
+        <editable>false</editable>
+        <field>Staff__c.Last_Then_First_Name__c</field>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>true</editable>
@@ -2214,19 +2230,19 @@
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>true</editable>
-        <field>Treatment__c.Customer__c</field>
+        <field>Treatment_History__c.Customer__c</field>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>true</editable>
-        <field>Treatment__c.Price__c</field>
+        <field>Treatment_History__c.Price__c</field>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>true</editable>
-        <field>Treatment__c.Service_Treatment__c</field>
+        <field>Treatment_History__c.Service_Treatment__c</field>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>true</editable>
-        <field>Treatment__c.Treatment_Date__c</field>
+        <field>Treatment_History__c.Treatment_Date__c</field>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>true</editable>
@@ -2424,7 +2440,7 @@
         <layout>Time_Range__c-Time Range Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
-        <layout>Treatment__c-Treatment Layout</layout>
+        <layout>Treatment_History__c-Treatment Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
         <layout>User-User Layout</layout>
@@ -2587,7 +2603,7 @@
         <object>Time_Range__c</object>
     </objectPermissions>
     <objectPermissions>
-        <object>Treatment__c</object>
+        <object>Treatment_History__c</object>
     </objectPermissions>
     <objectPermissions>
         <object>Vendor__c</object>

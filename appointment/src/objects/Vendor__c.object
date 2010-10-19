@@ -327,6 +327,7 @@
     </listViews>
     <nameField>
         <label>Vendor Name</label>
+        <trackHistory>true</trackHistory>
         <type>Text</type>
     </nameField>
     <pluralLabel>Vendors</pluralLabel>

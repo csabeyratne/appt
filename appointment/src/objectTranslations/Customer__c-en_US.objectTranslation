@@ -435,6 +435,10 @@
         <name>First_Name__c</name>
     </fields>
     <fields>
+        <label><!-- Name --></label>
+        <name>First_Then_Last_Name__c</name>
+    </fields>
+    <fields>
         <help><!-- Select frequency when Recurring is checked. --></help>
         <label><!-- Frequency --></label>
         <name>Frequency__c</name>
@@ -470,10 +474,6 @@
             <masterLabel>Every Week</masterLabel>
             <translation><!-- Every Week --></translation>
         </picklistValues>
-    </fields>
-    <fields>
-        <label><!-- Full Name --></label>
-        <name>Full_Name__c</name>
     </fields>
     <fields>
         <label><!-- Gels --></label>
@@ -557,6 +557,10 @@
     <fields>
         <label><!-- Last Perm --></label>
         <name>Last_Perm__c</name>
+    </fields>
+    <fields>
+        <label><!-- Name --></label>
+        <name>Last_Then_First_Name__c</name>
     </fields>
     <fields>
         <label><!-- Mailing State --></label>
