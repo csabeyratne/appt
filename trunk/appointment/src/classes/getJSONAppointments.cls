@@ -26,8 +26,8 @@ public class getJSONAppointments {
                               Start_DateTime__c,
                               Stop_DateTime__c,
                               Duration_In_Minutes__c,
-                              Customer__r.Full_Name__c,
-                              Staff_Service__r.Staff__r.Full_Name__c,
+                              Customer__r.First_Then_Last_Name__c,
+                              Staff_Service__r.Staff__r.First_Then_Last_Name__c,
                               Staff_Service__r.Service__r.Name,
                               Status__c
                               from Appointment__c 
@@ -65,8 +65,8 @@ public class getJSONAppointments {
                         cjson.putOpt('"start"', new JSONObject.value(startDateTime.intValue()));
                         cjson.putOpt('"end"', new JSONObject.value(endDateTime.intValue()));
                         cjson.putOpt('"duration"', new JSONObject.value(a.Duration_In_Minutes__c));
-                        cjson.putOpt('"customer"', new JSONObject.value(a.Customer__r.Full_Name__c));
-                        cjson.putOpt('"staff"', new JSONObject.value(a.Staff_Service__r.Staff__r.Full_Name__c));
+                        cjson.putOpt('"customer"', new JSONObject.value(a.Customer__r.First_Then_Last_Name__c));
+                        cjson.putOpt('"staff"', new JSONObject.value(a.Staff_Service__r.Staff__r.First_Then_Last_Name__c));
                         cjson.putOpt('"service"', new JSONObject.value(a.Staff_Service__r.Service__r.Name));
                         cjson.putOpt('"status"', new JSONObject.value(a.Status__c));
                         cjson.putOpt('"linkurl"', new JSONObject.value('https://na5.salesforce.com/'+a.Id));

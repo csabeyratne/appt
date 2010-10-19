@@ -40,8 +40,8 @@
         <name>First_Name__c</name>
     </fields>
     <fields>
-        <label><!-- Full Name --></label>
-        <name>Full_Name__c</name>
+        <label><!-- Name --></label>
+        <name>First_Then_Last_Name__c</name>
     </fields>
     <fields>
         <help><!-- Please enter a home phone number for resource. --></help>
@@ -52,6 +52,10 @@
         <help><!-- Please enter the last name for resource. --></help>
         <label><!-- Last Name --></label>
         <name>Last_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Name --></label>
+        <name>Last_Then_First_Name__c</name>
     </fields>
     <fields>
         <label><!-- License --></label>

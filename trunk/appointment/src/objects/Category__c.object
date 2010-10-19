@@ -34,6 +34,7 @@
     </actionOverrides>
     <deploymentStatus>Deployed</deploymentStatus>
     <description>A Service Category is used to group like services together.</description>
+    <enableEnhancedLookup>true</enableEnhancedLookup>
     <enableHistory>true</enableHistory>
     <enableReports>true</enableReports>
     <fields>
@@ -58,6 +59,7 @@
     </listViews>
     <nameField>
         <label>Category Name</label>
+        <trackHistory>true</trackHistory>
         <type>Text</type>
     </nameField>
     <pluralLabel>Service Categories</pluralLabel>

@@ -5,10 +5,6 @@
         <label>Information</label>
         <layoutColumns>
             <layoutItems>
-                <behavior>Readonly</behavior>
-                <field>Name</field>
-            </layoutItems>
-            <layoutItems>
                 <behavior>Edit</behavior>
                 <field>Title__c</field>
             </layoutItems>
@@ -59,6 +55,10 @@
             <layoutItems>
                 <behavior>Readonly</behavior>
                 <field>Anniversary_Date__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Readonly</behavior>
+                <field>First_Then_Last_Name__c</field>
             </layoutItems>
         </layoutColumns>
         <layoutColumns>
@@ -343,7 +343,7 @@
     </relatedLists>
     <relatedLists>
         <fields>NAME</fields>
-        <relatedList>Treatment__c.Customer__c</relatedList>
+        <relatedList>Treatment_History__c.Customer__c</relatedList>
     </relatedLists>
     <relatedLists>
         <fields>TASK.SUBJECT</fields>

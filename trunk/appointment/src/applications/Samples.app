@@ -4,6 +4,7 @@
     <description>Visualforce &amp; Apex Code Samples</description>
     <label>Samples</label>
     <logo>External_Documents/Developerforce_Logo.gif</logo>
+    <tab>standard-Chatter</tab>
     <tab>Sample__c</tab>
     <tab>EasyPage__EasyPage</tab>
     <tab>EasyDescribe__EasyDescribe</tab>

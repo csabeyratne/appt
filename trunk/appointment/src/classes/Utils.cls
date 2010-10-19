@@ -276,7 +276,7 @@ public with sharing class Utils {
     }
     
     /*
-    * Wrapper around getStringFeilds, but returns an ID rather than a string
+    * Wrapper around getStringFields, but returns an ID rather than a string
     * useful for use in SOQL queries.
     * @author cpeterson
     */
@@ -295,9 +295,16 @@ public with sharing class Utils {
         string target = subject;
         Map<String, Schema.SObjectType> gd = Schema.getGlobalDescribe();
         string keyPrefix;
+
+        System.Debug('## >>> getObjectType() subject: ' + subject);
+        System.Debug('## >>> getObjectType() gd: ' + gd);
+        System.Debug('## >>> getObjectType() gd.values(): ' + gd.values());
         
         for(Schema.SObjectType describe: gd.values() ){
             keyPrefix = describe.getDescribe().getKeyPrefix();
+
+            System.Debug('## >>> getObjectType() keyPrefix: ' + keyPrefix);
+           
             if(keyPrefix != null && target.startsWith(keyPrefix)){
                 result = describe;
                 break; // no need to keep looking
@@ -317,6 +324,8 @@ public with sharing class Utils {
         sObject result = Database.query(queryString);
         return result;
     }
+    
+    
 
     /* ============================================================
     * This code is part of the "apex-lang" open source project avaiable at:

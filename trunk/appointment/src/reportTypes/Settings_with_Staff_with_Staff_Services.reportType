@@ -464,7 +464,7 @@
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
-            <field>Full_Name__c</field>
+            <field>Last_Then_First_Name__c</field>
             <table>Setting__c.Staff__r</table>
         </columns>
         <columns>

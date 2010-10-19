@@ -10,10 +10,6 @@
                 <field>Settings__c</field>
             </layoutItems>
             <layoutItems>
-                <behavior>Readonly</behavior>
-                <field>Name</field>
-            </layoutItems>
-            <layoutItems>
                 <behavior>Edit</behavior>
                 <field>Title__c</field>
             </layoutItems>
@@ -64,6 +60,10 @@
             <layoutItems>
                 <behavior>Edit</behavior>
                 <field>User__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Readonly</behavior>
+                <field>First_Then_Last_Name__c</field>
             </layoutItems>
         </layoutColumns>
         <layoutColumns/>

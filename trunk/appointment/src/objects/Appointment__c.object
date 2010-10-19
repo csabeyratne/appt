@@ -129,16 +129,22 @@
     </nameField>
     <pluralLabel>Appointments</pluralLabel>
     <searchLayouts>
-        <customTabListAdditionalFields>Start_Time_List__c</customTabListAdditionalFields>
-        <customTabListAdditionalFields>Stop_Time_List__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Start_DateTime__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Stop_DateTime__c</customTabListAdditionalFields>
         <customTabListAdditionalFields>Customer__c</customTabListAdditionalFields>
-        <lookupDialogsAdditionalFields>Start_Time_List__c</lookupDialogsAdditionalFields>
-        <lookupDialogsAdditionalFields>Stop_Time_List__c</lookupDialogsAdditionalFields>
+        <customTabListAdditionalFields>Staff_Service__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Status__c</customTabListAdditionalFields>
+        <lookupDialogsAdditionalFields>Start_DateTime__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Stop_DateTime__c</lookupDialogsAdditionalFields>
         <lookupDialogsAdditionalFields>Customer__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Staff_Service__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Status__c</lookupDialogsAdditionalFields>
         <searchFilterFields>OBJECT_ID</searchFilterFields>
-        <searchResultsAdditionalFields>Start_Time_List__c</searchResultsAdditionalFields>
-        <searchResultsAdditionalFields>Stop_Time_List__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Start_DateTime__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Stop_DateTime__c</searchResultsAdditionalFields>
         <searchResultsAdditionalFields>Customer__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Staff_Service__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Status__c</searchResultsAdditionalFields>
     </searchLayouts>
     <sharingModel>ReadWrite</sharingModel>
 </CustomObject>

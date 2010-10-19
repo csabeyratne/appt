@@ -89,12 +89,12 @@
         <type>Text</type>
     </fields>
     <fields>
-        <fullName>Full_Name__c</fullName>
-        <formula>IF(AND(ISBLANK(Last_Name__c ),ISBLANK(First_Name__c )), 
+        <fullName>First_Then_Last_Name__c</fullName>
+        <formula>IF(AND(ISBLANK(First_Name__c ),ISBLANK(Last_Name__c )), 
 NULL, 
-IF(ISBLANK(Last_Name__c ), TRIM(First_Name__c), TRIM(Last_Name__c) &amp; &quot;, &quot; &amp; TRIM(First_Name__c)))</formula>
+IF(ISBLANK(First_Name__c ), TRIM(Last_Name__c), TRIM(First_Name__c) &amp; &quot;, &quot; &amp; TRIM(Last_Name__c)))</formula>
         <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
-        <label>Full Name</label>
+        <label>Name</label>
         <type>Text</type>
     </fields>
     <fields>
@@ -110,6 +110,15 @@ IF(ISBLANK(Last_Name__c ), TRIM(First_Name__c), TRIM(Last_Name__c) &amp; &quot;,
         <inlineHelpText>Please enter the last name for resource.</inlineHelpText>
         <label>Last Name</label>
         <length>40</length>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>Last_Then_First_Name__c</fullName>
+        <formula>IF(AND(ISBLANK(Last_Name__c ),ISBLANK(First_Name__c )), 
+NULL, 
+IF(ISBLANK(Last_Name__c ), TRIM(First_Name__c), TRIM(Last_Name__c) &amp; &quot;, &quot; &amp; TRIM(First_Name__c)))</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Name</label>
         <type>Text</type>
     </fields>
     <fields>
@@ -452,9 +461,10 @@ IF(ISBLANK(Last_Name__c ), TRIM(First_Name__c), TRIM(Last_Name__c) &amp; &quot;,
         <lookupDialogsAdditionalFields>Mobile_Phone__c</lookupDialogsAdditionalFields>
         <lookupPhoneDialogsAdditionalFields>First_Name__c</lookupPhoneDialogsAdditionalFields>
         <lookupPhoneDialogsAdditionalFields>Last_Name__c</lookupPhoneDialogsAdditionalFields>
-        <lookupPhoneDialogsAdditionalFields>Email__c</lookupPhoneDialogsAdditionalFields>
         <lookupPhoneDialogsAdditionalFields>Home_Phone__c</lookupPhoneDialogsAdditionalFields>
         <lookupPhoneDialogsAdditionalFields>Mobile_Phone__c</lookupPhoneDialogsAdditionalFields>
+        <searchFilterFields>First_Name__c</searchFilterFields>
+        <searchFilterFields>Last_Name__c</searchFilterFields>
         <searchResultsAdditionalFields>First_Name__c</searchResultsAdditionalFields>
         <searchResultsAdditionalFields>Last_Name__c</searchResultsAdditionalFields>
         <searchResultsAdditionalFields>Email__c</searchResultsAdditionalFields>

@@ -34,6 +34,7 @@
     </actionOverrides>
     <deploymentStatus>Deployed</deploymentStatus>
     <description>Junction for staff and service.</description>
+    <enableEnhancedLookup>true</enableEnhancedLookup>
     <enableHistory>true</enableHistory>
     <enableReports>true</enableReports>
     <fields>
@@ -130,6 +131,7 @@
     <nameField>
         <displayFormat>SS-{00000000}</displayFormat>
         <label>Staff Service ID</label>
+        <trackHistory>true</trackHistory>
         <type>AutoNumber</type>
     </nameField>
     <pluralLabel>Staff Services</pluralLabel>

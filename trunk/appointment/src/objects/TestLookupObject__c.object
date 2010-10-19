@@ -33,6 +33,7 @@
         <type>Default</type>
     </actionOverrides>
     <deploymentStatus>Deployed</deploymentStatus>
+    <enableEnhancedLookup>true</enableEnhancedLookup>
     <label>Test Lookup Object</label>
     <nameField>
         <label>TestLookupObject Name</label>
