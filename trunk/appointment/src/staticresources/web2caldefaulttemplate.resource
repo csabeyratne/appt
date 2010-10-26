@@ -279,7 +279,7 @@ function include(file)
 							+'			<div>	'
 							+'				<div class="label">User Name</div>	'
               +'        		<div class="selectUser"> '
-              +'          		<select name="eventUser" style="width:10em; border:1px solid #C3D9FF;"  id="eventUser"></select>  '
+              +'          		<select name="eventUser" style="width:10em; border:1px solid #C3D9FF;"  id="eventUser" disabled="disabled"></select>  '
               +'        		</div>   <br/>   '
 							+'				<div>	'
 							+'					<div class=" label" >	'

@@ -351,11 +351,11 @@ global with sharing class CalendarController {
 
     public list<W2CPerson> getW2CPeople(){
        if(W2CPeople == null){
-         list <User> people = [Select Id, FirstName, LastName from User order by  LastName];
+         //list <User> people = [Select Id, FirstName, LastName from User where isActive = true order by  LastName];
          W2CPeople = new list <W2CPerson>();
-         for (User p : people){
-           W2CPeople.add(new W2CPerson(p.Id, p.FirstName, p.LastName));
-          }
+         //for (User p : people){
+         W2CPeople.add(new W2CPerson(Userinfo.getUserId(), Userinfo.getFirstName(), Userinfo.getLastName()));
+          //}
        }
       return W2CPeople;
     }

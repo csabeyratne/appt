@@ -34,20 +34,27 @@
     </actionOverrides>
     <deploymentStatus>Deployed</deploymentStatus>
     <description>Groups allow you to group staff together. In the calendar you will see each group represented as a tab, with the staff from that group displayed together.</description>
+    <enableActivities>false</enableActivities>
     <enableEnhancedLookup>true</enableEnhancedLookup>
+    <enableFeeds>false</enableFeeds>
     <enableHistory>true</enableHistory>
     <enableReports>true</enableReports>
     <fields>
         <fullName>Description__c</fullName>
+        <externalId>false</externalId>
         <label>Description</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
         <type>TextArea</type>
     </fields>
     <fields>
         <fullName>Parent_Group__c</fullName>
+        <externalId>false</externalId>
         <label>Parent Group</label>
         <referenceTo>Staff_Group__c</referenceTo>
         <relationshipLabel>Staff Groups</relationshipLabel>
         <relationshipName>Staff_Groups</relationshipName>
+        <trackHistory>false</trackHistory>
         <type>Lookup</type>
     </fields>
     <label>Staff Group</label>
@@ -58,6 +65,7 @@
     </listViews>
     <nameField>
         <label>Staff Group Name</label>
+        <trackHistory>false</trackHistory>
         <type>Text</type>
     </nameField>
     <pluralLabel>Staff Groups</pluralLabel>

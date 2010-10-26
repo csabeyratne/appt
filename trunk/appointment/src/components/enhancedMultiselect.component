@@ -16,29 +16,29 @@
     <apex:attribute name="required" access="global" description="Is this field required?" type="Boolean" required="false" assignTo="{!required}" />
     <apex:attribute name="hidden" access="global" description="Is this text hidden?" type="Boolean" required="false" assignTo="{!hidden}" />
     <apex:attribute name="defaultValue" access="global" description="default value for field, will display and override other values" type="String" required="false" assignTo="{!defaultValue}" />
-	<apex:attribute name="downgrade" access="global" description="Should enhanced features be disabled?" required="false" type="Boolean" assignTo="{!downgrade}" />
+    <apex:attribute name="downgrade" access="global" description="Should enhanced features be disabled?" required="false" type="Boolean" assignTo="{!downgrade}" />
 
     {!onLoad}     
 
-	<apex:outputPanel rendered="{!downgrade != true}">  
+    <apex:outputPanel rendered="{!downgrade != true}">  
 
-	    <select multiple="multiple" name="MS{!fieldName}" style="width:150px" >
-		   	 <apex:repeat value="{!picklistValues}" var="v">  
-		          <apex:outputText escape="false" value="{!v.outputHTML}" />	      
-		    </apex:repeat>
-	    </select>
-	     
-	   <span id="S{!fieldName}"><apex:inputHidden value="{!myValueHolder}" /></span>
+        <select multiple="multiple" name="MS{!fieldName}" style="width:150px" >
+             <apex:repeat value="{!picklistValues}" var="v">  
+                  <apex:outputText escape="false" value="{!v.outputHTML}" />          
+            </apex:repeat>
+        </select>
+         
+       <span id="S{!fieldName}"><apex:inputHidden value="{!myValueHolder}" /></span>
    
    </apex:outputPanel>
    
-	 <apex:outputPanel rendered="{!downgrade == true}">
-	 
-	       <apex:selectList value="{!myValueHolder}" multiselect="true">
-				<apex:selectOptions value="{!picklistSO}"/>			
-	       </apex:selectList>
-	       
-	 </apex:outputPanel>
+     <apex:outputPanel rendered="{!downgrade == true}">
+     
+           <apex:selectList value="{!myValueHolder}" multiselect="true">
+                <apex:selectOptions value="{!picklistSO}"/>         
+           </apex:selectList>
+           
+     </apex:outputPanel>
    
    
 

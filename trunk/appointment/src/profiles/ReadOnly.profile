@@ -16,6 +16,11 @@
         <visible>true</visible>
     </applicationVisibilities>
     <applicationVisibilities>
+        <application>Resource_Scheduler</application>
+        <default>false</default>
+        <visible>true</visible>
+    </applicationVisibilities>
+    <applicationVisibilities>
         <application>Samples</application>
         <default>false</default>
         <visible>false</visible>
@@ -26,6 +31,14 @@
     </classAccesses>
     <classAccesses>
         <apexClass>BirthdayCronJobTest</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>CalTestingUtil</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>CalendarController</apexClass>
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
@@ -295,162 +308,202 @@
     <fieldLevelSecurities>
         <editable>true</editable>
         <field>Account.AccountNumber</field>
+        <hidden>false</hidden>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>true</editable>
         <field>Account.Active__c</field>
+        <hidden>false</hidden>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>true</editable>
         <field>Account.AnnualRevenue</field>
+        <hidden>false</hidden>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>true</editable>
         <field>Account.BillingAddress</field>
+        <hidden>false</hidden>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>true</editable>
         <field>Account.CustomerPriority__c</field>
+        <hidden>false</hidden>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>true</editable>
         <field>Account.Description</field>
+        <hidden>false</hidden>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>true</editable>
         <field>Account.Fax</field>
+        <hidden>false</hidden>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>true</editable>
         <field>Account.Industry</field>
+        <hidden>false</hidden>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>true</editable>
         <field>Account.NumberOfEmployees</field>
+        <hidden>false</hidden>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>true</editable>
         <field>Account.NumberofLocations__c</field>
+        <hidden>false</hidden>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>true</editable>
         <field>Account.Ownership</field>
+        <hidden>false</hidden>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>true</editable>
         <field>Account.ParentId</field>
+        <hidden>false</hidden>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>true</editable>
         <field>Account.Phone</field>
+        <hidden>false</hidden>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>true</editable>
         <field>Account.Rating</field>
+        <hidden>false</hidden>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>true</editable>
         <field>Account.SLAExpirationDate__c</field>
+        <hidden>false</hidden>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>true</editable>
         <field>Account.SLASerialNumber__c</field>
+        <hidden>false</hidden>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>true</editable>
         <field>Account.SLA__c</field>
+        <hidden>false</hidden>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>true</editable>
         <field>Account.ShippingAddress</field>
+        <hidden>false</hidden>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>true</editable>
         <field>Account.Sic</field>
+        <hidden>false</hidden>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>true</editable>
         <field>Account.Site</field>
+        <hidden>false</hidden>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>true</editable>
         <field>Account.TickerSymbol</field>
+        <hidden>false</hidden>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>true</editable>
         <field>Account.Type</field>
+        <hidden>false</hidden>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>true</editable>
         <field>Account.UpsellOpportunity__c</field>
+        <hidden>false</hidden>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>true</editable>
         <field>Account.Website</field>
+        <hidden>false</hidden>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>true</editable>
         <field>Appointment__c.All_Day__c</field>
+        <hidden>false</hidden>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>true</editable>
         <field>Appointment__c.Customer__c</field>
+        <hidden>false</hidden>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>true</editable>
         <field>Appointment__c.Duration_In_Minutes__c</field>
+        <hidden>false</hidden>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>true</editable>
         <field>Appointment__c.Staff_Service__c</field>
+        <hidden>false</hidden>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>true</editable>
         <field>Appointment__c.Start_DateTime__c</field>
+        <hidden>false</hidden>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>true</editable>
         <field>Appointment__c.Start_Time_List__c</field>
+        <hidden>false</hidden>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>true</editable>
         <field>Appointment__c.Status__c</field>
+        <hidden>false</hidden>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>true</editable>
         <field>Appointment__c.Stop_DateTime__c</field>
+        <hidden>false</hidden>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>true</editable>
         <field>Appointment__c.Stop_Time_List__c</field>
+        <hidden>false</hidden>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>true</editable>
         <field>Asset.AccountId</field>
+        <hidden>false</hidden>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>true</editable>
         <field>Asset.ContactId</field>
+        <hidden>false</hidden>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>true</editable>
         <field>Asset.Description</field>
+        <hidden>false</hidden>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>true</editable>
         <field>Asset.InstallDate</field>
+        <hidden>false</hidden>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>true</editable>
         <field>Asset.IsCompetitorProduct</field>
+        <hidden>false</hidden>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>true</editable>
         <field>Asset.Price</field>
+        <hidden>false</hidden>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>true</editable>
         <field>Asset.Product2Id</field>
+        <hidden>false</hidden>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>false</editable>
@@ -470,54 +523,67 @@
     <fieldLevelSecurities>
         <editable>true</editable>
         <field>Asset.PurchaseDate</field>
+        <hidden>false</hidden>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>true</editable>
         <field>Asset.Quantity</field>
+        <hidden>false</hidden>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>true</editable>
         <field>Asset.SerialNumber</field>
+        <hidden>false</hidden>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>true</editable>
         <field>Asset.Status</field>
+        <hidden>false</hidden>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>true</editable>
         <field>Asset.UsageEndDate</field>
+        <hidden>false</hidden>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>true</editable>
         <field>Campaign.ActualCost</field>
+        <hidden>false</hidden>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>true</editable>
         <field>Campaign.AmountAllOpportunities</field>
+        <hidden>false</hidden>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>true</editable>
         <field>Campaign.AmountWonOpportunities</field>
+        <hidden>false</hidden>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>true</editable>
         <field>Campaign.BudgetedCost</field>
+        <hidden>false</hidden>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>true</editable>
         <field>Campaign.Description</field>
+        <hidden>false</hidden>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>true</editable>
         <field>Campaign.EndDate</field>
+        <hidden>false</hidden>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>true</editable>
         <field>Campaign.ExpectedResponse</field>
+        <hidden>false</hidden>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>true</editable>
         <field>Campaign.ExpectedRevenue</field>
+        <hidden>false</hidden>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>false</editable>
@@ -582,34 +648,42 @@
     <fieldLevelSecurities>
         <editable>true</editable>
         <field>Campaign.IsActive</field>
+        <hidden>false</hidden>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>true</editable>
         <field>Campaign.NumberOfContacts</field>
+        <hidden>false</hidden>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>true</editable>
         <field>Campaign.NumberOfConvertedLeads</field>
+        <hidden>false</hidden>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>true</editable>
         <field>Campaign.NumberOfLeads</field>
+        <hidden>false</hidden>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>true</editable>
         <field>Campaign.NumberOfOpportunities</field>
+        <hidden>false</hidden>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>true</editable>
         <field>Campaign.NumberOfResponses</field>
+        <hidden>false</hidden>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>true</editable>
         <field>Campaign.NumberOfWonOpportunities</field>
+        <hidden>false</hidden>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>true</editable>
         <field>Campaign.NumberSent</field>
+        <hidden>false</hidden>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>false</editable>
@@ -619,22 +693,27 @@
     <fieldLevelSecurities>
         <editable>true</editable>
         <field>Campaign.StartDate</field>
+        <hidden>false</hidden>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>true</editable>
         <field>Campaign.Status</field>
+        <hidden>false</hidden>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>true</editable>
         <field>Campaign.Type</field>
+        <hidden>false</hidden>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>false</editable>
         <field>Case.AccountId</field>
+        <hidden>false</hidden>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>true</editable>
         <field>Case.AssetId</field>
+        <hidden>false</hidden>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>false</editable>
@@ -644,6 +723,7 @@
     <fieldLevelSecurities>
         <editable>false</editable>
         <field>Case.ClosedDate</field>
+        <hidden>false</hidden>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>false</editable>
@@ -653,14 +733,17 @@
     <fieldLevelSecurities>
         <editable>true</editable>
         <field>Case.ContactId</field>
+        <hidden>false</hidden>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>true</editable>
         <field>Case.Description</field>
+        <hidden>false</hidden>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>true</editable>
         <field>Case.EngineeringReqNumber__c</field>
+        <hidden>false</hidden>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>false</editable>
@@ -670,6 +753,7 @@
     <fieldLevelSecurities>
         <editable>false</editable>
         <field>Case.IsEscalated</field>
+        <hidden>false</hidden>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>false</editable>
@@ -694,22 +778,27 @@
     <fieldLevelSecurities>
         <editable>true</editable>
         <field>Case.Origin</field>
+        <hidden>false</hidden>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>false</editable>
         <field>Case.ParentId</field>
+        <hidden>false</hidden>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>true</editable>
         <field>Case.PotentialLiability__c</field>
+        <hidden>false</hidden>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>true</editable>
         <field>Case.Priority</field>
+        <hidden>false</hidden>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>true</editable>
         <field>Case.Product__c</field>
+        <hidden>false</hidden>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>false</editable>
@@ -719,74 +808,92 @@
     <fieldLevelSecurities>
         <editable>true</editable>
         <field>Case.Reason</field>
+        <hidden>false</hidden>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>true</editable>
         <field>Case.SLAViolation__c</field>
+        <hidden>false</hidden>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>true</editable>
         <field>Case.Subject</field>
+        <hidden>false</hidden>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>false</editable>
         <field>Case.SuppliedCompany</field>
+        <hidden>false</hidden>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>false</editable>
         <field>Case.SuppliedEmail</field>
+        <hidden>false</hidden>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>false</editable>
         <field>Case.SuppliedName</field>
+        <hidden>false</hidden>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>false</editable>
         <field>Case.SuppliedPhone</field>
+        <hidden>false</hidden>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>true</editable>
         <field>Case.Type</field>
+        <hidden>false</hidden>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>true</editable>
         <field>Category__c.Description__c</field>
+        <hidden>false</hidden>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>true</editable>
         <field>Category__c.Parent_Category__c</field>
+        <hidden>false</hidden>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>true</editable>
         <field>Closed_Date__c.Closed_Date__c</field>
+        <hidden>false</hidden>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>true</editable>
         <field>Closed_Date__c.Setting__c</field>
+        <hidden>false</hidden>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>true</editable>
         <field>Contact.AccountId</field>
+        <hidden>false</hidden>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>true</editable>
         <field>Contact.AssistantName</field>
+        <hidden>false</hidden>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>true</editable>
         <field>Contact.AssistantPhone</field>
+        <hidden>false</hidden>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>true</editable>
         <field>Contact.Birthdate</field>
+        <hidden>false</hidden>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>true</editable>
         <field>Contact.Department</field>
+        <hidden>false</hidden>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>true</editable>
         <field>Contact.Description</field>
+        <hidden>false</hidden>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>false</editable>
@@ -796,10 +903,12 @@
     <fieldLevelSecurities>
         <editable>true</editable>
         <field>Contact.Email</field>
+        <hidden>false</hidden>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>true</editable>
         <field>Contact.Fax</field>
+        <hidden>false</hidden>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>false</editable>
@@ -814,90 +923,112 @@
     <fieldLevelSecurities>
         <editable>true</editable>
         <field>Contact.HomePhone</field>
+        <hidden>false</hidden>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>true</editable>
         <field>Contact.Languages__c</field>
+        <hidden>false</hidden>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>true</editable>
         <field>Contact.LeadSource</field>
+        <hidden>false</hidden>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>true</editable>
         <field>Contact.Level__c</field>
+        <hidden>false</hidden>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>true</editable>
         <field>Contact.MailingAddress</field>
+        <hidden>false</hidden>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>true</editable>
         <field>Contact.MobilePhone</field>
+        <hidden>false</hidden>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>true</editable>
         <field>Contact.OtherAddress</field>
+        <hidden>false</hidden>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>true</editable>
         <field>Contact.OtherPhone</field>
+        <hidden>false</hidden>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>true</editable>
         <field>Contact.Phone</field>
+        <hidden>false</hidden>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>true</editable>
         <field>Contact.ReportsToId</field>
+        <hidden>false</hidden>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>true</editable>
         <field>Contact.Title</field>
+        <hidden>false</hidden>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>false</editable>
         <field>Contract.ActivatedById</field>
+        <hidden>false</hidden>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>false</editable>
         <field>Contract.ActivatedDate</field>
+        <hidden>false</hidden>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>true</editable>
         <field>Contract.BillingAddress</field>
+        <hidden>false</hidden>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>true</editable>
         <field>Contract.CompanySignedDate</field>
+        <hidden>false</hidden>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>true</editable>
         <field>Contract.CompanySignedId</field>
+        <hidden>false</hidden>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>true</editable>
         <field>Contract.ContractTerm</field>
+        <hidden>false</hidden>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>true</editable>
         <field>Contract.CustomerSignedDate</field>
+        <hidden>false</hidden>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>true</editable>
         <field>Contract.CustomerSignedId</field>
+        <hidden>false</hidden>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>true</editable>
         <field>Contract.CustomerSignedTitle</field>
+        <hidden>false</hidden>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>true</editable>
         <field>Contract.Description</field>
+        <hidden>false</hidden>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>false</editable>
         <field>Contract.EndDate</field>
+        <hidden>false</hidden>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>false</editable>
@@ -907,6 +1038,7 @@
     <fieldLevelSecurities>
         <editable>true</editable>
         <field>Contract.OwnerExpirationNotice</field>
+        <hidden>false</hidden>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>false</editable>
@@ -916,230 +1048,297 @@
     <fieldLevelSecurities>
         <editable>true</editable>
         <field>Contract.SpecialTerms</field>
+        <hidden>false</hidden>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>true</editable>
         <field>Contract.StartDate</field>
+        <hidden>false</hidden>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>true</editable>
         <field>Customer__c.Allergies_To_Medication__c</field>
+        <hidden>false</hidden>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>true</editable>
         <field>Customer__c.Allergies__c</field>
+        <hidden>false</hidden>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>true</editable>
         <field>Customer__c.Allergy_Reactions__c</field>
+        <hidden>false</hidden>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>false</editable>
         <field>Customer__c.Anniversary_Date__c</field>
+        <hidden>false</hidden>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>true</editable>
         <field>Customer__c.Anniversary_Day__c</field>
+        <hidden>false</hidden>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>true</editable>
         <field>Customer__c.Anniversary_Month__c</field>
+        <hidden>false</hidden>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>false</editable>
         <field>Customer__c.Birth_Date__c</field>
+        <hidden>false</hidden>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>true</editable>
         <field>Customer__c.Birth_Day__c</field>
+        <hidden>false</hidden>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>true</editable>
         <field>Customer__c.Birth_Month__c</field>
+        <hidden>false</hidden>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>true</editable>
         <field>Customer__c.Brand__c</field>
+        <hidden>false</hidden>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>true</editable>
         <field>Customer__c.City__c</field>
+        <hidden>false</hidden>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>true</editable>
         <field>Customer__c.Comments__c</field>
+        <hidden>false</hidden>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>true</editable>
         <field>Customer__c.Conditioner__c</field>
+        <hidden>false</hidden>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>true</editable>
         <field>Customer__c.Email_Notification__c</field>
+        <hidden>false</hidden>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>true</editable>
         <field>Customer__c.Email__c</field>
+        <hidden>false</hidden>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>true</editable>
         <field>Customer__c.First_Name__c</field>
+        <hidden>false</hidden>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>false</editable>
         <field>Customer__c.First_Then_Last_Name__c</field>
+        <hidden>false</hidden>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>true</editable>
         <field>Customer__c.Frequency__c</field>
+        <hidden>false</hidden>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>true</editable>
         <field>Customer__c.Gels__c</field>
+        <hidden>false</hidden>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>true</editable>
         <field>Customer__c.Hair_Color_Treatments__c</field>
+        <hidden>false</hidden>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>true</editable>
         <field>Customer__c.Hair_Condition__c</field>
+        <hidden>false</hidden>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>true</editable>
         <field>Customer__c.Hair_Spray__c</field>
+        <hidden>false</hidden>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>true</editable>
         <field>Customer__c.Home_Phone__c</field>
+        <hidden>false</hidden>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>true</editable>
         <field>Customer__c.Last_Appointment_Date__c</field>
+        <hidden>false</hidden>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>true</editable>
         <field>Customer__c.Last_Name__c</field>
+        <hidden>false</hidden>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>true</editable>
         <field>Customer__c.Last_Perm__c</field>
+        <hidden>false</hidden>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>false</editable>
         <field>Customer__c.Last_Then_First_Name__c</field>
+        <hidden>false</hidden>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>true</editable>
         <field>Customer__c.Mailing_State__c</field>
+        <hidden>false</hidden>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>true</editable>
         <field>Customer__c.Mobile_Phone__c</field>
+        <hidden>false</hidden>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>true</editable>
         <field>Customer__c.Natural_Base_Level__c</field>
+        <hidden>false</hidden>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>true</editable>
         <field>Customer__c.Office_Phone__c</field>
+        <hidden>false</hidden>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>true</editable>
         <field>Customer__c.Perms__c</field>
+        <hidden>false</hidden>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>true</editable>
         <field>Customer__c.Personal_Hair_Other__c</field>
+        <hidden>false</hidden>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>true</editable>
         <field>Customer__c.Personal_Hair_Treatment__c</field>
+        <hidden>false</hidden>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>true</editable>
         <field>Customer__c.Porosity__c</field>
+        <hidden>false</hidden>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>true</editable>
         <field>Customer__c.Recurring_End_Date__c</field>
+        <hidden>false</hidden>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>true</editable>
         <field>Customer__c.Recurring_Start_DT__c</field>
+        <hidden>false</hidden>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>true</editable>
         <field>Customer__c.Recurring_Start_Date__c</field>
+        <hidden>false</hidden>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>true</editable>
         <field>Customer__c.Recurring__c</field>
+        <hidden>false</hidden>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>true</editable>
         <field>Customer__c.Relaxer_Date__c</field>
+        <hidden>false</hidden>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>true</editable>
         <field>Customer__c.Relaxer__c</field>
+        <hidden>false</hidden>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>true</editable>
         <field>Customer__c.Scalp_Condition__c</field>
+        <hidden>false</hidden>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>true</editable>
         <field>Customer__c.Service__c</field>
+        <hidden>false</hidden>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>true</editable>
         <field>Customer__c.Shampoo__c</field>
+        <hidden>false</hidden>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>true</editable>
         <field>Customer__c.Staff__c</field>
+        <hidden>false</hidden>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>true</editable>
         <field>Customer__c.State__c</field>
+        <hidden>false</hidden>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>true</editable>
         <field>Customer__c.Status__c</field>
+        <hidden>false</hidden>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>true</editable>
         <field>Customer__c.Street_Address__c</field>
+        <hidden>false</hidden>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>true</editable>
         <field>Customer__c.Text_Notification__c</field>
+        <hidden>false</hidden>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>true</editable>
         <field>Customer__c.Texture__c</field>
+        <hidden>false</hidden>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>true</editable>
         <field>Customer__c.Title__c</field>
+        <hidden>false</hidden>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>true</editable>
         <field>Customer__c.Tonal_Value__c</field>
+        <hidden>false</hidden>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>true</editable>
         <field>Customer__c.Zip_Code__c</field>
+        <hidden>false</hidden>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>true</editable>
         <field>Event.Description</field>
+        <hidden>false</hidden>
+    </fieldLevelSecurities>
+    <fieldLevelSecurities>
+        <editable>true</editable>
+        <field>Event.EndDateTimeBackup__c</field>
+        <hidden>false</hidden>
+    </fieldLevelSecurities>
+    <fieldLevelSecurities>
+        <editable>true</editable>
+        <field>Event.Event_Name__c</field>
+        <hidden>false</hidden>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>true</editable>
         <field>Event.IsAllDayEvent</field>
+        <hidden>false</hidden>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>false</editable>
@@ -1149,6 +1348,17 @@
     <fieldLevelSecurities>
         <editable>true</editable>
         <field>Event.Location</field>
+        <hidden>false</hidden>
+    </fieldLevelSecurities>
+    <fieldLevelSecurities>
+        <editable>true</editable>
+        <field>Event.ResourceId__c</field>
+        <hidden>false</hidden>
+    </fieldLevelSecurities>
+    <fieldLevelSecurities>
+        <editable>true</editable>
+        <field>Event.StartDateTimeBackup__c</field>
+        <hidden>false</hidden>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>false</editable>
@@ -1158,42 +1368,67 @@
     <fieldLevelSecurities>
         <editable>true</editable>
         <field>Event.WhatId</field>
+        <hidden>false</hidden>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>true</editable>
         <field>Event.WhoId</field>
+        <hidden>false</hidden>
+    </fieldLevelSecurities>
+    <fieldLevelSecurities>
+        <editable>true</editable>
+        <field>Event.Work_Shift_Event__c</field>
+        <hidden>false</hidden>
+    </fieldLevelSecurities>
+    <fieldLevelSecurities>
+        <editable>true</editable>
+        <field>Group__c.Description__c</field>
+        <hidden>false</hidden>
+    </fieldLevelSecurities>
+    <fieldLevelSecurities>
+        <editable>true</editable>
+        <field>Group__c.Resource_Type__c</field>
+        <hidden>false</hidden>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>true</editable>
         <field>Holiday__c.Holiday_Date__c</field>
+        <hidden>false</hidden>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>true</editable>
         <field>Holiday__c.Recurring__c</field>
+        <hidden>false</hidden>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>true</editable>
         <field>Holiday__c.Setting__c</field>
+        <hidden>false</hidden>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>false</editable>
         <field>Idea.Status</field>
+        <hidden>false</hidden>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>true</editable>
         <field>Lead.Address</field>
+        <hidden>false</hidden>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>true</editable>
         <field>Lead.AnnualRevenue</field>
+        <hidden>false</hidden>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>true</editable>
         <field>Lead.CurrentGenerators__c</field>
+        <hidden>false</hidden>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>true</editable>
         <field>Lead.Description</field>
+        <hidden>false</hidden>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>false</editable>
@@ -1203,10 +1438,12 @@
     <fieldLevelSecurities>
         <editable>true</editable>
         <field>Lead.Email</field>
+        <hidden>false</hidden>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>true</editable>
         <field>Lead.Fax</field>
+        <hidden>false</hidden>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>false</editable>
@@ -1221,6 +1458,7 @@
     <fieldLevelSecurities>
         <editable>true</editable>
         <field>Lead.Industry</field>
+        <hidden>false</hidden>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>false</editable>
@@ -1230,122 +1468,152 @@
     <fieldLevelSecurities>
         <editable>true</editable>
         <field>Lead.LeadSource</field>
+        <hidden>false</hidden>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>true</editable>
         <field>Lead.MobilePhone</field>
+        <hidden>false</hidden>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>true</editable>
         <field>Lead.NumberOfEmployees</field>
+        <hidden>false</hidden>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>true</editable>
         <field>Lead.NumberofLocations__c</field>
+        <hidden>false</hidden>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>true</editable>
         <field>Lead.Phone</field>
+        <hidden>false</hidden>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>true</editable>
         <field>Lead.Primary__c</field>
+        <hidden>false</hidden>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>true</editable>
         <field>Lead.ProductInterest__c</field>
+        <hidden>false</hidden>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>true</editable>
         <field>Lead.Rating</field>
+        <hidden>false</hidden>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>true</editable>
         <field>Lead.SICCode__c</field>
+        <hidden>false</hidden>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>true</editable>
         <field>Lead.Title</field>
+        <hidden>false</hidden>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>true</editable>
         <field>Lead.Website</field>
+        <hidden>false</hidden>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>true</editable>
         <field>Lead.sfLma__Subscriber_Org_Type__c</field>
+        <hidden>false</hidden>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>true</editable>
         <field>Manufacturer__c.Active__c</field>
+        <hidden>false</hidden>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>true</editable>
         <field>Opportunity.AccountId</field>
+        <hidden>false</hidden>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>true</editable>
         <field>Opportunity.Amount</field>
+        <hidden>false</hidden>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>true</editable>
         <field>Opportunity.CampaignId</field>
+        <hidden>false</hidden>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>true</editable>
         <field>Opportunity.CurrentGenerators__c</field>
+        <hidden>false</hidden>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>true</editable>
         <field>Opportunity.DeliveryInstallationStatus__c</field>
+        <hidden>false</hidden>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>true</editable>
         <field>Opportunity.Description</field>
+        <hidden>false</hidden>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>true</editable>
         <field>Opportunity.ExpectedRevenue</field>
+        <hidden>false</hidden>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>true</editable>
         <field>Opportunity.IsPrivate</field>
+        <hidden>false</hidden>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>true</editable>
         <field>Opportunity.LeadSource</field>
+        <hidden>false</hidden>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>true</editable>
         <field>Opportunity.MainCompetitors__c</field>
+        <hidden>false</hidden>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>true</editable>
         <field>Opportunity.NextStep</field>
+        <hidden>false</hidden>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>true</editable>
         <field>Opportunity.OrderNumber__c</field>
+        <hidden>false</hidden>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>true</editable>
         <field>Opportunity.Probability</field>
+        <hidden>false</hidden>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>true</editable>
         <field>Opportunity.TotalOpportunityQuantity</field>
+        <hidden>false</hidden>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>true</editable>
         <field>Opportunity.TrackingNumber__c</field>
+        <hidden>false</hidden>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>true</editable>
         <field>Opportunity.Type</field>
+        <hidden>false</hidden>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>true</editable>
         <field>OpportunityLineItem.Description</field>
+        <hidden>false</hidden>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>false</editable>
@@ -1355,14 +1623,17 @@
     <fieldLevelSecurities>
         <editable>false</editable>
         <field>OpportunityLineItem.ListPrice</field>
+        <hidden>false</hidden>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>false</editable>
         <field>OpportunityLineItem.ProductCode</field>
+        <hidden>false</hidden>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>true</editable>
         <field>OpportunityLineItem.ServiceDate</field>
+        <hidden>false</hidden>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>false</editable>
@@ -1372,118 +1643,147 @@
     <fieldLevelSecurities>
         <editable>true</editable>
         <field>OpportunityLineItem.TotalPrice</field>
+        <hidden>false</hidden>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>true</editable>
         <field>Product2.Description</field>
+        <hidden>false</hidden>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>true</editable>
         <field>Product2.Family</field>
+        <hidden>false</hidden>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>true</editable>
         <field>Product2.ProductCode</field>
+        <hidden>false</hidden>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>true</editable>
         <field>Product__c.Active__c</field>
+        <hidden>false</hidden>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>true</editable>
         <field>Product__c.Cost__c</field>
+        <hidden>false</hidden>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>true</editable>
         <field>Product__c.Description__c</field>
+        <hidden>false</hidden>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>true</editable>
         <field>Product__c.Price__c</field>
+        <hidden>false</hidden>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>true</editable>
         <field>Product__c.Quantity_In_Stock__c</field>
+        <hidden>false</hidden>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>true</editable>
         <field>Promotion__c.Description__c</field>
+        <hidden>false</hidden>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>true</editable>
         <field>Promotion__c.Discount_Currency__c</field>
+        <hidden>false</hidden>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>true</editable>
         <field>Promotion__c.Discount_Percent__c</field>
+        <hidden>false</hidden>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>true</editable>
         <field>Promotion__c.Expiration_Date__c</field>
+        <hidden>false</hidden>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>true</editable>
         <field>Promotion__c.Promotion_Code__c</field>
+        <hidden>false</hidden>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>true</editable>
         <field>SMS_Gateways__c.Gateway_Address__c</field>
+        <hidden>false</hidden>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>true</editable>
         <field>Sample__c.Author__c</field>
+        <hidden>false</hidden>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>true</editable>
         <field>Sample__c.Description__c</field>
+        <hidden>false</hidden>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>false</editable>
         <field>Sample__c.Page_Link__c</field>
+        <hidden>false</hidden>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>true</editable>
         <field>Sample__c.Page_Name__c</field>
+        <hidden>false</hidden>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>true</editable>
         <field>Sample__c.Query_String__c</field>
+        <hidden>false</hidden>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>true</editable>
         <field>Sample__c.Type__c</field>
+        <hidden>false</hidden>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>true</editable>
         <field>Service__c.Begin_Time__c</field>
+        <hidden>false</hidden>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>true</editable>
         <field>Service__c.Description__c</field>
+        <hidden>false</hidden>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>true</editable>
         <field>Service__c.Double_Appointment__c</field>
+        <hidden>false</hidden>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>true</editable>
         <field>Service__c.Duration__c</field>
+        <hidden>false</hidden>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>true</editable>
         <field>Service__c.End_Time__c</field>
+        <hidden>false</hidden>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>true</editable>
         <field>Service__c.Fee__c</field>
+        <hidden>false</hidden>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>true</editable>
         <field>Service__c.Gap_Time__c</field>
+        <hidden>false</hidden>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>true</editable>
         <field>Service__c.Price__c</field>
+        <hidden>false</hidden>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>false</editable>
@@ -1493,506 +1793,632 @@
     <fieldLevelSecurities>
         <editable>true</editable>
         <field>Setting__c.Appointment_Intervals__c</field>
+        <hidden>false</hidden>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>true</editable>
         <field>Setting__c.Business_Email__c</field>
+        <hidden>false</hidden>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>true</editable>
         <field>Setting__c.Business_Phone__c</field>
+        <hidden>false</hidden>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>true</editable>
         <field>Setting__c.Business_State__c</field>
+        <hidden>false</hidden>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>true</editable>
         <field>Setting__c.City__c</field>
+        <hidden>false</hidden>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>true</editable>
         <field>Setting__c.Display_Address__c</field>
+        <hidden>false</hidden>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>true</editable>
         <field>Setting__c.Fax__c</field>
+        <hidden>false</hidden>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>true</editable>
         <field>Setting__c.First_Name__c</field>
+        <hidden>false</hidden>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>true</editable>
         <field>Setting__c.Friday_Duration__c</field>
+        <hidden>false</hidden>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>true</editable>
         <field>Setting__c.Friday_From_DT__c</field>
+        <hidden>false</hidden>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>true</editable>
         <field>Setting__c.Friday_From__c</field>
+        <hidden>false</hidden>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>false</editable>
         <field>Setting__c.Friday_Times_Count__c</field>
+        <hidden>false</hidden>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>true</editable>
         <field>Setting__c.Friday_To_DT__c</field>
+        <hidden>false</hidden>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>true</editable>
         <field>Setting__c.Friday_To__c</field>
+        <hidden>false</hidden>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>true</editable>
         <field>Setting__c.Friday__c</field>
+        <hidden>false</hidden>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>false</editable>
         <field>Setting__c.Full_Name__c</field>
+        <hidden>false</hidden>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>false</editable>
         <field>Setting__c.Interval_Minutes__c</field>
+        <hidden>false</hidden>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>true</editable>
         <field>Setting__c.Last_Name__c</field>
+        <hidden>false</hidden>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>true</editable>
         <field>Setting__c.Maximum_Lead_Time__c</field>
+        <hidden>false</hidden>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>true</editable>
         <field>Setting__c.Minimum_Lead_Time__c</field>
+        <hidden>false</hidden>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>true</editable>
         <field>Setting__c.Monday_Duration__c</field>
+        <hidden>false</hidden>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>true</editable>
         <field>Setting__c.Monday_From_DT__c</field>
+        <hidden>false</hidden>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>true</editable>
         <field>Setting__c.Monday_From__c</field>
+        <hidden>false</hidden>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>false</editable>
         <field>Setting__c.Monday_Times_Count__c</field>
+        <hidden>false</hidden>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>true</editable>
         <field>Setting__c.Monday_To_DT__c</field>
+        <hidden>false</hidden>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>true</editable>
         <field>Setting__c.Monday_To__c</field>
+        <hidden>false</hidden>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>true</editable>
         <field>Setting__c.Monday__c</field>
+        <hidden>false</hidden>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>true</editable>
         <field>Setting__c.Saturday_Duration__c</field>
+        <hidden>false</hidden>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>true</editable>
         <field>Setting__c.Saturday_From_DT__c</field>
+        <hidden>false</hidden>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>true</editable>
         <field>Setting__c.Saturday_From__c</field>
+        <hidden>false</hidden>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>false</editable>
         <field>Setting__c.Saturday_Times_Count__c</field>
+        <hidden>false</hidden>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>true</editable>
         <field>Setting__c.Saturday_To_DT__c</field>
+        <hidden>false</hidden>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>true</editable>
         <field>Setting__c.Saturday_To__c</field>
+        <hidden>false</hidden>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>true</editable>
         <field>Setting__c.Saturday__c</field>
+        <hidden>false</hidden>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>true</editable>
         <field>Setting__c.State__c</field>
+        <hidden>false</hidden>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>true</editable>
         <field>Setting__c.Street_Address__c</field>
+        <hidden>false</hidden>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>true</editable>
         <field>Setting__c.Sunday_Duration__c</field>
+        <hidden>false</hidden>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>true</editable>
         <field>Setting__c.Sunday_From_DT__c</field>
+        <hidden>false</hidden>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>true</editable>
         <field>Setting__c.Sunday_From__c</field>
+        <hidden>false</hidden>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>false</editable>
         <field>Setting__c.Sunday_Times_Count__c</field>
+        <hidden>false</hidden>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>true</editable>
         <field>Setting__c.Sunday_To_DT__c</field>
+        <hidden>false</hidden>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>true</editable>
         <field>Setting__c.Sunday_To__c</field>
+        <hidden>false</hidden>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>true</editable>
         <field>Setting__c.Sunday__c</field>
+        <hidden>false</hidden>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>true</editable>
         <field>Setting__c.Thursday_Duration__c</field>
+        <hidden>false</hidden>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>true</editable>
         <field>Setting__c.Thursday_From_DT__c</field>
+        <hidden>false</hidden>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>true</editable>
         <field>Setting__c.Thursday_From__c</field>
+        <hidden>false</hidden>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>false</editable>
         <field>Setting__c.Thursday_Times_Count__c</field>
+        <hidden>false</hidden>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>true</editable>
         <field>Setting__c.Thursday_To_DT__c</field>
+        <hidden>false</hidden>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>true</editable>
         <field>Setting__c.Thursday_To__c</field>
+        <hidden>false</hidden>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>true</editable>
         <field>Setting__c.Thursday__c</field>
+        <hidden>false</hidden>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>true</editable>
         <field>Setting__c.Time_Format__c</field>
+        <hidden>false</hidden>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>true</editable>
         <field>Setting__c.Tuesday_Duration__c</field>
+        <hidden>false</hidden>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>true</editable>
         <field>Setting__c.Tuesday_From_DT__c</field>
+        <hidden>false</hidden>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>true</editable>
         <field>Setting__c.Tuesday_From__c</field>
+        <hidden>false</hidden>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>false</editable>
         <field>Setting__c.Tuesday_Times_Count__c</field>
+        <hidden>false</hidden>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>true</editable>
         <field>Setting__c.Tuesday_To_DT__c</field>
+        <hidden>false</hidden>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>true</editable>
         <field>Setting__c.Tuesday_To__c</field>
+        <hidden>false</hidden>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>true</editable>
         <field>Setting__c.Tuesday__c</field>
+        <hidden>false</hidden>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>true</editable>
         <field>Setting__c.Website__c</field>
+        <hidden>false</hidden>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>true</editable>
         <field>Setting__c.Wednesday_Duration__c</field>
+        <hidden>false</hidden>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>true</editable>
         <field>Setting__c.Wednesday_From_DT__c</field>
+        <hidden>false</hidden>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>true</editable>
         <field>Setting__c.Wednesday_From__c</field>
+        <hidden>false</hidden>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>false</editable>
         <field>Setting__c.Wednesday_Times_Count__c</field>
+        <hidden>false</hidden>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>true</editable>
         <field>Setting__c.Wednesday_To_DT__c</field>
+        <hidden>false</hidden>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>true</editable>
         <field>Setting__c.Wednesday_To__c</field>
+        <hidden>false</hidden>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>true</editable>
         <field>Setting__c.Wednesday__c</field>
+        <hidden>false</hidden>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>true</editable>
         <field>Setting__c.Week_Start_Day__c</field>
+        <hidden>false</hidden>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>true</editable>
         <field>Setting__c.Zip_Code__c</field>
+        <hidden>false</hidden>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>true</editable>
         <field>Solution.IsPublished</field>
+        <hidden>false</hidden>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>true</editable>
         <field>Solution.IsPublishedInPublicKb</field>
+        <hidden>false</hidden>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>true</editable>
         <field>Solution.SolutionNote</field>
+        <hidden>false</hidden>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>true</editable>
         <field>Staff_Group__c.Description__c</field>
+        <hidden>false</hidden>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>true</editable>
         <field>Staff_Group__c.Parent_Group__c</field>
+        <hidden>false</hidden>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>true</editable>
         <field>Staff_Schedule__c.Description__c</field>
+        <hidden>false</hidden>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>true</editable>
         <field>Staff_Schedule__c.Friday_Duration__c</field>
+        <hidden>false</hidden>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>true</editable>
         <field>Staff_Schedule__c.Friday_From_DT__c</field>
+        <hidden>false</hidden>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>true</editable>
         <field>Staff_Schedule__c.Friday_From__c</field>
+        <hidden>false</hidden>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>true</editable>
         <field>Staff_Schedule__c.Friday_To_DT__c</field>
+        <hidden>false</hidden>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>true</editable>
         <field>Staff_Schedule__c.Friday_To__c</field>
+        <hidden>false</hidden>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>true</editable>
         <field>Staff_Schedule__c.Friday__c</field>
+        <hidden>false</hidden>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>true</editable>
         <field>Staff_Schedule__c.Monday_Duration__c</field>
+        <hidden>false</hidden>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>true</editable>
         <field>Staff_Schedule__c.Monday_From_DT__c</field>
+        <hidden>false</hidden>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>true</editable>
         <field>Staff_Schedule__c.Monday_From_Text__c</field>
+        <hidden>false</hidden>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>true</editable>
         <field>Staff_Schedule__c.Monday_From__c</field>
+        <hidden>false</hidden>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>true</editable>
         <field>Staff_Schedule__c.Monday_To_DT__c</field>
+        <hidden>false</hidden>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>true</editable>
         <field>Staff_Schedule__c.Monday_To_Text__c</field>
+        <hidden>false</hidden>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>true</editable>
         <field>Staff_Schedule__c.Monday_To__c</field>
+        <hidden>false</hidden>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>true</editable>
         <field>Staff_Schedule__c.Monday__c</field>
+        <hidden>false</hidden>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>true</editable>
         <field>Staff_Schedule__c.Saturday_Duration__c</field>
+        <hidden>false</hidden>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>true</editable>
         <field>Staff_Schedule__c.Saturday_From_DT__c</field>
+        <hidden>false</hidden>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>true</editable>
         <field>Staff_Schedule__c.Saturday_From__c</field>
+        <hidden>false</hidden>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>true</editable>
         <field>Staff_Schedule__c.Saturday_To_DT__c</field>
+        <hidden>false</hidden>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>true</editable>
         <field>Staff_Schedule__c.Saturday_To__c</field>
+        <hidden>false</hidden>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>true</editable>
         <field>Staff_Schedule__c.Saturday__c</field>
+        <hidden>false</hidden>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>true</editable>
         <field>Staff_Schedule__c.Staff__c</field>
+        <hidden>false</hidden>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>true</editable>
         <field>Staff_Schedule__c.Sunday_Duration__c</field>
+        <hidden>false</hidden>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>true</editable>
         <field>Staff_Schedule__c.Sunday_From_DT__c</field>
+        <hidden>false</hidden>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>true</editable>
         <field>Staff_Schedule__c.Sunday_From__c</field>
+        <hidden>false</hidden>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>true</editable>
         <field>Staff_Schedule__c.Sunday_To_DT__c</field>
+        <hidden>false</hidden>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>true</editable>
         <field>Staff_Schedule__c.Sunday_To__c</field>
+        <hidden>false</hidden>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>true</editable>
         <field>Staff_Schedule__c.Sunday__c</field>
+        <hidden>false</hidden>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>true</editable>
         <field>Staff_Schedule__c.Thursday_Duration__c</field>
+        <hidden>false</hidden>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>true</editable>
         <field>Staff_Schedule__c.Thursday_From_DT__c</field>
+        <hidden>false</hidden>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>true</editable>
         <field>Staff_Schedule__c.Thursday_From__c</field>
+        <hidden>false</hidden>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>true</editable>
         <field>Staff_Schedule__c.Thursday_To_DT__c</field>
+        <hidden>false</hidden>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>true</editable>
         <field>Staff_Schedule__c.Thursday_To__c</field>
+        <hidden>false</hidden>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>true</editable>
         <field>Staff_Schedule__c.Thursday__c</field>
+        <hidden>false</hidden>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>true</editable>
         <field>Staff_Schedule__c.Tuesday_Duration__c</field>
+        <hidden>false</hidden>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>true</editable>
         <field>Staff_Schedule__c.Tuesday_From_DT__c</field>
+        <hidden>false</hidden>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>true</editable>
         <field>Staff_Schedule__c.Tuesday_From__c</field>
+        <hidden>false</hidden>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>true</editable>
         <field>Staff_Schedule__c.Tuesday_To_DT__c</field>
+        <hidden>false</hidden>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>true</editable>
         <field>Staff_Schedule__c.Tuesday_To__c</field>
+        <hidden>false</hidden>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>true</editable>
         <field>Staff_Schedule__c.Tuesday__c</field>
+        <hidden>false</hidden>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>true</editable>
         <field>Staff_Schedule__c.Wednesday_Duration__c</field>
+        <hidden>false</hidden>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>true</editable>
         <field>Staff_Schedule__c.Wednesday_From_DT__c</field>
+        <hidden>false</hidden>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>true</editable>
         <field>Staff_Schedule__c.Wednesday_From__c</field>
+        <hidden>false</hidden>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>true</editable>
         <field>Staff_Schedule__c.Wednesday_To_DT__c</field>
+        <hidden>false</hidden>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>true</editable>
         <field>Staff_Schedule__c.Wednesday_To__c</field>
+        <hidden>false</hidden>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>true</editable>
         <field>Staff_Schedule__c.Wednesday__c</field>
+        <hidden>false</hidden>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>true</editable>
         <field>Staff_Service__c.Begin_Time__c</field>
+        <hidden>false</hidden>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>true</editable>
         <field>Staff_Service__c.Double_Appointment__c</field>
+        <hidden>false</hidden>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>true</editable>
         <field>Staff_Service__c.Duration__c</field>
+        <hidden>false</hidden>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>true</editable>
         <field>Staff_Service__c.End_Time__c</field>
+        <hidden>false</hidden>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>true</editable>
         <field>Staff_Service__c.Fee__c</field>
+        <hidden>false</hidden>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>true</editable>
         <field>Staff_Service__c.Gap_Time__c</field>
+        <hidden>false</hidden>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>true</editable>
         <field>Staff_Service__c.Price__c</field>
+        <hidden>false</hidden>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>false</editable>
@@ -2007,103 +2433,147 @@
     <fieldLevelSecurities>
         <editable>true</editable>
         <field>Staff__c.Active__c</field>
+        <hidden>false</hidden>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>true</editable>
         <field>Staff__c.Birth_Date__c</field>
+        <hidden>false</hidden>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>true</editable>
         <field>Staff__c.City__c</field>
+        <hidden>false</hidden>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>true</editable>
         <field>Staff__c.Comments__c</field>
+        <hidden>false</hidden>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>true</editable>
         <field>Staff__c.Email_Notification__c</field>
+        <hidden>false</hidden>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>true</editable>
         <field>Staff__c.Email__c</field>
+        <hidden>false</hidden>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>true</editable>
         <field>Staff__c.First_Name__c</field>
+        <hidden>false</hidden>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>false</editable>
         <field>Staff__c.First_Then_Last_Name__c</field>
+        <hidden>false</hidden>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>true</editable>
         <field>Staff__c.Home_Phone__c</field>
+        <hidden>false</hidden>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>true</editable>
         <field>Staff__c.Last_Name__c</field>
+        <hidden>false</hidden>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>false</editable>
         <field>Staff__c.Last_Then_First_Name__c</field>
+        <hidden>false</hidden>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>true</editable>
         <field>Staff__c.License__c</field>
+        <hidden>false</hidden>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>true</editable>
         <field>Staff__c.Mailing_State__c</field>
+        <hidden>false</hidden>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>true</editable>
         <field>Staff__c.Mobile_Phone__c</field>
+        <hidden>false</hidden>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>true</editable>
         <field>Staff__c.Settings__c</field>
+        <hidden>false</hidden>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>true</editable>
         <field>Staff__c.Staff_Type__c</field>
+        <hidden>false</hidden>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>true</editable>
         <field>Staff__c.State__c</field>
+        <hidden>false</hidden>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>true</editable>
         <field>Staff__c.Street_Address__c</field>
+        <hidden>false</hidden>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>true</editable>
         <field>Staff__c.Text_Notification__c</field>
+        <hidden>false</hidden>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>true</editable>
         <field>Staff__c.Title__c</field>
+        <hidden>false</hidden>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>true</editable>
         <field>Staff__c.User__c</field>
+        <hidden>false</hidden>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>true</editable>
         <field>Staff__c.Zip_Code__c</field>
+        <hidden>false</hidden>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>true</editable>
         <field>Task.ActivityDate</field>
+        <hidden>false</hidden>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>true</editable>
         <field>Task.Description</field>
+        <hidden>false</hidden>
+    </fieldLevelSecurities>
+    <fieldLevelSecurities>
+        <editable>true</editable>
+        <field>Task.EndDateTimeBackup__c</field>
+        <hidden>false</hidden>
+    </fieldLevelSecurities>
+    <fieldLevelSecurities>
+        <editable>true</editable>
+        <field>Task.Event_Name__c</field>
+        <hidden>false</hidden>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>false</editable>
         <field>Task.IsVisibleInSelfService</field>
         <hidden>true</hidden>
+    </fieldLevelSecurities>
+    <fieldLevelSecurities>
+        <editable>true</editable>
+        <field>Task.ResourceId__c</field>
+        <hidden>false</hidden>
+    </fieldLevelSecurities>
+    <fieldLevelSecurities>
+        <editable>true</editable>
+        <field>Task.StartDateTimeBackup__c</field>
+        <hidden>false</hidden>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>false</editable>
@@ -2113,214 +2583,272 @@
     <fieldLevelSecurities>
         <editable>true</editable>
         <field>Task.WhatId</field>
+        <hidden>false</hidden>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>true</editable>
         <field>Task.WhoId</field>
+        <hidden>false</hidden>
+    </fieldLevelSecurities>
+    <fieldLevelSecurities>
+        <editable>true</editable>
+        <field>Task.Work_Shift_Event__c</field>
+        <hidden>false</hidden>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>true</editable>
         <field>TestObject__c.Checkbox__c</field>
+        <hidden>false</hidden>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>true</editable>
         <field>TestObject__c.Currency__c</field>
+        <hidden>false</hidden>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>true</editable>
         <field>TestObject__c.Date__c</field>
+        <hidden>false</hidden>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>true</editable>
         <field>TestObject__c.Datetime__c</field>
+        <hidden>false</hidden>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>true</editable>
         <field>TestObject__c.Email__c</field>
+        <hidden>false</hidden>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>true</editable>
         <field>TestObject__c.Number__c</field>
+        <hidden>false</hidden>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>true</editable>
         <field>TestObject__c.Percent__c</field>
+        <hidden>false</hidden>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>true</editable>
         <field>TestObject__c.Phone__c</field>
+        <hidden>false</hidden>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>true</editable>
         <field>TestObject__c.Picklist_Multi_Select__c</field>
+        <hidden>false</hidden>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>true</editable>
         <field>TestObject__c.Picklist__c</field>
+        <hidden>false</hidden>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>true</editable>
         <field>TestObject__c.Test_Lookup_Object__c</field>
+        <hidden>false</hidden>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>true</editable>
         <field>TestObject__c.Text_Area_Long__c</field>
+        <hidden>false</hidden>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>true</editable>
         <field>TestObject__c.Text_Area_Rich__c</field>
+        <hidden>false</hidden>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>true</editable>
         <field>TestObject__c.Text_Area__c</field>
+        <hidden>false</hidden>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>true</editable>
         <field>TestObject__c.Text__c</field>
+        <hidden>false</hidden>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>true</editable>
         <field>TestObject__c.Url__c</field>
+        <hidden>false</hidden>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>true</editable>
         <field>Time_Off__c.All_Day__c</field>
+        <hidden>false</hidden>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>true</editable>
         <field>Time_Off__c.Start_DateTime__c</field>
+        <hidden>false</hidden>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>true</editable>
         <field>Time_Off__c.Start_Time_List__c</field>
+        <hidden>false</hidden>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>true</editable>
         <field>Time_Off__c.Stop_DateTime__c</field>
+        <hidden>false</hidden>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>true</editable>
         <field>Time_Off__c.Stop_Time_List__c</field>
+        <hidden>false</hidden>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>true</editable>
         <field>Time_Range__c.DateTime_Value__c</field>
+        <hidden>false</hidden>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>true</editable>
         <field>Time_Range__c.Settings__c</field>
+        <hidden>false</hidden>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>true</editable>
         <field>Time_Range__c.Time_String__c</field>
+        <hidden>false</hidden>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>true</editable>
         <field>Time_Range__c.Weekday_Number__c</field>
+        <hidden>false</hidden>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>false</editable>
         <field>Time_Range__c.Weekday__c</field>
+        <hidden>false</hidden>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>true</editable>
         <field>Treatment_History__c.Customer__c</field>
+        <hidden>false</hidden>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>true</editable>
         <field>Treatment_History__c.Price__c</field>
+        <hidden>false</hidden>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>true</editable>
         <field>Treatment_History__c.Service_Treatment__c</field>
+        <hidden>false</hidden>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>true</editable>
         <field>Treatment_History__c.Treatment_Date__c</field>
+        <hidden>false</hidden>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>true</editable>
         <field>Vendor__c.City__c</field>
+        <hidden>false</hidden>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>true</editable>
         <field>Vendor__c.Contact_Name__c</field>
+        <hidden>false</hidden>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>true</editable>
         <field>Vendor__c.Email__c</field>
+        <hidden>false</hidden>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>true</editable>
         <field>Vendor__c.Home_Phone__c</field>
+        <hidden>false</hidden>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>true</editable>
         <field>Vendor__c.Mailing_State__c</field>
+        <hidden>false</hidden>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>true</editable>
         <field>Vendor__c.Mobile_Phone__c</field>
+        <hidden>false</hidden>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>true</editable>
         <field>Vendor__c.Office_Phone__c</field>
+        <hidden>false</hidden>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>true</editable>
         <field>Vendor__c.State__c</field>
+        <hidden>false</hidden>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>true</editable>
         <field>Vendor__c.Street_Address__c</field>
+        <hidden>false</hidden>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>true</editable>
         <field>Vendor__c.Zip_Code__c</field>
+        <hidden>false</hidden>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>true</editable>
         <field>zCat3__c.Name__c</field>
+        <hidden>false</hidden>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>true</editable>
         <field>zConsoleView__c.List_1_Id__c</field>
+        <hidden>false</hidden>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>true</editable>
         <field>zConsoleView__c.List_2_Id__c</field>
+        <hidden>false</hidden>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>true</editable>
         <field>zConsoleView__c.List_3_Id__c</field>
+        <hidden>false</hidden>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>true</editable>
         <field>zConsoleView__c.List_4_Id__c</field>
+        <hidden>false</hidden>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>true</editable>
         <field>zConsoleView__c.List_5_Id__c</field>
+        <hidden>false</hidden>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>true</editable>
         <field>zConsoleView__c.Tab__c</field>
+        <hidden>false</hidden>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>false</editable>
         <field>zConsoleView__c.User_Role__c</field>
+        <hidden>false</hidden>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>true</editable>
         <field>zConsoleView__c.User__c</field>
+        <hidden>false</hidden>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>true</editable>
         <field>zProjectItem__c.Status__c</field>
+        <hidden>false</hidden>
     </fieldLevelSecurities>
     <fieldLevelSecurities>
         <editable>true</editable>
         <field>zProjectItem__c.Weighting__c</field>
+        <hidden>false</hidden>
     </fieldLevelSecurities>
     <layoutAssignments>
         <layout>Account-Account Layout</layout>
@@ -2360,6 +2888,9 @@
     </layoutAssignments>
     <layoutAssignments>
         <layout>Event-Event Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>Group__c-Group Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
         <layout>Holiday__c-Holiday Layout</layout>
@@ -2452,134 +2983,355 @@
         <layout>zProjectItem__c-ProjectItem Layout</layout>
     </layoutAssignments>
     <objectPermissions>
+        <allowCreate>false</allowCreate>
+        <allowDelete>false</allowDelete>
+        <allowEdit>false</allowEdit>
         <allowRead>true</allowRead>
+        <modifyAllRecords>false</modifyAllRecords>
         <object>Account</object>
+        <viewAllRecords>false</viewAllRecords>
     </objectPermissions>
     <objectPermissions>
+        <allowCreate>false</allowCreate>
+        <allowDelete>false</allowDelete>
+        <allowEdit>false</allowEdit>
+        <allowRead>false</allowRead>
+        <modifyAllRecords>false</modifyAllRecords>
         <object>Appointment__c</object>
+        <viewAllRecords>false</viewAllRecords>
     </objectPermissions>
     <objectPermissions>
+        <allowCreate>false</allowCreate>
+        <allowDelete>false</allowDelete>
+        <allowEdit>false</allowEdit>
         <allowRead>true</allowRead>
+        <modifyAllRecords>false</modifyAllRecords>
         <object>Asset</object>
+        <viewAllRecords>false</viewAllRecords>
     </objectPermissions>
     <objectPermissions>
+        <allowCreate>false</allowCreate>
+        <allowDelete>false</allowDelete>
+        <allowEdit>false</allowEdit>
         <allowRead>true</allowRead>
+        <modifyAllRecords>false</modifyAllRecords>
         <object>Campaign</object>
+        <viewAllRecords>false</viewAllRecords>
     </objectPermissions>
     <objectPermissions>
+        <allowCreate>false</allowCreate>
+        <allowDelete>false</allowDelete>
+        <allowEdit>false</allowEdit>
         <allowRead>true</allowRead>
+        <modifyAllRecords>false</modifyAllRecords>
         <object>Case</object>
+        <viewAllRecords>false</viewAllRecords>
     </objectPermissions>
     <objectPermissions>
+        <allowCreate>false</allowCreate>
+        <allowDelete>false</allowDelete>
+        <allowEdit>false</allowEdit>
+        <allowRead>false</allowRead>
+        <modifyAllRecords>false</modifyAllRecords>
         <object>Category__c</object>
+        <viewAllRecords>false</viewAllRecords>
     </objectPermissions>
     <objectPermissions>
+        <allowCreate>false</allowCreate>
+        <allowDelete>false</allowDelete>
+        <allowEdit>false</allowEdit>
+        <allowRead>false</allowRead>
+        <modifyAllRecords>false</modifyAllRecords>
         <object>Closed_Date__c</object>
+        <viewAllRecords>false</viewAllRecords>
     </objectPermissions>
     <objectPermissions>
+        <allowCreate>false</allowCreate>
+        <allowDelete>false</allowDelete>
+        <allowEdit>false</allowEdit>
         <allowRead>true</allowRead>
+        <modifyAllRecords>false</modifyAllRecords>
         <object>Contact</object>
+        <viewAllRecords>false</viewAllRecords>
     </objectPermissions>
     <objectPermissions>
+        <allowCreate>false</allowCreate>
+        <allowDelete>false</allowDelete>
+        <allowEdit>false</allowEdit>
         <allowRead>true</allowRead>
+        <modifyAllRecords>false</modifyAllRecords>
         <object>Contract</object>
+        <viewAllRecords>false</viewAllRecords>
     </objectPermissions>
     <objectPermissions>
+        <allowCreate>false</allowCreate>
+        <allowDelete>false</allowDelete>
+        <allowEdit>false</allowEdit>
+        <allowRead>false</allowRead>
+        <modifyAllRecords>false</modifyAllRecords>
         <object>Customer__c</object>
+        <viewAllRecords>false</viewAllRecords>
     </objectPermissions>
     <objectPermissions>
+        <allowCreate>false</allowCreate>
+        <allowDelete>false</allowDelete>
+        <allowEdit>false</allowEdit>
+        <allowRead>false</allowRead>
+        <modifyAllRecords>false</modifyAllRecords>
+        <object>Group__c</object>
+        <viewAllRecords>false</viewAllRecords>
+    </objectPermissions>
+    <objectPermissions>
+        <allowCreate>false</allowCreate>
+        <allowDelete>false</allowDelete>
+        <allowEdit>false</allowEdit>
+        <allowRead>false</allowRead>
+        <modifyAllRecords>false</modifyAllRecords>
         <object>Holiday__c</object>
+        <viewAllRecords>false</viewAllRecords>
     </objectPermissions>
     <objectPermissions>
+        <allowCreate>false</allowCreate>
+        <allowDelete>false</allowDelete>
+        <allowEdit>false</allowEdit>
         <allowRead>true</allowRead>
+        <modifyAllRecords>false</modifyAllRecords>
         <object>Idea</object>
+        <viewAllRecords>false</viewAllRecords>
     </objectPermissions>
     <objectPermissions>
+        <allowCreate>false</allowCreate>
+        <allowDelete>false</allowDelete>
+        <allowEdit>false</allowEdit>
         <allowRead>true</allowRead>
+        <modifyAllRecords>false</modifyAllRecords>
         <object>Lead</object>
+        <viewAllRecords>false</viewAllRecords>
     </objectPermissions>
     <objectPermissions>
+        <allowCreate>false</allowCreate>
+        <allowDelete>false</allowDelete>
+        <allowEdit>false</allowEdit>
+        <allowRead>false</allowRead>
+        <modifyAllRecords>false</modifyAllRecords>
         <object>Manufacturer__c</object>
+        <viewAllRecords>false</viewAllRecords>
     </objectPermissions>
     <objectPermissions>
+        <allowCreate>false</allowCreate>
+        <allowDelete>false</allowDelete>
+        <allowEdit>false</allowEdit>
         <allowRead>true</allowRead>
+        <modifyAllRecords>false</modifyAllRecords>
         <object>Opportunity</object>
+        <viewAllRecords>false</viewAllRecords>
     </objectPermissions>
     <objectPermissions>
+        <allowCreate>false</allowCreate>
+        <allowDelete>false</allowDelete>
+        <allowEdit>false</allowEdit>
         <allowRead>true</allowRead>
+        <modifyAllRecords>false</modifyAllRecords>
         <object>Product2</object>
+        <viewAllRecords>false</viewAllRecords>
     </objectPermissions>
     <objectPermissions>
+        <allowCreate>false</allowCreate>
+        <allowDelete>false</allowDelete>
+        <allowEdit>false</allowEdit>
+        <allowRead>false</allowRead>
+        <modifyAllRecords>false</modifyAllRecords>
         <object>Product_Type__c</object>
+        <viewAllRecords>false</viewAllRecords>
     </objectPermissions>
     <objectPermissions>
+        <allowCreate>false</allowCreate>
+        <allowDelete>false</allowDelete>
+        <allowEdit>false</allowEdit>
+        <allowRead>false</allowRead>
+        <modifyAllRecords>false</modifyAllRecords>
         <object>Product__c</object>
+        <viewAllRecords>false</viewAllRecords>
     </objectPermissions>
     <objectPermissions>
+        <allowCreate>false</allowCreate>
+        <allowDelete>false</allowDelete>
+        <allowEdit>false</allowEdit>
+        <allowRead>false</allowRead>
+        <modifyAllRecords>false</modifyAllRecords>
         <object>Promotion__c</object>
+        <viewAllRecords>false</viewAllRecords>
     </objectPermissions>
     <objectPermissions>
+        <allowCreate>false</allowCreate>
+        <allowDelete>false</allowDelete>
+        <allowEdit>false</allowEdit>
         <allowRead>true</allowRead>
+        <modifyAllRecords>false</modifyAllRecords>
         <object>Question</object>
+        <viewAllRecords>false</viewAllRecords>
     </objectPermissions>
     <objectPermissions>
+        <allowCreate>false</allowCreate>
+        <allowDelete>false</allowDelete>
+        <allowEdit>false</allowEdit>
+        <allowRead>false</allowRead>
+        <modifyAllRecords>false</modifyAllRecords>
         <object>SMS_Gateways__c</object>
+        <viewAllRecords>false</viewAllRecords>
     </objectPermissions>
     <objectPermissions>
+        <allowCreate>false</allowCreate>
+        <allowDelete>false</allowDelete>
+        <allowEdit>false</allowEdit>
         <allowRead>true</allowRead>
+        <modifyAllRecords>false</modifyAllRecords>
         <object>Sample__c</object>
+        <viewAllRecords>false</viewAllRecords>
     </objectPermissions>
     <objectPermissions>
+        <allowCreate>false</allowCreate>
+        <allowDelete>false</allowDelete>
+        <allowEdit>false</allowEdit>
+        <allowRead>false</allowRead>
+        <modifyAllRecords>false</modifyAllRecords>
         <object>Service__c</object>
+        <viewAllRecords>false</viewAllRecords>
     </objectPermissions>
     <objectPermissions>
+        <allowCreate>false</allowCreate>
+        <allowDelete>false</allowDelete>
+        <allowEdit>false</allowEdit>
+        <allowRead>false</allowRead>
+        <modifyAllRecords>false</modifyAllRecords>
         <object>Setting__c</object>
+        <viewAllRecords>false</viewAllRecords>
     </objectPermissions>
     <objectPermissions>
+        <allowCreate>false</allowCreate>
+        <allowDelete>false</allowDelete>
+        <allowEdit>false</allowEdit>
         <allowRead>true</allowRead>
+        <modifyAllRecords>false</modifyAllRecords>
         <object>Solution</object>
+        <viewAllRecords>false</viewAllRecords>
     </objectPermissions>
     <objectPermissions>
+        <allowCreate>false</allowCreate>
+        <allowDelete>false</allowDelete>
+        <allowEdit>false</allowEdit>
+        <allowRead>false</allowRead>
+        <modifyAllRecords>false</modifyAllRecords>
         <object>Staff_Group__c</object>
+        <viewAllRecords>false</viewAllRecords>
     </objectPermissions>
     <objectPermissions>
+        <allowCreate>false</allowCreate>
+        <allowDelete>false</allowDelete>
+        <allowEdit>false</allowEdit>
+        <allowRead>false</allowRead>
+        <modifyAllRecords>false</modifyAllRecords>
         <object>Staff_Schedule__c</object>
+        <viewAllRecords>false</viewAllRecords>
     </objectPermissions>
     <objectPermissions>
+        <allowCreate>false</allowCreate>
+        <allowDelete>false</allowDelete>
+        <allowEdit>false</allowEdit>
+        <allowRead>false</allowRead>
+        <modifyAllRecords>false</modifyAllRecords>
         <object>Staff_Service__c</object>
+        <viewAllRecords>false</viewAllRecords>
     </objectPermissions>
     <objectPermissions>
+        <allowCreate>false</allowCreate>
+        <allowDelete>false</allowDelete>
+        <allowEdit>false</allowEdit>
+        <allowRead>false</allowRead>
+        <modifyAllRecords>false</modifyAllRecords>
         <object>Staff__c</object>
+        <viewAllRecords>false</viewAllRecords>
     </objectPermissions>
     <objectPermissions>
+        <allowCreate>false</allowCreate>
+        <allowDelete>false</allowDelete>
+        <allowEdit>false</allowEdit>
+        <allowRead>false</allowRead>
+        <modifyAllRecords>false</modifyAllRecords>
         <object>TestLookupObject__c</object>
+        <viewAllRecords>false</viewAllRecords>
     </objectPermissions>
     <objectPermissions>
+        <allowCreate>false</allowCreate>
+        <allowDelete>false</allowDelete>
+        <allowEdit>false</allowEdit>
+        <allowRead>false</allowRead>
+        <modifyAllRecords>false</modifyAllRecords>
         <object>TestObject__c</object>
+        <viewAllRecords>false</viewAllRecords>
     </objectPermissions>
     <objectPermissions>
+        <allowCreate>false</allowCreate>
+        <allowDelete>false</allowDelete>
+        <allowEdit>false</allowEdit>
+        <allowRead>false</allowRead>
+        <modifyAllRecords>false</modifyAllRecords>
         <object>Time_Off__c</object>
+        <viewAllRecords>false</viewAllRecords>
     </objectPermissions>
     <objectPermissions>
+        <allowCreate>false</allowCreate>
+        <allowDelete>false</allowDelete>
+        <allowEdit>false</allowEdit>
+        <allowRead>false</allowRead>
+        <modifyAllRecords>false</modifyAllRecords>
         <object>Time_Range__c</object>
+        <viewAllRecords>false</viewAllRecords>
     </objectPermissions>
     <objectPermissions>
+        <allowCreate>false</allowCreate>
+        <allowDelete>false</allowDelete>
+        <allowEdit>false</allowEdit>
+        <allowRead>false</allowRead>
+        <modifyAllRecords>false</modifyAllRecords>
         <object>Treatment_History__c</object>
+        <viewAllRecords>false</viewAllRecords>
     </objectPermissions>
     <objectPermissions>
+        <allowCreate>false</allowCreate>
+        <allowDelete>false</allowDelete>
+        <allowEdit>false</allowEdit>
+        <allowRead>false</allowRead>
+        <modifyAllRecords>false</modifyAllRecords>
         <object>Vendor__c</object>
+        <viewAllRecords>false</viewAllRecords>
     </objectPermissions>
     <objectPermissions>
+        <allowCreate>false</allowCreate>
+        <allowDelete>false</allowDelete>
+        <allowEdit>false</allowEdit>
         <allowRead>true</allowRead>
+        <modifyAllRecords>false</modifyAllRecords>
         <object>zCat3__c</object>
+        <viewAllRecords>false</viewAllRecords>
     </objectPermissions>
     <objectPermissions>
+        <allowCreate>false</allowCreate>
+        <allowDelete>false</allowDelete>
+        <allowEdit>false</allowEdit>
         <allowRead>true</allowRead>
+        <modifyAllRecords>false</modifyAllRecords>
         <object>zConsoleView__c</object>
+        <viewAllRecords>false</viewAllRecords>
     </objectPermissions>
     <objectPermissions>
+        <allowCreate>false</allowCreate>
+        <allowDelete>false</allowDelete>
+        <allowEdit>false</allowEdit>
         <allowRead>true</allowRead>
+        <modifyAllRecords>false</modifyAllRecords>
         <object>zProjectItem__c</object>
+        <viewAllRecords>false</viewAllRecords>
     </objectPermissions>
     <pageAccesses>
         <apexPage>AnswersHome</apexPage>
@@ -2660,6 +3412,10 @@
     <pageAccesses>
         <apexPage>PicklistPage</apexPage>
         <enabled>false</enabled>
+    </pageAccesses>
+    <pageAccesses>
+        <apexPage>ResourceCalendar</apexPage>
+        <enabled>true</enabled>
     </pageAccesses>
     <pageAccesses>
         <apexPage>SettingGoogleMaps</apexPage>
@@ -2878,6 +3634,14 @@
     </tabVisibilities>
     <tabVisibilities>
         <tab>Console2</tab>
+        <visibility>DefaultOn</visibility>
+    </tabVisibilities>
+    <tabVisibilities>
+        <tab>Group__c</tab>
+        <visibility>DefaultOn</visibility>
+    </tabVisibilities>
+    <tabVisibilities>
+        <tab>Resource_Calendar</tab>
         <visibility>DefaultOn</visibility>
     </tabVisibilities>
     <tabVisibilities>

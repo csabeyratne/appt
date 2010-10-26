@@ -34,40 +34,57 @@
     </actionOverrides>
     <deploymentStatus>Deployed</deploymentStatus>
     <description>Products you provide.</description>
+    <enableActivities>false</enableActivities>
     <enableEnhancedLookup>true</enableEnhancedLookup>
+    <enableFeeds>false</enableFeeds>
     <enableHistory>true</enableHistory>
     <enableReports>true</enableReports>
     <fields>
         <fullName>Active__c</fullName>
         <defaultValue>true</defaultValue>
+        <externalId>false</externalId>
         <label>Active</label>
+        <trackHistory>false</trackHistory>
         <type>Checkbox</type>
     </fields>
     <fields>
         <fullName>Cost__c</fullName>
+        <externalId>false</externalId>
         <label>Cost</label>
         <precision>9</precision>
+        <required>false</required>
         <scale>2</scale>
+        <trackHistory>false</trackHistory>
         <type>Currency</type>
     </fields>
     <fields>
         <fullName>Description__c</fullName>
+        <externalId>false</externalId>
         <label>Description</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
         <type>TextArea</type>
     </fields>
     <fields>
         <fullName>Price__c</fullName>
+        <externalId>false</externalId>
         <label>Price</label>
         <precision>6</precision>
+        <required>false</required>
         <scale>2</scale>
+        <trackHistory>false</trackHistory>
         <type>Currency</type>
     </fields>
     <fields>
         <fullName>Quantity_In_Stock__c</fullName>
+        <externalId>false</externalId>
         <label>Quantity In Stock</label>
         <precision>18</precision>
+        <required>false</required>
         <scale>0</scale>
+        <trackHistory>false</trackHistory>
         <type>Number</type>
+        <unique>false</unique>
     </fields>
     <label>Product</label>
     <listViews>
@@ -77,6 +94,7 @@
     </listViews>
     <nameField>
         <label>Product Name</label>
+        <trackHistory>false</trackHistory>
         <type>Text</type>
     </nameField>
     <pluralLabel>Products</pluralLabel>

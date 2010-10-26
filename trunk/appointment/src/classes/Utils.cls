@@ -1,5 +1,9 @@
 public with sharing class Utils {
 
+    private Utils() {
+        // prevent instantiation
+    }
+
     // IMPORTANT: Enables minimized JS and CSS files for Production Release
     public static Boolean isProduction = false;
 
@@ -272,6 +276,9 @@ public with sharing class Utils {
             result.add(String.valueOf(thisObject.get(fieldName)));
         }       
         System.assertEquals(result.size(),objectList.size());
+        
+        System.Debug('## >>> getStringFields() result: ' + result);
+        
         return result;
     }
     
@@ -282,6 +289,9 @@ public with sharing class Utils {
     */
     public static List<Id> getIDFields(List<sObject> objectList, string fieldName) {
         List<Id> idList = Utils.getStringFields(objectList, fieldName);
+        
+        System.Debug('## >>> getIDFields() idList: ' + idList);
+        
         return idList;
     }
     
@@ -301,6 +311,9 @@ public with sharing class Utils {
         System.Debug('## >>> getObjectType() gd.values(): ' + gd.values());
         
         for(Schema.SObjectType describe: gd.values() ){
+
+            System.Debug('## >>> getObjectType() describe: ' + describe);
+           
             keyPrefix = describe.getDescribe().getKeyPrefix();
 
             System.Debug('## >>> getObjectType() keyPrefix: ' + keyPrefix);
@@ -310,22 +323,95 @@ public with sharing class Utils {
                 break; // no need to keep looking
             }
         }
+        
+        System.Debug('## >>> getObjectType() result: ' + result);
+        
         return result;
     }
     
     public static sObject getAllFields(id subject){
+
+        System.Debug('## >>> getAllFields() subject: ' + subject);
+
         Schema.SObjectType objectType = getObjectType(subject);
+
+        System.Debug('## >>> getAllFields() objectType: ' + objectType);
+
         Map<String, Schema.SObjectField> fields = objectType.getDescribe().fields.getMap();
+
+        System.Debug('## >>> getAllFields() fields: ' + fields);
+
         string queryString = 'SELECT ';
         for(Schema.sObjectField field:fields.values()){
             queryString += ' '+field.getDescribe().getName()+', ';
         }
         queryString = queryString.substring(0, queryString.length()-2)+' FROM '+objectType.getDescribe().getName()+' WHERE id = \''+subject+'\' LIMIT 1';
+
+        System.Debug('## >>> getAllFields() queryString: ' + queryString);
+
         sObject result = Database.query(queryString);
+
+        System.Debug('## >>> getAllFields() result: ' + result);
+
         return result;
     }
     
+    /**
+     * A collection of utility methods to perform String analysis and transformations
+     * 
+     * @author Yoel Gluck (securecloud .at. salesforce.com) <a href="http://www.salesforce.com">Salesforce.com</a>
+     * @created 2010
+     */
+
+    /**
+     * Check to ensure that a {@code String} is not null or empty (after optional
+     * trimming of leading and trailing whitespace). 
+     * 
+     * @param str   The {@code String} to be checked.
+     * @param trim  If {@code true}, the string is first trimmed before checking
+     *              to see if it is empty, otherwise it is not.
+     * @return      True if the string is null or empty (after possible
+     *              trimming); otherwise false.
+     */
+    public static boolean notNullOrEmpty(String str, boolean trim) {
+        if ( trim ) {
+            return !( str == null || str.trim().equals('') );
+        } else {
+            return !( str == null || str.equals('') );
+        }
+    }
     
+    /**
+     * Returns true if String is empty ('') or null.
+     */
+    public static boolean isEmpty(String str) {
+        return str == null || str.length() == 0;
+    }
+    
+    public static String[] unionStringArrays(String[] a, String[] b) {
+        
+        Set<String> tmp = new Set<String>();
+        String[] ret;
+        Integer i;
+        
+        // add all unique strings
+        tmp.addAll(a);
+        tmp.addAll(b);
+        
+        List<String> tmpList = new List<String>();
+        tmpList.addAll(tmp);
+        tmpList.sort();
+        
+        // get all strings into an array of strings
+        ret = new String[tmpList.size()];
+        i = 0;
+        for (String s : tmpList) {
+            ret[i] = s;
+            i++;
+        }
+        
+        return ret;
+    }
 
     /* ============================================================
     * This code is part of the "apex-lang" open source project avaiable at:

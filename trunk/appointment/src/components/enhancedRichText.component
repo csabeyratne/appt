@@ -11,21 +11,21 @@
     <apex:attribute name="required" description="Is this field required?" type="Boolean" required="false" assignTo="{!required}" />
     <apex:attribute name="hidden" description="Is this text hidden?" type="Boolean" required="false" assignTo="{!hidden}" />
     <apex:attribute name="defaultValue" description="default value for field, will display and override other values" type="String" required="false" assignTo="{!defaultValue}" />
-	<apex:attribute name="downgrade" description="Should enhanced features be disabled?" required="false" type="Boolean" assignTo="{!downgrade}" />
+    <apex:attribute name="downgrade" description="Should enhanced features be disabled?" required="false" type="Boolean" assignTo="{!downgrade}" />
 
   
     {!onLoad}
   
-	<apex:outputPanel rendered="{!downgrade != true}">
+    <apex:outputPanel rendered="{!downgrade != true}">
 
-			Not yet supported.
-	   
-	 </apex:outputPanel> 
-	 <apex:outputPanel rendered="{!downgrade == true}">
-	 
-		   <apex:inputTextArea richText="true" value="{!myValueHolder}" />
-	 	
-	 </apex:outputPanel>
-	 
-	   
+            Not yet supported.
+       
+     </apex:outputPanel> 
+     <apex:outputPanel rendered="{!downgrade == true}">
+     
+           <apex:inputTextArea richText="true" value="{!myValueHolder}" />
+        
+     </apex:outputPanel>
+     
+       
 </apex:component>

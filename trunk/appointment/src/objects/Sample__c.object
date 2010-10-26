@@ -34,44 +34,63 @@
     </actionOverrides>
     <deploymentStatus>Deployed</deploymentStatus>
     <description>Visualforce &amp; Apex Code Samples</description>
+    <enableActivities>false</enableActivities>
     <enableEnhancedLookup>true</enableEnhancedLookup>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableReports>false</enableReports>
     <fields>
         <fullName>Author__c</fullName>
         <description>Author of the code or sample</description>
+        <externalId>false</externalId>
         <label>Author</label>
         <length>128</length>
+        <required>false</required>
         <type>Text</type>
+        <unique>false</unique>
     </fields>
     <fields>
         <fullName>Description__c</fullName>
+        <externalId>false</externalId>
         <label>Description</label>
+        <required>false</required>
         <type>TextArea</type>
     </fields>
     <fields>
         <fullName>Page_Link__c</fullName>
         <description>Hyperlink to test various samples.</description>
+        <externalId>false</externalId>
         <formula>HYPERLINK( Page_Name__c &amp;  IF(TRIM(Query_String__c)  = &quot;&quot;, &quot;&quot;, &quot;?&quot;)  &amp; Query_String__c, &quot;Run Sample&quot;)</formula>
         <label>Page Link</label>
+        <required>false</required>
         <type>Text</type>
+        <unique>false</unique>
     </fields>
     <fields>
         <fullName>Page_Name__c</fullName>
         <defaultValue>&quot;/apex/&quot;</defaultValue>
+        <externalId>false</externalId>
         <label>Page Name</label>
         <length>128</length>
+        <required>false</required>
         <type>Text</type>
+        <unique>false</unique>
     </fields>
     <fields>
         <fullName>Query_String__c</fullName>
         <defaultValue>&quot;core.apexpages.devmode.url=1&quot;</defaultValue>
         <description>Add &apos;core.apexpages.devmode.url=1&apos; to NOT run in development mode.</description>
+        <externalId>false</externalId>
         <inlineHelpText>Add &apos;core.apexpages.devmode.url=1&apos; to NOT run in development mode.</inlineHelpText>
         <label>Query String</label>
         <length>128</length>
+        <required>false</required>
         <type>Text</type>
+        <unique>false</unique>
     </fields>
     <fields>
         <fullName>Type__c</fullName>
+        <externalId>false</externalId>
         <label>Type</label>
         <picklist>
             <picklistValues>

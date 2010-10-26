@@ -8,8 +8,8 @@
     <script type="text/javascript" src="{!URLFOR($Resource.JQTooltip13,'jquery-tooltip/jquery.tooltip.min.js')}"></script>
     <apex:stylesheet value="{!URLFOR($Resource.JQTooltip13,'jquery-tooltip/jquery.tooltip.css')}"/>      
 
-	<span id="La{!forField}" title="{!tooltip}">{!label}&nbsp;<apex:image value="{!URLFOR($Resource.FamFamIconsMini,'icon_info.gif')}" rendered="{!renderIcon == true}" width="13" height="13" /></span>
-	   
+    <span id="La{!forField}" title="{!tooltip}">{!label}&nbsp;<apex:image value="{!URLFOR($Resource.FamFamIconsMini,'icon_info.gif')}" rendered="{!renderIcon == true}" width="13" height="13" /></span>
+       
   
     <apex:outputText escape="false" value="{!onLoad}" />  
         

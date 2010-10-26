@@ -33,18 +33,22 @@
         <type>Default</type>
     </actionOverrides>
     <deploymentStatus>Deployed</deploymentStatus>
+    <enableActivities>false</enableActivities>
     <enableEnhancedLookup>true</enableEnhancedLookup>
+    <enableFeeds>false</enableFeeds>
     <enableHistory>true</enableHistory>
     <enableReports>true</enableReports>
     <fields>
         <fullName>All_Day__c</fullName>
         <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
         <label>All Day</label>
         <trackHistory>true</trackHistory>
         <type>Checkbox</type>
     </fields>
     <fields>
         <fullName>Customer__c</fullName>
+        <externalId>false</externalId>
         <label>Customer</label>
         <referenceTo>Customer__c</referenceTo>
         <relationshipLabel>Appointments</relationshipLabel>
@@ -54,14 +58,18 @@
     </fields>
     <fields>
         <fullName>Duration_In_Minutes__c</fullName>
+        <externalId>false</externalId>
         <label>Duration</label>
         <precision>8</precision>
+        <required>false</required>
         <scale>0</scale>
         <trackHistory>true</trackHistory>
         <type>Number</type>
+        <unique>false</unique>
     </fields>
     <fields>
         <fullName>Staff_Service__c</fullName>
+        <externalId>false</externalId>
         <label>Staff Service</label>
         <referenceTo>Staff_Service__c</referenceTo>
         <relationshipLabel>Appointments</relationshipLabel>
@@ -71,19 +79,25 @@
     </fields>
     <fields>
         <fullName>Start_DateTime__c</fullName>
+        <externalId>false</externalId>
         <label>Start Time</label>
+        <required>false</required>
         <trackHistory>true</trackHistory>
         <type>DateTime</type>
     </fields>
     <fields>
         <fullName>Start_Time_List__c</fullName>
+        <externalId>false</externalId>
         <label>Start Time List</label>
         <length>10</length>
+        <required>false</required>
         <trackHistory>true</trackHistory>
         <type>Text</type>
+        <unique>false</unique>
     </fields>
     <fields>
         <fullName>Status__c</fullName>
+        <externalId>false</externalId>
         <label>Status</label>
         <picklist>
             <picklistValues>
@@ -105,16 +119,21 @@
     </fields>
     <fields>
         <fullName>Stop_DateTime__c</fullName>
+        <externalId>false</externalId>
         <label>Stop Time</label>
+        <required>false</required>
         <trackHistory>true</trackHistory>
         <type>DateTime</type>
     </fields>
     <fields>
         <fullName>Stop_Time_List__c</fullName>
+        <externalId>false</externalId>
         <label>Stop Time List</label>
         <length>10</length>
+        <required>false</required>
         <trackHistory>true</trackHistory>
         <type>Text</type>
+        <unique>false</unique>
     </fields>
     <label>Appointment</label>
     <listViews>
@@ -125,6 +144,7 @@
     <nameField>
         <displayFormat>A-{00000000}</displayFormat>
         <label>Appointment ID</label>
+        <trackHistory>false</trackHistory>
         <type>AutoNumber</type>
     </nameField>
     <pluralLabel>Appointments</pluralLabel>

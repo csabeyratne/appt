@@ -1,0 +1,162 @@
+<html xmlns="http://www.w3.org/TR/REC-html40">
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=us-ascii">
+<style>
+<!--
+a:link, span.MsoHyperlink {
+	color:blue;
+	text-decoration:underline;
+}
+a:visited, span.MsoHyperlinkFollowed {
+	color:blue;
+	text-decoration:underline;
+}
+span.EmailStyle17 {
+	font-family:Arial;
+	color:navy;
+}
+-->
+</style>
+</head>
+
+<body lang=EN-US link=blue vlink=blue>
+<div class=Section1>
+  <div align=center style='text-align:center'>
+    <h4><font
+face="Times New Roman"><span style='font-size:12.0pt'>
+      <hr size=2 width="100%" align=center tabindex=-1>
+      </span></font></h4>
+  </div>
+  <div style='border:solid #3D89CD 1.5pt;padding:15.0pt 15.0pt 15.0pt 15.0pt;
+'>
+    <p><font size=1 color="#333333" face=Arial><span
+style='font-size:9.0pt;font-family:Arial;color:#333333'><br>
+      <img width=300 height=65 src="http://appointment-time.com/BelleAmitieR.gif" alt="Belle Amitie">
+      </span></font></p>
+    </span></font></div>
+  <div align=center style='text-align:center'><font size=1
+color="#333333" face=Arial><span style='font-size:9.0pt;font-family:Arial;
+color:#333333'>
+    <hr size=2 width="100%" align=center>
+    </span></font></div>
+  <p><font size=1 color="#333333" face=Arial><span
+style='font-size:9.0pt;font-family:Arial;color:#333333'>Dear bob smith, <br>
+    <br>
+    </span></font><b><font size=1 color="#307dc0" face=Arial><span
+style='font-size:9.0pt;font-family:Arial;color:#307DC0;font-weight:bold'>Reminder:
+    You have an appointment with Beth's Hair Salon &amp; Spa!</span></font></b><font
+size=1 color="#333333" face=Arial><span style='font-size:9.0pt;font-family:
+Arial;color:#333333'> <br>
+    <br>
+    <b><span style='font-weight:bold'>APPOINTMENT DETAILS</span></b> </span></font></p>
+  <table border=0 cellpadding=0>
+    <tr>
+      <td width=100><p><b><font size=1 color="#307dc0" face=Arial><span
+  style='font-size:9.0pt;font-family:Arial;color:#307DC0;font-weight:bold'>Service:</span></font></b></p></td>
+      <td><p><font size=1 color="#333333" face=Arial><span
+  style='font-size:9.0pt;font-family:Arial;color:#333333'>{!Appointment__c.Staff_Service__c}</span></font></p></td>
+    </tr>
+    <tr>
+      <td width=100><p><b><font size=1 color="#307dc0" face=Arial><span
+  style='font-size:9.0pt;font-family:Arial;color:#307DC0;font-weight:bold'>Time:</span></font></b></p></td>
+      <td><p><font size=1 color="#333333" face=Arial><span
+  style='font-size:9.0pt;font-family:Arial;color:#333333'>Monday May 10 at
+          09:00 AM (EDT)</span></font></p></td>
+    </tr>
+    <tr>
+      <td width=100><p><b><font size=1 color="#307dc0" face=Arial><span
+  style='font-size:9.0pt;font-family:Arial;color:#307DC0;font-weight:bold'>Staff
+          Member:</span></font></b></p></td>
+      <td><p><font size=1 color="#333333" face=Arial><span
+  style='font-size:9.0pt;font-family:Arial;color:#333333'>Linda Anthony</span></font></p></td>
+    </tr>
+    <tr>
+      <td width=100><p><b><font size=1 color="#307dc0" face=Arial><span
+  style='font-size:9.0pt;font-family:Arial;color:#307DC0;font-weight:bold'>Address:</span></font></b></p></td>
+      <td><p>
+          <st1:address w:st="on">
+          <st1:Street w:st="on">
+          <font size=1
+    color="#333333" face=Arial><span style='font-size:9.0pt;font-family:Arial;
+    color:#333333'>312 Lake Oconee Parkway</span></font><font
+   size=1 color="#333333" face=Arial><span style='font-size:9.0pt;font-family:
+   Arial;color:#333333'>,
+          <st1:City w:st="on">
+          Greensboro,
+          <st1:State
+   w:st="on">
+          GA
+          <st1:PostalCode w:st="on">
+          30642</span></font></p></td>
+    </tr>
+    <tr>
+      <td width=100><p><b><font size=1 color="#307dc0" face=Arial><span
+  style='font-size:9.0pt;font-family:Arial;color:#307DC0;font-weight:bold'>Phone:</span></font></b></p></td>
+      <td><p><font size=1 color="#333333" face=Arial><span
+  style='font-size:9.0pt;font-family:Arial;color:#333333'>(404) 502-8363</span></font></p></td>
+    </tr>
+    <tr>
+      <td width=100><p><b><font size=1 color="#307dc0" face=Arial><span
+  style='font-size:9.0pt;font-family:Arial;color:#307DC0;font-weight:bold'>Confirmation
+          #:</span></font></b></p></td>
+      <td><p><font size=1 color="#333333" face=Arial><span
+  style='font-size:9.0pt;font-family:Arial;color:#333333'>4ECC0HL14N</span></font></p></td>
+    </tr>
+  </table>
+  <p><font size=1 color="#333333" face=Arial><span
+style='font-size:9.0pt;font-family:Arial;color:#333333'> <b><span style='font-weight:bold'>CLIENT DETAILS</span></b> </span></font></p>
+  <table border=0 cellpadding=0>
+    <tr>
+      <td width=100><p><b><font size=1 color="#307dc0" face=Arial><span
+  style='font-size:9.0pt;font-family:Arial;color:#307DC0;font-weight:bold'>Name:</span></font></b></p></td>
+      <td><p><font size=1 color="#333333" face=Arial><span
+  style='font-size:9.0pt;font-family:Arial;color:#333333'>bob smith</span></font></p></td>
+    </tr>
+    <tr>
+      <td width=100><p><b><font size=1 color="#307dc0" face=Arial><span
+  style='font-size:9.0pt;font-family:Arial;color:#307DC0;font-weight:bold'>Phone:</span></font></b></p></td>
+      <td><p><font size=1 color="#333333" face=Arial><span
+  style='font-size:9.0pt;font-family:Arial;color:#333333'>(404) 502-8363</span></font></p></td>
+    </tr>
+    <tr>
+      <td width=100><p><b><font size=1 color="#307dc0" face=Arial><span
+  style='font-size:9.0pt;font-family:Arial;color:#307DC0;font-weight:bold'>Email:</span></font></b></p></td>
+      <td><p><font size=1 color="#333333" face=Arial><span
+  style='font-size:9.0pt;font-family:Arial;color:#333333'><a
+  href="mailto:mdl8585@gmail.com"><span style='color:
+  #333333;text-decoration:none'>mdl8585@gmail.com</span></a></span></font></p></td>
+    </tr>
+  </table>
+  <p><font size=1 color="#333333"
+face=Arial><span style='font-size:9.0pt;font-family:Arial;color:#333333'> <b><span style='font-weight:bold'>CHANGES AND CANCELATIONS</span></b> <br>
+    <br>
+    To change your appointment, please call Beth's Hair Salon &amp; Spa on (404)
+    502-8363 during business hours. </span></font></p>
+  <div align=center style='text-align:center'><font size=1
+color="#333333" face=Arial><span style='font-size:7.5pt;font-family:Arial;
+color:#333333'>
+    <hr size=2 width="100%" align=center>
+    </span></font></div>
+  <p align=center style='text-align:center'><b><font size=1 color="#333333" face=Arial><span
+style='font-size:9.0pt;font-family:Arial;color:#333333;font-weight:bold'>Get <a
+href="http://www.appointment-time.com" style='a:text-decoration: underline'><font
+color="#307dc0"><span style='color:#307DC0'>FREE online appointment scheduling</span></font></a>&nbsp;for
+    your small business.</span></font></b><font size=1 color="#333333" face=Arial><span
+style='font-size:7.5pt;font-family:Arial;color:#333333'> <br>
+    <br>
+    Please do not reply to this message. <br>
+    This email was sent to you by Tempus Systems on behalf of <a
+href="mailto:mdl8585@gmail.com"><b><font color="#307dc0"><span
+style='color:#307DC0;font-weight:bold;text-decoration:none'>mdl8585@gmail.com</span></font></b></a>. <br>
+    To ensure delivery to your inbox, please add <a
+href="mailto:no_reply@appointment-time.com"><b><font color="#307dc0"><span
+style='color:#307DC0;font-weight:bold;text-decoration:none'>no_reply@appointment-time.com</span></font></b></a>&nbsp;to
+    your address book or safe sender list. <br>
+    Read our <a href="http://www.appointment-time.com/legal.html" style='a:text-decoration: underline'><font
+color="#307dc0"><span style='color:#307DC0'>Terms of Use and Privacy Policy</span></font></a>. <br>
+    <br>
+    Tempus Systems, In.c is an online appointment scheduling company headquartered in Atlanta, Georgia.</span></font></p>
+</div>
+</div>
+</body>
+</html>

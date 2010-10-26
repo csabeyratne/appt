@@ -12,21 +12,21 @@
     <apex:attribute name="required" access="global" description="Is this field required?" type="Boolean" required="false" assignTo="{!required}" />
     <apex:attribute name="hidden" access="global" description="Is this text hidden?" type="Boolean" required="false" assignTo="{!hidden}" />
     <apex:attribute name="defaultValue" access="global" description="default value for field, will display and override other values" type="String" required="false" assignTo="{!defaultValue}" />
-	<apex:attribute name="downgrade" access="global" description="Should enhanced features be disabled?" required="false" type="Boolean" assignTo="{!downgrade}" />
-	<apex:attribute name="minDate" access="global" description="earliest Date allowed" required="false" type="String" assignTo="{!minDate}" />
-	<apex:attribute name="maxDate" access="global" description="latest Date allowed"  required="false" type="String" assignTo="{!maxDate}" />
+    <apex:attribute name="downgrade" access="global" description="Should enhanced features be disabled?" required="false" type="Boolean" assignTo="{!downgrade}" />
+    <apex:attribute name="minDate" access="global" description="earliest Date allowed" required="false" type="String" assignTo="{!minDate}" />
+    <apex:attribute name="maxDate" access="global" description="latest Date allowed"  required="false" type="String" assignTo="{!maxDate}" />
   
     {!onLoad}
 
-	<apex:outputPanel rendered="{!downgrade != true}">  
+    <apex:outputPanel rendered="{!downgrade != true}">  
 
-	    <apex:inputText styleClass="{!uid}" value="{!myValueHolder}" />
-	    
-	</apex:outputPanel>
-	<apex:outputPanel rendered="{!downgrade  == true}">
+        <apex:inputText styleClass="{!uid}" value="{!myValueHolder}" />
+        
+    </apex:outputPanel>
+    <apex:outputPanel rendered="{!downgrade  == true}">
 
-		Only the enhanced Datepicker is supported at this time.
+        Only the enhanced Datepicker is supported at this time.
 
-	</apex:outputPanel>
-	  
+    </apex:outputPanel>
+      
 </apex:component>

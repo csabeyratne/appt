@@ -33,10 +33,16 @@
         <type>Default</type>
     </actionOverrides>
     <deploymentStatus>Deployed</deploymentStatus>
+    <enableActivities>false</enableActivities>
     <enableEnhancedLookup>true</enableEnhancedLookup>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableReports>false</enableReports>
     <fields>
         <fullName>Gateway_Address__c</fullName>
+        <caseSensitive>false</caseSensitive>
         <description>Email suffix used to contact the provider.  This should be in the format of something.com (E.g. tmomail.net for TMobile)</description>
+        <externalId>false</externalId>
         <inlineHelpText>More suffixes can be found here: http://www.mutube.com/projects/open-email-to-sms/gateway-list/</inlineHelpText>
         <label>Gateway Address</label>
         <length>255</length>

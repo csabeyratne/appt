@@ -3,9 +3,14 @@
     <enableFeeds>true</enableFeeds>
     <fields>
         <fullName>EngineeringReqNumber__c</fullName>
+        <externalId>false</externalId>
         <label>Engineering Req Number</label>
         <length>12</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
         <type>Text</type>
+        <unique>false</unique>
     </fields>
     <fields>
         <fullName>Origin</fullName>
@@ -28,6 +33,7 @@
     </fields>
     <fields>
         <fullName>PotentialLiability__c</fullName>
+        <externalId>false</externalId>
         <label>Potential Liability</label>
         <picklist>
             <picklistValues>
@@ -40,6 +46,8 @@
             </picklistValues>
             <sorted>false</sorted>
         </picklist>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
         <type>Picklist</type>
     </fields>
     <fields>
@@ -63,6 +71,7 @@
     </fields>
     <fields>
         <fullName>Product__c</fullName>
+        <externalId>false</externalId>
         <label>Product</label>
         <picklist>
             <picklistValues>
@@ -103,6 +112,8 @@
             </picklistValues>
             <sorted>false</sorted>
         </picklist>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
         <type>Picklist</type>
     </fields>
     <fields>
@@ -110,30 +121,37 @@
         <picklist>
             <picklistValues>
                 <fullName>Installation</fullName>
+                <cssExposed>false</cssExposed>
                 <default>false</default>
             </picklistValues>
             <picklistValues>
                 <fullName>Equipment Complexity</fullName>
+                <cssExposed>false</cssExposed>
                 <default>false</default>
             </picklistValues>
             <picklistValues>
                 <fullName>Performance</fullName>
+                <cssExposed>false</cssExposed>
                 <default>false</default>
             </picklistValues>
             <picklistValues>
                 <fullName>Breakdown</fullName>
+                <cssExposed>false</cssExposed>
                 <default>false</default>
             </picklistValues>
             <picklistValues>
                 <fullName>Equipment Design</fullName>
+                <cssExposed>false</cssExposed>
                 <default>false</default>
             </picklistValues>
             <picklistValues>
                 <fullName>Feedback</fullName>
+                <cssExposed>false</cssExposed>
                 <default>false</default>
             </picklistValues>
             <picklistValues>
                 <fullName>Other</fullName>
+                <cssExposed>false</cssExposed>
                 <default>false</default>
             </picklistValues>
             <sorted>false</sorted>
@@ -142,6 +160,7 @@
     </fields>
     <fields>
         <fullName>SLAViolation__c</fullName>
+        <externalId>false</externalId>
         <label>SLA Violation</label>
         <picklist>
             <picklistValues>
@@ -154,6 +173,8 @@
             </picklistValues>
             <sorted>false</sorted>
         </picklist>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
         <type>Picklist</type>
     </fields>
     <fields>
@@ -161,14 +182,17 @@
         <picklist>
             <picklistValues>
                 <fullName>New</fullName>
+                <closed>false</closed>
                 <default>true</default>
             </picklistValues>
             <picklistValues>
                 <fullName>Working</fullName>
+                <closed>false</closed>
                 <default>false</default>
             </picklistValues>
             <picklistValues>
                 <fullName>Escalated</fullName>
+                <closed>false</closed>
                 <default>false</default>
             </picklistValues>
             <picklistValues>
@@ -291,4 +315,15 @@
         <label>US - Silver/Bronze</label>
         <queue>US - Silver/Bronze</queue>
     </listViews>
+    <webLinks>
+        <fullName>Schedule_Resource</fullName>
+        <availability>online</availability>
+        <displayType>button</displayType>
+        <height>600</height>
+        <linkType>url</linkType>
+        <masterLabel>Schedule Resource</masterLabel>
+        <openType>noSidebar</openType>
+        <protected>false</protected>
+        <url>/apex/ResourceCalendar?wId={!Case.Id}&amp;w=case</url>
+    </webLinks>
 </CustomObject>

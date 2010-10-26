@@ -34,9 +34,14 @@
     </actionOverrides>
     <deploymentStatus>Deployed</deploymentStatus>
     <description>An Approach to In-Place Editing with Visualforce by Ryan Marples</description>
+    <enableActivities>false</enableActivities>
     <enableEnhancedLookup>true</enableEnhancedLookup>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableReports>false</enableReports>
     <fields>
         <fullName>Status__c</fullName>
+        <externalId>false</externalId>
         <label>Status</label>
         <picklist>
             <picklistValues>
@@ -57,6 +62,7 @@
     </fields>
     <fields>
         <fullName>Weighting__c</fullName>
+        <externalId>false</externalId>
         <label>Weighting</label>
         <picklist>
             <picklistValues>

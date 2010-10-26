@@ -33,67 +33,89 @@
         <type>Default</type>
     </actionOverrides>
     <deploymentStatus>Deployed</deploymentStatus>
+    <enableActivities>false</enableActivities>
     <enableEnhancedLookup>true</enableEnhancedLookup>
+    <enableFeeds>false</enableFeeds>
     <enableHistory>true</enableHistory>
     <enableReports>true</enableReports>
     <fields>
         <fullName>City__c</fullName>
         <description>Customer&apos;s city address.</description>
+        <externalId>false</externalId>
         <inlineHelpText>Enter customer&apos;s city.</inlineHelpText>
         <label>City</label>
         <length>50</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
         <type>Text</type>
+        <unique>false</unique>
     </fields>
     <fields>
         <fullName>Contact_Name__c</fullName>
         <description>Contact name.</description>
+        <externalId>false</externalId>
         <inlineHelpText>Enter Contact&apos;s name.</inlineHelpText>
         <label>Contact Name</label>
         <length>50</length>
         <required>true</required>
         <trackHistory>true</trackHistory>
         <type>Text</type>
+        <unique>false</unique>
     </fields>
     <fields>
         <fullName>Email__c</fullName>
         <description>Customer&apos;s Email address.</description>
+        <externalId>false</externalId>
         <inlineHelpText>Enter Customer&apos;s Email address.</inlineHelpText>
         <label>Email</label>
+        <required>false</required>
         <trackHistory>true</trackHistory>
         <type>Email</type>
+        <unique>false</unique>
     </fields>
     <fields>
         <fullName>Home_Phone__c</fullName>
         <description>Customer&apos;s home phone</description>
+        <externalId>false</externalId>
         <inlineHelpText>Enter customer&apos;s home phone number.</inlineHelpText>
         <label>Home Phone</label>
+        <required>false</required>
         <trackHistory>true</trackHistory>
         <type>Phone</type>
     </fields>
     <fields>
         <fullName>Mailing_State__c</fullName>
+        <externalId>false</externalId>
         <label>Mailing State</label>
         <length>20</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
         <type>Text</type>
+        <unique>false</unique>
     </fields>
     <fields>
         <fullName>Mobile_Phone__c</fullName>
         <description>Customer&apos;s mobile/cell phone.</description>
+        <externalId>false</externalId>
         <inlineHelpText>Enter Customer&apos;s mobile/cell phone.  Include area code.</inlineHelpText>
         <label>Mobile Phone</label>
+        <required>false</required>
         <trackHistory>true</trackHistory>
         <type>Phone</type>
     </fields>
     <fields>
         <fullName>Office_Phone__c</fullName>
         <description>Customer&apos;s office phone.</description>
+        <externalId>false</externalId>
         <inlineHelpText>Enter Customer&apos;s office phone.</inlineHelpText>
         <label>Office Phone</label>
+        <required>false</required>
         <trackHistory>true</trackHistory>
         <type>Phone</type>
     </fields>
     <fields>
         <fullName>State__c</fullName>
+        <externalId>false</externalId>
         <label>State</label>
         <picklist>
             <picklistValues>
@@ -302,22 +324,30 @@
             </picklistValues>
             <sorted>false</sorted>
         </picklist>
+        <trackHistory>false</trackHistory>
         <type>Picklist</type>
     </fields>
     <fields>
         <fullName>Street_Address__c</fullName>
         <description>Customer&apos;s street address.</description>
+        <externalId>false</externalId>
         <inlineHelpText>Enter customer&apos;s street address.</inlineHelpText>
         <label>Street</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
         <type>TextArea</type>
     </fields>
     <fields>
         <fullName>Zip_Code__c</fullName>
         <description>Customer zip code.</description>
+        <externalId>false</externalId>
         <inlineHelpText>Enter customer&apos;s zip code.</inlineHelpText>
         <label>Zip Code</label>
         <length>10</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
         <type>Text</type>
+        <unique>false</unique>
     </fields>
     <label>Vendor</label>
     <listViews>

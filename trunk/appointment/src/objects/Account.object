@@ -3,6 +3,7 @@
     <enableFeeds>true</enableFeeds>
     <fields>
         <fullName>Active__c</fullName>
+        <externalId>false</externalId>
         <label>Active</label>
         <picklist>
             <picklistValues>
@@ -15,10 +16,12 @@
             </picklistValues>
             <sorted>false</sorted>
         </picklist>
+        <trackFeedHistory>false</trackFeedHistory>
         <type>Picklist</type>
     </fields>
     <fields>
         <fullName>CustomerPriority__c</fullName>
+        <externalId>false</externalId>
         <label>Customer Priority</label>
         <picklist>
             <picklistValues>
@@ -35,6 +38,7 @@
             </picklistValues>
             <sorted>false</sorted>
         </picklist>
+        <trackFeedHistory>false</trackFeedHistory>
         <type>Picklist</type>
     </fields>
     <fields>
@@ -174,10 +178,14 @@
     </fields>
     <fields>
         <fullName>NumberofLocations__c</fullName>
+        <externalId>false</externalId>
         <label>Number of Locations</label>
         <precision>3</precision>
+        <required>false</required>
         <scale>0</scale>
+        <trackFeedHistory>false</trackFeedHistory>
         <type>Number</type>
+        <unique>false</unique>
     </fields>
     <fields>
         <fullName>Ownership</fullName>
@@ -223,17 +231,25 @@
     </fields>
     <fields>
         <fullName>SLAExpirationDate__c</fullName>
+        <externalId>false</externalId>
         <label>SLA Expiration Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
         <type>Date</type>
     </fields>
     <fields>
         <fullName>SLASerialNumber__c</fullName>
+        <externalId>false</externalId>
         <label>SLA Serial Number</label>
         <length>10</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
         <type>Text</type>
+        <unique>false</unique>
     </fields>
     <fields>
         <fullName>SLA__c</fullName>
+        <externalId>false</externalId>
         <label>SLA</label>
         <picklist>
             <picklistValues>
@@ -254,6 +270,7 @@
             </picklistValues>
             <sorted>false</sorted>
         </picklist>
+        <trackFeedHistory>false</trackFeedHistory>
         <type>Picklist</type>
     </fields>
     <fields>
@@ -293,6 +310,7 @@
     </fields>
     <fields>
         <fullName>UpsellOpportunity__c</fullName>
+        <externalId>false</externalId>
         <label>Upsell Opportunity</label>
         <picklist>
             <picklistValues>
@@ -309,6 +327,7 @@
             </picklistValues>
             <sorted>false</sorted>
         </picklist>
+        <trackFeedHistory>false</trackFeedHistory>
         <type>Picklist</type>
     </fields>
     <listViews>
@@ -351,4 +370,15 @@
         <filterScope>Everything</filterScope>
         <label>Platinum and Gold SLA Customers</label>
     </listViews>
+    <webLinks>
+        <fullName>Schedule_Resource</fullName>
+        <availability>online</availability>
+        <displayType>button</displayType>
+        <height>600</height>
+        <linkType>url</linkType>
+        <masterLabel>Schedule Resource</masterLabel>
+        <openType>noSidebar</openType>
+        <protected>false</protected>
+        <url>/apex/basicCalendar?wId={!Account.Id}&amp;w=account</url>
+    </webLinks>
 </CustomObject>
