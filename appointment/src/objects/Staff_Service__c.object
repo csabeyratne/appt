@@ -34,20 +34,26 @@
     </actionOverrides>
     <deploymentStatus>Deployed</deploymentStatus>
     <description>Junction for staff and service.</description>
+    <enableActivities>false</enableActivities>
     <enableEnhancedLookup>true</enableEnhancedLookup>
+    <enableFeeds>false</enableFeeds>
     <enableHistory>true</enableHistory>
     <enableReports>true</enableReports>
     <fields>
         <fullName>Begin_Time__c</fullName>
+        <externalId>false</externalId>
         <label>Begin Time</label>
         <precision>8</precision>
+        <required>false</required>
         <scale>0</scale>
         <trackHistory>true</trackHistory>
         <type>Number</type>
+        <unique>false</unique>
     </fields>
     <fields>
         <fullName>Double_Appointment__c</fullName>
         <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
         <label>Double Appointment</label>
         <trackHistory>true</trackHistory>
         <type>Checkbox</type>
@@ -55,45 +61,58 @@
     <fields>
         <fullName>Duration__c</fullName>
         <description>The unit of measure for &apos;Duration&apos; is minutes. The default value is 30 minutes.</description>
+        <externalId>false</externalId>
         <inlineHelpText>Enter the service duration in minutes.</inlineHelpText>
         <label>Duration</label>
         <precision>4</precision>
+        <required>false</required>
         <scale>0</scale>
         <trackHistory>true</trackHistory>
         <type>Number</type>
+        <unique>false</unique>
     </fields>
     <fields>
         <fullName>End_Time__c</fullName>
+        <externalId>false</externalId>
         <label>End Time</label>
         <precision>8</precision>
+        <required>false</required>
         <scale>0</scale>
         <trackHistory>true</trackHistory>
         <type>Number</type>
+        <unique>false</unique>
     </fields>
     <fields>
         <fullName>Fee__c</fullName>
         <description>Fee amount if applicable for this service</description>
+        <externalId>false</externalId>
         <inlineHelpText>Enter fee.</inlineHelpText>
         <label>Fee</label>
         <precision>9</precision>
+        <required>false</required>
         <scale>2</scale>
         <trackHistory>true</trackHistory>
         <type>Currency</type>
     </fields>
     <fields>
         <fullName>Gap_Time__c</fullName>
+        <externalId>false</externalId>
         <label>Gap Time</label>
         <precision>8</precision>
+        <required>false</required>
         <scale>0</scale>
         <trackHistory>true</trackHistory>
         <type>Number</type>
+        <unique>false</unique>
     </fields>
     <fields>
         <fullName>Price__c</fullName>
         <description>Sales price of the service for this staff member</description>
+        <externalId>false</externalId>
         <inlineHelpText>Enter price of this service.</inlineHelpText>
         <label>Price</label>
         <precision>9</precision>
+        <required>false</required>
         <scale>2</scale>
         <trackHistory>true</trackHistory>
         <type>Currency</type>
@@ -101,6 +120,7 @@
     <fields>
         <fullName>Service__c</fullName>
         <description>Service Assigned</description>
+        <externalId>false</externalId>
         <inlineHelpText>Enter service.</inlineHelpText>
         <label>Service</label>
         <referenceTo>Service__c</referenceTo>
@@ -109,10 +129,12 @@
         <relationshipOrder>1</relationshipOrder>
         <trackHistory>true</trackHistory>
         <type>MasterDetail</type>
+        <writeRequiresMasterRead>false</writeRequiresMasterRead>
     </fields>
     <fields>
         <fullName>Staff__c</fullName>
         <description>Staff assigned</description>
+        <externalId>false</externalId>
         <inlineHelpText>Enter Staff</inlineHelpText>
         <label>Staff</label>
         <referenceTo>Staff__c</referenceTo>
@@ -121,6 +143,7 @@
         <relationshipOrder>0</relationshipOrder>
         <trackHistory>true</trackHistory>
         <type>MasterDetail</type>
+        <writeRequiresMasterRead>false</writeRequiresMasterRead>
     </fields>
     <label>Staff Service</label>
     <listViews>

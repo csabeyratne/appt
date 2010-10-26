@@ -52,6 +52,7 @@
         <members>Solution</members>
         <members>Task</members>
         <members>User</members>
+        <members>UserLicense</members>
         <name>CustomObject</name>
     </types>
     <types>
@@ -76,14 +77,18 @@
     </types>
     <types>
         <members>External_Documents</members>
+        <members>External_Documents/Belle_Amitie_Logo.gif</members>
         <members>External_Documents/Developerforce_Logo.gif</members>
         <members>External_Documents/TimeWare_Logo.gif</members>
         <members>External_Documents/TimeWare_Logo_SFDC_Blue.gif</members>
         <name>Document</name>
     </types>
     <types>
+        <members>Birthday_Templates</members>
+        <members>Birthday_Templates/Happy_Birthday</members>
         <members>unfiled$public</members>
         <members>unfiled$public/ChangePwdEmail</members>
+        <members>unfiled$public/Customer_Appointment_Reminder</members>
         <members>unfiled$public/MarketingProductInquiryResponse</members>
         <members>unfiled$public/NewUserEmail</members>
         <members>unfiled$public/SUPPORTSelfServiceNewCommentNotificationSAMPLE</members>
@@ -123,6 +128,7 @@
     </types>
     <types>
         <members>ApexDevNet</members>
+        <members>BelleAmitie</members>
         <name>RemoteSiteSetting</name>
     </types>
     <types>
@@ -145,5 +151,5 @@
         <members>*</members>
         <name>Workflow</name>
     </types>
-    <version>19.0</version>
+    <version>20.0</version>
 </Package>

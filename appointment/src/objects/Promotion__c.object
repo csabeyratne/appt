@@ -34,38 +34,56 @@
     </actionOverrides>
     <deploymentStatus>Deployed</deploymentStatus>
     <description>Define promotions (coupons, discounts).</description>
+    <enableActivities>false</enableActivities>
     <enableEnhancedLookup>true</enableEnhancedLookup>
+    <enableFeeds>false</enableFeeds>
     <enableHistory>true</enableHistory>
     <enableReports>true</enableReports>
     <fields>
         <fullName>Description__c</fullName>
+        <externalId>false</externalId>
         <label>Description</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
         <type>TextArea</type>
     </fields>
     <fields>
         <fullName>Discount_Currency__c</fullName>
+        <externalId>false</externalId>
         <label>Discount Currency</label>
         <precision>9</precision>
+        <required>false</required>
         <scale>2</scale>
+        <trackHistory>false</trackHistory>
         <type>Currency</type>
     </fields>
     <fields>
         <fullName>Discount_Percent__c</fullName>
+        <externalId>false</externalId>
         <label>Discount Percent</label>
         <precision>2</precision>
+        <required>false</required>
         <scale>0</scale>
+        <trackHistory>false</trackHistory>
         <type>Percent</type>
     </fields>
     <fields>
         <fullName>Expiration_Date__c</fullName>
+        <externalId>false</externalId>
         <label>Expiration Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
         <type>Date</type>
     </fields>
     <fields>
         <fullName>Promotion_Code__c</fullName>
+        <externalId>false</externalId>
         <label>Promotion Code</label>
         <length>40</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
         <type>Text</type>
+        <unique>false</unique>
     </fields>
     <label>Promotion</label>
     <listViews>
@@ -76,6 +94,7 @@
     <nameField>
         <displayFormat>P-{00000000}</displayFormat>
         <label>Promotion ID</label>
+        <trackHistory>false</trackHistory>
         <type>AutoNumber</type>
     </nameField>
     <pluralLabel>Promotions</pluralLabel>

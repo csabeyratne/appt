@@ -33,38 +33,56 @@
         <type>Default</type>
     </actionOverrides>
     <deploymentStatus>Deployed</deploymentStatus>
+    <enableActivities>false</enableActivities>
     <enableEnhancedLookup>true</enableEnhancedLookup>
+    <enableFeeds>false</enableFeeds>
     <enableHistory>true</enableHistory>
     <enableReports>true</enableReports>
     <fields>
         <fullName>All_Day__c</fullName>
         <defaultValue>true</defaultValue>
         <description>Check box indicates time off is for the entire day.</description>
+        <externalId>false</externalId>
         <inlineHelpText>Check if the time off for the date is for the entire day.</inlineHelpText>
         <label>All Day</label>
+        <trackHistory>false</trackHistory>
         <type>Checkbox</type>
     </fields>
     <fields>
         <fullName>Start_DateTime__c</fullName>
+        <externalId>false</externalId>
         <label>Start Time</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
         <type>DateTime</type>
     </fields>
     <fields>
         <fullName>Start_Time_List__c</fullName>
+        <externalId>false</externalId>
         <label>Start Time List</label>
         <length>10</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
         <type>Text</type>
+        <unique>false</unique>
     </fields>
     <fields>
         <fullName>Stop_DateTime__c</fullName>
+        <externalId>false</externalId>
         <label>Stop Time</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
         <type>DateTime</type>
     </fields>
     <fields>
         <fullName>Stop_Time_List__c</fullName>
+        <externalId>false</externalId>
         <label>Stop Time List</label>
         <length>10</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
         <type>Text</type>
+        <unique>false</unique>
     </fields>
     <label>Time Off</label>
     <listViews>
@@ -74,6 +92,7 @@
     </listViews>
     <nameField>
         <label>Time Off Name</label>
+        <trackHistory>false</trackHistory>
         <type>Text</type>
     </nameField>
     <pluralLabel>Time Off</pluralLabel>

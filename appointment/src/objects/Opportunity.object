@@ -3,12 +3,17 @@
     <enableFeeds>true</enableFeeds>
     <fields>
         <fullName>CurrentGenerators__c</fullName>
+        <externalId>false</externalId>
         <label>Current Generator(s)</label>
         <length>100</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
         <type>Text</type>
+        <unique>false</unique>
     </fields>
     <fields>
         <fullName>DeliveryInstallationStatus__c</fullName>
+        <externalId>false</externalId>
         <label>Delivery/Installation Status</label>
         <picklist>
             <picklistValues>
@@ -25,6 +30,7 @@
             </picklistValues>
             <sorted>false</sorted>
         </picklist>
+        <trackFeedHistory>false</trackFeedHistory>
         <type>Picklist</type>
     </fields>
     <fields>
@@ -56,66 +62,90 @@
     </fields>
     <fields>
         <fullName>MainCompetitors__c</fullName>
+        <externalId>false</externalId>
         <label>Main Competitor(s)</label>
         <length>100</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
         <type>Text</type>
+        <unique>false</unique>
     </fields>
     <fields>
         <fullName>OrderNumber__c</fullName>
+        <externalId>false</externalId>
         <label>Order Number</label>
         <length>8</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
         <type>Text</type>
+        <unique>false</unique>
     </fields>
     <fields>
         <fullName>StageName</fullName>
         <picklist>
             <picklistValues>
                 <fullName>Prospecting</fullName>
+                <closed>false</closed>
                 <default>false</default>
                 <forecastCategory>Pipeline</forecastCategory>
                 <probability>10</probability>
+                <won>false</won>
             </picklistValues>
             <picklistValues>
                 <fullName>Qualification</fullName>
+                <closed>false</closed>
                 <default>false</default>
                 <forecastCategory>Pipeline</forecastCategory>
                 <probability>10</probability>
+                <won>false</won>
             </picklistValues>
             <picklistValues>
                 <fullName>Needs Analysis</fullName>
+                <closed>false</closed>
                 <default>false</default>
                 <forecastCategory>Pipeline</forecastCategory>
                 <probability>20</probability>
+                <won>false</won>
             </picklistValues>
             <picklistValues>
                 <fullName>Value Proposition</fullName>
+                <closed>false</closed>
                 <default>false</default>
                 <forecastCategory>Pipeline</forecastCategory>
                 <probability>50</probability>
+                <won>false</won>
             </picklistValues>
             <picklistValues>
                 <fullName>Id. Decision Makers</fullName>
+                <closed>false</closed>
                 <default>false</default>
                 <forecastCategory>Pipeline</forecastCategory>
                 <probability>60</probability>
+                <won>false</won>
             </picklistValues>
             <picklistValues>
                 <fullName>Perception Analysis</fullName>
+                <closed>false</closed>
                 <default>false</default>
                 <forecastCategory>Pipeline</forecastCategory>
                 <probability>70</probability>
+                <won>false</won>
             </picklistValues>
             <picklistValues>
                 <fullName>Proposal/Price Quote</fullName>
+                <closed>false</closed>
                 <default>false</default>
                 <forecastCategory>Pipeline</forecastCategory>
                 <probability>75</probability>
+                <won>false</won>
             </picklistValues>
             <picklistValues>
                 <fullName>Negotiation/Review</fullName>
+                <closed>false</closed>
                 <default>false</default>
                 <forecastCategory>Pipeline</forecastCategory>
                 <probability>90</probability>
+                <won>false</won>
             </picklistValues>
             <picklistValues>
                 <fullName>Closed Won</fullName>
@@ -131,6 +161,7 @@
                 <default>false</default>
                 <forecastCategory>Omitted</forecastCategory>
                 <probability>0</probability>
+                <won>false</won>
             </picklistValues>
             <sorted>false</sorted>
         </picklist>
@@ -138,9 +169,13 @@
     </fields>
     <fields>
         <fullName>TrackingNumber__c</fullName>
+        <externalId>false</externalId>
         <label>Tracking Number</label>
         <length>12</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
         <type>Text</type>
+        <unique>false</unique>
     </fields>
     <fields>
         <fullName>Type</fullName>
@@ -250,4 +285,15 @@
         </filters>
         <label>Won</label>
     </listViews>
+    <webLinks>
+        <fullName>Schedule_Resource</fullName>
+        <availability>online</availability>
+        <displayType>button</displayType>
+        <height>600</height>
+        <linkType>url</linkType>
+        <masterLabel>Schedule Resource</masterLabel>
+        <openType>noSidebar</openType>
+        <protected>false</protected>
+        <url>/apex/ResourceCalendar?wId={!Opportunity.Id}&amp;w=opportunity</url>
+    </webLinks>
 </CustomObject>

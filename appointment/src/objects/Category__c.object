@@ -34,17 +34,22 @@
     </actionOverrides>
     <deploymentStatus>Deployed</deploymentStatus>
     <description>A Service Category is used to group like services together.</description>
+    <enableActivities>false</enableActivities>
     <enableEnhancedLookup>true</enableEnhancedLookup>
+    <enableFeeds>false</enableFeeds>
     <enableHistory>true</enableHistory>
     <enableReports>true</enableReports>
     <fields>
         <fullName>Description__c</fullName>
+        <externalId>false</externalId>
         <label>Description</label>
+        <required>false</required>
         <trackHistory>true</trackHistory>
         <type>TextArea</type>
     </fields>
     <fields>
         <fullName>Parent_Category__c</fullName>
+        <externalId>false</externalId>
         <label>Parent Category</label>
         <referenceTo>Category__c</referenceTo>
         <relationshipName>Categories</relationshipName>

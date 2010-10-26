@@ -34,13 +34,17 @@
     </actionOverrides>
     <deploymentStatus>Deployed</deploymentStatus>
     <description>Manufacturer of our products.  (e.g. Nexxus, Paul Mitchell, Goldwell)</description>
+    <enableActivities>false</enableActivities>
     <enableEnhancedLookup>true</enableEnhancedLookup>
+    <enableFeeds>false</enableFeeds>
     <enableHistory>true</enableHistory>
     <enableReports>true</enableReports>
     <fields>
         <fullName>Active__c</fullName>
         <defaultValue>true</defaultValue>
+        <externalId>false</externalId>
         <label>Active</label>
+        <trackHistory>false</trackHistory>
         <type>Checkbox</type>
     </fields>
     <label>Manufacturer</label>
@@ -51,6 +55,7 @@
     </listViews>
     <nameField>
         <label>Manufacturer Name</label>
+        <trackHistory>false</trackHistory>
         <type>Text</type>
     </nameField>
     <pluralLabel>Manufacturers</pluralLabel>

@@ -33,40 +33,59 @@
         <type>Default</type>
     </actionOverrides>
     <deploymentStatus>Deployed</deploymentStatus>
+    <enableActivities>false</enableActivities>
     <enableEnhancedLookup>true</enableEnhancedLookup>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
     <enableReports>true</enableReports>
     <fields>
         <fullName>List_1_Id__c</fullName>
+        <externalId>false</externalId>
         <label>List 1 Id</label>
         <length>50</length>
+        <required>false</required>
         <type>Text</type>
+        <unique>false</unique>
     </fields>
     <fields>
         <fullName>List_2_Id__c</fullName>
+        <externalId>false</externalId>
         <label>List 2 Id</label>
         <length>50</length>
+        <required>false</required>
         <type>Text</type>
+        <unique>false</unique>
     </fields>
     <fields>
         <fullName>List_3_Id__c</fullName>
+        <externalId>false</externalId>
         <label>List 3 Id</label>
         <length>50</length>
+        <required>false</required>
         <type>Text</type>
+        <unique>false</unique>
     </fields>
     <fields>
         <fullName>List_4_Id__c</fullName>
+        <externalId>false</externalId>
         <label>List 4 Id</label>
         <length>50</length>
+        <required>false</required>
         <type>Text</type>
+        <unique>false</unique>
     </fields>
     <fields>
         <fullName>List_5_Id__c</fullName>
+        <externalId>false</externalId>
         <label>List 5 Id</label>
         <length>50</length>
+        <required>false</required>
         <type>Text</type>
+        <unique>false</unique>
     </fields>
     <fields>
         <fullName>Tab__c</fullName>
+        <externalId>false</externalId>
         <label>Tab</label>
         <picklist>
             <picklistValues>
@@ -79,12 +98,16 @@
     </fields>
     <fields>
         <fullName>User_Role__c</fullName>
+        <externalId>false</externalId>
         <formula>User__r.UserRole.Name</formula>
         <label>User Role</label>
+        <required>false</required>
         <type>Text</type>
+        <unique>false</unique>
     </fields>
     <fields>
         <fullName>User__c</fullName>
+        <externalId>false</externalId>
         <label>User</label>
         <referenceTo>User</referenceTo>
         <relationshipName>Console_Views</relationshipName>

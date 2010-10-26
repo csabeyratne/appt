@@ -3,9 +3,13 @@
     <enableFeeds>true</enableFeeds>
     <fields>
         <fullName>Languages__c</fullName>
+        <externalId>false</externalId>
         <label>Languages</label>
         <length>100</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
         <type>Text</type>
+        <unique>false</unique>
     </fields>
     <fields>
         <fullName>LeadSource</fullName>
@@ -36,6 +40,7 @@
     </fields>
     <fields>
         <fullName>Level__c</fullName>
+        <externalId>false</externalId>
         <label>Level</label>
         <picklist>
             <picklistValues>
@@ -52,6 +57,7 @@
             </picklistValues>
             <sorted>false</sorted>
         </picklist>
+        <trackFeedHistory>false</trackFeedHistory>
         <type>Picklist</type>
     </fields>
     <listViews>
@@ -94,4 +100,15 @@
         </filters>
         <label>New This Week</label>
     </listViews>
+    <webLinks>
+        <fullName>Schedule_Resource</fullName>
+        <availability>online</availability>
+        <displayType>button</displayType>
+        <height>600</height>
+        <linkType>url</linkType>
+        <masterLabel>Schedule Resource</masterLabel>
+        <openType>noSidebar</openType>
+        <protected>false</protected>
+        <url>/apex/ResourceCalendar?wId={!Contact.Id}&amp;w=contact</url>
+    </webLinks>
 </CustomObject>

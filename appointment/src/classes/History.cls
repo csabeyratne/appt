@@ -26,11 +26,11 @@ public with sharing class History {
     
         events = new List<HistoryEvent>();
         Schema.Describesobjectresult r = subject.getSObjectType().getDescribe();
-        List<Schema.ChildRelationship> C = R.getChildRelationships();
+        List<Schema.ChildRelationship> c = r.getChildRelationships();
         List<string> result = new List<string>();
         HistoryEvent event;
         
-        for(Schema.Childrelationship child:C) {
+        for(Schema.Childrelationship child:c) {
         
             string childName = child.getChildsObject().getDescribe().getName();
             

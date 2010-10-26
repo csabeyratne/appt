@@ -34,28 +34,38 @@
     </actionOverrides>
     <deploymentStatus>Deployed</deploymentStatus>
     <description>Business holiday dates.</description>
+    <enableActivities>false</enableActivities>
     <enableEnhancedLookup>true</enableEnhancedLookup>
+    <enableFeeds>false</enableFeeds>
     <enableHistory>true</enableHistory>
     <enableReports>true</enableReports>
     <fields>
         <fullName>Holiday_Date__c</fullName>
+        <externalId>false</externalId>
         <label>Holiday Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
         <type>Date</type>
     </fields>
     <fields>
         <fullName>Recurring__c</fullName>
         <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
         <label>Recurring</label>
+        <trackHistory>false</trackHistory>
         <type>Checkbox</type>
     </fields>
     <fields>
         <fullName>Setting__c</fullName>
+        <externalId>false</externalId>
         <label>Business Name</label>
         <referenceTo>Setting__c</referenceTo>
         <relationshipLabel>Holidays</relationshipLabel>
         <relationshipName>Holidays</relationshipName>
         <relationshipOrder>0</relationshipOrder>
+        <trackHistory>false</trackHistory>
         <type>MasterDetail</type>
+        <writeRequiresMasterRead>false</writeRequiresMasterRead>
     </fields>
     <label>Holiday</label>
     <listViews>
@@ -65,6 +75,7 @@
     </listViews>
     <nameField>
         <label>Holiday Name</label>
+        <trackHistory>false</trackHistory>
         <type>Text</type>
     </nameField>
     <pluralLabel>Holidays</pluralLabel>

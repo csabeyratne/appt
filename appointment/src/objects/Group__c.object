@@ -33,13 +33,20 @@
         <type>Default</type>
     </actionOverrides>
     <deploymentStatus>Deployed</deploymentStatus>
+    <enableActivities>false</enableActivities>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableReports>false</enableReports>
     <fields>
         <fullName>Description__c</fullName>
+        <externalId>false</externalId>
         <label>Description</label>
+        <required>false</required>
         <type>TextArea</type>
     </fields>
     <fields>
         <fullName>Resource_Type__c</fullName>
+        <externalId>false</externalId>
         <label>Resource Type</label>
         <picklist>
             <picklistValues>
@@ -52,14 +59,6 @@
             </picklistValues>
             <picklistValues>
                 <fullName>Telephone</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>Large Room</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>Small Room</fullName>
                 <default>false</default>
             </picklistValues>
             <sorted>false</sorted>

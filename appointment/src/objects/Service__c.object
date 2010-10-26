@@ -34,76 +34,108 @@
     </actionOverrides>
     <deploymentStatus>Deployed</deploymentStatus>
     <description>Services you provide.</description>
+    <enableActivities>false</enableActivities>
     <enableEnhancedLookup>true</enableEnhancedLookup>
+    <enableFeeds>false</enableFeeds>
     <enableHistory>true</enableHistory>
     <enableReports>true</enableReports>
     <fields>
         <fullName>Begin_Time__c</fullName>
+        <externalId>false</externalId>
         <label>Begin Time</label>
         <precision>8</precision>
+        <required>false</required>
         <scale>0</scale>
+        <trackHistory>false</trackHistory>
         <type>Number</type>
+        <unique>false</unique>
     </fields>
     <fields>
         <fullName>Description__c</fullName>
         <description>Description of service displayed in calendar or in an email.</description>
+        <externalId>false</externalId>
         <inlineHelpText>Enter description of the service.</inlineHelpText>
         <label>Description</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
         <type>TextArea</type>
     </fields>
     <fields>
         <fullName>Double_Appointment__c</fullName>
         <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
         <label>Double Appointment</label>
+        <trackHistory>false</trackHistory>
         <type>Checkbox</type>
     </fields>
     <fields>
         <fullName>Duration__c</fullName>
         <defaultValue>30</defaultValue>
         <description>The unit of measure for &apos;Duration&apos; is minutes. The default value is 30 minutes.</description>
+        <externalId>false</externalId>
         <inlineHelpText>Enter the service duration in minutes.</inlineHelpText>
         <label>Duration</label>
         <precision>4</precision>
+        <required>false</required>
         <scale>0</scale>
+        <trackHistory>false</trackHistory>
         <type>Number</type>
+        <unique>false</unique>
     </fields>
     <fields>
         <fullName>End_Time__c</fullName>
+        <externalId>false</externalId>
         <label>End Time</label>
         <precision>8</precision>
+        <required>false</required>
         <scale>0</scale>
+        <trackHistory>false</trackHistory>
         <type>Number</type>
+        <unique>false</unique>
     </fields>
     <fields>
         <fullName>Fee__c</fullName>
+        <externalId>false</externalId>
         <label>Fee</label>
         <precision>9</precision>
+        <required>false</required>
         <scale>2</scale>
+        <trackHistory>false</trackHistory>
         <type>Currency</type>
     </fields>
     <fields>
         <fullName>Gap_Time__c</fullName>
+        <externalId>false</externalId>
         <label>Gap Time</label>
         <precision>8</precision>
+        <required>false</required>
         <scale>0</scale>
+        <trackHistory>false</trackHistory>
         <type>Number</type>
+        <unique>false</unique>
     </fields>
     <fields>
         <fullName>Price__c</fullName>
+        <externalId>false</externalId>
         <label>Price</label>
         <precision>9</precision>
+        <required>false</required>
         <scale>2</scale>
+        <trackHistory>false</trackHistory>
         <type>Currency</type>
     </fields>
     <fields>
         <fullName>Service_Category__c</fullName>
+        <externalId>false</externalId>
         <inlineHelpText>Select the appropriate Service Category for your service.</inlineHelpText>
         <label>Service Category</label>
         <referenceTo>Category__c</referenceTo>
         <relationshipLabel>Services</relationshipLabel>
         <relationshipName>Services</relationshipName>
         <relationshipOrder>0</relationshipOrder>
+        <trackHistory>false</trackHistory>
         <type>MasterDetail</type>
+        <writeRequiresMasterRead>false</writeRequiresMasterRead>
     </fields>
     <label>Service</label>
     <listViews>
@@ -113,6 +145,7 @@
     </listViews>
     <nameField>
         <label>Service Name</label>
+        <trackHistory>false</trackHistory>
         <type>Text</type>
     </nameField>
     <pluralLabel>Services</pluralLabel>

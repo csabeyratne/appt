@@ -34,26 +34,34 @@
     </actionOverrides>
     <deploymentStatus>Deployed</deploymentStatus>
     <description>Service history for customer.</description>
+    <enableActivities>false</enableActivities>
     <enableEnhancedLookup>true</enableEnhancedLookup>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
     <enableReports>true</enableReports>
     <fields>
         <fullName>Customer__c</fullName>
+        <externalId>false</externalId>
         <label>Customer</label>
         <referenceTo>Customer__c</referenceTo>
         <relationshipLabel>Treatments</relationshipLabel>
         <relationshipName>Treatments</relationshipName>
         <relationshipOrder>0</relationshipOrder>
         <type>MasterDetail</type>
+        <writeRequiresMasterRead>false</writeRequiresMasterRead>
     </fields>
     <fields>
         <fullName>Price__c</fullName>
+        <externalId>false</externalId>
         <label>Price</label>
         <precision>5</precision>
+        <required>false</required>
         <scale>2</scale>
         <type>Currency</type>
     </fields>
     <fields>
         <fullName>Service_Treatment__c</fullName>
+        <externalId>false</externalId>
         <label>Service Treatment</label>
         <length>32000</length>
         <type>LongTextArea</type>
@@ -61,7 +69,9 @@
     </fields>
     <fields>
         <fullName>Treatment_Date__c</fullName>
+        <externalId>false</externalId>
         <label>Treatment Date</label>
+        <required>false</required>
         <type>Date</type>
     </fields>
     <label>Treatment</label>

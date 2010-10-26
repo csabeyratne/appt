@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <enableFeeds>false</enableFeeds>
     <fields>
         <fullName>Status</fullName>
         <picklist>
             <picklistValues>
                 <fullName>Draft</fullName>
                 <default>true</default>
+                <reviewed>false</reviewed>
             </picklistValues>
             <picklistValues>
                 <fullName>Reviewed</fullName>
@@ -15,6 +17,7 @@
             <picklistValues>
                 <fullName>Duplicate</fullName>
                 <default>false</default>
+                <reviewed>false</reviewed>
             </picklistValues>
             <sorted>false</sorted>
         </picklist>
@@ -40,4 +43,15 @@
         </filters>
         <label>All Unreviewed Solutions</label>
     </listViews>
+    <webLinks>
+        <fullName>Schedule_Resource</fullName>
+        <availability>online</availability>
+        <displayType>button</displayType>
+        <height>600</height>
+        <linkType>url</linkType>
+        <masterLabel>Schedule Resource</masterLabel>
+        <openType>noSidebar</openType>
+        <protected>false</protected>
+        <url>/apex/ResourceCalendar?wId={!Solution.Id}&amp;w=solution</url>
+    </webLinks>
 </CustomObject>

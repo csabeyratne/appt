@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <enableFeeds>false</enableFeeds>
     <fields>
         <fullName>Priority</fullName>
         <picklist>
@@ -11,10 +12,12 @@
             <picklistValues>
                 <fullName>Normal</fullName>
                 <default>true</default>
+                <highPriority>false</highPriority>
             </picklistValues>
             <picklistValues>
                 <fullName>Low</fullName>
                 <default>false</default>
+                <highPriority>false</highPriority>
             </picklistValues>
             <sorted>false</sorted>
         </picklist>
@@ -25,10 +28,12 @@
         <picklist>
             <picklistValues>
                 <fullName>Not Started</fullName>
+                <closed>false</closed>
                 <default>true</default>
             </picklistValues>
             <picklistValues>
                 <fullName>In Progress</fullName>
+                <closed>false</closed>
                 <default>false</default>
             </picklistValues>
             <picklistValues>
@@ -38,10 +43,12 @@
             </picklistValues>
             <picklistValues>
                 <fullName>Waiting on someone else</fullName>
+                <closed>false</closed>
                 <default>false</default>
             </picklistValues>
             <picklistValues>
                 <fullName>Deferred</fullName>
+                <closed>false</closed>
                 <default>false</default>
             </picklistValues>
             <sorted>false</sorted>

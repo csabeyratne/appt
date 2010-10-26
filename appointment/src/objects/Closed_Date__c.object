@@ -34,23 +34,30 @@
     </actionOverrides>
     <deploymentStatus>Deployed</deploymentStatus>
     <description>Dates when your business is closed.</description>
+    <enableActivities>false</enableActivities>
     <enableEnhancedLookup>true</enableEnhancedLookup>
+    <enableFeeds>false</enableFeeds>
     <enableHistory>true</enableHistory>
     <enableReports>true</enableReports>
     <fields>
         <fullName>Closed_Date__c</fullName>
+        <externalId>false</externalId>
         <label>Closed Date</label>
+        <required>false</required>
         <trackHistory>true</trackHistory>
         <type>Date</type>
     </fields>
     <fields>
         <fullName>Setting__c</fullName>
+        <externalId>false</externalId>
         <label>Business Name</label>
         <referenceTo>Setting__c</referenceTo>
         <relationshipLabel>Closed Dates</relationshipLabel>
         <relationshipName>Closed_Date</relationshipName>
         <relationshipOrder>0</relationshipOrder>
+        <trackHistory>false</trackHistory>
         <type>MasterDetail</type>
+        <writeRequiresMasterRead>false</writeRequiresMasterRead>
     </fields>
     <label>Closed Date</label>
     <listViews>
@@ -60,6 +67,7 @@
     </listViews>
     <nameField>
         <label>Closed Name</label>
+        <trackHistory>false</trackHistory>
         <type>Text</type>
     </nameField>
     <pluralLabel>Closed Dates</pluralLabel>

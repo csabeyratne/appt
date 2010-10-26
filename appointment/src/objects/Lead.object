@@ -3,9 +3,13 @@
     <enableFeeds>true</enableFeeds>
     <fields>
         <fullName>CurrentGenerators__c</fullName>
+        <externalId>false</externalId>
         <label>Current Generator(s)</label>
         <length>100</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
         <type>Text</type>
+        <unique>false</unique>
     </fields>
     <fields>
         <fullName>Industry</fullName>
@@ -171,13 +175,18 @@
     </fields>
     <fields>
         <fullName>NumberofLocations__c</fullName>
+        <externalId>false</externalId>
         <label>Number of Locations</label>
         <precision>3</precision>
+        <required>false</required>
         <scale>0</scale>
+        <trackFeedHistory>false</trackFeedHistory>
         <type>Number</type>
+        <unique>false</unique>
     </fields>
     <fields>
         <fullName>Primary__c</fullName>
+        <externalId>false</externalId>
         <label>Primary</label>
         <picklist>
             <picklistValues>
@@ -190,10 +199,12 @@
             </picklistValues>
             <sorted>false</sorted>
         </picklist>
+        <trackFeedHistory>false</trackFeedHistory>
         <type>Picklist</type>
     </fields>
     <fields>
         <fullName>ProductInterest__c</fullName>
+        <externalId>false</externalId>
         <label>Product Interest</label>
         <picklist>
             <picklistValues>
@@ -210,6 +221,7 @@
             </picklistValues>
             <sorted>false</sorted>
         </picklist>
+        <trackFeedHistory>false</trackFeedHistory>
         <type>Picklist</type>
     </fields>
     <fields>
@@ -233,19 +245,25 @@
     </fields>
     <fields>
         <fullName>SICCode__c</fullName>
+        <externalId>false</externalId>
         <label>SIC Code</label>
         <length>15</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
         <type>Text</type>
+        <unique>false</unique>
     </fields>
     <fields>
         <fullName>Status</fullName>
         <picklist>
             <picklistValues>
                 <fullName>Open - Not Contacted</fullName>
+                <converted>false</converted>
                 <default>true</default>
             </picklistValues>
             <picklistValues>
                 <fullName>Working - Contacted</fullName>
+                <converted>false</converted>
                 <default>false</default>
             </picklistValues>
             <picklistValues>
@@ -255,6 +273,7 @@
             </picklistValues>
             <picklistValues>
                 <fullName>Closed - Not Converted</fullName>
+                <converted>false</converted>
                 <default>false</default>
             </picklistValues>
             <sorted>false</sorted>
@@ -263,10 +282,15 @@
     </fields>
     <fields>
         <fullName>sfLma__Subscriber_Org_Type__c</fullName>
+        <deprecated>false</deprecated>
         <description>The Edition of this org. UE, EE, PE, TE, Free</description>
+        <externalId>false</externalId>
         <label>Subscriber Org Type</label>
         <length>32</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
         <type>Text</type>
+        <unique>false</unique>
     </fields>
     <listViews>
         <fullName>AllOpenLeads</fullName>
@@ -337,4 +361,15 @@
         <filterScope>Everything</filterScope>
         <label>View - Custom 2</label>
     </listViews>
+    <webLinks>
+        <fullName>Schedule_Resource</fullName>
+        <availability>online</availability>
+        <displayType>button</displayType>
+        <height>600</height>
+        <linkType>url</linkType>
+        <masterLabel>Schedule Resource</masterLabel>
+        <openType>noSidebar</openType>
+        <protected>false</protected>
+        <url>/apex/ResourceCalendar?wId={!Lead.Id}&amp;w=lead</url>
+    </webLinks>
 </CustomObject>
