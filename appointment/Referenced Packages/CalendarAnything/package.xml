@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Package xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>CalendarAnything</fullName>
+    <apiAccessLevel>Unrestricted</apiAccessLevel>
+    <description>CalendarAnything allows Salesforce users to create calendars that display any standard or custom object within the application. Users can share calendars with their team or other users, display multiple calendars at once, and create groups of calendars.</description>
+    <namespacePrefix>SLCA</namespacePrefix>
+    <types>
+        <members>CalendarAnything_Ajax</members>
+        <members>CalendarAnything_ControllerV2R</members>
+        <members>CalendarAnything_Core</members>
+        <members>CalendarAnything_Field</members>
+        <members>CalendarAnything_Filters</members>
+        <members>CalendarAnything_Groups</members>
+        <members>CalendarAnything_Info</members>
+        <members>CalendarAnything_UnitTests</members>
+        <members>CalendarAnything_UnitTestsV2R</members>
+        <members>CalendarAnything_Visible</members>
+        <name>ApexClass</name>
+    </types>
+    <types>
+        <members>CalendarAnythingV2R</members>
+        <members>CalendarAnything_CJSON</members>
+        <members>CalendarAnything_Info</members>
+        <members>CalendarAnything_JSON</members>
+        <members>CalendarAnything_JSONV2R</members>
+        <members>CalendarAnything_JSONVisible</members>
+        <members>CalendarAnything_ListV2R</members>
+        <name>ApexPage</name>
+    </types>
+    <types>
+        <members>CalendarAnything</members>
+        <name>CustomApplication</name>
+    </types>
+    <types>
+        <members>CA_CalendarByUser__c.CalendarID__c</members>
+        <members>CA_CalendarByUser__c.UserID__c</members>
+        <members>CA_CalendarGroupMember__c.Calendar__c</members>
+        <members>CA_CalendarGroupMember__c.Group__c</members>
+        <members>CA_CalendarGroup__c.CalendarList__c</members>
+        <members>CA_Field__c.CA_Settings__c</members>
+        <members>CA_Field__c.Label__c</members>
+        <members>CA_Field__c.Order__c</members>
+        <members>CA_Filters__c.CalendarID__c</members>
+        <members>CA_Filters__c.FieldName__c</members>
+        <members>CA_Filters__c.FieldType__c</members>
+        <members>CA_Filters__c.Operator__c</members>
+        <members>CA_Filters__c.Order__c</members>
+        <members>CA_Filters__c.Value__c</members>
+        <members>CA_Settings__c.Advanced__c</members>
+        <members>CA_Settings__c.Color__c</members>
+        <members>CA_Settings__c.Description__c</members>
+        <members>CA_Settings__c.Editable__c</members>
+        <members>CA_Settings__c.End__c</members>
+        <members>CA_Settings__c.Filter__c</members>
+        <members>CA_Settings__c.Object__c</members>
+        <members>CA_Settings__c.OwnerFilter__c</members>
+        <members>CA_Settings__c.Start__c</members>
+        <name>CustomField</name>
+    </types>
+    <types>
+        <members>CA_CalendarByUser__c</members>
+        <members>CA_CalendarGroupMember__c</members>
+        <members>CA_CalendarGroup__c</members>
+        <members>CA_Field__c</members>
+        <members>CA_Filters__c</members>
+        <members>CA_Settings__c</members>
+        <name>CustomObject</name>
+    </types>
+    <types>
+        <members>CalendarAnything</members>
+        <name>CustomTab</name>
+    </types>
+    <types>
+        <members>CalendarAnything</members>
+        <members>CalendarAnything/Icon.png</members>
+        <members>CalendarAnything/Logo.png</members>
+        <name>Document</name>
+    </types>
+    <types>
+        <members>CA_CalendarByUser__c-CA_CalendarByUser Layout</members>
+        <members>CA_CalendarGroupMember__c-CA_CalendarGroupMember Layout</members>
+        <members>CA_CalendarGroup__c-CA_CalendarGroup Layout</members>
+        <members>CA_Field__c-CA Field Layout</members>
+        <members>CA_Filters__c-CA_Filters Layout</members>
+        <members>CA_Settings__c-CA_Settings Layout</members>
+        <name>Layout</name>
+    </types>
+    <types>
+        <members>CA_CalendarByUser__c.All</members>
+        <members>CA_CalendarGroupMember__c.All</members>
+        <members>CA_CalendarGroup__c.All</members>
+        <members>CA_Field__c.All</members>
+        <members>CA_Filters__c.All</members>
+        <members>CA_Settings__c.All</members>
+        <name>ListView</name>
+    </types>
+    <types>
+        <members>CalendarAnything</members>
+        <name>StaticResource</name>
+    </types>
+    <types>
+        <members>CA_CalendarGroup__c.emptyName</members>
+        <members>CA_Settings__c.NameNotEmpty</members>
+        <name>ValidationRule</name>
+    </types>
+    <version>20.0</version>
+</Package>

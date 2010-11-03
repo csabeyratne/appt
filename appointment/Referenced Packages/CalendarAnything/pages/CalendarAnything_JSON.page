@@ -1,0 +1,29 @@
+<!-- created: Serg Brull 16.02.2010 -->
+<apex:page action="{!AjaxEventHandler}" controller="SLCA.CalendarAnything_ControllerV2R" sidebar="false" showHeader="false" standardStylesheets="false" contentType="text/plain">
+<apex:outputText rendered="{!(ISNULL($CurrentPage.parameters.event))}">
+[
+</apex:outputText>
+<apex:repeat var="X" value="{!JSONItemList}" rendered="{!(ISNULL($CurrentPage.parameters.event))}">
+{
+    "id"     : "{!X.id}",
+    "title"  : "{!X.title}",
+    "start"  : "{!X.start_date}",
+    "end"    : "{!X.end_date}",
+    "allDay" : {!X.all_day},
+    "color" : "{!X.color}",
+    "url"    : "{!X.url}",
+    "calendarid": "{!X.calendarid}",
+    "className": "{!X.calendarid}"
+}
+<apex:outputText value="," rendered="{!NOT(X.is_last)}" />
+</apex:repeat>
+<!-- rendered="{!NOT(ISNULL($CurrentPage.parameters.event))}" -->
+<apex:repeat var="s" value="{!errors}" >
+{
+	"error" : "{!s}"
+}
+</apex:repeat>
+<apex:outputText rendered="{!(ISNULL($CurrentPage.parameters.event))}">
+]
+</apex:outputText>
+</apex:page>

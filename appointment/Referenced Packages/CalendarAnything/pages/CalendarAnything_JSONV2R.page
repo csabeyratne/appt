@@ -1,0 +1,191 @@
+<apex:page action="{!AjaxEventHandlerSave}" controller="SLCA.CalendarAnything_ControllerV2R" sidebar="false" showHeader="false" standardStylesheets="false" contentType="text/plain">
+    {
+        "status" : "{!V2RAjaxResponse.responseType}"
+    <apex:outputText rendered="{!IF(ISNULL(V2RAjaxResponse.Title), false, true)}">
+        ,"Title" : "{!V2RAjaxResponse.Title}"
+    </apex:outputText>    
+    <apex:outputText rendered="{!IF(ISNULL(V2RAjaxResponse.Color), false, true)}">
+        ,"Color" : "{!V2RAjaxResponse.Color}"
+    </apex:outputText>
+    <apex:outputText rendered="{!IF(ISNULL(V2RAjaxResponse.TypeOfObjects), false, true)}">
+        ,"TypeOfObjects" : [
+        <apex:repeat value="{!V2RAjaxResponse.TypeOfObjects}" var="item" rows="1">
+            {"name" : "{!item.Name}", "value": "{!item.Value}"}
+        </apex:repeat>
+        <apex:repeat value="{!V2RAjaxResponse.TypeOfObjects}" var="item" first="1">
+            ,{"name" : "{!item.Name}", "value": "{!item.Value}"}
+        </apex:repeat>
+        ]
+    </apex:outputText>
+    <apex:outputText rendered="{!IF(ISNULL(V2RAjaxResponse.SelectedObjectType), false, true)}">
+        ,"SelectedObjectType": "{!V2RAjaxResponse.SelectedObjectType}"
+    </apex:outputText>    
+    <apex:outputText rendered="{!IF(ISNULL(V2RAjaxResponse.Objects), false, true)}">
+        ,"Objects" : [
+        <apex:repeat value="{!V2RAjaxResponse.Objects}" var="item" rows="1">
+            {"name" : "{!item.Name}", "value": "{!item.Value}"}
+        </apex:repeat>
+        <apex:repeat value="{!V2RAjaxResponse.Objects}" var="item" first="1">
+            ,{"name" : "{!item.Name}", "value": "{!item.Value}"}
+        </apex:repeat>
+        ]
+    </apex:outputText>
+    <apex:outputText rendered="{!IF(ISNULL(V2RAjaxResponse.SelectedObject), false, true)}">
+        ,"SelectedObject" : "{!V2RAjaxResponse.SelectedObject}"
+    </apex:outputText>        
+    <apex:outputText rendered="{!IF(ISNULL(V2RAjaxResponse.EntryFields), false, true)}">
+        ,"EntryFields" :[
+        <apex:repeat value="{!V2RAjaxResponse.EntryFields}" var="item" rows="1">
+            {"name" : "{!item.Name}", "value": "{!item.Value}"}
+        </apex:repeat>
+        <apex:repeat value="{!V2RAjaxResponse.EntryFields}" var="item" first="1">
+            ,{"name" : "{!item.Name}", "value": "{!item.Value}"}
+        </apex:repeat>
+        ]
+    </apex:outputText>        
+    <apex:outputText rendered="{!IF(ISNULL(V2RAjaxResponse.SelectedEntryField), false, true)}">
+        ,"SelectedEntryField" : "{!V2RAjaxResponse.SelectedEntryField}"
+    </apex:outputText>        
+    <apex:outputText rendered="{!IF(ISNULL(V2RAjaxResponse.StartFields), false, true)}">
+        ,"StartFields" :[
+        <apex:repeat value="{!V2RAjaxResponse.StartFields}" var="item" rows="1">
+            {"name" : "{!item.Name}", "value": "{!item.Value}"}
+        </apex:repeat>
+        <apex:repeat value="{!V2RAjaxResponse.StartFields}" var="item" first="1">
+            ,{"name" : "{!item.Name}", "value": "{!item.Value}"}
+        </apex:repeat>
+        ]
+    </apex:outputText>
+    <apex:outputText rendered="{!IF(ISNULL(V2RAjaxResponse.SelectedStartField), false, true)}">
+        ,"SelectedStartField" : "{!V2RAjaxResponse.SelectedStartField}"
+    </apex:outputText>
+    <apex:outputText rendered="{!IF(ISNULL(V2RAjaxResponse.EndFields), false, true)}">
+        ,"EndFields" :[
+        <apex:repeat value="{!V2RAjaxResponse.EndFields}" var="item" rows="1">
+            {"name" : "{!item.Name}", "value": "{!item.Value}"}
+        </apex:repeat>
+        <apex:repeat value="{!V2RAjaxResponse.EndFields}" var="item" first="1">
+            ,{"name" : "{!item.Name}", "value": "{!item.Value}"}
+        </apex:repeat>
+        ]
+    </apex:outputText>
+    <apex:outputText rendered="{!IF(ISNULL(V2RAjaxResponse.SelectedEndField), false, true)}">
+        ,"SelectedEndField" : "{!V2RAjaxResponse.SelectedEndField}"
+    </apex:outputText>        
+        ,"Visible" : "{!V2RAjaxResponse.Visible}"
+    <apex:outputText rendered="{!IF(ISNULL(V2RAjaxResponse.HoverPageAvailableFields), false, true)}">
+        ,"HoverPageAvailableFields" :[
+        <apex:repeat value="{!V2RAjaxResponse.HoverPageAvailableFields}" var="item" rows="1">
+            {"name" : "{!item.Name}", "value": "{!item.Label}"}
+        </apex:repeat>
+        <apex:repeat value="{!V2RAjaxResponse.HoverPageAvailableFields}" var="item" first="1">
+            ,{"name" : "{!item.Name}", "value": "{!item.Label}"}
+        </apex:repeat>
+        ]
+    </apex:outputText>
+    <apex:outputText rendered="{!IF(ISNULL(V2RAjaxResponse.HoverPageSelectedFields), false, true)}">
+        ,"HoverPageSelectedFields" :[
+        <apex:repeat value="{!V2RAjaxResponse.HoverPageSelectedFields}" var="item" rows="1">
+            {"name" : "{!item.Name}", "value": "{!item.Label}"}
+        </apex:repeat>
+        <apex:repeat value="{!V2RAjaxResponse.HoverPageSelectedFields}" var="item" first="1">
+            ,{"name" : "{!item.Name}", "value": "{!item.Label}"}
+        </apex:repeat>
+        ]
+    </apex:outputText>
+    <apex:outputText rendered="{!IF(ISNULL(V2RAjaxResponse.OwnershipOfObjectRecords), false, true)}">
+        ,"OwnershipOfObjectRecords" : "{!V2RAjaxResponse.OwnershipOfObjectRecords}"
+    </apex:outputText>
+    <apex:outputText rendered="{!IF(ISNULL(V2RAjaxResponse.UserFilters), false, true)}">
+        ,"UserFilters" :[
+        <apex:repeat value="{!V2RAjaxResponse.UserFilters}" var="item" rows="1">
+            {"name" : "{!item.Field}", "value": "{!item.Value}", "operator": "{!item.Operator}", "type": "{!item.fieldType}"}
+        </apex:repeat>
+        <apex:repeat value="{!V2RAjaxResponse.UserFilters}" var="item" first="1">
+            ,{"name" : "{!item.Field}", "value": "{!item.Value}", "operator": "{!item.Operator}", "type": "{!item.fieldType}"}
+        </apex:repeat>
+        ]
+    </apex:outputText>
+    <apex:outputText rendered="{!IF(ISNULL(V2RAjaxResponse.ObjectFields), false, true)}">
+        ,"ObjectFields" :[
+        <apex:repeat value="{!V2RAjaxResponse.ObjectFields}" var="item" rows="1">
+            {"name" : "{!item.Name}", "value": "{!item.Label}", "type": "{!item.FieldType}"
+            <apex:outputText rendered="{!IF(ISNULL(item.Values), false, true)}">
+                ,"picklistValues" :[
+                <apex:repeat value="{!item.Values}" var="value" rows="1">
+                    {"value": "{!value}"}
+                </apex:repeat>
+                <apex:repeat value="{!item.Values}" var="value" first="1">
+                    ,{"value": "{!value}"}
+                </apex:repeat>
+                ]
+            </apex:outputText>
+            }
+        </apex:repeat>
+        <apex:repeat value="{!V2RAjaxResponse.ObjectFields}" var="item" first="1">
+            ,{"name" : "{!item.Name}", "value": "{!item.Label}", "type": "{!item.FieldType}"
+            <apex:outputText rendered="{!IF(ISNULL(item.Values), false, true)}">
+                ,"picklistValues" :[
+                <apex:repeat value="{!item.Values}" var="value" rows="1">
+                    {"value": "{!value}"}
+                </apex:repeat>
+                <apex:repeat value="{!item.Values}" var="value" first="1">
+                    ,{"value": "{!value}"}
+                </apex:repeat>
+                ]
+            </apex:outputText>
+            }
+        </apex:repeat>
+        ]
+    </apex:outputText>
+    <apex:outputText rendered="{!IF(ISNULL(V2RAjaxResponse.RestrictVisability), false, true)}">
+        ,"RestrictVisability" : "{!V2RAjaxResponse.RestrictVisability}"
+    </apex:outputText>        
+    <apex:outputText rendered="{!IF(ISNULL(V2RAjaxResponse.AvailableGroups), false, true)}">
+        ,"AllGroups" :[
+        <apex:repeat value="{!V2RAjaxResponse.AvailableGroups}" var="item" rows="1">
+            {"value" : "{!item.Name}", "name": "{!item.id}"}
+        </apex:repeat>
+        <apex:repeat value="{!V2RAjaxResponse.AvailableGroups}" var="item" first="1">
+            ,{"value" : "{!item.Name}", "name": "{!item.id}"}
+        </apex:repeat>
+        ]
+    </apex:outputText>        
+    <apex:outputText rendered="{!IF(ISNULL(V2RAjaxResponse.SelectedGroups), false, true)}">
+        ,"SelectedGroups" :[
+        <apex:repeat value="{!V2RAjaxResponse.SelectedGroups}" var="item" rows="1">
+            {"value" : "{!item.Name}", "name": "{!item.id}"}
+        </apex:repeat>
+        <apex:repeat value="{!V2RAjaxResponse.SelectedGroups}" var="item" first="1">
+            ,{"value" : "{!item.Name}", "name": "{!item.id}"}
+        </apex:repeat>
+        ]
+    </apex:outputText>
+    <apex:outputText rendered="{!IF(ISNULL(V2RAjaxResponse.AdvancedOptionsValue), false, true)}">
+        ,"AdvancedOptionsValue" : "{!V2RAjaxResponse.AdvancedOptionsValue}"
+    </apex:outputText>
+    <apex:outputText rendered="{!IF(ISNULL(V2RAjaxResponse.AvailableCalendars), false, true)}">
+        ,"AvailableCalendars" :[
+        <apex:repeat value="{!V2RAjaxResponse.AvailableCalendars}" var="item" rows="1">
+            {"value" : "{!item.Name}", "name": "{!item.id}"}
+        </apex:repeat>
+        <apex:repeat value="{!V2RAjaxResponse.AvailableCalendars}" var="item" first="1">
+            ,{"value" : "{!item.Name}", "name": "{!item.id}"}
+        </apex:repeat>
+        ]
+    </apex:outputText>
+    <apex:outputText rendered="{!IF(ISNULL(V2RAjaxResponse.SelectedCalendars), false, true)}">
+        ,"SelectedCalendars" :[
+        <apex:repeat value="{!V2RAjaxResponse.SelectedCalendars}" var="item" rows="1">
+            {"value" : "{!item.Name}", "name": "{!item.id}"}
+        </apex:repeat>
+        <apex:repeat value="{!V2RAjaxResponse.SelectedCalendars}" var="item" first="1">
+            ,{"value" : "{!item.Name}", "name": "{!item.id}"}
+        </apex:repeat>
+        ]
+    </apex:outputText>
+    <apex:outputText rendered="{!IF(ISNULL(V2RAjaxResponse.CalendarGroup), false, true)}">
+        ,"CalendarGroupName" : "{!V2RAjaxResponse.CalendarGroup.Name}"
+    </apex:outputText>
+    }
+</apex:page>

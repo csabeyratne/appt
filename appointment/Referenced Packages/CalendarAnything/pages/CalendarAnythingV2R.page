@@ -1,0 +1,824 @@
+<apex:page standardController="SLCA__CA_Settings__c" extensions="SLCA.CalendarAnything_ControllerV2R" showHeader="true" standardStylesheets="false" sidebar="false"> 
+
+
+<apex:stylesheet value="{!URLFOR($Resource.SLCA__CalendarAnything, '/themes/standard/css/theme.css')}"/>
+<apex:stylesheet value="{!URLFOR($Resource.SLCA__CalendarAnything, 'fullcalendar.css')}"/>
+<apex:stylesheet value="{!URLFOR($Resource.SLCA__CalendarAnything, 'uibox.css')}"/>
+
+<apex:includeScript value="{!URLFOR($Resource.SLCA__CalendarAnything, 'jquery/jquery.js')}"/>
+<apex:includeScript value="{!URLFOR($Resource.SLCA__CalendarAnything, 'jquery/ui.core.js')}"/>
+<apex:includeScript value="{!URLFOR($Resource.SLCA__CalendarAnything, 'jquery/ui.draggable.js')}"/>
+<apex:includeScript value="{!URLFOR($Resource.SLCA__CalendarAnything, 'jquery/ui.resizable.js')}"/>
+<apex:includeScript value="{!URLFOR($Resource.SLCA__CalendarAnything, 'jquery/jquery.qtip.min.js')}"/>
+<apex:includeScript value="{!URLFOR($Resource.SLCA__CalendarAnything, 'jquery/jquery.cookie.js')}"/>
+<apex:includeScript value="{!URLFOR($Resource.SLCA__CalendarAnything, 'fullcalendar.js')}"/>
+<apex:includeScript value="{!URLFOR($Resource.SLCA__CalendarAnything, 'jquery/jquery-ui-1.7.2.custom.js')}"/>
+<apex:includeScript value="{!URLFOR($Resource.SLCA__CalendarAnything, 'jquery/panels-ui-1.0.js')}"/>
+<apex:includeScript value="{!URLFOR($Resource.SLCA__CalendarAnything, 'jquery/extends-ui-1.0.js')}"/>
+
+<style>
+    #calendar { position: relative; width: 980px; margin: 0 auto; }
+    #details { display: none; position: relative; z-index: 400; background-color:#eeecd1; max-width: 280px;}
+    .fcui-overlay { display: none; position: absolute; background-color:#eeecd1; z-index: 190; opacity: .6; filter: alpha(opacity = 60);}
+    .fcui-loading { display: none; position: absolute; z-index: 191; }
+    .fcui-popup-colors { display: none; position: absolute; background-color:#eeecd1; z-index: 200; }
+    .fcui-popup-color-item { float:right;display:block;width:15px;height:15px;margin:0 4px 4px 0;border:1px solid #fff;text-decoration:none; margin-top: 3px;}
+    .fcui-popup-color-item a:hover { border-color:#000; }   
+    .fcui-color-item { float:right;display:block;width:15px;height:15px;margin:0 4px 4px 0;border:1px solid #fff;text-decoration:none; margin-top: 3px;}
+    .fcui-color-item a:hover { border-color:#000; }
+    .fcui-checkbox { margin-top: 3px; margin-right: 7px; position:relative; float:left; }
+    .fcui-menu-text {  margin-top: 2px; margin-right: 7px; position:relative; float:left; }
+    
+    input.text {
+            margin-bottom:5px; 
+            padding: 2px; 
+        }
+        
+        select.text {
+            margin-bottom:5px; 
+            padding: 2px; 
+        }
+        
+        .text-size { 
+            font-size: 0.85em;
+            font-family: Arial,Helvetica,sans-serif;
+            padding: 2px;
+        }
+
+        .ui-dialog-title { font-size: 1.0em; }
+        
+        fieldset { 
+            padding:0; 
+            border:0; 
+            margin-top:0px; 
+        }
+        
+        
+        .ui-button { 
+                outline: 0; 
+                margin:0;  
+                text-decoration:none;  !important; 
+                cursor:pointer; 
+                position: relative; 
+                ext-align: center; 
+        }
+        
+        .ui-dialog .ui-dialog-content .ui-widget-content { 
+            margin-left: 0px; 
+            margin-right: 0px; 
+            padding: 3px, 3px, 3px, 3px; 
+        }
+        .ui-widget input, .ui-widget select, .ui-widget textarea, .ui-widget button { font-size: 0.85em;}
+        .cs-popup-color-item { 
+                width:15px;
+                height:15px;
+                border:1px solid #fff;
+                margin:0 4px 4px 0;
+                
+                text-decoration:none; 
+                margin-top: 3px;
+                display:block;
+        }
+        .ui-accordion-content { padding: 0 px, 0px, 0px, 0px;}
+        .cs-popup-color-item a:hover { border-color:#000; }   
+        
+        .fcui-block-header {  background-color:#CCC; }
+        
+        .ui-form-label { width: 120px;  } 
+        
+        .cs-popup-colors { display: none; position: relative; background-color:#eeecd1; z-index: 999; }
+        
+        div ul { 
+            list-style-type: none; 
+            margin: 0; 
+            padding: 0; 
+            margin-bottom: 10px; 
+            font-size: .8em; 
+            overflow:auto;  
+            width: 185px; 
+            height:185px;
+        }
+        
+        h3 { display: block !important; }
+        
+        div ul li { 
+            margin: 5px; 
+            padding: 5px; 
+            width: 150px;  
+        }
+        
+        #list_of_object_fields { 
+            width: 190px; 
+            height:190px; 
+            overflow:visible;
+        }
+        #list_of_selected_fields {  
+            width: 190px; 
+            height:190px; 
+            overflow:visible;
+        }
+        h5 { 
+            font-size: 0.95em; 
+            margin: 0; 
+            padding: 5px; 
+            text-align:center; 
+            vertical-align:middle; 
+            padding-top:2px; 
+            font-family: Arial,Helvetica,sans-serif;
+        }
+</style>
+
+<script type='text/javascript'>
+    var fcui_ajaxurl = '/apex/CalendarAnything_CJSON';
+    var mouse_is_inside_colorpicker = true;
+    
+var groups_calendars = {
+<apex:repeat value="{!AllCalendarsByGroups}" var="item">
+    '{!item.groupId}': [
+<apex:repeat value="{!item.calendars}" var="c">
+    '{!c}',
+</apex:repeat>  
+    ],
+</apex:repeat>
+};
+
+var selected_calendar_id = '{!selected_object.ID}';
+var selected_group_id = '{!SelectedGroup}';
+
+var calendars_for_render = new Array();
+
+jQuery.noConflict();  
+  
+(function($) {    
+    $(document).ready(function() {
+    	//for color picker
+        $('#colors').hover(function(){ 
+            mouse_is_inside_colorpicker=true; 
+        }, function(){ 
+            mouse_is_inside_colorpicker=false; 
+        });       
+    
+        $("body").click(function(){ 
+            if(!mouse_is_inside_colorpicker) $('#colors').hide('fast');
+            mouse_is_inside_colorpicker = true;
+        });
+
+        $("body").keypress(function(event){
+            if (event.keyCode == '27')
+            {
+                $('#colors').hide('fast');
+                mouse_is_inside_colorpicker = true;
+            }
+        });
+        
+        $('#calendar').fullCalendar({
+            header: {
+                left: 'prev,next today',
+                center: 'title',
+                right: 'month,{!CalendarType}'
+            }, 
+            more: 2,
+            allDayDefault: false,
+            theme: true,
+            editable: false,
+            disableResizing: {!isDisableResizing},
+            
+            /*events: fcui_ajaxurl + "?cid={!selected_object.ID}&token={!SessionToken}", */
+            
+            eventDrop: function(event, ddelta, mdelta) {
+                fcui_send_event('drag', event, ddelta, mdelta);
+            },
+            
+            eventResize: function(event,ddelta,mdelta,revertFunc) {
+                fcui_send_event('resize', event, ddelta, mdelta);
+            },
+            eventRender: function(event, element) {
+                if(event.id == undefined) { return ; }
+                var rid = event.id.substr(0,15);
+                var tp_data = "loading...";
+                var params = {};
+                params['rid'] = rid;
+                params['cid'] = event.calendarid.substr(0,15);
+                params['token'] = '{!SessionToken}';
+                //this not documented salesforce solution for mini-page 
+                $.ajax({
+                    url: '/apex/CalendarAnything_Info',
+                    type: 'POST',
+                    dataType: 'text',
+                    data: params,
+                    cache: false, 
+                    success: function(data){
+                         $('.fcui-checkbox').removeAttr("disabled");
+                         //need for exclude salesforce tag  
+                         //data = data.replace("<" + rid +">", "");   
+                         //data = data.replace("</" + rid +">", "");
+                         //var data1 = data.substr(0, data.indexOf('<td class="pbButton">')); 
+                         //var data2 = data.substr(data.indexOf('</td></tr>'));
+                         //data = data1+'&nbsp;'+data2;
+                         element.qtip({
+                            show: { solo: true },
+                            content: data,
+                            style: { 
+                                border: {
+                                    width: 0
+                                },
+                                padding: 0
+                            },
+                            position: {
+                                adjust: {
+                                    screen: true
+                                }
+                            }
+                         });
+                    }
+                });
+            },
+            viewDisplay: function( view ) { 
+                //fcui_changeEventShow(view);
+            },
+            loading: function(bool) {
+                fcui_loading_bar(bool);
+            },
+            
+            
+            /** when user click on the day square. Here must be function to add an event
+             * @param date Date in GMT Date object
+             * @param allDay boolean whole day event or not
+             * @param jsEvent ?
+             * @param view ?
+             *
+             * @return void
+             */
+            dayClick: function(date, allDay, jsEvent, view) {
+                
+            }
+        });
+        
+        $('.fcui-color-item').bind('click', fcui_onclick);
+        
+        $('a.fcui-menu-text').bind('click', fcui_link_onclick);
+        $('.fcui-checkbox').bind('click', fcui_checkbox_onclick);
+        
+        $('.fcui-group-checkbox').bind('click', fcui_group_onclick);
+        $('.fcui-group-link').bind('click', fcui_groups_link_onclick); 
+        
+        $('#dlg_visible_open').bind('click', fcui_openVisibleDlg);
+        
+        fcui_init(); 
+        checkboxes_from_cookie();
+        fcui_init_selected_in_url();
+    });
+    
+    function fcui_init_selected_in_url() {
+    	
+    	if( selected_calendar_id != '' ) {
+    		var $sc_checkbox = $('#' + selected_calendar_id);
+    		if($sc_checkbox.attr('checked') != true) {
+    			$sc_checkbox.attr('checked','checked');
+    			fcui_calendar_onclick(selected_calendar_id, true);
+    		}
+    	}
+    	
+    	if(selected_group_id != '') {
+    		var $sg_checkbox = $('#' + selected_group_id);
+    		if($sg_checkbox.attr('checked') != true) {
+    			$sg_checkbox.attr('checked','checked');
+    			fcui_calendar_group_onclick(selected_group_id, true);
+    		}
+    	}
+    }
+    
+    /* when user click on calendar link */
+    function fcui_link_onclick() {
+  		var $checkbox = $(this).parent().find('input:checkbox');
+  		$checkbox[0].checked = !$checkbox[0].checked;
+  		fcui_calendar_onclick($checkbox.attr('id'), $checkbox[0].checked);
+    	return false;
+    }
+
+    function fcui_groups_link_onclick(){
+    	var $checkbox = $(this).parent().find('input:checkbox');
+  		$checkbox[0].checked = !$checkbox[0].checked;
+  		fcui_calendar_group_onclick( $checkbox.attr('id'), $checkbox[0].checked);
+    	return true;
+    }
+    
+    function add_to_render(id) {
+    	//console.log('add');
+    	//console.log(calendars_for_render);
+    	if(calendars_for_render[id] != undefined) {
+    		if(calendars_for_render[id] < 1) {
+    			$('#calendar').fullCalendar('addEventSource', fcui_ajaxurl + '?cid=' + id + '&token={!SessionToken}');
+        		$('#calendar').fullCalendar('rerenderEvents');
+    		}
+    	   	calendars_for_render[id]++;
+    	} else {
+    		calendars_for_render[id] = 1;
+    		$('#calendar').fullCalendar('addEventSource', fcui_ajaxurl + '?cid=' + id + '&token={!SessionToken}');
+        	$('#calendar').fullCalendar('rerenderEvents');
+    	}
+    }
+    
+    function remove_from_render(id) {
+    	//console.log('remove');
+    	//console.log(calendars_for_render);
+    	if(calendars_for_render[id] != undefined) {
+    		calendars_for_render[id]--;
+    		if(calendars_for_render[id] < 1) {
+        		$('#calendar').fullCalendar('removeEventSource', fcui_ajaxurl + '?cid=' + id + '&token={!SessionToken}');
+       			$('#calendar').fullCalendar('rerenderEvents');
+       		}
+       	}
+    }
+    
+    function fcui_render_calendars(calendar_id, checked) {
+        
+        if (checked) {
+            add_to_render(calendar_id);
+        } else {
+            remove_from_render(calendar_id);
+        }
+        
+    }
+    
+    function fcui_loading_bar(show) {
+        var $calendarloading = $('#calendarloading');
+        var $calendaroverlay = $('#calendaroverlay');
+        
+        if(show) {
+            var $calendar = $('#calendar');
+            var body = $('body');
+            var width = $calendar.width();
+            var height = $calendar.height();
+            var position = $calendar.position();
+            var parent_position =  $calendar.parent().position();
+            position.left = position.left - parent_position.left; 
+            position.top = position.top - parent_position.top ;
+            
+            $calendaroverlay
+                .css({ 'width': width, 'height' : height, 'left' : position.left, 'top': position.top})
+                .show();
+                
+            $calendarloading.hide().addClass('fcui-loading');
+            var loading_width = $calendarloading.width();    
+            var loading_height = $calendarloading.height();
+            var real_loading_left = position.left + ((width / 2) - (loading_width /2));
+            var real_loading_top = position.top + ((height / 2) - (loading_height /2));
+            $calendarloading
+                .css({'position' : 'relative', 'left': real_loading_left - position.left, 'top': real_loading_top - position.top})
+                .show();
+        } else {
+            $calendarloading.hide();   
+            $calendaroverlay.hide();       
+        }
+    } 
+     
+    function fcui_send_event(call, event,ddelta,mdelta,revertFunc) {
+                fcui_loading_bar(true);
+                var params = {};
+                params['event'] = call;
+                params['rid'] = event.id;
+                params['ddelta'] = ddelta;
+                params['mdelta'] = mdelta;
+                params['cid'] = '{!selected_object.ID}';
+                params['token'] = token;
+                $.ajax({
+                    url: fcui_ajaxurl,
+                    type: 'POST',
+                    dataType: 'text',
+                    data: params,
+                    cache: false, 
+                    success: function(msg){ 
+                        fcui_loading_bar(false); 
+                    }
+                });     
+    }
+     
+    var fcui_current_target = null;
+    
+    function fcui_init() {
+        $('.fcui-checkbox').each(function () {
+            var cid = $(this).attr('id');
+            var color = $('a[id='+ cid +']').css('background-color');
+            fcui_create_new_css_class(cid, color, true);
+        } );
+        $('#calendar').fullCalendar( 'rerenderEvents' );
+    }
+    
+    function fcui_create_new_css_class(classname, bgcolor, visible) {
+        var str_append = '';
+        if(visible == null ||  visible == true) {
+            str_append = '<style> .' + classname + ' a { display: block; visibility: visible; background-color: ' + bgcolor  + ' !important;  border-color: ' + bgcolor  + '  !important; color: white  !important; }  .' + classname + ' { display: block; visibility: visible; border-color: ' + bgcolor  + '  !important; } </style>';
+        } else {
+            str_append = '<style> .' + classname + ' { display: none; visibility: hidden; } .' + classname + ' a { display: none; visibility: hidden; } </style>';
+        }
+        $('body').append(str_append);
+    }
+    
+    document.fcui_set_new_color = function(bgcolor, color) {
+        fcui_set_new_color(bgcolor, color);
+        return false;
+    }
+    
+    function fcui_set_new_color(bgcolor, color) {
+        var $calendar = $('#calendar');
+        $('#colors').hide('fast');
+        if(fcui_current_target != null) {
+            var $fcui_current_target = $(fcui_current_target);
+            var cid = $fcui_current_target.attr('id');
+            fcui_save_color(cid, bgcolor);
+            var ar = $calendar.fullCalendar( 'clientEvents' );
+            for(var i=0; i < ar.length; i++) {
+                fcui_create_new_css_class(cid, bgcolor);
+                if(ar[i].calendarid == cid) {
+                    ar[i].className = [cid];
+                }
+            }   
+            $fcui_current_target.css('background-color', bgcolor);
+        }
+        return false;
+    }
+    
+    function fcui_onclick(event) {
+         fcui_current_target = (event.target)? event.target : event.srcElement;
+         var coords = $(fcui_current_target).offset();
+         var clr_height = $('#AppBodyHeader').height();
+         $('#colors').css('position', 'absolute').css('left', coords.left-7).css('top', coords.top-clr_height+7).toggle('fast');
+         mouse_is_inside_colorpicker = true;
+         return false;
+    }
+    
+    /**
+     * Add or delete elements in selectedCalendars array
+     * @return void
+     */
+     
+    function fcui_calendar_onclick(id, checked) {
+		var ids = new Array();
+        
+        $('.fcui-checkbox:checked').each(function(){
+            ids.push($(this).attr('id'));
+        });
+        
+        set_cookie('selected_calendars',  ids.join(','));
+        
+        fcui_render_calendars(id, checked);
+    }
+     
+    function fcui_checkbox_onclick(event) {
+		fcui_calendar_onclick($(this).attr('id'), $(this).attr('checked'));
+    }
+     
+    /**
+     * When user made click on group checkbox
+     *
+     */
+     
+    function fcui_calendar_group_onclick(group_id, checked) {
+    	if (group_id != '') {
+    		var calendars = groups_calendars[group_id];
+   		
+	        for (var i = 0; i < calendars.length; i++) {
+	        	if (checked == true) {
+	        		add_to_render(calendars[i]);
+	        	} else {
+	        		remove_from_render(calendars[i]);
+	        	}
+	        }
+    	}
+        var groups_to_cookie_array = new Array();
+        $('.fcui-group-checkbox:checked').each(function(idx){
+        	groups_to_cookie_array.push($(this).attr('id'));
+        }); 
+        set_cookie('selected_groups', groups_to_cookie_array.join(','));
+    }
+
+    function fcui_group_onclick(event) {
+    	//console.log('fcui_group_onclick runned');
+    	fcui_calendar_group_onclick( $(this).attr('id'), $(this)[0].checked);
+    }
+    
+    function checkboxes_from_cookie()
+    {
+    	//console.log('checkboxes_from_cookie');
+    	if ($.cookie('selected_calendars') == null) {
+    		set_cookie('selected_calendars', '');
+    	}
+        var selected_calendars = $.cookie('selected_calendars').split(',');
+        
+    	if ($.cookie('selected_groups') == null) {
+    		set_cookie('selected_groups', '');
+    	}
+        var selected_groups = $.cookie('selected_groups').split(',');
+        
+        for (var i=0; i < selected_calendars.length; i++) {
+            $('input[id=' + selected_calendars[i] + ']').attr('checked', true);
+            add_to_render(selected_calendars[i]);
+        }
+        
+       	for (var i=0; i < selected_groups.length; i++) {
+       		//console.log('selected_groups.length['+i+']: ' + selected_groups[i]);
+       		if (selected_groups[i].length > 0) {
+            	$('#' + selected_groups[i]).attr('checked', true);
+       			fcui_calendar_group_onclick(selected_groups[i], true);
+       		}
+   		}
+    } 
+    
+    function set_cookie(cookie_name, cookie_value)
+    {
+        var expiresDate = new Date();
+        expiresDate.setTime(expiresDate.getTime() + (1000 * 86400 * 365));
+        $.cookie(cookie_name, cookie_value, {
+            expires: expiresDate.toGMTString(),
+            path: '/',
+            domain: document.domain,
+            secure: false
+        });
+    }
+    
+    function fcui_save_color_apex(cid, color) {
+    	fcui_loading_bar(true);
+    	var r = sforce.apex.execute('CalendarAnything_ControllerV2R', 'changeColor', {"p_cid" : cid, "p_token" : "{!SessionToken}", "p_color" : color});
+    	fcui_loading_bar(false);
+    	alert(r);
+    }
+    
+    function fcui_save_color(cid, color) {
+        fcui_loading_bar(true);
+        var params = {};
+        params['event'] = 'color';
+        params['color'] = color;
+        params['cid'] = cid;
+        params['token'] = '{!SessionToken}';
+        $.ajax({
+                url: fcui_ajaxurl,
+                type: 'POST',
+                dataType: 'text',
+                data: params,
+                cache: false, 
+                success: function(msg){ fcui_loading_bar(false); }
+        }); 
+            
+    }
+    
+    function fcui_changeEventShow(view) {
+        var ar_events =  $('#calendar').fullCalendar( 'clientEvents' );
+        for(var i = 0; i <  ar_events.length; i++) {
+            var event_start = ar_events[i]._start;
+            var event_end =  ar_events[i]._end;
+            if(view.name != 'month') {
+                if(ar_events[i]._end != null && 
+                   !fcui_DateEqvals(event_start, event_end)) {
+                    
+                    ar_events[i].allDay = true;
+                }
+            } else {
+                if(ar_events[i].allDay == true && 
+                   ar_events[i]._end != null && 
+                   !fcui_DateEqvals(event_start, event_end) ) {
+                    
+                    ar_events[i].allDay = false;
+                }
+            }
+        }
+        $('#calendar').fullCalendar( 'rerenderEvents' );
+    }
+    
+    
+    function fcui_DateEqvals(p_datetime1, p_datetime2)  {
+        var result = false;
+        if(p_datetime2 != null &&
+           p_datetime1.getYear() == p_datetime2.getYear() &&
+           p_datetime1.getMonth() == p_datetime2.getMonth() &&
+           p_datetime1.getDate() == p_datetime2.getDate() ) {
+        
+           result = true;
+        }
+        return result;
+    }
+    
+    function fcui_openVisibleDlg() {
+    	$("body").loadingBar(true);
+        $("#dlg_visible_for_user").dialog({
+                        bgiframe: true,
+                        autoOpen: false,
+                        width: 470,
+                        height: 420,
+                        modal: true,
+                        buttons: {
+                            'Cancel': function() {
+                                $(this).dialog('close');
+                                $(this).dialog('destroy');
+                                return false;
+                            },
+                            'Save': function() {
+                                fcui_openVisibleDlg_DataRequest('save') ;            
+                                $(this).dialog('close');
+                                $(this).dialog('destroy');
+                                return false;
+                            }
+                        }
+        }); 
+        fcui_openVisibleDlg_DataRequest('load') ;            
+    }
+    
+    function in_array(p_array, p_value) {
+		var result = false; 
+		for(var i = 0; i < p_array.length; i++) {
+			if(p_array[i] == p_value) {
+				result = true;
+			} 
+		}
+		return result;
+	}
+	
+    function fcui_removeHiddenIDsFromCookie(p_hidden_ids) {
+    	  var ar_result = Array();	
+    	  var ar_ids = p_hidden_ids.split('|');
+          var cookie_string = $.cookie('selected_calendars');
+          if(cookie_string != undefined) {
+          		ar_from_cookies = cookie_string.split(',');
+    	  		for(var i = 0; i < ar_from_cookies.length; i++) {
+    	  			if(!in_array(ar_ids, ar_from_cookies[i])) {
+    	  				ar_result.push(ar_from_cookies[i]);
+    	  			}
+    	  		}
+    	  		set_cookie('selected_calendars', ar_result.join(','));
+    	  }
+    }
+    
+    function fcui_openVisibleDlg_DataRequest(action) {
+        var params = {};
+        if(action == 'save'){
+            var result = $("#dlg_visible_for_user").SortablePanelsGetResult(
+                { panel1 : 'list_of_all_calendars', panel2 : 'list_of_visible_calendars'}
+            ); 
+            params['event'] = "save";
+            params['hidden'] = result.panel1;
+            params['visible'] = result.panel2;
+            params['token'] = '{!SessionToken}';
+        }
+        $.ajax({
+              url: '/apex/CalendarAnything_JSONVisible',
+              type: 'POST',
+              data: params,
+              dataType: 'json',
+              cache: false, 
+              success: function(data){
+              	$("body").loadingBar(false);
+                if( action == 'load') {  
+                    if( data.AllCalendarsList != undefined &&
+                        data.SelectedCalendarsList != undefined) 
+                    {
+                        $("#dlg_visible_for_user").SortablePanels({
+                            clean : true,
+                            panel1 : 'list_of_all_calendars',
+                            panel2 : 'list_of_visible_calendars',
+                            connected_class : 'connectedVisbleCalendarsSortable', 
+                            panel1_list : data.AllCalendarsList,
+                            panel2_list : data.SelectedCalendarsList                       
+                        });
+                   
+                    }
+                    $("#dlg_visible_for_user").dialog('open');
+                }
+              
+                if( action == 'save' ) {
+                	fcui_removeHiddenIDsFromCookie(params['hidden']);
+                  	window.location.reload();
+                }
+           }  
+        }); 
+    } 
+    
+})(jQuery);   
+</script>
+<!-- <apex:sectionHeader title="{!selected_object.Name}" subtitle="for {!$User.FirstName} {!$User.LastName}"/> -->
+<table width="100%">
+<tr>
+<td width="20%" valign="top">
+<apex:pageBlock title="My&nbsp;Calendars" id="pbList" >
+    <apex:facet name="header">
+        <div class="pbHeader">
+            <table cellspacing="0" cellpadding="0" border="0">
+                <tbody>
+                <tr>
+                    <td class="pbTitle">
+                        <h2 class="mainTitle">My&nbsp;Calendars</h2>
+                    </td>
+                    <td align="center">
+                        &nbsp;&nbsp;<a id="dlg_visible_open" href="#">Edit</a>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+    </div>
+    </apex:facet>
+    
+    <apex:pageBlockTable value="{!UserRecords}" var="r" rendered="true" >
+        <apex:column >
+            <input type="checkbox" id="{!JSENCODE(r.ID)}" value="false" class="fcui-checkbox"/><a class="fcui-menu-text" href="#">{!r.Name}</a>
+            <a href="#" id="{!JSENCODE(r.ID)}" class="fcui-color-item"  style="background-color:{!JSENCODE(r.SLCA__Color__c)};">
+        </apex:column>
+    </apex:pageBlockTable>
+</apex:pageBlock>
+
+<apex:pageBlock title="My&nbsp;Calendars&nbsp;Groups" id="groupsList">
+    <apex:pageBlockTable value="{!AllGroups}" var="group" rendered="true" >
+        <apex:column style="background-color: white;">
+            <input type="checkbox" id="{!group.Id}" class="fcui-group-checkbox"/>
+            <a href="#" class="fcui-group-link" >{!group.Name}</a>
+        </apex:column>
+    </apex:pageBlockTable>
+</apex:pageBlock>
+
+<apex:pageBlock title="Manage&nbsp;Calendars" id="pbControl">
+<a href="/apex/CalendarAnything_ListV2R">Add/Change Calendars</a>
+</apex:pageBlock>
+
+</td>
+<td width="85%" valign="top">
+<apex:outputPanel id="plCalendarSelected" > <!-- rendered="{!NOT(AND(ISNULL($CurrentPage.parameters.id),ISNULL($CurrentPage.parameters.groupId)))}" -->
+    <div id="details_container" style="position:absolute;">
+        <div id="details">loading detail...</div>
+    </div>
+    <div id='calendar'>
+        <div id="calendaroverlay" class="fcui-overlay">
+            <div id="calendarloading" class="fcui-loading"><img src="/img/loading.gif" alt="Please wait..." title="Please wait..." width="16" height="16"/><span style="margin-left: 10px; margin-bottom: 5px;">loading...<span></div>
+        </div>
+    </div>
+</apex:outputPanel>
+<!--<apex:outputPanel id="plCalendarInfo" rendered="{!AND(ISNULL($CurrentPage.parameters.id),ISNULL($CurrentPage.parameters.groupId))}">
+     <apex:pageBlock title="Information" id="pbInfo">
+        Please, select calendar.
+    </apex:pageBlock>
+</apex:outputPanel>-->
+</td>
+</tr>
+</table>
+<div id="colors" class="fcui-popup-colors">
+<table style="border-left-style:solid; border-color: #000; border-width: 1px; ">
+<tr>
+    <td><a href="#" class="fcui-popup-color-item" style="background-color:rgb(204, 51, 51);" onmouseover="this.style.borderColor='#000'" onmouseout="this.style.borderColor='#FFF'"  onclick="fcui_set_new_color('rgb(204, 51, 51)'); return false;"></a></td>
+    <td><a href="#" class="fcui-popup-color-item" style="background-color:rgb(221, 68, 119);" onmouseover="this.style.borderColor='#000'" onmouseout="this.style.borderColor='#FFF'" onclick="fcui_set_new_color('rgb(221, 68, 119)'); return false;"></a></td>
+    <td><a href="#"class="fcui-popup-color-item" style="background-color:rgb(153, 68, 153);" onmouseover="this.style.borderColor='#000'" onmouseout="this.style.borderColor='#FFF'" onclick="fcui_set_new_color('rgb(153, 68, 153)'); return false;"></a></td>
+    <td><a href="#" class="fcui-popup-color-item" style="background-color:rgb(102, 51, 204);" onmouseover="this.style.borderColor='#000'" onmouseout="this.style.borderColor='#FFF'" onclick="fcui_set_new_color('rgb(102, 51, 204)'); return false;"></a></td>
+    <td><a href="#" class="fcui-popup-color-item" style="background-color:rgb(51, 102, 153);" onmouseover="this.style.borderColor='#000'" onmouseout="this.style.borderColor='#FFF'" onclick="fcui_set_new_color('rgb(51, 102, 153)'); return false;"></a></td>
+    <td><a href="#" class="fcui-popup-color-item" style="background-color:rgb(51, 102, 204);" onmouseover="this.style.borderColor='#000'" onmouseout="this.style.borderColor='#FFF'" onclick="fcui_set_new_color('rgb(51, 102, 204)'); return false;"></a></td>
+    <td><a href="#" class="fcui-popup-color-item" style="background-color:rgb(34, 170, 153);" onmouseover="this.style.borderColor='#000'" onmouseout="this.style.borderColor='#FFF'" onclick="fcui_set_new_color('rgb(34, 170, 153)'); return false;"></a></td>
+</tr>
+<tr>
+    <td><a href="#" class="fcui-popup-color-item" style="background-color:rgb(50, 146, 98);" onmouseover="this.style.borderColor='#000'" onmouseout="this.style.borderColor='#FFF'" onclick="fcui_set_new_color('rgb(50, 146, 98)'); return false;"></a></td>
+    <td><a href="#" class="fcui-popup-color-item" style="background-color:rgb(16, 150, 24);" onmouseover="this.style.borderColor='#000'" onmouseout="this.style.borderColor='#FFF'" onclick="fcui_set_new_color('rgb(16, 150, 24)'); return false;"></a></td>
+    <td><a href="#" class="fcui-popup-color-item" style="background-color:rgb(102, 170, 0);" onmouseover="this.style.borderColor='#000'" onmouseout="this.style.borderColor='#FFF'" onclick="fcui_set_new_color('rgb(102, 170, 0)'); return false;"></a></td>
+    <td><a href="#" class="fcui-popup-color-item" style="background-color:rgb(170, 170, 17);" onmouseover="this.style.borderColor='#000'" onmouseout="this.style.borderColor='#FFF'" onclick="fcui_set_new_color('rgb(170, 170, 17)'); return false;"></a></td>
+    <td><a href="#" class="fcui-popup-color-item" style="background-color:rgb(214, 174, 0);" onmouseover="this.style.borderColor='#000'" onmouseout="this.style.borderColor='#FFF'" onclick="fcui_set_new_color('rgb(214, 174, 0)'); return false;"></a></td>
+    <td><a href="#" class="fcui-popup-color-item" style="background-color:rgb(238, 136, 0);" onmouseover="this.style.borderColor='#000'" onmouseout="this.style.borderColor='#FFF'" onclick="fcui_set_new_color('rgb(238, 136, 0)'); return false;"></a></td>
+    <td><a href="#" class="fcui-popup-color-item" style="background-color:rgb(221, 85, 17);" onmouseover="this.style.borderColor='#000'" onmouseout="this.style.borderColor='#FFF'" onclick="fcui_set_new_color('rgb(221, 85, 17)'); return false;"></a></td>
+</tr>
+<tr>
+    <td><a href="#" class="fcui-popup-color-item" style="background-color:rgb(168, 112, 112);" onmouseover="this.style.borderColor='#000'" onmouseout="this.style.borderColor='#FFF'" onclick="fcui_set_new_color('rgb(168, 112, 112)'); return false;"></a></td>
+    <td><a href="#" class="fcui-popup-color-item" style="background-color:rgb(140, 109, 140);" onmouseover="this.style.borderColor='#000'" onmouseout="this.style.borderColor='#FFF'" onclick="fcui_set_new_color('rgb(140, 109, 140)'); return false;"></a></td>
+    <td><a href="#" class="fcui-popup-color-item" style="background-color:rgb(98, 116, 135);" onmouseover="this.style.borderColor='#000'" onmouseout="this.style.borderColor='#FFF'" onclick="fcui_set_new_color('rgb(98, 116, 135)'); return false;"></a></td>
+    <td><a href="#" class="fcui-popup-color-item" style="background-color:rgb(112, 131, 168);" onmouseover="this.style.borderColor='#000'" onmouseout="this.style.borderColor='#FFF'" onclick="fcui_set_new_color('rgb(112, 131, 168)'); return false;"></a></td>
+    <td><a href="#" class="fcui-popup-color-item" style="background-color:rgb(92, 141, 135);" onmouseover="this.style.borderColor='#000'" onmouseout="this.style.borderColor='#FFF'" onclick="fcui_set_new_color('rgb(92, 141, 135)'); return false;"></a></td>
+    <td><a href="#" class="fcui-popup-color-item" style="background-color:rgb(137, 137, 81);" onmouseover="this.style.borderColor='#000'" onmouseout="this.style.borderColor='#FFF'" onclick="fcui_set_new_color('rgb(137, 137, 81)'); return false;"></a></td>
+    <td><a href="#" class="fcui-popup-color-item" style="background-color:rgb(176, 139, 89);" onmouseover="this.style.borderColor='#000'" onmouseout="this.style.borderColor='#FFF'" onclick="fcui_set_new_color('rgb(176, 139, 89)'); return false;"></a></td>
+</tr>      
+</table>
+</div>
+
+<div id="dlg_visible_for_user" title="Select Calendar to Display" style="display: none; padding-right:0px; padding-left: 0px;">
+    <div id="dlg_visible_for_user_text"  class="text-size"> 
+    Please select the calendars you'd like to display on the My Calendars page. 
+    Please note, only calendars you have access to will display on the list provided below.
+    </div>
+    <table width="450px" class="text-size">
+    <tr>
+        <td align="left">
+            <table style="height:100px;">
+                <tr>
+                    <td>
+                    <div id="list_of_all_calendars">
+                        <h5 >Available:</h5>
+                        <ul class="ui-state-highlight connectedVisbleCalendarsSortable"></ul>
+                    </div>
+                   </td>
+                   <td style=" width:40px;">
+                        &nbsp;
+                   </td>
+                   <td>
+                    <div id="list_of_visible_calendars">
+                        <h5>Selected:</h5>
+                        <ul class="ui-state-highlight connectedVisbleCalendarsSortable"></ul> 
+                    </div>
+                   </td>
+                 </tr>
+            </table>            
+        </td>
+    </tr>
+    </table>
+</div>
+
+</apex:page>

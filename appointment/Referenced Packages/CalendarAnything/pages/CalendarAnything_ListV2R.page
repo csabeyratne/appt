@@ -1,0 +1,786 @@
+<apex:page standardController="SLCA__CA_Settings__c" extensions="SLCA.CalendarAnything_ControllerV2R" sidebar="false">
+<apex:stylesheet value="{!URLFOR($Resource.SLCA__CalendarAnything, 'themes/standard/css/theme.css')}"/>
+<apex:includeScript value="{!URLFOR($Resource.SLCA__CalendarAnything, 'jquery/jquery-1.4.2.min.js')}"/>
+<apex:includeScript value="{!URLFOR($Resource.SLCA__CalendarAnything, 'jquery/jquery-ui-1.8.2.custom.min.js')}"/>
+<apex:includeScript value="{!URLFOR($Resource.SLCA__CalendarAnything, 'jquery/ui.timepicker.js')}"/>
+<apex:includeScript value="{!URLFOR($Resource.SLCA__CalendarAnything, 'jquery/jquery.validate.js')}"/>
+<apex:includeScript value="{!URLFOR($Resource.SLCA__CalendarAnything, 'jquery/filters-ui-1.0.js')}"/>
+<apex:includeScript value="{!URLFOR($Resource.SLCA__CalendarAnything, 'jquery/color-select-ui-1.0.js')}"/>
+<apex:includeScript value="{!URLFOR($Resource.SLCA__CalendarAnything, 'jquery/panels-ui-1.0.js')}"/>
+<apex:includeScript value="{!URLFOR($Resource.SLCA__CalendarAnything, 'jquery/extends-ui-1.0.js')}"/>
+<style>
+		input.text {
+			margin-bottom:5px; 
+			padding: 2px; 
+		}
+		
+		select.text {
+			margin-bottom:5px; 
+			padding: 2px; 
+		}
+		
+		.text-size { 
+			font-size: 0.85em;
+			font-family: Arial,Helvetica,sans-serif;
+			padding: 2px;
+		}
+
+		.ui-dialog-title { font-size: 1.0em; }
+		
+		fieldset { 
+			padding:0; 
+			border:0; 
+			margin-top:0px; 
+		}
+		
+		
+		.ui-button { 
+				outline: 0; 
+				margin:0;  
+				text-decoration:none;  !important; 
+				cursor:pointer; 
+				position: relative; 
+				ext-align: center; 
+		}
+		
+		.ui-dialog .ui-dialog-content .ui-widget-content { 
+			margin-left: 0px; 
+			margin-right: 0px; 
+			padding: 3px, 3px, 3px, 3px; 
+		}
+		.ui-widget input, .ui-widget select, .ui-widget textarea, .ui-widget button { font-size: 0.85em;}
+	    .cs-popup-color-item { 
+				width:15px;
+				height:15px;
+				border:1px solid #fff;
+				margin:0 4px 4px 0;
+				
+				text-decoration:none; 
+				margin-top: 3px;
+				display:block;
+		}
+		.ui-accordion-content { padding: 0 px, 0px, 0px, 0px;}
+    	.cs-popup-color-item a:hover { border-color:#000; }   
+		
+		.fcui-block-header {  background-color:#CCC; }
+		
+		.ui-form-label { width: 120px;  } 
+		
+		.cs-popup-colors { display: none; position: relative; background-color:#eeecd1; z-index: 999; }
+		
+		div ul { 
+			list-style-type: none; 
+			margin: 0; 
+			padding: 0; 
+			margin-bottom: 10px; 
+			font-size: .8em; 
+			overflow:auto;  
+			width: 185px; 
+			height:185px;
+		}
+		
+		h3 { display: block !important; }
+		
+		div ul li { 
+			margin: 5px; 
+			padding: 5px; 
+			width: 150px;  
+		}
+		
+		#list_of_object_fields { 
+			width: 190px; 
+			height:190px; 
+			overflow:visible;
+		}
+		#list_of_selected_fields {  
+			width: 190px; 
+			height:190px; 
+			overflow:visible;
+		}
+		h5 { 
+			font-size: 0.95em; 
+			margin: 0; 
+			padding: 5px; 
+			text-align:center; 
+			vertical-align:middle; 
+			padding-top:2px; 
+			font-family: Arial,Helvetica,sans-serif;
+		}
+</style>
+<script>
+function on_delete() {
+	return window.confirm('You are sure?');
+}
+
+jQuery.noConflict();    
+(function($) {
+	$(document).ready(function() {
+
+		var json_response = null;
+		var g_cid = null;
+		
+		function DialogInitialize() {
+			if(json_response != null) {
+				if( json_response.HoverPageAvailableFields != undefined &&
+					json_response.HoverPageSelectedFields != undefined) 
+				{
+					$("#dlg_display").SortablePanels({
+						clean : true,
+						panel1 : 'list_of_object_fields',
+						panel2 : 'list_of_selected_fields',
+						connected_class : 'connectedSortable',
+						panel1_list : json_response.HoverPageAvailableFields,
+						panel2_list : json_response.HoverPageSelectedFields						  
+					});
+				}
+
+                if( json_response.AvailableCalendars != undefined &&
+                    json_response.SelectedCalendars != undefined) 
+                {
+                    $("#select_calendars_dlg").SortablePanels({
+                        clean : true,
+                        panel1 : 'list_of_available_calendars',
+                        panel2 : 'list_of_selected_calendars',
+                        connected_class : 'connectedGroupsSortable',
+                        panel1_list : json_response.AvailableCalendars,
+                        panel2_list : json_response.SelectedCalendars                       
+                    });
+                }
+				
+				if( json_response.ObjectFields != undefined &&
+					json_response.UserFilters != undefined) 
+				{
+					$('#dlg_filters').html('').filterForm({ 
+						fields : json_response.ObjectFields, 
+						filterset : json_response.UserFilters 
+					});
+				}
+				
+				if( json_response.AllGroups != undefined &&
+					json_response.SelectedGroups != undefined) 
+				{
+					$("#dlg_display").SortablePanels({
+						clean : true,
+						panel1 : 'list_of_groups',
+						panel2 : 'list_of_selected_groups',
+						connected_class : 'connectedGroups',
+						panel1_list : json_response.AllGroups,
+						panel2_list : json_response.SelectedGroups					  
+					});
+				}
+				
+				if( json_response.Title != undefined ) 
+					$('#dlg_calendar_name').val(json_response.Title);
+
+                if( json_response.CalendarGroupName != undefined ) 
+                    $('#dlg_group_name').val(json_response.CalendarGroupName);
+				
+				if( json_response.Color != undefined )
+					$('#dlg_colors_popup').html('').ColorSelect({ nopopup: true, color: json_response.Color });
+				
+				//alert(json_response.TypeOfObjects);
+				if( json_response.TypeOfObjects != undefined) 
+					$('#dlg_object_type').SelectInitialize(json_response.TypeOfObjects, json_response.SelectedObjectType);
+				
+				if( json_response.Objects != undefined) 	
+					$('#dlg_object_name').SelectInitialize(json_response.Objects, json_response.SelectedObject);
+					
+				if( json_response.EntryFields != undefined) 	
+					$('#dlg_entry_label').SelectInitialize(json_response.EntryFields, json_response.SelectedEntryField);
+				
+				if( json_response.StartFields != undefined)	
+					$('#dlg_entry_start').SelectInitialize(json_response.StartFields, json_response.SelectedStartField);
+					
+				if( json_response.EndFields != undefined)	
+					$('#dlg_entry_end').SelectInitialize(json_response.EndFields, json_response.SelectedEndField);
+					
+				if( json_response.Visible != undefined)	{
+						$('#dlg_visible').CheckboxInitialize(json_response.Visible);
+				}
+					
+				if( json_response.OwnershipOfObjectRecords != undefined) {
+					$('#records').RadioInitializeByReturn(json_response.OwnershipOfObjectRecords);
+				}
+					
+				if( json_response.RestrictVisability != undefined ) {
+					$('#restricts').RadioInitializeByReturn(json_response.RestrictVisability);
+				}
+				
+				if( json_response.AdvancedOptionsValue != undefined ) {
+					$("#advanced_options_value").val( json_response.AdvancedOptionsValue);
+				}
+			}
+		}
+	
+		function loadingData(p_event, p_cid, p_additional) {
+			//$("#msg").append("loadingData | ");
+			$("body").loadingBar(true);
+			var isCache = false;
+			if(p_event == 'add') {
+				isCache = true;
+				title = "Add new calendar"; 	
+			} else {
+				title = "Edit Calendar"; 
+			}
+			var params = {};
+	        params['event'] = p_event;
+	        params['cid'] = p_cid;
+	        params['token'] = '{!SessionToken}';
+			if(p_additional != 'undefined') {
+				for(var name in p_additional) {
+					params[name] = p_additional[name];
+				}
+			}
+			$.ajax({
+	                url: '/apex/CalendarAnything_JSONV2R',
+	                //async:  false,
+	                type: 'POST',
+	                dataType: 'json',
+	                data: params,
+	                cache: isCache, 
+	                success: function(data){
+	                	json_response = data;
+	                	$("body").loadingBar(false);
+	                	if(p_event == "add" || p_event == "edit") {
+	                		DialogInitialize();
+	                		$("#dlg_add_edit").dialog( "option", "title", title );
+							$('#dlg_add_edit').dialog('open');
+	                	}
+                        
+                        if (p_event == "addGroup" || p_event == "editGroup")
+                        {
+                            DialogInitialize();
+                            $('#dlg_groups').dialog('open');
+                        } 
+	                	if (p_event == "save" || p_event == "delete" || p_event == "saveGroup" || p_event == "deleteGroup") {
+                            if (json_response.status.substring(0,5) == 'Error')
+                            {
+                                alert(json_response.status);
+                            }
+                            else
+                            {
+                                window.location.reload();
+                            }
+	                	} 
+	                	if(p_event == "change") {
+							DialogInitialize();	                	
+	                	}
+	                }
+	        });	
+		}
+		
+		
+		function SaveSettings() {
+			var params = {};
+			params['Title'] = $('#dlg_calendar_name').val();
+			params['Color'] = $('#cs_indicator').css('background-color');
+			params['SelectedObjectType'] = $('#dlg_object_type').val();
+			params['SelectedObject'] = $('#dlg_object_name').val();
+			params['SelectedEntryField'] = $('#dlg_entry_label').val();
+			params['SelectedStartField'] = $('#dlg_entry_start').val();
+			params['SelectedEndField'] = $('#dlg_entry_end').val();
+			params['Visible'] = $('#dlg_visible').CheckboxGetValue();
+			params['OwnershipOfObjectRecords'] = $('#records').RadioGetReturn();
+			params['RestrictVisability'] = $('#restricts').RadioGetReturn();
+			
+			var hover_result = $("#dlg_display").SortablePanelsGetResult(
+				{ panel1 : 'list_of_object_fields', panel2 : 'list_of_selected_fields'}
+			);
+			
+			//params['HoverPageAvailableFields'] = hover_result.panel1;
+			params['HoverPageSelectedFields'] = hover_result.panel2;
+			
+			
+			//filters
+			$("#dlg_filters div[id*=filter_row_]").each(function(idx){
+				var row_result= "";														 
+				$(this).children("select, input[type!=button]").each(function(idxi){
+					if( $(this).attr('type') != "checkbox" ) {														  
+						row_result += $(this).val() + ((idxi != 2)? "|" : "");
+					} else {
+						row_result += (($(this)[0].checked)? "true" : "false") + ((idxi != 2)? "|" : "");	
+					}
+				});
+				params['filters+' + idx] = row_result;
+			});
+
+			var groups_result = $("#dlg_display").SortablePanelsGetResult(
+				{ panel1 : 'list_of_groups', panel2 : 'list_of_selected_groups'}
+			);
+			
+			//params['AllGroups'] = groups_result.panel1;
+			params['SelectedGroups'] = groups_result.panel2;
+			
+			params['AdvancedOptionsValue'] = $("#advanced_options_value").val();
+			//print_object(params, 'msg');
+			
+			loadingData("save", g_cid, params);
+			//alert('SaveSettings 2');
+			
+		}
+
+        function SaveCalendarGroup() {
+            var params = {};
+            params['CalendarGroupName'] = $('#dlg_group_name').val();
+
+            var hover_result = $("#select_calendars_dlg").SortablePanelsGetResult(
+                { panel1 : 'list_of_available_calendars', panel2 : 'list_of_selected_calendars'}
+            );
+            
+            params['SelectedCalendars'] = hover_result.panel2;
+            
+            loadingData("saveGroup", g_cid, params);
+        }
+
+		function print_object(p_what, p_where) {
+			var $msg = $('#' + p_where);
+			$msg.append( " { " );
+			for(var it in p_what) {
+				if (typeof p_what[it] == 'object') {
+					$msg.append(it + " = " + print_object(p_what[it], p_where));
+				}
+				$msg.append(it + "  =  " + p_what[it] + " , ");
+			}
+			$msg.append(" } ");
+		}
+		
+		
+		//onload...
+		
+		$("body").ajaxError(function(e, xhr, settings, exception) {
+ 				alert('ajax error: ' + exception);
+ 				$("body").loadingBar(false);
+		});
+			
+		$("#step1, #step2, #step3, #step4, #step5").accordion({ 
+					header: 'h3' , 
+					collapsible: true,
+					fillSpace: false,
+					autoHeight: false,
+					animated: true,
+					clearStyle: true,
+					navigation: false
+		});
+		
+        function initCalendarDlg() {
+            $("#dlg_add_edit").dialog({
+                bgiframe: true,
+                autoOpen: false,
+                width: 550,
+                height: 550,
+                modal: true,
+                buttons: {
+                    'Cancel': function() {
+                        $(this).dialog('close');
+                        $(this).dialog('destroy');
+                        return false;
+                    },
+                    'Save': function() {
+                        SaveSettings();
+                        //$(this).dialog('close');
+                        //$(this).dialog('destroy');
+                        return false;
+                    }
+                }
+            });
+        }
+        function initCalendarGroupDlg(id) {
+            if (id == undefined)
+            {
+                $("#dlg_groups").attr('title', 'Add new group');
+            }
+            else
+            {
+                $("#dlg_groups").attr('title', 'Edit group');
+            }
+            $("#dlg_groups").dialog({
+                bgiframe: true,
+                autoOpen: false,
+                width: 550,
+                height: 550,
+                modal: true,
+                buttons: {
+                    'Cancel': function() {
+                        $(this).dialog('close');
+                        $(this).dialog('destroy');
+                        return false;
+                    },
+                    'Save': function() {
+                        SaveCalendarGroup();
+                        //$(this).dialog('close');
+                        //$(this).dialog('destroy');
+                        return false;
+                    }
+                }
+            });
+        }
+        
+        $("#dlg_add_btn").click(function(event) {
+            initCalendarDlg();
+            loadingData("add");
+            return false;
+        });
+                
+        $(".dlg-edit-btn").click(function(event) {
+            g_cid = $(this).attr("cid");
+            initCalendarDlg();
+            loadingData("edit", g_cid);
+        });
+
+        $("#dlg_add_group_btn").click(function(event) {
+            initCalendarGroupDlg();
+            loadingData("addGroup");
+            return false;
+        });
+                
+        $(".dlg-edit-group-btn").click(function(event) {
+            g_cid = $(this).attr("gid");
+            initCalendarGroupDlg(g_cid);
+            loadingData("editGroup", g_cid);
+        });
+        $(".delete-edit-group-btn").click(function(event) {
+            g_cid = $(this).attr("gid");
+            if( on_delete() ) {
+                loadingData("deleteGroup", g_cid);
+                //window.location.reload();
+            }
+        });
+		
+		$('#dlg_object_type').bind("change", function(event){
+			//($(this).attr('value'));
+			loadingData("change", g_cid, {"SelectedObjectType" : $(this).attr('value')}) 
+		});
+		
+		$('#dlg_object_name').bind("change", function(event){
+			//alert($(this).attr('value'));
+			loadingData("change", g_cid, {"SelectedObject" : $(this).attr('value')}) 
+		});
+		
+		$('#dlg_entry_start').bind("change", function(event){
+			//alert($(this).attr('value'));
+			loadingData("change", g_cid, 
+						{"SelectedStartField" : $(this).attr('value'),
+						 "SelectedObject" : $('#dlg_object_name').attr('value')}); 
+		});
+		
+		$(".delete-edit-btn").click(function(event) {
+			g_cid = $(this).attr("cid");
+			if( on_delete() ) {
+				loadingData("delete", g_cid);
+				//window.location.reload();
+			}
+		});
+	});		
+})(jQuery);
+
+</script>
+
+
+<apex:sectionHeader title="Calendars Control" subtitle="for {!$User.FirstName} {!$User.LastName}"/>
+<apex:form >
+<apex:pageBlock title="Calendar List ({!RecordsWithLabelsCount})" id="pbList">
+    <apex:facet name="header">
+        <div class="pbHeader">
+            <table cellspacing="0" cellpadding="0" border="0">
+                <tbody>
+                <tr>
+                    <td class="pbTitle" width="160px">
+                        <h2 class="mainTitle">Calendar List ({!RecordsWithLabelsCount})</h2>
+                    </td>
+                    <td>
+                       <button id="dlg_add_btn" class="ui-button ui-state-default ui-corner-all">New</button>
+                       &nbsp;&nbsp;&nbsp;
+                       <a href="/apex/CalendarAnythingV2R">
+                       		<button id="go_to_calendars_btn" class="ui-button ui-state-default ui-corner-all">Go to Calendars</button>
+                       </a>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+    	</div>
+    </apex:facet>
+    <apex:pageMessages />
+    <apex:pageBlockTable value="{!RecordsWithLabels}" var="r" rendered="true" >
+      <apex:column >
+        <apex:facet name="header">
+            <apex:outputText >Action</apex:outputText>
+        </apex:facet>
+        <apex:outputPanel id="thePanel" rendered="{!($User.Id == r.OwnerId) || isAdministrator}">
+		<a href="#" id="dlg_edit_btn_{!r.ID}" class="dlg-edit-btn" cid="{!r.ID}" >Edit</a>  
+        &nbsp;|&nbsp;
+        <a href="#" id="dlg_delete_btn_{!r.ID}" class="delete-edit-btn" cid="{!r.ID}" >Del</a>      
+      	<!-- <apex:commandLink value="delete" action="{!deleteCalendar}" onclick="return on_delete();">
+                <apex:param name="id" value="{!r.ID}"/>
+        </apex:commandLink>
+         -->
+         </apex:outputPanel>
+        </apex:column>       
+        <apex:column >
+            <apex:facet name="header">
+                <apex:outputText >Name</apex:outputText>
+            </apex:facet>
+			<a href="/apex/CalendarAnythingV2R?id={!r.ID}">{!r.Name}</a>
+        </apex:column>
+        <apex:column value="{!r.SLCA__Object__c}" />
+        <apex:column value="{!r.SLCA__OwnerFilter__c}" />
+        <apex:column value="{!r.SLCA__Description__c}" />
+        <apex:column value="{!r.SLCA__Start__c}" />
+        <apex:column value="{!r.SLCA__End__c}" />
+      </apex:pageBlockTable>
+</apex:pageBlock>
+
+<apex:pageBlock title="Groups of Calendars ({!AllGroupsCount})">
+	 <apex:facet name="header">
+        <div class="pbHeader">
+            <table cellspacing="0" cellpadding="0" border="0">
+                <tbody>
+                <tr>
+                    <td class="pbTitle" width="160px">
+                        <h2 class="mainTitle">Groups of Calendars ({!AllGroupsCount})</h2>
+                    </td>
+                    <td>
+                        <button id="dlg_add_group_btn" class="ui-button ui-state-default ui-corner-all">New</button>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+    	</div>
+    </apex:facet>
+    
+    <apex:pageBlockTable value="{!AllGroups}" var="group" rendered="true" >
+        <apex:column >
+            <apex:facet name="header">
+                <apex:outputText >Action</apex:outputText>
+            </apex:facet>
+            <a href="#" id="dlg_edit_group_btn_{!group.ID}" class="dlg-edit-group-btn" gid="{!group.ID}" >Edit</a>  
+            &nbsp;|&nbsp;
+            <a href="#" id="dlg_delete_group_btn_{!group.ID}" class="delete-edit-group-btn" gid="{!group.ID}" >Del</a>      
+        </apex:column>
+        <apex:column >
+            <apex:facet name="header">
+                <apex:outputText >Name</apex:outputText>
+            </apex:facet>
+            <a href="/apex/CalendarAnythingV2R?groupId={!group.ID}">{!group.Name}</a>
+        </apex:column>
+        <apex:column value="{!group.SLCA__CalendarList__c}" />
+    </apex:pageBlockTable>
+</apex:pageBlock>
+
+<div id="dlg_groups" title="Add new group" style="display: none; padding-right:0px; padding-left: 0px;  ">
+    <table width="450px" class="text-size">
+    <tr>
+        <td align="left">
+            <span class="ui-form-label">Group Name: </span>
+            <input type="text" name="group_name" id="dlg_group_name" class="text ui-widget-content ui-corner-all" />
+            <div id="select_calendars_dlg">
+            <table style="height:100px;">
+                <tr>
+                    <td>
+                    <div id="list_of_available_calendars">
+                        <h5 >Available:</h5>
+                        <ul class="ui-state-highlight connectedGroupsSortable"></ul>
+                    </div>
+                   </td>
+                   <td style=" width:40px;">
+                        <!--<input type="button" id="step3_left_btn" name="step3_left_btn" value="<"/>
+                        <br/>
+                        <input type="button" id="step3_right_btn" name="step3_right_btn" value=">"/>
+                        -->
+
+                   </td>
+                   <td>
+                    <div id="list_of_selected_calendars">
+                        <h5>Selected:</h5>
+                        <ul class="ui-state-highlight connectedGroupsSortable"></ul> 
+                    </div>
+                   </td>
+                 </tr>
+            </table>
+            </div>            
+        </td>
+
+    </tr>
+    </table>
+</div>
+
+<div id="dlg_add_edit" title="Add new calendar" style="display: none; padding-right:0px; padding-left: 0px;  ">
+	<div id="steps">
+     <div id="step1" class="text-size" >
+     	<h3 class="fcui-block-header"><a href="#">Step 1: Enter Calendar Name and Color</a></h3>
+        <div>
+                <table width="450px" >
+                <tr>
+                	<td align="left">
+                    	 <span class="ui-form-label">Calendar Name: </span>
+						 <input type="text" name="calendar_name" id="dlg_calendar_name" class="text ui-widget-content ui-corner-all" />
+                    </td>
+                	<td align="center">
+                		<span class="ui-form-label">Color:</span>
+                    </td>
+                    <td>
+                    	<div id="dlg_colors_popup">
+                        </div>    
+                    </td>
+                </tr>
+                </table>   
+        </div>
+     </div>
+     <div id="step2" class="text-size" >
+     	<h3 class="fcui-block-header"><a href="#">Step 2: Specify Object &amp; Entry Details</a></h3>
+        <div>
+        <table width="450px">
+        <tr>
+        	<td>
+            	<!-- inner table -->
+            	<table>
+                <tr>
+                	<td>
+                    	<span class="ui-form-label">Object Type: </span>	
+                    </td>
+                    <td>
+                    	<select name="object_type" id="dlg_object_type"  class="text ui-widget-content ui-corner-all" >
+                        </select>
+                    </td>
+
+                </tr>
+                <tr>
+                    <td>
+                    	<span class="ui-form-label">Object Name: </span>
+                    </td>
+                    <td>
+                    	<select name="object_name" id="dlg_object_name"  class="text ui-widget-content ui-corner-all" >
+
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                    	<span class="ui-form-label">Entry Label: </span>
+                    </td>
+                    <td>
+  						<select name="entry_label" id="dlg_entry_label"  class="text ui-widget-content ui-corner-all" >
+        		        </select>
+                    </td>
+                </tr>
+				</table>
+            </td>
+            <td align="right">
+	            <table>
+    	            <tr>
+        	        	<td>
+	                         <span class="ui-form-label">Entry Start:</span>
+                        </td>
+                        <td>
+                        	<select name="entry_start" id="dlg_entry_start"  class="text ui-widget-content ui-corner-all">
+		            	    </select>
+                        </td>
+                    </tr>   
+					<tr>
+                    	<td>
+	                         <span class="ui-form-label">Entry End: </span>
+                        </td>
+                        <td>
+                          	<select name="entry_end" id="dlg_entry_end"  class="text ui-widget-content ui-corner-all" >
+			        		</select>    	
+                        </td>
+                    </tr>		       
+					<tr>
+                    	<td>
+                        	<span class="ui-form-label">Visible: </span>
+                        </td>
+                        <td>
+                        	<!-- <label for="visible" class="text-size">Visible</label> -->
+	                        <input type="checkbox" name="visible" id="dlg_visible" />
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+        </table>   
+        </div>
+    </div>
+    <div id="step3" class="text-size" >
+     	<h3 class="fcui-block-header"><a href="#">Step 3: Specify Fields to Display </a></h3>
+        <div id="dlg_display">
+        	<table style="height:220px;">
+            	<tr>
+                	<td>
+					<div id="list_of_object_fields">
+						<h5 >Available:</h5>
+						<ul class="ui-state-highlight connectedSortable"></ul>
+					</div>
+                   </td>
+                   <td style=" width:40px;">
+                   		<!--<input type="button" id="step3_left_btn" name="step3_left_btn" value="<"/>
+                        <br/>
+                   		<input type="button" id="step3_right_btn" name="step3_right_btn" value=">"/>
+                        -->
+                   </td>
+                   <td>
+                    <div id="list_of_selected_fields">
+                        <h5>Selected:</h5>
+                        <ul class="ui-state-highlight connectedSortable"></ul> 
+                    </div>
+            	   </td>
+                 </tr>
+            </table>    
+        </div>
+    </div>
+    
+    <div id="step4" class="text-size">
+     	<h3 class="fcui-block-header"><a href="#">Step 4: Specify Filter Criteria</a></h3>
+        <div>
+            <div id="records">
+            	<span class="ui-form-label">Ownership:</span>
+                <input type="radio" id="my_records" return="My records" name="records" />
+                <label for="my_records" class="text-size">My Records</label>
+                <input type="radio" id="all_records" return="All records" name="records"/>
+                <label for="all_records" class="text-size">All Records</label>
+            </div>
+            <div id="filters" style="margin-top:10px;">
+            	<span class="ui-form-label">Filters:</span>	
+                <div id="dlg_filters"></div> 	
+            </div>
+        </div>
+    </div>
+    
+    <div id="step5" class="text-size" >
+     	<h3 class="fcui-block-header"><a href="#">Step 5: Restrict Visibility</a></h3>
+        <div>
+        	<div id="restricts">
+                <input type="radio" id="restricts_me" return="me" name="restricts" />
+            	<label for="restricts_me" class="text-size">Visible only to me</label>
+                <!-- <input type="radio" id="restricts_all" return="all" name="restricts" />
+                 <label for="restricts_all" class="text-size">Visible to all users</label> -->
+                <input type="radio" id="restricts_selected" return="selected" name="restricts"/> 
+                <label for="restricts_selected" class="text-size">Visible to certain groups of user</label>
+            </div>
+            <div id="groups">
+            <table style="height:220px;">
+            	<tr>
+                	<td>
+					<div id="list_of_groups">
+						<h5 >Available:</h5>
+						<ul class="ui-state-highlight connectedGroups"></ul>
+					</div>
+                   </td>
+                   <td style=" width:40px;">
+                   </td>
+                   <td>
+                    <div id="list_of_selected_groups">
+                        <h5>Selected:</h5>
+                        <ul class="ui-state-highlight connectedGroups"></ul> 
+                    </div>
+            	   </td>
+                 </tr>
+            </table>    
+            </div>
+        </div>
+    </div>
+    <div id="step6" class="text-size" >
+        &nbsp;
+    </div>
+  </div>
+</div>
+</apex:form>
+</apex:page>
