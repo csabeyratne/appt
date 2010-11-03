@@ -1,0 +1,21 @@
+<apex:page controller="SLCA.CalendarAnything_Info" sidebar="false" showheader="false" >
+<div class="bPageBlock secondaryPalette">
+	<div class="pbHeader">
+		<table  border="0" cellpadding="0" cellspacing="0">
+		<tr>
+		    <td class="pbTitle" colspan="2"><h2 class="mainTitle">{!objectLabel}</h2></td>
+		</tr>
+		</table>
+	</div>
+	<div class="pbBody">
+	    <table  class="detailList" border="0" cellpadding="0" cellspacing="0">
+<apex:repeat value="{!Fields}" var="field">
+	    <tr>
+	        <td class="labelCol">{!field.Label}</td>
+	        <td class="dataCol">{!field.Value}</td>
+	    </tr>
+</apex:repeat>	    
+	    </table>
+	</div>
+</div>
+</apex:page>
