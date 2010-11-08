@@ -19,7 +19,7 @@ global with sharing class CalendarController {
       CalTestingUtil tu = new CalTestingUtil();
       Group__c res;
       if (res == null) {
-      	res = new Group__c(); 
+        res = new Group__c(); 
       }
       ApexPages.StandardController sc = new ApexPages.StandardController(res);
       CalendarController cc = new CalendarController(sc);
@@ -29,7 +29,7 @@ global with sharing class CalendarController {
 /*----------------------------------------------------*/
 
 
-	
+    
     
   global class DisplayEvents {
       public String eventName       {get; set;}
@@ -74,17 +74,17 @@ global with sharing class CalendarController {
        }       
      
      public List<String> toArray(){
-     	List <String> returnVal = new String[9];
-     	returnVal.set(0,eventName);
-     	returnVal.set(1, description);
-     	returnVal.set(2,'false');
-     	returnVal.set(3,eventId);
-     	returnVal.set(4,startDate);
-     	returnVal.set(5,endDate);
-     	returnVal.set(6,groupNum.format());
-     	returnVal.set(7, personId);
-     	returnVal.set(8, personName);
-     	return returnVal;
+        List <String> returnVal = new String[9];
+        returnVal.set(0,eventName);
+        returnVal.set(1, description);
+        returnVal.set(2,'false');
+        returnVal.set(3,eventId);
+        returnVal.set(4,startDate);
+        returnVal.set(5,endDate);
+        returnVal.set(6,groupNum.format());
+        returnVal.set(7, personId);
+        returnVal.set(8, personName);
+        return returnVal;
      }
      
      private String escapeNewLine(String s){
@@ -102,7 +102,7 @@ global with sharing class CalendarController {
   //This method is not currently used, but may be useful to other developers
 /*     // returns a list of events
    public DisplayEvents[] getEvents() {
-   	 Group__c rsc;
+     Group__c rsc;
      if (lesevents == null) {
       lesevents = new DisplayEvents[]{};
       for (Event evt : [SELECT Id, Event_Name__c, isAllDayEvent, Description, 
@@ -121,16 +121,16 @@ global with sharing class CalendarController {
 */
 /*--------------------TEST--------------------------*/     
 /*  private static TestMethod void testGetEvents() { 
-		CalTestingUtil tu = new CalTestingUtil();
-		      Group__c res;
+        CalTestingUtil tu = new CalTestingUtil();
+              Group__c res;
       if (res == null) {
-      	res = new Group__c(); 
+        res = new Group__c(); 
       }
       ApexPages.StandardController sc = new ApexPages.StandardController(res);
-      	CalendarController cc = new CalendarController(sc);  
-      	cc.setupGroupNamesMap();    
-      	DisplayEvents[] de = cc.getEvents();
-      	System.assert(de!=null);
+        CalendarController cc = new CalendarController(sc);  
+        cc.setupGroupNamesMap();    
+        DisplayEvents[] de = cc.getEvents();
+        System.assert(de!=null);
   }*/
 /*----------------------------------------------------*/
 
@@ -141,8 +141,8 @@ global with sharing class CalendarController {
     List<String> eToA;
     Group__c rsc;
     Map <String, Integer> StaticGroupNamesMap = getStaticGroupNamesMap(); 
-  	List <List <String>> returnEvents = new List<List <String>>();
-  	List <Event> eventsFromDB = [SELECT Id, Event_Name__c, isAllDayEvent, Description, 
+    List <List <String>> returnEvents = new List<List <String>>();
+    List <Event> eventsFromDB = [SELECT Id, Event_Name__c, isAllDayEvent, Description, 
                            StartDateTime, EndDateTime, Subject, ResourceId__c,
                            StartDateTimeBackup__c, EndDateTimeBackup__c
                         FROM Event 
@@ -153,34 +153,34 @@ global with sharing class CalendarController {
       rsc =  [select Id,Name, Description__c, Resource_Type__c 
                                      from Group__c 
                                      where Id =:evt.ResourceId__c];
-		  eToA = new DisplayEvents(evt, rsc, StaticGroupNamesMap).toArray();
-		  returnEvents.add(eToA);
+          eToA = new DisplayEvents(evt, rsc, StaticGroupNamesMap).toArray();
+          returnEvents.add(eToA);
      }     
-	return returnEvents;
+    return returnEvents;
   }  
 
 /*--------------------TEST--------------------------*/    
     private static TestMethod void testGetAllEvents() {
-		CalTestingUtil tu = new CalTestingUtil();
-      	List<List<String>> evts = CalendarController.getAllEvents('2010-4-6 00:00:00', '2010-4-8 00:00:00');
-      	Integer i, j;
-      	for (i=0; i < evts.size(); i++){
-      		List<String> theStrings = evts.get(i);
-      		for (j=0; j<theStrings.size(); j++){
-      			if (j!=1) // object it is associated with. Will be null if not associated
-      				System.assert(theStrings.get(j)!=null);
-      		}
-      	}
+        CalTestingUtil tu = new CalTestingUtil();
+        List<List<String>> evts = CalendarController.getAllEvents('2010-4-6 00:00:00', '2010-4-8 00:00:00');
+        Integer i, j;
+        for (i=0; i < evts.size(); i++){
+            List<String> theStrings = evts.get(i);
+            for (j=0; j<theStrings.size(); j++){
+                if (j!=1) // object it is associated with. Will be null if not associated
+                    System.assert(theStrings.get(j)!=null);
+            }
+        }
   }
 /*----------------------------------------------------*/
 
-	Webservice static String getGroupObject(String curPage) {
-		PageReference pr = new PageReference(curPage);
-		String url = pr.getUrl();
-		
-		Map<String, String> param = pr.getParameters();
-		return curPage;
-	}
+    Webservice static String getGroupObject(String curPage) {
+        PageReference pr = new PageReference(curPage);
+        String url = pr.getUrl();
+        
+        Map<String, String> param = pr.getParameters();
+        return curPage;
+    }
   
   Webservice static String createEvent(String name ,String resourceId, String strtDate, String strtTime, String endDate, String endTime, String newEventDesc, String curPage){ 
     //******** name = userId **************************/
@@ -254,7 +254,7 @@ global with sharing class CalendarController {
   } 
     
   Webservice static Boolean updateEvent(String eventId, String newStartDate, String newEndDate){
-  	Event evt;
+    Event evt;
     try{ 
       evt = [select StartDateTime, EndDateTime, id, Subject, ResourceId__c from Event where Id =:eventId];
     } catch (Exception e){
@@ -281,13 +281,13 @@ global with sharing class CalendarController {
 
 /*--------------------TEST--------------------------*/    
   private static TestMethod void testUpdateEvents(){
-	CalTestingUtil tu = new CalTestingUtil();
-	datetime dt = datetime.now();
-  	datetime et = datetime.now().addHours(2);
-  	String dts = dt.year()+'-'+dt.month()+'-'+dt.day();
-  	String ets = et.year()+'-'+et.month()+'-'+et.day();
-  	Boolean update1 = CalendarController.updateEvent(tu.testEventId, '2010-04-10 12:00:00', '2010-04-10 15:00:00');
-	Boolean update2 = CalendarController.updateEvent(tu.testEventId, dts+' 07:45:00', ets+' 08:30:00');
+    CalTestingUtil tu = new CalTestingUtil();
+    datetime dt = datetime.now();
+    datetime et = datetime.now().addHours(2);
+    String dts = dt.year()+'-'+dt.month()+'-'+dt.day();
+    String ets = et.year()+'-'+et.month()+'-'+et.day();
+    Boolean update1 = CalendarController.updateEvent(tu.testEventId, '2010-04-10 12:00:00', '2010-04-10 15:00:00');
+    Boolean update2 = CalendarController.updateEvent(tu.testEventId, dts+' 07:45:00', ets+' 08:30:00');
   }
 /*----------------------------------------------------*/
 
@@ -306,14 +306,14 @@ global with sharing class CalendarController {
 
 /*--------------------TEST--------------------------*/   
   private static TestMethod void testEditEvent(){
-  	      Group__c res;
+          Group__c res;
       if (res == null) {
-      	res = new Group__c(); 
+        res = new Group__c(); 
       }
       ApexPages.StandardController sc = new ApexPages.StandardController(res);
     CalendarController cc = new CalendarController(sc);
     CalTestingUtil tu = new CalTestingUtil();
-    CalendarController.editEvent(tu.testEventId, 'newName', 'newDescription');  	
+    CalendarController.editEvent(tu.testEventId, 'newName', 'newDescription');      
   }
 /*----------------------------------------------------*/
 
@@ -326,9 +326,9 @@ global with sharing class CalendarController {
 
 /*--------------------TEST--------------------------*/    
   private static TestMethod void testDeleteEvents(){
-  	      Group__c res;
+          Group__c res;
       if (res == null) {
-      	res = new Group__c(); 
+        res = new Group__c(); 
       }
       ApexPages.StandardController sc = new ApexPages.StandardController(res);
     CalendarController cc = new CalendarController(sc);
@@ -365,23 +365,23 @@ global with sharing class CalendarController {
       CalTestingUtil tu = new CalTestingUtil();
             Group__c res;
       if (res == null) {
-      	res = new Group__c(); 
+        res = new Group__c(); 
       }
       ApexPages.StandardController sc = new ApexPages.StandardController(res);
       CalendarController cc = new CalendarController(sc);
       List<W2CPerson> thePeople = cc.getW2CPeople();
       Integer i;
       for (i=0;i<thePeople.size(); i++) {
-      	System.assert(thePeople[i].userId!=null);
+        System.assert(thePeople[i].userId!=null);
       }
     }
 /*----------------------------------------------------*/
 
 
    /* Return list of names of the groups */
-  	public List<String> getBigGroups() {
-		 DescribeSObjectResult descSObjectRslt;
-		 List<String> entries = new List<String>();
+    public List<String> getBigGroups() {
+         DescribeSObjectResult descSObjectRslt;
+         List<String> entries = new List<String>();
          Schema.DescribeFieldResult R =  Group__c.Resource_Type__c.getDescribe();
          List<Schema.PicklistEntry> P = R.getPicklistValues();
 
@@ -391,18 +391,18 @@ global with sharing class CalendarController {
      return entries;
   }
 
-/*--------------------TEST--------------------------*/  	
-	private static TestMethod void testGetBigGroups() {
-		CalTestingUtil tu = new CalTestingUtil();
-		      Group__c res;
+/*--------------------TEST--------------------------*/      
+    private static TestMethod void testGetBigGroups() {
+        CalTestingUtil tu = new CalTestingUtil();
+              Group__c res;
       if (res == null) {
-      	res = new Group__c(); 
+        res = new Group__c(); 
       }
       ApexPages.StandardController sc = new ApexPages.StandardController(res);
-      	CalendarController cc = new CalendarController(sc); 
-      	List<String> bg = cc.getBigGroups();
-      	System.assert(bg!=null);
-	}
+        CalendarController cc = new CalendarController(sc); 
+        List<String> bg = cc.getBigGroups();
+        System.assert(bg!=null);
+    }
 /*----------------------------------------------------*/
   
   Webservice static List<String> groupsNames() {
@@ -418,29 +418,29 @@ global with sharing class CalendarController {
 
 /*--------------------TEST--------------------------*/      
     private static TestMethod void testGroupsNames() {
-		CalTestingUtil tu = new CalTestingUtil();
-      	List<String> gn = CalendarController.groupsNames();
-      	System.assert(gn!=null);  	
+        CalTestingUtil tu = new CalTestingUtil();
+        List<String> gn = CalendarController.groupsNames();
+        System.assert(gn!=null);    
     }
 /*----------------------------------------------------*/
 
 
   public class subgroup{
-  	  public String   name            {get; set;}
+      public String   name            {get; set;}
       public String   description     {get; set;}
       public Integer  groupNum        {get; set;}
       public String   Id              {get; set;}
       public String   startDate       {get; set;}
       public String   endDate         {get; set;}
-  	
-  	  public subgroup(Group__c g, Integer gNum){
-  		  name        = g.Name;
-  		  Id          = g.Id;
-  		  groupNum    = gNum;
-  		  description = escapeNewLine(g.Description__c);
-  		  startDate   = '0000-00-00 00:00:00';
-  		  endDate     = '0000-00-00 00:00:00';
-  	}
+    
+      public subgroup(Group__c g, Integer gNum){
+          name        = g.Name;
+          Id          = g.Id;
+          groupNum    = gNum;
+          description = escapeNewLine(g.Description__c);
+          startDate   = '0000-00-00 00:00:00';
+          endDate     = '0000-00-00 00:00:00';
+    }
     
     private String escapeNewLine(String s){
       if(s == null)
@@ -465,17 +465,17 @@ global with sharing class CalendarController {
   }
 
 /*--------------------TEST--------------------------*/   
- 	private static TestMethod void testGetSubgroups() {
-		CalTestingUtil tu = new CalTestingUtil();
-		      Group__c res;
+    private static TestMethod void testGetSubgroups() {
+        CalTestingUtil tu = new CalTestingUtil();
+              Group__c res;
       if (res == null) {
-      	res = new Group__c(); 
+        res = new Group__c(); 
       }
       ApexPages.StandardController sc = new ApexPages.StandardController(res);
-      	CalendarController cc = new CalendarController(sc); 
-      	List<subgroup> sb = cc.getSubgroups();
-      	System.assert(sb!=null);	
- 	}
+        CalendarController cc = new CalendarController(sc); 
+        List<subgroup> sb = cc.getSubgroups();
+        System.assert(sb!=null);    
+    }
 /*----------------------------------------------------*/
 
     
@@ -486,7 +486,7 @@ global with sharing class CalendarController {
       }
       else{
         Notification='Newly created events will be associated with the '+w+': '+obName;        
-		    showMessage = true;
+            showMessage = true;
       }
     }  
 
@@ -495,7 +495,7 @@ global with sharing class CalendarController {
       CalTestingUtil tu = new CalTestingUtil();
             Group__c res;
       if (res == null) {
-      	res = new Group__c(); 
+        res = new Group__c(); 
       }
       ApexPages.StandardController sc = new ApexPages.StandardController(res);
       CalendarController cc = new CalendarController(sc);
@@ -524,7 +524,7 @@ global with sharing class CalendarController {
       CalTestingUtil tu = new CalTestingUtil();
             Group__c res;
       if (res == null) {
-      	res = new Group__c(); 
+        res = new Group__c(); 
       }
       ApexPages.StandardController sc = new ApexPages.StandardController(res);
       CalendarController cc = new CalendarController(sc);
@@ -560,7 +560,7 @@ global with sharing class CalendarController {
       CalTestingUtil ct = new CalTestingUtil();
             Group__c res;
       if (res == null) {
-      	res = new Group__c(); 
+        res = new Group__c(); 
       }
       ApexPages.StandardController sc = new ApexPages.StandardController(res);
       CalendarController cc = new CalendarController(sc);
@@ -578,8 +578,8 @@ global with sharing class CalendarController {
     
 
   private static Map<String, Integer> getStaticGroupNamesMap(){
-  	Map <String, Integer> returnVal = new Map<String, Integer>();
-  	Schema.DescribeFieldResult R =  Group__c.Resource_Type__c.getDescribe();
+    Map <String, Integer> returnVal = new Map<String, Integer>();
+    Schema.DescribeFieldResult R =  Group__c.Resource_Type__c.getDescribe();
     List<Schema.PicklistEntry> P = R.getPicklistValues();
     Integer i;
     for(i=0;i<P.size();i++){
@@ -601,17 +601,17 @@ global with sharing class CalendarController {
     }
 
 /*--------------------TEST--------------------------*/  
-	private static TestMethod void testGetfullUserId() {
-		CalTestingUtil tu = new CalTestingUtil();
-		      Group__c res;
+    private static TestMethod void testGetfullUserId() {
+        CalTestingUtil tu = new CalTestingUtil();
+              Group__c res;
       if (res == null) {
-      	res = new Group__c(); 
+        res = new Group__c(); 
       }
       ApexPages.StandardController sc = new ApexPages.StandardController(res);
-      	CalendarController cc = new CalendarController(sc);
-		String userID = cc.getfullUserId();	
-		System.assert(userID!=null);
-	}
+        CalendarController cc = new CalendarController(sc);
+        String userID = cc.getfullUserId(); 
+        System.assert(userID!=null);
+    }
 /*----------------------------------------------------*/
 
   private static String dateFix(String newDate){
@@ -630,22 +630,22 @@ global with sharing class CalendarController {
 /*----------------------------------------------------*/
 
   Webservice static String getUserName(String userId){
-  	User u = [Select Name, Id from User where Id = :userId];
-  	return u.Name; 	
+    User u = [Select Name, Id from User where Id = :userId];
+    return u.Name;  
   }
 
 /*--------------------TEST--------------------------*/  
   private static TestMethod void testGetUserName(){
-		CalTestingUtil tu = new CalTestingUtil();
-		      Group__c res;
+        CalTestingUtil tu = new CalTestingUtil();
+              Group__c res;
       if (res == null) {
-      	res = new Group__c(); 
+        res = new Group__c(); 
       }
       ApexPages.StandardController sc = new ApexPages.StandardController(res);
-		CalendarController cc = new CalendarController(sc);
-      	String userID = cc.getfullUserId();
-      	String userName = CalendarController.getUserName(userID);
-      	System.assert(userName!=null);
+        CalendarController cc = new CalendarController(sc);
+        String userID = cc.getfullUserId();
+        String userName = CalendarController.getUserName(userID);
+        System.assert(userName!=null);
   }
 /*----------------------------------------------------*/
 
@@ -656,20 +656,20 @@ global with sharing class CalendarController {
     Long s2;
     Long e2;
     for(Event e : events){
-    	if(e.Id != eventId){
-	    	s2 = e.StartDateTime.getTime();
-	    	e2 = e.EndDateTime.getTime();
-	    	if(s1<s2 && e1>s2 &&e2>e1)
-	    	 return true;
-	    	if(s1<=s2 && e2<=e1)
-	    	 return true;
-	    	if(s2<=s1 && e1<=e2)
-	    	 return true;
-	    	if(s2<s1 && s1<e2 && e2<e1)
-	    	 return true;
-    	}   	
-    }  	
-  	return false;
+        if(e.Id != eventId){
+            s2 = e.StartDateTime.getTime();
+            e2 = e.EndDateTime.getTime();
+            if(s1<s2 && e1>s2 &&e2>e1)
+             return true;
+            if(s1<=s2 && e2<=e1)
+             return true;
+            if(s2<=s1 && e1<=e2)
+             return true;
+            if(s2<s1 && s1<e2 && e2<e1)
+             return true;
+        }       
+    }   
+    return false;
   }    
 
 /*--------------------TEST--------------------------*/    

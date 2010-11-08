@@ -48,12 +48,12 @@ public with sharing class UIDemoController extends PageControllerBase {
       
       public static testMethod void testUIDemoCon() 
       {
-      	
-      	TestObject__c to = new TestObject__c();
-      	ApexPages.StandardController sc = new ApexPages.StandardController(to);
-      	UIDemoController con = new UIDemoController(sc);
-      	con.getFieldNames();
-      	con.save();
-      	
+        
+        TestObject__c to = new TestObject__c();
+        ApexPages.StandardController sc = new ApexPages.StandardController(to);
+        UIDemoController con = new UIDemoController(sc);
+        con.getFieldNames();
+        con.save();
+        
       }
 }

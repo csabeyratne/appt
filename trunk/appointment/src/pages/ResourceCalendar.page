@@ -1,4 +1,4 @@
-<apex:page standardStylesheets="false" standardController="Group__c" extensions="CalendarController"	showHeader="true" sidebar="false" cache="false" sidebar="true">
+<apex:page standardStylesheets="false" standardController="Group__c" extensions="CalendarController" showHeader="true" sidebar="false" cache="false">
 
       <!--------------------------- Required files and reference ---------------------------------->
     <apex:stylesheet value="{!URLFOR($Resource.web2cal, 'css/web2cal.css')}"/>

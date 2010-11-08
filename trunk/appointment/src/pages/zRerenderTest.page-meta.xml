@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ApexPage xmlns="http://soap.sforce.com/2006/04/metadata">
-    <apiVersion>19.0</apiVersion>
+    <apiVersion>20.0</apiVersion>
     <description>Partial Page Updates with Visualforce and APEX by Tim Inman</description>
     <label>zRerenderTest</label>
     <packageVersions>
@@ -17,6 +17,11 @@
         <majorNumber>1</majorNumber>
         <minorNumber>12</minorNumber>
         <namespace>INFA</namespace>
+    </packageVersions>
+    <packageVersions>
+        <majorNumber>1</majorNumber>
+        <minorNumber>0</minorNumber>
+        <namespace>SLCA</namespace>
     </packageVersions>
     <packageVersions>
         <majorNumber>1</majorNumber>

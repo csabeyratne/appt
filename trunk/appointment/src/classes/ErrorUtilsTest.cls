@@ -10,7 +10,7 @@ private class ErrorUtilsTest {
         );
         Exception sampleException = null;
         try{
-        	sampleException.getMessage();
+            sampleException.getMessage();
         }catch(System.NullPointerException e){
             sampleException = e;
         }

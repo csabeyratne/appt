@@ -1,4 +1,4 @@
-public class JsonUtils {
+public class JSONUtils {
 
     public static String JSENCODE(String s)
     {
@@ -9,7 +9,7 @@ public class JsonUtils {
     // see: http://community.salesforce.com/t5/Apex-Code-Development/Building-a-reusable-JSON-component/m-p/172428
     // and: http://joe-ferraro.com/2009/04/extjs-vf-json/
     
-    public static String getJsonFromObject(String objectName, List<String> columns, String filterString)
+    public static String getJSONFromObject(String objectName, List<String> columns, String filterString)
      {
         if(filterString == null)
             filterString = '';
@@ -17,7 +17,7 @@ public class JsonUtils {
             String jsonData = '[ ';
             try {
                 
-                //System.debug('getJsonifiedObjectRecords for:' + objectName);
+                //System.debug('getJSONifiedObjectRecords for:' + objectName);
                   
                 String queryString = 'Select id,';
                   
@@ -72,7 +72,7 @@ public class JsonUtils {
             }
             catch(Exception e)
             {   
-                System.debug('Bad query in Jsonify Call ' + e);         
+                System.debug('Bad query in JSONify Call ' + e);         
             }
 
         jsonData += ']';
@@ -96,10 +96,10 @@ public class JsonUtils {
             return json;
         }
 
-   public static String jsonify(List<JsonObject> records)
+   public static String jsonify(List<JSONObject> records)
         {
             String json = '[ ';
-            for(JsonObject r : records) {
+            for(JSONObject r : records) {
                 //r = r.ValuetoString().trim();  
                 json += '' + r.ValuetoString() + ',';  
             }
