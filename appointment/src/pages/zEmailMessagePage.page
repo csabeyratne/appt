@@ -19,7 +19,7 @@
         </apex:facet>
         <apex:form >
             <apex:pageblocktable value="{!Messages}" var="e" id="emailtable"
-                bgcolor="#F3F3EC" styleClass="list" rowClasses="dataRow"
+                styleClass="list" rowClasses="dataRow"
                 onRowMouseOver="hiOn(this);" onRowMouseOut="hiOff(this);">
                 <apex:column >
                     <apex:facet name="header">

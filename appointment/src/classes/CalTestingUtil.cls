@@ -12,7 +12,7 @@ public with sharing class CalTestingUtil {
   public String testEventId   {get; set;}
   
   public CalTestingUtil(){
-  	makeResource();
+    makeResource();
     makeAccount();
     makeAsset();
     makeCampaign();
@@ -26,63 +26,63 @@ public with sharing class CalTestingUtil {
   }
   
   private static testmethod void testConstructor(){
-  	CalTestingUtil ctu = new CalTestingUtil();
+    CalTestingUtil ctu = new CalTestingUtil();
   }
   
   private void makeContact(){
-  	Contact c = new Contact();
-  	c.FirstName = 'test';
-  	c.LastName= 'test';
-  	c.Email = 'test@test.com';
-  	insert c;
-  	contactId = c.Id;
+    Contact c = new Contact();
+    c.FirstName = 'test';
+    c.LastName= 'test';
+    c.Email = 'test@test.com';
+    insert c;
+    contactId = c.Id;
   }
   
   private void makeSolution(){
-  	Solution s = new Solution();
-  	s.SolutionName = 'test';
-  	insert s;
-  	solutionId = s.Id;
+    Solution s = new Solution();
+    s.SolutionName = 'test';
+    insert s;
+    solutionId = s.Id;
   }
   
   private void makeOpportunity(){
-  	Opportunity o = new Opportunity();
-  	o.Name='test';
-  	o.CloseDate = Date.today();
-  	o.StageName='test';
-  	insert o;
-  	opportunityId = o.Id;
+    Opportunity o = new Opportunity();
+    o.Name='test';
+    o.CloseDate = Date.today();
+    o.StageName='test';
+    insert o;
+    opportunityId = o.Id;
   }
   
   
   private void makeCase(){
-  	Case c = new Case();
-  	c.Status='test';
-  	c.Origin = 'test';
-  	insert c;
-  	caseId = c.Id;
+    Case c = new Case();
+    c.Status='test';
+    c.Origin = 'test';
+    insert c;
+    caseId = c.Id;
   }
   
   private void makeCampaign(){
-  	Campaign c = new Campaign();
-  	c.Name = 'test';
-  	insert c;
-  	campaignId = c.Id;
+    Campaign c = new Campaign();
+    c.Name = 'test';
+    insert c;
+    campaignId = c.Id;
   }
   
   private void makeAsset(){
-  	Asset a = new Asset();
-  	a.Name = 'test';
-  	a.AccountId = accountId;
-  	insert a;
-  	assetId = a.Id;
-  	
+    Asset a = new Asset();
+    a.Name = 'test';
+    a.AccountId = accountId;
+    insert a;
+    assetId = a.Id;
+    
   }
   private void makeAccount(){
-  	Account a = new Account();
-  	a.Name = 'test tester';
-  	insert a;
-  	accountId = a.Id;
+    Account a = new Account();
+    a.Name = 'test tester';
+    insert a;
+    accountId = a.Id;
   }
  
   private void makeLead(){
@@ -103,13 +103,13 @@ public with sharing class CalTestingUtil {
   }
   
   private void makeEvents(){
-  	datetime dt = datetime.now();
-  	datetime et = datetime.now().addHours(2);
-  	Pagereference pr = new Pagereference('/apex/basicCalendar');
+    datetime dt = datetime.now();
+    datetime et = datetime.now().addHours(2);
+    Pagereference pr = new Pagereference('/apex/basicCalendar');
     testEventId = CalendarController.createEvent(Userinfo.getUserId(), resourceId, dt.Date().format(), '7:00 AM', et.Date().format(), '8:00 AM', 'new test', pr.getUrl());
     pr = new Pagereference('/apex/basicCalendar?wId='+accountId+'&w=account');
     CalendarController.createEvent(Userinfo.getUserId(), resourceId, dt.Date().format(), '8:15 AM', et.Date().format(), '9:00 AM', 'new test', pr.getUrl());
-  	pr = new Pagereference('/apex/basicCalendar?wId='+leadId+'&w=lead');
+    pr = new Pagereference('/apex/basicCalendar?wId='+leadId+'&w=lead');
     CalendarController.createEvent(Userinfo.getUserId(), resourceId, dt.Date().format(), '9:15 AM', et.Date().format(), '10:00 AM', 'new test', pr.getUrl());
     pr = new Pagereference('/apex/basicCalendar?wId='+leadId+'&w=lead');
     CalendarController.createEvent(Userinfo.getUserId(), resourceId, dt.Date().format(), '10:15 AM', et.Date().format(), '11:00 AM', 'new test', pr.getUrl());
