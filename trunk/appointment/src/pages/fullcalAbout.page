@@ -1,0 +1,44 @@
+<apex:page >
+<div class="about" style="font-size:1.3em;padding:16px;"  >
+<h1>Congratulations</h1>
+
+<p>The Chatter calendar allows you to view the calendar for each memeber of a Chatter Group.  </p>
+
+<ul><li>Create a Chatter group with 3-7 members, more than that and the calendar may become slow</li>
+
+<li>Enter that group name in the <a href="/apex/fullcalGroup">Calendar Group View</a> tab and select that group to view</li></ul>
+
+<p>You should now see the users calendars for day, week and month</p>
+
+<p>The Day View tab is experimental</p>
+
+<p>Features</p>
+
+<ul><li>Click to create a new event</li>
+<li>Drag to move an event</li>
+<li>Drag to resize</li>
+<li>Drag a user name to change the owner of an event</li>
+<li>Click a user name to hide or show their events</li>
+<li>Hoover over event to see details</li>
+<li>Worktime events do not allow drag</li>
+
+<li>Events with a type of 'Available' are displayed differently on day view</li>
+</ul>
+
+
+<p>Missing features</p>
+
+<ul>
+<li>Day starting time should be in a custom setting</li>
+<li>Create new events does not insert chatter to the group</li>
+<li>Day view does not move events</li>
+<li>Day view does not resize events</li>
+<li>Creating events makes current user the owner</li>
+<li>Day view does not create new events</li>
+<li>Quick Edit does not save</li>
+<li>Hover dialogs are not well formatted</li>
+<li>Calendar day view does not color events by owner</li>
+</ul>
+ 
+</div>
+</apex:page>

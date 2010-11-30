@@ -5,18 +5,8 @@
     <label>StaffScheduleEdit</label>
     <packageVersions>
         <majorNumber>1</majorNumber>
-        <minorNumber>8</minorNumber>
-        <namespace>EasyDescribe</namespace>
-    </packageVersions>
-    <packageVersions>
-        <majorNumber>1</majorNumber>
         <minorNumber>23</minorNumber>
         <namespace>EasyPage</namespace>
-    </packageVersions>
-    <packageVersions>
-        <majorNumber>1</majorNumber>
-        <minorNumber>12</minorNumber>
-        <namespace>INFA</namespace>
     </packageVersions>
     <packageVersions>
         <majorNumber>1</majorNumber>

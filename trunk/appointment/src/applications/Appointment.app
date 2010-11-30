@@ -24,4 +24,10 @@
     <tab>Promotion__c</tab>
     <tab>Treatment_History__c</tab>
     <tab>Vendor__c</tab>
+    <tab>Calendar_Settings__c</tab>
+    <tab>Calendar_Filters__c</tab>
+    <tab>Calendar_Group__c</tab>
+    <tab>Calendar_Group_Member__c</tab>
+    <tab>Calendar_Field__c</tab>
+    <tab>Calendar_By_User__c</tab>
 </CustomApplication>

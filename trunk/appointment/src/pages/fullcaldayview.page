@@ -1,0 +1,232 @@
+<apex:page Controller="fullcalUser" sidebar="false">
+	<apex:stylesheet value="/sCSS/20.0/sprites/1288206287000/Theme3/default/chatter.css" />
+
+    <apex:stylesheet value="{!URLFOR($Resource.fullcalendar_148, '/css/custom/jquery-ui-1.7.custom.css')}" />
+    <apex:stylesheet value="{!URLFOR($Resource.fullcalendar_148, '/fullcalendar/fullcalendar.css')}" />
+    <apex:stylesheet value="{!URLFOR($Resource.fullcalendar_148, '/qtip/dist/jquery.qtip.css')}" />
+ 
+    <script type='text/javascript' src="{!URLFOR($Resource.fullcalendar_148,'/jquery/jquery-1.4.3.min.js')}"></script>
+    <script type="text/javascript" src="{!URLFOR($Resource.fullcalendar_148, '/jquery/jquery_ba_dotimeout.js')}"></script>
+	<script type='text/javascript' src="{!URLFOR($Resource.fullcalendar_JS)}"  ></script>
+	<script type="text/javascript" src="{!URLFOR($Resource.fullcalendar_148, '/qtip/dist/jquery.qtip.js')}"></script>
+    <script type="text/javascript" src="{!URLFOR($Resource.fullcalendar_148, '/jquery/jquery-ui-1.8.6.custom.min.js')}"></script>
+	
+	<apex:include pageName="fullcalUtil_JS" />
+	<apex:form >
+	<div id='loading' style='display:none' >loading...</div>
+	
+	<table class="fc-header"><tbody><tr><td class="fc-header-left"><table><tbody><tr><td>
+	<div class="fc-button-prev fc-state-default fc-corner-left fc-no-right" alt="prev"><a><span>&nbsp;◄&nbsp;</span></a></div></td><td>
+	<div class="fc-button-next fc-state-default fc-corner-right" alt="next"><a><span>&nbsp;►&nbsp;</span></a></div>
+	</td><td><span class="fc-header-space"></span></td><td>
+	<div class="fc-button-today fc-state-default fc-corner-left fc-corner-right fc-state-disabled"><a><span>today</span></a></div></td>
+	</tr></tbody></table></td>
+	
+	<td class="fc-header-center">
+	<table><tbody><tr><td><h2 class="fc-header-title">Monday, Nov 1, 2010</h2>
+	</td></tr></tbody></table></td>
+	
+	<td class="fc-header-right"><table><tbody><tr><td>
+	</td><td>
+	</td><td>
+	</td></tr></tbody></table>
+	</td></tr></tbody></table>
+	
+	<apex:outputPanel id="userList" styleclass="calendars feedcontainer cxfeedcontainer" >
+	      <apex:repeat value="{!Users}" var="u" >
+	          <div class="ui-user-item" >
+	          
+	          <div class="cxfeeditem feeditem">
+	          	<span style="display: none;" class="feeddata cxfeeditemid" >{!u.u.id}</span>
+	          
+	          	<span><a href="/{!u.u.id}">
+	          			<img width="45" height="45" title="{!u.u.name}" class="feeditemusericon" 
+	          					alt="{!u.u.name}"  src="{!u.u.SmallPhotoUrl}" />
+	          		</a>
+	          	</span>
+	          	<div class="feeditemcontent cxfeeditemcontent">
+	          		<div>
+			          	<span class="feeditemfirstentity"><a href="/{!u.u.id}">{!u.u.name}</a></span>
+			          	<span class="feeditemtext">{!u.u.currentstatus}</span>
+			       </div>
+	          	<div class="feedclearfloat"></div>
+	        	</div>
+	         </div>
+		 
+	          <div class="calendarDiv" alt="{!u.u.id}" id="{!u.u.id}"></div>
+	          </div>
+	      </apex:repeat>
+	</apex:outputPanel>
+	
+	
+	<div class="ui-widget" style="margin-top:2em;  padding: 5px 5px; font-family:Arial; display:none;">
+	    js debug log :
+	    <div id="log" style="height: 1300px; width: 420px; overflow: auto;" class="ui-widget-content"></div>
+	</div>
+	
+	</apex:form>
+	
+<script type='text/javascript'>
+    
+	function loading_complete() { 
+	}
+	function dayClickCallback  (date, allDay, jsEvent, view ) { 
+	}
+	
+	var cal_opts = { 
+		height: 950,
+		width: 270,  
+		defaultEventMinutes: 15,
+		slotMinutes: 15,
+		defaultView: 'agendaDay', 
+		allDayDefault: false, 
+		allDaySlot: false,
+		minTime: 8,
+		maxTime: 19,
+		firstHour: 8,
+		
+		eventRender: function(event, element) {
+			// all events get colored by their type
+			
+			if ( event.type != '' ) element.addClass( event.type.toLowerCase() );
+	        
+	       	if ( event.type == 'Available' ) {  
+	        	element.addClass('available');
+	        	 /* 
+	        	  * it's not a real event, rather shows availability
+	        	  * color the background to indicate that the user is 
+	        	  * working at this time
+     	  		  */
+		     	var cal = jQuery(element).closest('.calendarDiv');
+		     	var minMinute = jQuery.fullCalendar.parseTime( cal_opts['minTime'] );
+		     	
+				var maxMinute = jQuery.fullCalendar.parseTime( cal_opts['maxTime'] ); 
+				var eMin  = jQuery.fullCalendar.parseTime(  event.start );
+		     	var eMax = jQuery.fullCalendar.parseTime( event.end );
+		     	
+		     	var	d = jQuery.fullCalendar.zeroDate(); 
+				var maxd = jQuery.fullCalendar.addMinutes(jQuery.fullCalendar.cloneDate(d), maxMinute);
+				jQuery.fullCalendar.addMinutes(d, minMinute);
+		
+		     	for (i=0; d < maxd; i++) { // loop across the min slots of the day
+					var minutes = d.getMinutes();
+		     		var j = jQuery.fullCalendar.parseTime( d );
+		     		if ( j >= eMin && j < eMax ) { 
+		     			cal.find('.fc-slot'+i).addClass('fc-state-working');	// color this slot 
+		     		}
+					jQuery.fullCalendar.addMinutes(d, cal_opts['slotMinutes']);
+		     	}
+		     	
+		    	return false; 				// it's not a real event, rather shows availability
+	        }
+	        
+			addToolTipToEvent(element,event);	        
+	      	return true;		
+	    },
+	    
+		eventAfterRender: function (event, element) {
+			//log('event after render '+event.title);
+		},
+		
+		timeFormat: {  
+			agenda: 'h:mm{ - h:mm}',
+			'': 'h(:mm)t'	
+		} ,
+//		header: {		left: 'prev,next,today',center: '',	right: 'agendaWeek,agendaDay' 		},
+		header: {		left: '',center: '',	right: '' 		}, 
+		
+		loading: function(bool) {
+			if (bool) {				
+				jQuery('#loading').show();
+				// clear background colors on events
+				jQuery('.fc-state-working').removeClass('fc-state-working'); 
+			}else{					
+				jQuery('#loading').hide();
+				loading_complete();
+			}
+		},
+		
+		eventDrop: function(event, delta) {
+			/*
+			alert(event.title + ' was moved ' + delta + ' days\n' +
+				'(should probably update your database)');
+			*/
+		},
+		eventResize: function(event,dayDelta,minuteDelta,revertFunc) {
+			/*
+	        alert(
+	            "The end date of " + event.title + "has been moved " +
+	            dayDelta + " days and " +
+	            minuteDelta + " minutes."
+	        );
+	
+	        if (!confirm("is this okay?")) {
+	            revertFunc();
+	        }
+			*/
+	    },
+		
+		eventClick: function(event) {
+			// opens events in a popup window
+			window.open(event.url, 'gcalevent', 'width=700,height=600');
+			return false;
+		},
+		
+		// open a new event pop
+		//dayClick: dayClickCallback,
+		
+		editable: true
+	};
+		
+		
+	/* construct the calendars for each person 
+	 * 
+	 */
+	jQuery(document).ready(function() {
+	
+		jQuery('.calendarDiv').each( function(index){ 
+			var j = jQuery(this); 
+			j.fullCalendar( cal_opts );
+//			j.fullCalendar('addEventSource', '/apex/fullcalUserData?filter=Available&id='+j.attr('alt'));
+			j.fullCalendar('addEventSource', '/apex/fullcalUserData?id='+j.attr('alt'));
+			var q = 1;
+			
+			// color a time slot
+			/*j.find('.fc-slot2,.fc-slot3,.fc-slot4')
+				.css({background:'lightSteelBlue'});
+			*/
+		});
+		
+		// color a time on a cal ?
+		
+		
+		jQuery('.fc-button-next,.fc-button-prev').click(function() { 
+			var cmd = jQuery(this).attr('alt');
+			jQuery('.calendarDiv').each( function(index){ 
+				var j = jQuery(this);
+				j.fullCalendar(  cmd );
+			});
+		});
+	});
+</script> 
+
+<apex:include pageName="fullcalStyle" />
+ 
+<style type='text/css'>
+
+.ui-user-item {
+	width: 270px;
+	margin: 0 auto;
+	float:left;
+	padding-left: 6px;
+}
+
+.fc .fc-agenda-body td div {
+/*	height: 14px;		/* height of 15 min on the cal */
+}
+
+
+</style>
+
+
+</apex:page>

@@ -1,0 +1,11 @@
+<apex:page controller="fullcalUser" contentType="text/plain" >
+<apex:variable value="{!0}" var="cnt"/>
+<apex:variable value="{!allGroups.size}" var="max"/>
+[<apex:repeat value="{!allGroups}" var="ev" >
+{ 	"id": "{!ev.id}",
+	"label": "{!ev.name}",
+	"value": "{!ev.name}"
+}<apex:variable value="{!cnt+1}" var="cnt"/>
+<apex:variable value="sdf" var="sdf" rendered="{! cnt != max}" >,</apex:variable>
+</apex:repeat>]
+</apex:page>
