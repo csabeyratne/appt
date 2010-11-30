@@ -9,7 +9,7 @@ public with sharing class EnhancedMultiselectController extends EnhancedComponen
     // and the constructor is run before the setters on attributes
     public String getOnLoad() {
 
-		//We overwrite the passed value since it means nothing for the Multiselect to be required (we treat it the same way as the checkbox)
+        //We overwrite the passed value since it means nothing for the Multiselect to be required (we treat it the same way as the checkbox)
         required = false;
 
         onLoad();  
@@ -31,9 +31,9 @@ public with sharing class EnhancedMultiselectController extends EnhancedComponen
         '                  } \n';
                         
         String initialize = '' +
-        //  	 A bit buggy when rerenders but unable to fix (as of yet)
+        //       A bit buggy when rerenders but unable to fix (as of yet)
         //'      $('.ui-multiselect-checkboxes > li > label > a > input').each(function() { appendTo($(this).parent.parent()); } );
-        //		find('a span div').remove()\n' +      
+        //      find('a span div').remove()\n' +      
         //'      $('.ui-multiselect-checkboxes > li > label').find('a span div').remove()\n' +      
         //'       $(".ui-multiselect-options").empty().remove();\n' +      
          
@@ -58,7 +58,7 @@ public with sharing class EnhancedMultiselectController extends EnhancedComponen
     
     public void initializePicklistVals()
     {
-    	        System.debug('GETPICKLISTVAL');
+                System.debug('GETPICKLISTVAL');
         if(picklistSO == null && picklistEntries == null && myObject != null)  
         {
             System.debug('GRABBING');
@@ -81,7 +81,7 @@ public with sharing class EnhancedMultiselectController extends EnhancedComponen
                 picklistEntries = picklistEntries.replace('\\,','--COMMA--');
                 String[] values = picklistEntries.split(',' , 0);
                 for(String s:values) {
-                	s = s.replaceAll('--COMMA--',',');
+                    s = s.replaceAll('--COMMA--',',');
                     so = new SelectOption(s,s);
                     picklistSO.add(so);  
                 }
@@ -95,16 +95,16 @@ public with sharing class EnhancedMultiselectController extends EnhancedComponen
         picklistVals = new List<PicklistVal>();
         for(SelectOption so : picklistSO)
             picklistVals.add(new PicklistVal(so, currVals));
-	        
-    	
+            
+        
     }
       public List<PicklistVal> getPickListValues() {    
         return picklistVals;
           
     }
     
-    	
+        
     
-	
+    
 
 }

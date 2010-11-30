@@ -34,14 +34,14 @@ public with sharing class EnhancedComponentTestSuite {
     System.assertNotEquals(null, to.Text__c);
     
     
-	EnhancedDatePickerController edpc = new EnhancedDatePickerController();
-	edpc.pageController = pcb;	  	
-	edpc.maxDate = '02/22/2011';
-	edpc.minDate = '4/4/2009';
-	edpc.fieldName = 'Date__c';
-	edpc.getOnLoad();	  	
-	Date d = (Date) edpc.getCastedValue();
-	System.assertEquals(to.Date__c, d);
+    EnhancedDatePickerController edpc = new EnhancedDatePickerController();
+    edpc.pageController = pcb;      
+    edpc.maxDate = '02/22/2011';
+    edpc.minDate = '4/4/2009';
+    edpc.fieldName = 'Date__c';
+    edpc.getOnLoad();       
+    Date d = (Date) edpc.getCastedValue();
+    System.assertEquals(to.Date__c, d);
       
     edpc.myValueHolder = '01/02/2008';
     pcb.ecSave(); 

@@ -1,0 +1,404 @@
+<apex:page >
+
+<style type='text/css'>
+
+.bPageBlock .tip_links { 
+	font-size: 93%;
+	color:#015BA7;
+	text-align:right;
+}
+.bPageBlock .tip_links a {
+	color:#015BA7;
+	text-decoration: none;	
+}
+.bPageBlock .tip_links a:hover {
+	text-decoration: underline;
+}
+body .bPageBlock .tip_links .pbBody {
+	padding-bottom: 18px;
+}
+/* for qTip modal  */
+.ui-tooltip-sfdc {
+	width:350px;	
+}
+
+.ui-tooltip-wrapper {
+	background-color:#ECECEC;
+	border-color:##ECECEC;
+	
+}
+.ui-tooltip .ui-tooltip-content {
+	padding: 0px;
+}
+
+.ui-tooltip-sfdc .bPageBlock .pbTitle {
+	color:#222222;
+	font-size:91%;
+	margin:0;
+	vertical-align:middle;
+	width:56%;
+}
+
+.ui-tooltip-sfdc .ui-tooltip-wrapper {
+	-moz-border-radius:5px 5px 5px 5px;
+	border-width:0px;
+	color:black;
+	padding:0px;
+	text-align:left;
+}
+
+body .ui-tooltip-sfdc .bPageBlock { 
+	margin-bottom: 1px;
+}
+
+.ui-tooltip-light .ui-tooltip-wrapper {
+	background-color: transparent;
+	border-width: 0;
+}
+
+#ui-tooltip-0 .ui-tooltip-wrapper .pbHeader { 
+	padding-top: 10px;
+	padding-left: 10px;
+}
+
+#ui-tooltip-0 .comboboxIcon , .inputFieldSubject a {
+	display: none;
+}
+
+.fc-event-vert .ui-resizable-s {
+	height:5px !important;
+	line-height:5px !important;
+}
+/*
+.modalContent .pbHeader td input.btn { 
+	float: right;
+}
+.modalContent .pbHeader div input.btn { 
+	float: right;
+}
+.modalContent .ui-tooltip .ui-tooltip-wrapper {
+	background:none repeat scroll 0 0 transparent;
+	border-width:0;
+}
+*/
+.modalContent .ui-tooltip .ui-tooltip-wrapper comboboxIcon {
+	display: none;
+}
+
+/* main calendar 
+*/
+#calendar {
+    min-width: 730px;
+    margin: 0 auto;
+}
+
+#miniCalendar {
+    padding-right: 8px;
+    padding-bottom: 8px;
+}
+
+#main_table td {
+    vertical-align: top;
+}
+
+.fc .fc-agenda-body td div {
+    height: 18px;
+    /* controls the height of a slot of time, default is 20 */
+}
+
+.ui-datepicker-calendar td {
+    width: 26px;
+}
+
+#loading {
+    display: none;
+    font-size: 1.1em;
+    font-weight: bold;
+    padding: 8px;
+    position: absolute;
+    top: 4px;
+    left: 384px;
+    background: none repeat scroll 0 0 orange;
+    -moz-border-radius-bottomleft: 5px;
+    -moz-border-radius-bottomright: 5px;
+}
+
+body .qtip-content a:hover {
+    color: black;
+}
+
+/*
+body a:hover {
+    color: #FFFFFF;
+    font-weight: bold;
+    text-decoration: underline;
+}*/
+
+.ui-user-list { 
+    list-style:none;    
+    padding: 8px; 
+    -moz-user-select: none;
+    -khtml-user-select: none;
+}   
+.ui-user-list input {   height: 1.6em; width: 1.6em;}
+.ui-user-list img {
+    height:32px;
+    width:32px;
+    float: left;
+}
+
+.ui-user-item {
+    display: block;
+    overflow: auto;
+    width: 100%;
+    padding:4px;
+}
+
+.ui-user-item-body {
+    display: block;
+    margin-left: 42px;    
+} 
+
+.ui-tooltip-blue {
+    width: 300px;
+}
+
+.ui-tooltip-blue .ui-tooltip-wrapper {
+    padding: 6px;
+    color: black;
+    text-align: left;
+    border-width: 5px;
+    -webkit-border-radius: 5px;
+    -o-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+}
+
+.ui-user-item-body label {
+   -webkit-border-radius: 5px;
+    -o-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    padding: 4px;
+}
+ 
+/* date picker tweaks */
+.ui-datepicker th {
+    padding:0.5em 0.3em;
+}
+
+.ui-widget-content {
+    border: 1px solid #CCCCCC;
+}
+
+#userList { padding: 6px;   }
+    
+#main_table .ui-widget { 
+	/*  padding-top : 6px;*/
+}   
+
+
+.fc-content .fc-state-highlight {
+	/*background:none repeat scroll 0 0 transparent; /* hide the yellow on "today" */
+}
+
+.ui-autocomplete-loading { 
+    background: white url('https://na1.salesforce.com/img/loading.gif') right center no-repeat; 
+}
+
+.ui-autocomplete { position: absolute; cursor: default; }   
+
+/* workarounds */
+* html .ui-autocomplete { width:1px; } /* without this, the menu expands to 100% in IE6 */
+    
+.ui-menu {
+    list-style:none;
+    padding: 2px;
+    margin: 0;
+    display:block;
+    float: left;
+}
+.ui-menu .ui-menu {
+    margin-top: -3px;
+}
+.ui-menu .ui-menu-item {
+    margin:0;
+    padding: 0;
+    zoom: 1;
+    float: left;
+    clear: left;
+    width: 100%;
+}
+.ui-menu .ui-menu-item a {
+    text-decoration:none;
+    display:block;
+    padding:.2em .4em;
+    line-height:1.5;
+    zoom:1;
+}
+.ui-menu .ui-menu-item a.ui-state-hover,
+.ui-menu .ui-menu-item a.ui-state-active {
+    font-weight: normal;
+    margin: -1px;
+}
+
+/* 
+ * size and colors for events 
+ * override or extend defaults from fullcalendar.css
+ */
+ 
+	.fc-agenda .fc-axis {
+		width: 32px;		/* size of sidebar */
+	}
+    .fc .fc-content td.fc-state-working {
+		background:none repeat scroll 0 0 lightGreen;
+		opacity: 0.6; 
+	}
+    
+    .teal,
+    .fc-agenda .teal .fc-event-time,
+    .teal a{
+        background-color:#668CB3;
+        border-color:#668CB3;
+        border-style:solid;
+        color:#FFFFFF;
+    }
+    
+    .lightGreen,
+    .fc-agenda .lightGreen .fc-event-time,
+    .lightGreen a{
+        background-color:#85AAA5;
+        border-color:#85AAA5;
+        border-style:solid;
+        color:#000000;
+    }
+    
+    .brown,
+    .fc-agenda .brown .fc-event-time,
+    .brown a{
+        background-color:#8D6F47;
+        border-color:#8D6F47;
+        border-style:solid;
+        color:#FFFFFF;
+    }
+    
+    .blue,
+    .fc-agenda .blue .fc-event-time,
+    .blue a{
+        background-color:#2952A3;
+        border-color:#2952A3;
+        border-style:solid;
+        color:#FFFFFF;
+    }
+    
+    .lightPurple,
+    .fc-agenda .lightPurple .fc-event-time,
+    .lightPurple a{
+        background-color:#94A2BE;
+        border-color:#94A2BE;
+        border-style:solid;
+        color:#000000;
+    }
+    
+    .brightGreen,
+    .fc-agenda .brightGreen .fc-event-time,
+    .brightGreen a{
+        background-color:#8CBF40;
+        border-color:#8CBF40;
+        border-style:solid;
+        color:#000000;
+    }
+    
+    .dirtyYellow,
+    .fc-agenda .dirtyYellow .fc-event-time,
+    .dirtyYellow a{
+        background-color:#E0C240;
+        border-color:#E0C240;
+        border-style:solid;
+        color:#000000;
+    }
+    
+    .green,
+    .fc-agenda .green .fc-event-time,
+    .green a{
+        background-color:#92D5CD;
+        border-color:#92D5CD;
+        border-style:solid;
+        color:#000000;
+    }
+    
+    .gray,
+    .fc-agenda .gray .fc-event-time,
+    .gray a{
+        background-color:#4E5D6C;
+        border-color:#4E5D6C;
+        border-style:solid;
+        color:#000000;
+    }
+    
+    .dirtyPink,
+    .fc-agenda .dirtyPink .fc-event-time,
+    .dirtyPink a{
+        background-color:#A32929;
+        border-color:#A32929;
+        border-style:solid;
+        color:#000000;
+    }
+    
+    .purple,
+    .fc-agenda .purple .fc-event-time,
+    .purple a{
+        background-color:#7A367A;
+        border-color:#7A367A;
+        border-style:solid;
+        color:#000000;
+    }
+    
+    .cyan,
+    .fc-agenda .cyan .fc-event-time,
+    .cyan a{
+        background-color:#59BFB3;
+        border-color:#59BFB3;
+        border-style:solid;
+        color:#000000;
+    }
+    
+    .brick,
+    .fc-agenda .brick .fc-event-time,
+    .brick a{
+        background-color:#B1440E;
+        border-color:#B1440E;
+        border-style:solid;
+        color:#000000;
+    }
+    
+    .brightBlue,
+    .fc-agenda .brightBlue .fc-event-time,
+    .brightBlue a{
+        background-color:#2952A3;
+        border-color:#2952A3;
+        border-style:solid;
+        color:#000000;
+    }
+    
+    .pink,
+    .fc-agenda .pink .fc-event-time,
+    .pink a{
+        background-color:#B1365F;
+        border-color:#B1365F;
+        border-style:solid;
+        color:#000000;
+    }
+    
+    /* when a user name is dragged over an event, color that some bright color */
+	.ui-droppable-highlight,
+    .fc-agenda .ui-droppable-highlight .fc-event-time,
+    .ui-droppable-highlight a {  
+        background-color: orange;
+        border-color: orange;
+        border-style:solid;
+        color:#000000;
+	} 
+    
+</style>
+</apex:page>

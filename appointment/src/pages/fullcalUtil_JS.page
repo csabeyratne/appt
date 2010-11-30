@@ -1,0 +1,113 @@
+<apex:page >
+<script>
+	function addToolTipToEvent(element,event) {	
+        /* this pulls data from the event, at load time 
+		 * an alternative is to pull data at the time we show the tip.
+		 */
+		element.qtip({ 
+	        content: 	{ text: hoverHtml(event)     	},
+	        hide: 		{ fixed: true, delay: 300,  effect: "fade"   },
+	        position: 	{ at: "right center",  my: "left center", adjust:{screen: true }  },
+	        style: 		{ tip: "bottomLeft",  classes: "ui-tooltip-sfdc ui-tooltip-shadow"  }
+		});
+        
+	}
+	
+	// common functions 
+	function hoverHtml(ev) {
+		return '<div class="bPageBlock secondaryPalette"><div class="pbHeader">'+ 
+		'<table cellspacing="0" cellpadding="0" border="0"><tbody><tr><td class="pbTitle">'+
+		'<h2 class="mainTitle">Event Detail</h2></td><td class="pbButton">' +
+		'<input type="button" title="Edit" name="edit" class="btn" value=" Edit ">'+
+		'<input type="button" title="Delete" name="delete" class="btn" value="Delete"></td></tr>' +
+		'</tbody></table></div><div class="pbBody"><div class="pbSubsection">' +
+		'<table cellspacing="0" cellpadding="0" border="0" class="detailList"><tbody><tr>'+
+		'<td class="labelCol">Assigned To</td><td class="dataCol">'+
+		ev.ownerName +
+		'</td></tr>'+
+		'<tr><td class="labelCol">Subject</td><td class="dataCol">'+
+		ev.title+
+		'</td></tr>' +
+		'<tr><td class="labelCol">Name</td><td class="dataCol">&nbsp;</td></tr>' +
+	//	'<tr><td class="labelCol">Related To</td><td class="dataCol">&nbsp;</td></tr>' +
+		'<tr><td class="labelCol">Start</td><td class="dataCol">'+
+		jQuery.fullCalendar.formatDate(ev.start,"MM/d/yyyy h:mm TT") + 
+		'</td></tr>'+
+		'<tr><td class="labelCol last">End</td><td class="dataCol last">'+
+		jQuery.fullCalendar.formatDate(ev.end,"MM/d/yyyy h:mm TT") + 
+		'</td></tr>' +
+		'</tbody></table></div></div><div class="pbFooter secondaryPalette"><div class="bg"></div></div></div>';
+	}
+
+ 	function log( message ) {
+        jQuery( "<div/>" ).text( message ).prependTo( "#log" );
+        jQuery( "#log" ).attr( "scrollTop", 0 );
+    }
+
+    function getSettingValue(name, defaultValue) { 
+        return ( name != null && name != "" ? name : defaultValue );
+    }
+    
+    function fadeOutErrors() {
+        if (jQuery('#errors').text() != '') {
+            var t=setTimeout('fadeErrors()',9000);
+        }
+    }
+    
+    function fadeErrors(){
+        jQuery('#errors').fadeOut('slow');
+    }
+    
+    
+    /* 
+    NOT USED clean up TODO
+     
+     * list and count events by the date they fall on, map them once
+     * used to summarize events on a given date on the month view
+    
+    var monthDateUsedMap = []; // map all events which we place on this cal
+    
+    function reportEvent( event ,view ) {
+        var key = event.start.toDateString();
+        if ( monthDateUsedMap[key] ) {
+            monthDateUsedMap[key].push(event);
+        } else {
+            monthDateUsedMap[key] = [event];
+        }
+    }
+    function sameDateCount( event ) {
+        var key = event.start.toDateString();
+        return monthDateUsedMap[key].length;
+    }
+    
+    var monthDateMap = null; // map all events by their toDateString
+    function _loadDateMap(view) {
+        // count the events per date, used when rendering the month view
+        var event;
+        for ( var jj in view.eventsByID ) {
+            event = view.eventsByID[jj][0]; // true because no repeating events yet
+            var key = event.start.toDateString();
+            if ( monthDateMap[key] ) {
+                monthDateMap[key].push(event);
+            } else {
+                monthDateMap[key] = [event];
+            }
+        }
+        return monthDateMap;
+    }
+    function getDateMap(view) { 
+        if (monthDateMap == null ) {
+            monthDateMap = [];
+            _loadDateMap(view);
+        }
+        return  monthDateMap;
+    }
+    function getEventsOnSameDate(view,event) {
+        var map = getDateMap(view);
+        return map[event.start.toDateString()];
+    }
+   
+   */
+    
+</script>
+</apex:page>

@@ -1,0 +1,510 @@
+<apex:page Controller="fullcalUser" sidebar="false"    >
+
+    <apex:stylesheet value="{!URLFOR($Resource.fullcalendar_148, '/css/light-blue/jquery-ui-1.8.6.custom.css')}" />
+    <apex:stylesheet value="{!URLFOR($Resource.fullcalendar_148, '/fullcalendar/fullcalendar.css')}" />
+    <apex:stylesheet value="{!URLFOR($Resource.fullcalendar_148, '/qtip/dist/jquery.qtip.css')}" />
+
+    <script type='text/javascript' src="{!URLFOR($Resource.fullcalendar_148,'/jquery/jquery-1.4.3.min.js')}"></script>
+    <script type="text/javascript" src="{!URLFOR($Resource.fullcalendar_148, '/jquery/jquery_ba_dotimeout.js')}"></script>
+	<script type='text/javascript' src="{!URLFOR($Resource.fullcalendar_JS)}"  ></script>
+	<script type="text/javascript" src="{!URLFOR($Resource.fullcalendar_148, '/qtip/dist/jquery.qtip.js')}"></script>
+    <script type="text/javascript" src="{!URLFOR($Resource.fullcalendar_148, '/jquery/jquery-ui-1.8.6.custom.min.js')}"></script>
+
+	<apex:include pageName="fullcalUtil_JS" />
+
+    <apex:form >
+
+        <div id="errors"><apex:pageMessages id="errorMsgs" /></div>
+
+        <div id='loading'>loading...</div>
+		<table id='main_table'> 
+            <tbody> 
+                <tr>
+                <td>
+                    <div id='miniCalendar'></div>
+                     
+                    <div class="ui-widget">
+                        <label for="selectedGroup"><h3>Group: </h3></label>
+                        <input id="selectedGroup" value="{!selectedGroup.name}"/>
+                    </div>
+                    
+                    
+                    <apex:outputPanel id="userList" >
+                        <div class="ui-user-list " >
+                        <apex:repeat value="{!Users}" var="u" >
+                            <div class="ui-user-item" >
+                                <a href="/{!u.u.id}" class="feeditemcommentphoto" >
+                                    <img    title="{!u.u.name}"  alt="{!u.u.name}"  src="{!u.u.SmallPhotoUrl}" /></a>
+                                    
+                                <span class="ui-user-item-body "  >
+                                    <input type="checkbox" id="check{!u.u.id}" alt="{!u.u.id}" checked="checked" 
+                                        class="user-selected  " 
+                                        onchange="userCheckBoxChange(this,'{!u.u.id}');" />
+                                    <label class="{!u.classname}" for="check{!u.u.id}" >{!u.u.name}</label>
+                                </span> 
+                                
+                            </div>
+                            
+                        </apex:repeat>
+                        </div>
+                    </apex:outputPanel>
+<!--
+                    <h3>New Event</h3>
+                    
+                    <table><tr><td>
+                    <div style=" width: 65px; height: 74px;"
+                        class="fc-event fc-event-vert fc-corner-top fc-corner-bottom lightGreen protoEvent"><a
+                        href="#"><span class="fc-event-bg"></span><span
+                        class="fc-event-time">1 Hour</span><span
+                        class="fc-event-title">Drag onto calendar</span></a>
+                    <div class="ui-resizable-handle ui-resizable-s">=</div>
+                    </div>
+                    </td>
+                    <td>
+                    <div style=" width: 65px; height: 55px;"
+                        class="fc-event fc-event-vert fc-corner-top fc-corner-bottom lightGreen protoEvent"><a
+                        href="#"><span class="fc-event-bg"></span><span
+                        class="fc-event-time">45 Minutes</span><span
+                        class="fc-event-title">Drag onto calendar</span></a>
+                    <div class="ui-resizable-handle ui-resizable-s">=</div>
+                    </div></td>
+                    <td>
+                    <div style=" width: 65px; height: 36px;"
+                        class="fc-event fc-event-vert fc-corner-top fc-corner-bottom lightGreen protoEvent"><a
+                        href="#"><span class="fc-event-bg"></span><span
+                        class="fc-event-time">30 Minutes</span><span
+                        class="fc-event-title">Drag onto calendar</span></a>
+                    <div class="ui-resizable-handle ui-resizable-s">=</div>
+                    </div>
+                    &nbsp;
+                    <div style=" width: 65px; height: 36px;"
+                        class="fc-event fc-event-vert fc-corner-top fc-corner-bottom lightGreen protoEvent"><a
+                        href="#"><span class="fc-event-bg"></span><span
+                        class="fc-event-time">30 Minutes</span><span
+                        class="fc-event-title">Drag onto calendar</span></a>
+                    <div class="ui-resizable-handle ui-resizable-s">=</div>
+                    </div>
+                    
+                    </td>
+                    </tr></table>
+                    -->
+                    
+                    <div class="ui-widget" style="margin-top:2em; font-family:Arial; display:none;">js debug log :
+                        <div id="log" style="height: 300px; width: 220px; overflow: auto;" class="ui-widget-content"></div>
+                    </div>
+
+                </td>
+                
+                <td><div id='calendar'></div></td>
+                    
+                </tr>
+            </tbody>
+        </table>
+
+        <apex:actionFunction name="selectedGroup" action="{!selectedGroup}"	onComplete="loadUserEvents();" rerender="errorMsgs,userList"> 
+        	<apex:param name="groupId" value="" /> 
+        </apex:actionFunction>
+        
+        <apex:actionFunction name="updateViewDisplay" action="{!viewDisplay}" onComplete="" rerender="">
+            <apex:param name="view" value="" />
+        </apex:actionFunction>
+        
+        <apex:actionFunction name="saveMove" onComplete="fadeOutErrors();" action="{!updateEventMove}" rerender="errorMsgs">
+            <apex:param name="eventId" value="" />
+            <apex:param name="dayDelta" value="" />
+            <apex:param name="minuteDelta" value="" />
+        </apex:actionFunction>
+        
+        <apex:actionFunction name="changeEventOwner" action="{!changeEventOwner}" onComplete="changeEventOwnerDone();fadeOutErrors();" rerender="errorMsgs">
+            <apex:param name="eventId" value="" />
+            <apex:param name="ownerId" value="" />
+        </apex:actionFunction>
+
+
+        <apex:actionFunction name="saveResize" action="{!updateEventResize}" onComplete="fadeOutErrors();" rerender="errorMsgs">
+            <apex:param name="eventId" value="" />
+            <apex:param name="dayDelta" value="" />
+            <apex:param name="minuteDelta" value="" />
+        </apex:actionFunction>
+
+		<apex:actionFunction name="insertNewEvent" action="{!insertNewEvent}" onComplete="renderNewEvent();" rerender="errorMsgs">
+            <apex:param name="title" value="" />
+            <apex:param name="start" value="" />
+            <apex:param name="end" value="" />
+            <apex:param name="allDay" value="" />
+        </apex:actionFunction>
+        
+
+<div class="modal" id="mymodal" >
+    <div style="display: none;" class="modalContent" >
+    
+ 	<apex:pageBlock title="Edit Event" mode="edit" >
+ 		
+ 		<apex:facet name="header"><h3>Edit Event</h3>
+ 		</apex:facet>
+ 		 
+		<apex:pageBlockButtons location="bottom" >
+		    <a href="#"  onclick="modalMiniEdit.qtip('hide');">Cancel</a>&nbsp;
+			<apex:commandButton action="{!saveEvent}" value="Save" oncomplete="modalMiniEdit.qtip('hide');"/>
+      	</apex:pageBlockButtons>
+        
+      	<apex:pageBlockSection columns="1" > 
+      	<!--  hide the popup, it does not work -->
+      	<apex:inputField value="{!editEvent.subject}" styleclass="inputFieldSubject" />
+      	<apex:inputField value="{!editEvent.description}" styleclass="inputFieldDescription" /> 
+      	</apex:pageBlockSection>
+	  
+	</apex:pageBlock>
+  	</div> 
+</div>
+
+    </apex:form>
+
+
+<script type='text/javascript'> 
+    
+    jQuery.noConflict();
+    
+    function changeEventOwnerDone() { 
+    	// reload a single event, with it's owner, hard
+    	// reload the events for all users, simple
+    	jQuery('#calendar').fullCalendar('refetchEvents');
+    }
+    
+    function renderNewEvent() { 
+	   	// reload a single event, with it's owner, hard
+    	// reload the events for all users, simple
+    	jQuery('#calendar').fullCalendar('refetchEvents');
+    }
+        
+    function loadUserEvents() {
+    	jQuery('.ui-user-item input').change();  // trigger onchange event to load each calendar
+
+        /* this interfers with the button click? TEST */
+        jQuery('.ui-user-item ').draggable({ distance: 20,
+                zIndex: 999, 
+                revert: true,      // will cause the event to go back to its
+                revertDuration: 0  //  original position after the drag
+            });        
+    }
+      
+    function userCheckBoxChange(ele,userid) { // filter in or out events with this user id
+        var action = ( jQuery(ele).attr('checked') ? 'addEventSource':	'removeEventSource');
+        jQuery('#calendar').fullCalendar( action,   '/apex/fullcalUserData?id='+userid ); 
+    } 
+    
+     
+    jQuery(document).ready(function() {
+	
+        jQuery('.protoEvent').draggable({   distance: 30,   zIndex: 999, revert: true,revertDuration: 0,
+                                            cursorAt: { top: 0 }    
+                                        });
+        
+        jQuery( "#selectedGroup" ).autocomplete({   source: "groupSearch",     minLength: 2,
+            select: function( event, ui ) {
+                log( ui.item ?
+					"Selected: " + ui.item.id :
+					"Nothing selected, input was " + this.value );
+              
+              	if ( ui.item == null ) return;
+              	
+              	// clean up all event sources
+              	jQuery('.ui-user-list input').each( function (idx,val) { 
+		        	var userid = jQuery(val).attr('alt');
+		        	jQuery('#calendar').fullCalendar( 'removeEventSource', '/apex/fullcalUserData?id='+userid );
+				});
+				
+                selectedGroup( ui.item.id );    // call apex to select the group and reload the calendar
+            }
+        });
+          
+        jQuery('#miniCalendar').datepicker({            dateFormat: 'DD, d MM, yy',
+            onSelect: function(dateText,dp){
+                jQuery('#calendar').fullCalendar('gotoDate',new Date(Date.parse(dateText)));
+                jQuery('#calendar').fullCalendar('changeView','agendaDay');
+            }
+        });
+     
+        var theView = getSettingValue("{!recentView}","agendaDay"); // get default from custom settings
+     	
+     	var theDropTarget = null;
+     	
+        var theCal = jQuery('#calendar').fullCalendar({ 
+            
+            height: 700,
+            defaultEventMinutes: 15,
+            slotMinutes: 15,        
+            defaultView: theView,  
+            firstHour: 9,
+            theme: true,
+            lazyFetching: true,
+            // not needed ignoreTimezone: false, 
+             
+            /*
+            droppable: true, 
+            // this function is called when something is dropped onto the calendar from the outside
+            drop: function(date, allDay, ev, ui) { 
+                var k = theCal;
+                var v = theView;
+                var j = date;
+				var ui = ui;
+            },
+            */
+            
+            timeFormat: {               agenda: 'h:mm{ - h:mm}',                '': 'h(:mm)t'           } ,
+            allDaySlot: false,
+            header: {
+                left: 'prev,next today',
+                center: 'title',
+                right: 'month,agendaWeek,agendaDay'
+            },
+            
+            loading: function(bool,view) {
+                if (bool) {             
+                    jQuery('#loading').show();
+                } else {
+                    jQuery('#loading').fadeOut('fast');
+                }
+            },
+            
+            /* mouse overs - not used 
+            eventMouseover:  function ( event, jsEvent, view ) {       	
+            	log( 'eventMouseover ' + event.start );         
+            	theDropTarget = event;  
+            },
+            eventMouseout:  function ( event, jsEvent, view ) {         	
+            	log( 'eventMouseout '+ event.start);
+            	theDropTarget = null;           
+            },
+            */
+            eventRender: eventRender,
+            
+            /* 
+             * when qtip comes up and we drag an event 
+             * the qtip may stay up and become disconnected
+             * instead hide and disable on drag start and enable when drag stops
+             */
+            eventDragStart: function( event, jsEvent, ui, view ) { 
+                ui.helper.qtip('hide');
+                ui.helper.qtip('disable');
+            },
+            eventDragStop: function( event, jsEvent, ui, view ) { 
+                ui.helper.qtip('enable');
+            },
+            
+            eventDrop: function(event, dayDelta, minuteDelta) {
+                saveMove(event.id,dayDelta,minuteDelta);
+            },
+            
+            eventResize: function(event,dayDelta,minuteDelta,revertFunc) {
+                saveResize(event.id,dayDelta,minuteDelta);
+                
+            },
+            
+            selectable: true,
+            selectHelper: true,
+            select: function(start, end, allDay) {
+                var title = prompt('Event Title:');
+                if (title) {
+                    // create the new event now
+                    
+                    // in the calendar
+                    log ('start '+start );
+                    
+                    theCal.fullCalendar('renderEvent',
+                        {
+                            title: title,
+                            start: start,
+                            end: end,
+                            allDay: allDay
+                        },
+                        false // make the event "stick"
+                    );
+                     
+                    // and on the data base
+                    insertNewEvent( title, start.getTime(), end.getTime(),allDay );
+                }
+                theCal.fullCalendar('unselect');
+            },
+                        
+            dayClick: function(date, allDay, jsEvent, view) {
+            
+               if (allDay) {
+                    log('Clicked on the entire day: ' + date);
+                }else{
+                    log('Clicked on the slot: ' + date);
+                }
+                
+                log('Coordinates: ' + jsEvent.pageX + ',' + jsEvent.pageY);
+                
+                log('Current view: ' + view.name);
+                
+                // change the day's background color just for fun
+                //jQuery(this).css('background-color', 'red');
+            },          
+            
+            eventClick: function(event, view) {
+                log( view.toString() + ' ' + event.toString() );
+                
+                if ( event.isViewMore != null ) { 
+                    // switch to the day view on the date of this event
+                    theCal.fullCalendar('changeView','agendaDay' );
+                    theCal.fullCalendar('gotoDate', event.start );
+                    return false;
+                }
+                /*
+                if (event.className == 'availableClass') {
+                    //open a modal with the appropriate information
+                    var iFrameLink = '<iframe src="/apex/FullCalUserData?calendarId={!$User.Id}' + '&startMs=' + event.startMs +'&endMs=' + event.endMs + '" style="min-height:300px; width:100%; border:0;">';
+                    jQuery(iFrameLink).modal(modalOptions);   
+                }*/
+                
+                // opens events in a popup window
+                // window.open(event.url, 'gcalevent', 'width=700,height=600');
+                
+                // navigate to that url
+                window.location.href = event.url; 
+                
+                //alert('Title: ' + event.title + '\r\nDescription : ' + event.description);
+                return false;
+            },
+            
+            viewDisplay:  function(view) { // The calendar's date-range changes whenever the user switches to a new view 
+                if ( theView != view.name ) { 
+                    theView = view.name;
+                    jQuery.doTimeout( 'id', 2000, function() { // debounce 3 seconds
+                        updateViewDisplay(theView); // save out to custom settings
+                    }, true);
+                }
+                
+                /* sync the mini calendar with the date in this view
+                 * if we are in the day, move day on mini 
+                 */
+                //if ( view.name == 'agendaDay' ) { 
+	                //var j = view;	                var start = view.start;
+	                jQuery('#miniCalendar').datepicker( 'setDate', view.start);
+				//}
+            },
+                
+            editable: true
+        
+        }); // end fullcalendar()
+        
+        // in case we want to jump to a date TODO  
+        // jQuery('#calendar').fullCalendar('gotoDate',new Date(2010,3,1) );
+        
+        
+        // just call add to get the defaulted event sources we need ( if any )  
+        loadUserEvents(); 
+                
+        loadMiniEdit(); 
+    }); // end document ready
+    
+    
+    
+    
+    /* Helper functions
+	-----------------------------------------------------------------------------*/
+	var modalMiniEdit;
+	function loadMiniEdit() {
+		var body = jQuery('.modalContent');
+		var k = body;
+ 
+ 		modalMiniEdit = jQuery('#mymodal').qtip( 
+		   {
+		      content: {
+		         text: jQuery('.modalContent'),
+		         //title: { text: 'Edit Event', button: 'Close' },
+		      },
+		      position: {
+		         my: 'center', // ...at the center of the viewport
+		         at: 'center',
+		         target: jQuery(window)
+		      },
+		      show: {
+		        // event: 'click', // Show it on click
+		         solo: true, // And hide all other tooltips
+		         modal: true // Make it modal
+		      },
+		      hide: false,
+		      style: {
+		         classes: 'ui-tooltip-light'
+		      }
+		   });
+		   
+	}
+	function quickEdit(e) {
+		var eventId = jQuery(e).attr( 'rel' );
+		// stuff values into the qtip?
+		var jj = jQuery('#calendar').fullCalendar('clientEvents');
+		for ( var i in jj) {			var p = jj[i];
+			if ( p.id == eventId ) { 
+			var sub = 
+				jQuery('#ui-tooltip-0').find('.inputFieldSubject').val(p.title).end()
+					.find('.inputFieldDescription').val(p.description);
+			}
+			
+		}
+		modalMiniEdit.qtip('show');	
+	}
+	
+	    
+    function eventRender(event, element, view) {
+        
+        if ( view.name == 'month' ) { 
+            var sameDayList = view.eachElementOnDay(event)  ; 
+             
+            if ( sameDayList != undefined && sameDayList.length == 5 ) {
+            
+                // this event now marks a jump to date on click
+            
+                var html = '<a><span class="fc-event-time"></span><span class="fc-event-title"> more ';
+                html += '</span></a><div class="ui-resizable-handle ui-resizable-e"></div>';
+                jQuery(element).html(html);
+                event.isViewMore = true; 
+            }
+            
+            if (sameDayList != undefined && sameDayList.length > 5 ) {
+                return false;
+            }
+        } // month view
+        
+
+		// allow users to be dropped onto events, change the owner of that event
+		jQuery( element ).droppable({ 
+			accept: '.ui-user-item', // allow others ? events onto events ? whoid?
+			greedy: true ,  
+			hoverClass: 'ui-droppable-highlight',   
+			tolerance: 'pointer',
+			drop: function( jsevent, ui) { 
+				var newOwner = ui.draggable.find('input').attr('alt');
+				log( newOwner + ' dropped onto event '+event.id); 
+				
+				// TODO add a waiting image to the event
+				jQuery(element).fadeOut(3000);
+				
+				changeEventOwner( event.id, newOwner );
+			},
+			/*
+			over: function( jsevent, ui) { 
+				// get the color of the element
+				var j = element;
+				var background = jQuery(ui.draggable).find('label').attr('class');
+			
+				jQuery( element ).droppable( "option", "hoverClass", background );
+			},
+			out: function( jsevent, ui) { 
+				jQuery( element ).droppable( "option", "hoverClass", '' ); 
+			}
+			*/ 
+		});
+		
+		addToolTipToEvent(element,event);
+        
+    }
+
+</script>
+
+<apex:include pageName="fullcalStyle" />
+
+</apex:page>

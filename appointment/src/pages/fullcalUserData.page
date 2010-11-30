@@ -1,0 +1,18 @@
+<apex:page contentType="text/plain" 
+	controller="fullcalUser"	>       
+<apex:variable value="{!0}" var="cnt"/>
+<apex:variable value="{!allEvents.size}" var="max"/>
+[<apex:repeat value="{!allEvents}" var="ev" >{
+"id": "{!ev.Id}","ownerid":"{!ev.ownerid}","ownerName":"{!ev.ownerName}",
+"title":"{!ev.title}","type":"{!ev.eventType}",
+"allDay":{!ev.allDayEvent},"vis":{!ev.visible},
+"start":"{!ev.startISO}",
+"end":"{!ev.endISO}",
+"url":"{!ev.url}",
+"description":"{!ev.description}",
+"className": "{!ev.className}",
+"editable": {!ev.editable}
+}<apex:variable value="{!cnt+1}" var="cnt"/> 
+<apex:variable value="sdf" var="sdf" rendered="{! cnt != max}" >,</apex:variable> 
+</apex:repeat>]
+</apex:page>

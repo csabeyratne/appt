@@ -7,8 +7,6 @@
     <tab>standard-Chatter</tab>
     <tab>Sample__c</tab>
     <tab>EasyPage__EasyPage</tab>
-    <tab>EasyDescribe__EasyDescribe</tab>
     <tab>cloudconverter__Cloud_Converter</tab>
-    <tab>INFA__Integration</tab>
     <tab>Appirio_SOQL_Query_Tool</tab>
 </CustomApplication>

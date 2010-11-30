@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Calendar Group</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Calendar Groups</value>
+    </caseValues>
+    <fields>
+        <label><!-- Calendar List --></label>
+        <name>Calendar_List__c</name>
+    </fields>
+    <layouts>
+        <layout>Calendar Group Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

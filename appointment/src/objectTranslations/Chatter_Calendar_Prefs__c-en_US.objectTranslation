@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Chatter Calendar Prefs</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Chatter Calendar Prefs</value>
+    </caseValues>
+    <fields>
+        <label><!-- Event Color --></label>
+        <name>Event_Color__c</name>
+    </fields>
+    <fields>
+        <label><!-- Recent Group --></label>
+        <name>Recent_Group__c</name>
+    </fields>
+    <fields>
+        <label><!-- Recent View --></label>
+        <name>Recent_View__c</name>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>
